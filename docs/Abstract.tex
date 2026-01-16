@@ -1,0 +1,25 @@
+%%
+% 摘要信息
+% 摘要内容应概括地反映出本论文的主要内容，主要说明本论文的研究目的、内容、方法、成果和结论。要突出本论文的创造性成果或新见解，不要与引言相 混淆。语言力求精练、准确，以 300—500 字为宜。
+% 关键词是供检索用的主题词条，应采用能覆盖论文主要内容的通用技术词条(参照相应的技术术语 标准)。按词条的外延层次排列（外延大的排在前面）。
+
+
+\cabstract{
+随着物联网（IoT）和海量机器型通信（mMTC）应用的快速发展，现有的第五代移动通信（5G）网络在面对复杂多样的流量特征和能效需求时逐渐显现出局限性。为满足B5G（Beyond 5G）时代对大规模连接与高能效通信的需求，亟需设计新型的介质接入控制（MAC）层随机接入机制，以兼顾系统容量、信令开销和能耗性能。本论文针对5G免授权随机接入机制（Grant-Free Random Access, GFRA）资源利用模式僵化的问题，提出一种动态时长免授权随机接入机制（Dynamic Time-GFRA, DT-GFRA），旨在充分利用随机接入信道的短时可用性，提升网络能效与系统容量。
+
+论文首先基于离散时间休假排队理论构建了DT-GFRA的理论模型，分析节点和信道在忙期与假期之间的耦合关系，推导网络稳态运行点及吞吐量、时延等性能指标的解析表达式，并在此基础上完成接入参数的最优配置与能效优化。其次，论文构建了基于能效门限的接入机制选择与资源分配策略，在FT-GFRA、DT-GFRA与GBRA共存的B5G网络中，实现面向业务流量特征的最优接入策略选择。最后，为应对复杂多业务场景下的动态流量与高维决策问题，论文提出基于多智能体近端策略优化（MAPPO）的DT-GFRA强化学习框架，实现分布式能效优化与快速收敛。
+
+研究结果表明，所提出的DT-GFRA机制在不更改物理层结构的前提下，可有效提升随机接入信道利用率与系统能效，具备良好的兼容性与可实施性。本研究丰富了B5G蜂窝网络MAC层接入协议体系，为面向未来物联网场景的高能效通信机制设计提供了新的理论支撑与工程参考。
+}
+% 中文关键词(每个关键词之间用;分开,最后一个关键词不打标点符号。)
+\ckeywords{B5G；物联网；免授权随机接入；休假排队论；强化学习；能效优化}
+
+\eabstract{
+With the rapid proliferation of the Internet of Things (IoT) and massive Machine-Type Communications (mMTC), the existing fifth-generation (5G) networks face increasing challenges in supporting diverse traffic characteristics and stringent energy efficiency requirements. To meet the demands of Beyond 5G (B5G) networks for massive connectivity and energy-efficient communication, it is crucial to develop novel Medium Access Control (MAC) layer random access mechanisms that balance system capacity, signaling overhead, and energy consumption. This thesis proposes a Dynamic Time Grant-Free Random Access (DT-GFRA) mechanism to overcome the rigidity of conventional GFRA resource utilization, thereby enhancing network throughput and energy efficiency by exploiting the short-term availability of random access channels.
+
+Firstly, a discrete-time vacation queuing model is developed to analyze the DT-GFRA mechanism. The model characterizes the coupling behavior between node busy periods and channel idle periods, derives the steady-state operating point, and provides closed-form expressions for throughput and delay. On this basis, optimal access parameters and energy-efficient configurations are obtained. Secondly, an energy-efficiency-based access and resource allocation strategy is designed to enable adaptive protocol selection among FT-GFRA, DT-GFRA, and GBRA in hybrid B5G networks. Finally, to handle dynamic multi-service environments with heterogeneous traffic patterns, a Multi-Agent Proximal Policy Optimization (MAPPO)-based reinforcement learning framework is proposed, enabling distributed optimization and fast convergence under practical communication constraints.
+
+Simulation and analytical results demonstrate that the proposed DT-GFRA mechanism significantly improves resource utilization and energy efficiency without modifying the physical layer, showing strong compatibility and feasibility within the 3GPP framework. The study contributes to the theoretical development and practical design of high-efficiency MAC-layer access mechanisms for future B5G-enabled IoT networks.
+}
+% 英文文关键词（关键词之间用逗号隔开，最后一个关键词不打标点符号。）
+\ekeywords{ Beyond 5G (B5G), Internet of Things (IoT), Grant-Free Random Access (GFRA), Vacation Queuing Theory, Reinforcement Learning, Energy Efficiency Optimization} 

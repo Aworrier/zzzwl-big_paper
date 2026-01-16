@@ -1,0 +1,323 @@
+\chapter{面向CSMA网络的连续传输机制设计与分析优化}
+\label{chapter4: CSMAST }
+
+在前一章验证了连续传输机制在时隙 Aloha 网络中的显著增益后，本章进一步将其扩展至应用更为广泛的载波侦听多路访问（CSMA）协议中，提出 CSMAST 机制。与 Aloha 统一的时隙结构不同，CSMA 协议显著的\textbf{状态时长异构性}（即空闲、碰撞与成功传输时长截然不同）使得简单的几何分布模型不再适用，给理论建模带来了新的挑战。为此，本章首先结合物理层侦听特性重构系统模型与协议流程；随后引入\textbf{吸收马尔可夫链}理论，构建能够捕捉非对称状态跳转特征的精细化休假排队模型；最后基于该模型推导饱和状态下的网络吞吐量与公平性指标，深入揭示连续传输机制在 CSMA 环境下特有的效率与公平性的权衡规律。
+
+\section{CSMAST 系统模型与机制描述}
+\label{sec:csmast_system_model}
+
+本章的研究工作构建于第二章 2.3 节所述的通用上行网络模型基础之上，并针对载波侦听多路访问（CSMA）协议特有的物理层与 MAC 层交互特性进行了具体化假设与扩展。为了探究连续传输机制在感知型网络中的性能极限，本章假设网络处于饱和状态，即网络中 $n$ 个同质节点的缓冲区始终非空，所有节点均时刻准备竞争信道资源。
+
+\subsection{异构时隙结构与信道状态定义}
+
+在 CSMA 网络中，时间轴被划分为连续的离散时隙（Slot），其长度被定义为信号在网络中的最大传播延迟与硬件侦听处理时间之和。与时隙 Aloha 协议中所有传输事件固定占用一个单位时隙不同，CSMA 协议中的信道状态持续时间由具体的传输行为决定，呈现出显著的异构性。具体而言，系统的时间参数定义如下：
+首先，为了确保信道感知的准确性，节点在任何传输行为（无论是成功发送还是碰撞结束）之后，或在侦听到信道空闲时，都需要经过一个时隙的持续侦听以确认信道状态。这一强制性的侦听时隙构成了所有信道状态的基础开销。
+其次，当发生传输碰撞时，由于信号叠加的物理特性及传播延迟，节点无法在发送瞬间立即察觉。假设节点需要 $x$ 个时隙（$x \ge 1$）来检测到碰撞信号并终止无效的传输，这意味着一次失败的竞争将导致信道被无效占用 $x$ 个传输时隙。算上随后的 1 个侦听时隙，碰撞事件的总持续时间为 $\tau_F = x + 1$。
+最后，当节点成功抢占信道并完成一次有效的数据包传输时，整个过程（包含数据包发送、传播延迟及接收端的 ACK 反馈）耗时 $y$ 个时隙（通常 $y \ge x$）。因此，一次成功的传输事件将占用 $y$ 个传输时隙，算上随后的 1 个侦听时隙，成功事件的总持续时间为 $\tau_S = y + 1$。
+综上所述，从信道资源占用的视角来看，系统在时间域上呈现出三种基本的信道状态：
+\begin{enumerate}
+	\item \textbf{空闲状态（State I）}：持续时间为 $\tau_I = 1$ 个时隙。表示当前信道无任何节点进行传输，仅包含必要的侦听开销。
+	\item \textbf{碰撞/失败状态（State F）}：持续时间为 $\tau_F = x + 1$ 个时隙。表示多节点并发导致传输失败，信道被无效占用直至碰撞被检测并恢复侦听。
+	\item \textbf{成功状态（State S）}：持续时间为 $\tau_S = y + 1$ 个时隙。表示单节点成功完成数据包传输并收到确认。
+\end{enumerate}
+这种状态时长的非对称性（即 $\tau_S \neq \tau_F \neq \tau_I$）是 CSMA 与 Aloha 协议的本质区别，也极大地增加了后续理论建模的复杂度。
+
+\subsection{基于连续传输的 CSMA 协议设计}
+
+在此异构时间模型下，本章提出了一种结合连续传输机制的 CSMA 增强方案——CSMAST。该方案旨在解决传统 CSMA 在高负载下因频繁退避导致的信道利用率低下问题。其核心设计思想是以单次竞争的成功换取多次传输的优先权。
+
+具体的 CSMAST 协议执行流程遵循从竞争接入到连续占用再到冲突重置的逻辑闭环。当网络中的积压节点侦听到信道处于可用状态时（即信道处于 State I，或正处于 State S/State F 的最后一个时隙），节点不会立即发送，而是根据预设的传输概率 $q \in (0,1]$ 进行随机判决。
+\begin{itemize}
+	\item \textbf{接入成功与连续传输}：若节点判决发送，且在随后的传输过程中未遭遇干扰，成功将队首（HoL）数据包传输至基站（即信道完整经历了 State S 的前 $y$ 个传输时隙），基站将立即反馈 ACK。收到 ACK 的节点即确立了对信道的\textbf{临时控制权}，随即进入连续传输阶段。
+	
+	值得注意的是，为了保持与 CSMA 先听后说（LBT）原则的一致性并保留其他节点接入的可能性，该节点在发送后续数据包之前，仍需经历一个标准的侦听时隙。然而，与初始接入阶段不同，此时该节点将跳过随机退避过程，直接以\textbf{概率 1} 立即发送缓存中的下一个数据包。这种策略使得该节点在竞争中占据绝对优势，能够连续利用信道，直至缓存清空。
+	
+	\item \textbf{碰撞处理与状态重置}：如果在 HoL 包发送阶段，或在连续传输期间的侦听时隙内，有其他节点发起传输导致碰撞（即信道经历了 State F 的前 $x$ 个传输时隙），基站将反馈 NACK 或不反馈。此时，所有涉及冲突的节点（包括正在进行连续传输的节点）必须立即终止当前的传输进程，并退回到常规的竞争状态，在下一个可用时隙重新以概率 $q$ 发起接入尝试。
+\end{itemize}
+
+与传统 CSMA 相比，CSMAST 并非实现了物理层面的绝对无竞争，而是通过概率 1 连续发送策略，将 HoL 数据包的成功传输转化为后续一系列数据包的高概率传输机会。这种机制有效地将昂贵的竞争开销，即初始接入时的空闲等待时间 $\tau_I$ 和潜在的碰撞损失时间 $\tau_F$——分摊到了多个连续传输的数据包上。随着连续传输长度的增加，单位数据包分摊到的平均竞争开销显著降低，从而在理论上具备了突破传统 CSMA 吞吐量极限的潜力。
+
+\subsection{面向CSMAST的休假排队建模}
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=0.9\textwidth]{figure/chap4/csmast_channel.png}
+	\caption{CSMAST方案中的信道状态演变示意图。$B_c$、$V_c$和$C_c$分别表示信道的忙期、假期和周期时间。}
+	\label{fig:csmast_channel}
+\end{figure}
+
+为了对 CSMAST 机制进行系统的定量分析，本节引入离散时间休假排队理论作为建模基础。鉴于本章考虑的是同质饱和网络，单个节点的统计行为特征可以无偏地映射为整个网络的宏观性能。因此，我们将分析视角聚焦于公共信道的状态演变。
+
+从信道资源占用的时间轴来看，CSMAST 系统的运行过程可被抽象为信道忙期 $B_c$与信道假期 $V_c$的交替循环。相应地，一个完整的信道周期定义为 $C_c = B_c + V_c$。
+
+图 \ref{fig:csmast_channel} 直观展示了 CSMAST 机制下的信道时序演化过程。结合该图，我们将两个核心阶段定义如下：
+
+\begin{itemize}
+	\item \textbf{信道忙期（$B_c$）}：对应于图中连续出现的Succ状态（即 State S）。在此期间，某一节点成功确立了信道控制权，并利用连续传输机制无间断地发送数据包。从系统角度看，这是信道处于有效吞吐服务的状态。
+	
+	\item \textbf{信道假期（$V_c$）}：对应于图中Fail状态（State F）与I状态（State I）的随机混合序列。这一阶段表征了系统在上一忙期结束后，网络中各节点为争夺下一次信道控制权所经历的竞争过程。无论是因为发生碰撞进入 State F，还是因为无节点发送保持 State I，这些时段本质上都是为了达成下一次成功接入所付出的时间代价。
+\end{itemize}
+
+为了简化后续数学推导中的符号表示，在不引起歧义的情况下，下文将统一使用 $\overline{B}$ 和 $\overline{V}_c$ 分别表示信道忙期与信道假期的统计平均长度。具体的概率分布推导及性能指标计算将在下一节详细展开。
+
+
+
+\section{基于休假排队的性能指标分析}
+在进行具体推导之前，首先定义基本的接入概率。\ref{subsec:channel_vacation_analysis}指出，当 $n$ 较大且 $q$ 较小时，网络中的聚合接入请求数可近似为参数为 $\theta = nq$ 的泊松随机变量。在任意非忙期时隙（即侦听时隙），网络中发起接入请求的节点数量决定了下一时刻的信道状态。定义以下三个关键概率：
+\begin{itemize}
+	\item $p_0 = e^{-\theta}$：无任何节点发送请求的概率（信道保持空闲或忙期延续）。
+	\item $p_1 = \theta e^{-\theta}$：恰有一个节点发送请求的概率（产生成功传输）。
+	\item $p_2 = 1 - p_0 - p_1$：有两个及以上节点发送请求的概率（产生碰撞）。
+\end{itemize}
+
+后面我们将在所建立的休假排队模型中详细阐述忙期和假期分布。
+
+\subsection{信道忙期分布分析}
+
+信道忙期 $B_c$（为简化符号，本节统一记为 $\overline{B}$）定义为信道被某一节点连续占用并成功传输有效数据包的时间段。
+与第三章所述的 SAST 机制类似，CSMAST 中的忙期维持机制同样取决于当前占用节点是否继续发送以及是否有其他节点干扰。
+在饱和网络的假设下，当前获得信道控制权的节点缓存永不为空，因此其在完成当前数据包传输后，总是倾向于以概率 1 继续发送下一个数据包。这意味着，忙期的终止并非由发送方主动停止导致，而是唯一地由信道碰撞触发。
+具体而言，一个忙期由若干个连续的成功传输状态（State S）组成，每个 State S 持续时间为 $\tau_S$。在每一个 State S 结束前的最后一个时隙（即侦听时隙），网络中其余 $n-1$ 个节点会侦听到信道即将变为空闲。根据前述的泊松近似，此时网络中没有任何其他节点发起接入请求的概率为 $p_0 = e^{-\theta}$。
+
+\begin{itemize}
+	\item \textbf{忙期延续}：若无其他节点接入（概率 $p_0$），当前占用节点将在侦听时隙后无缝开启下一个数据包的传输，信道状态由 State S 刷新为新的 State S，忙期得以延续。
+	\item \textbf{忙期终止}：若有至少一个其他节点发起接入（概率 $1-p_0$），则会与当前节点的下一次传输形成碰撞。此时，信道状态由 State S 转变为 State F，标志着当前忙期的结束和新假期的开始。
+\end{itemize}
+
+基于上述状态转移机制，忙期内连续成功传输的次数本质上服从参数为 $1-p_0$ 的几何分布。考虑到单次成功传输的持续时间固定为 $\tau_S$，我们可以直接推导出信道忙期的期望长度 $\overline{B}$：
+\begin{equation}
+	\overline{B} = \frac{\tau_S}{1 - p_0} = \frac{\tau_S}{1 - e^{-nq}}.
+\end{equation}
+
+进一步地，为了评估系统服务的稳定性及为后续的公平性分析提供依据，我们需要考察忙期长度的二阶矩特性。根据几何分布的方差性质，信道忙期长度的方差 $\sigma^2_B$ 可表示为：
+\begin{equation}
+	\sigma^2_B = \tau_S^2 \cdot \frac{p_0}{(1 - p_0)^2}.
+\end{equation}
+
+该方差表达式揭示了网络负载对信道占用模式的深刻影响：当网络竞争激烈（即 $p_0$ 较小）时，忙期频繁被碰撞打断，其长度普遍较短且波动较小；反之，当网络负载较轻（即 $p_0 \to 1$）时，一旦某节点抢占信道，极易形成长时间的连续占用，导致忙期长度的方差急剧增大。这种剧烈的波动性正是造成系统短期公平性恶化的主要诱因。
+
+\subsection{信道假期分布分析}
+相较于信道忙期仅由单一的成功状态（State S）构成，信道假期的时序演变更为复杂。在饱和网络中，一个假期总是始于一次导致忙期结束的碰撞事件（State F），随后信道可能在空闲状态（State I）与碰撞状态（State F）之间进行多次随机跳转，直至某次竞争产生唯一的成功传输（State S），从而宣告假期的终结并开启新的忙期。
+更棘手地，空闲时长 $\tau_I$ 与碰撞时长 $\tau_F$ 往往并不相等（通常 $\tau_F > \tau_I$），假期的总长度不仅取决于尝试次数，还高度依赖于系统在两种瞬态之间的驻留比例，这使得简单的几何分布模型不再适用。为了精确刻画这一过程的统计特性（均值与方差），我们将信道在假期内的状态演变建模为一个具有吸收态的马尔可夫链。其状态转移关系如图 \ref{fig:csmast_markov_absorption} 所示。
+
+\noindent \textbf{1. 状态空间与转移矩阵构建}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.6\textwidth]{figure/chap4/csmast_markov_absorption.png}
+	\caption{描述信道假期内状态转移过程的吸收马尔可夫链模型。其中状态 F 和 I 为瞬态，状态 S 为吸收态。}
+	\label{fig:csmast_markov_absorption}
+\end{figure}
+
+
+该模型的具体定义如下：
+\begin{itemize}
+	\item \textbf{状态空间}：模型包含三个状态。其中，碰撞状态（State F）和空闲状态（State I）构成了\textbf{瞬态集合}，表示假期仍在持续；成功状态（State S）构成了唯一的\textbf{吸收态}，一旦进入该状态，意味着竞争成功，假期结束并转入忙期。
+	\item \textbf{转移逻辑}：在任意非忙期时隙（即 State I 的时隙或 State F 的最后时隙），网络中发起接入请求的节点数决定了下一时刻的状态跳转：
+	\begin{enumerate}
+		\item \textbf{进入吸收态}：恰有一个节点发起接入（概率 $p_1 = \theta e^{-\theta}$），信道进入 State S，过程被吸收。
+		\item \textbf{保持/进入空闲}：无任何节点接入（概率 $p_0 = e^{-\theta}$），信道保持静默，进入 State I。
+		\item \textbf{保持/进入碰撞}：有多个节点同时接入（概率 $p_2 = 1 - p_0 - p_1$），发生碰撞，信道进入 State F。
+	\end{enumerate}
+\end{itemize}
+基于上述转移逻辑，其状态转移概率矩阵 $\mathbf{P}$ 可表示为如下的标准分块形式：
+\begin{equation}
+	\mathbf{P} = 
+	\begin{pmatrix}
+		p_2 & p_0 & p_1 \\
+		p_2 & p_0 & p_1 \\
+		0 & 0 & 1
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		\mathbf{T} & \mathbf{R} \\
+		\mathbf{0} & \mathbf{I}
+	\end{pmatrix},
+\end{equation}
+其中，$\mathbf{T} = \begin{pmatrix} p_2 & p_0 \\ p_2 & p_0 \end{pmatrix}$ 描述了瞬态之间的转移概率，$\mathbf{R} = \begin{pmatrix} p_1 \\ p_1 \end{pmatrix}$ 描述了进入吸收态的概率。
+
+\noindent \textbf{2. 基本矩阵 $\mathbf{N}$ 的求解}
+
+根据马尔可夫吸收理论，核心的计算依赖于\textbf{基本矩阵（Fundamental Matrix）} $\mathbf{N} = (\mathbf{I} - \mathbf{T})^{-1}$。矩阵中的元素 $N_{ij}$ 表示过程从瞬态 $i$ 开始，在被吸收之前访问瞬态 $j$ 的期望次数。
+首先计算 $(\mathbf{I} - \mathbf{T})$：
+\begin{equation}
+	\mathbf{I} - \mathbf{T} = 
+	\begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} - \begin{pmatrix} p_2 & p_0 \\ p_2 & p_0 \end{pmatrix} 
+	= \begin{pmatrix} 1-p_2 & -p_0 \\ -p_2 & 1-p_0 \end{pmatrix}.
+\end{equation}
+利用 $p_0 + p_1 + p_2 = 1$ 的关系，可得该矩阵的行列式为 $\det(\mathbf{I} - \mathbf{T}) = (1-p_2)(1-p_0) - (-p_0)(-p_2) = 1 - p_0 - p_2 = p_1$。
+通过矩阵求逆公式，解得基本矩阵 $\mathbf{N}$：
+\begin{equation}
+	\mathbf{N} = \frac{1}{p_1} \begin{pmatrix} 1-p_0 & p_0 \\ p_2 & 1-p_2 \end{pmatrix}.
+\end{equation}
+由于饱和网络中的假期总是由碰撞（State F）触发，我们重点关注矩阵 $\mathbf{N}$ 的第一行。$N_{FF} = (1-p_0)/p_1$ 表示平均经历的碰撞次数，$N_{FI} = p_0/p_1$ 表示平均经历的空闲次数。
+
+\noindent \textbf{3. 假期均值 $\overline{V}_c$ 推导}
+令列向量 $\boldsymbol{\mu} = [\tau_F, \tau_I]^T$ 表示各瞬态的单次驻留时长。从各瞬态出发到达吸收态的平均总时间向量 $\mathbf{F}$ 由 $\mathbf{F} = \mathbf{N} \boldsymbol{\mu}$ 给出。
+我们取向量 $\mathbf{F}$ 的第一个分量（对应初始状态 F），即得到信道假期的均值：
+\begin{equation}
+	\overline{V}_c = [\mathbf{F}]_1 = [\mathbf{N} \boldsymbol{\mu}]_1 = \frac{1-p_0}{p_1}\tau_F + \frac{p_0}{p_1}\tau_I.
+\end{equation}
+代入 $p_0 = e^{-\theta}$ 和 $p_1 = \theta e^{-\theta}$，整理得闭式解：
+\begin{equation}
+	\overline{V}_c = \frac{(1 - e^{-nq})\tau_F + e^{-nq}\tau_I}{nq e^{-nq}}.
+\end{equation}
+
+\vspace{0.5em}
+\noindent \textbf{4. 假期方差 $\sigma^2_{V_c}$ 推导}
+
+为了分析公平性，还需计算假期长度的二阶矩。根据吸收马尔可夫链理论，到达吸收态的总时间的二阶矩向量 $\mathbf{G}$ 满足方程：
+\begin{equation}
+	\mathbf{G} = \mathbf{N} ( \mathbf{m}_2 + 2 \cdot \text{diag}(\boldsymbol{\mu}) \cdot \mathbf{T} \mathbf{F} ),
+\end{equation}
+其中 $\mathbf{m}_2 = [\tau_F^2, \tau_I^2]^T$ 为各瞬态驻留时间的二阶矩向量，$\text{diag}(\boldsymbol{\mu})$ 为以 $\boldsymbol{\mu}$ 为对角元素的对角矩阵。
+通过复杂矩阵代数运算，并提取向量 $\mathbf{G}$ 的第一个分量 $G_1$，我们可以得到从 State F 出发的假期长度的二阶原点矩 $\mathbb{E}[V_c^2]$。
+最终，信道假期的方差 $\sigma^2_{V_c}$ 由公式 $\sigma^2_{V_c} = G_1 - (\overline{V}_c)^2$ 给出：
+\begin{equation}
+	\sigma^2_{V_c} \approx \frac{[(1 - p_0)\tau_F + p_0\tau_I]^2}{p_1^2} = (\overline{V}_c)^2.
+\end{equation}
+这一结果表明，在大规模网络中（$p_1$ 较小），假期的分布近似于指数分布（或其离散形式几何分布），其标准差与均值处于同一量级。这种较大的波动性意味着不同节点在争夺信道时面临的等待时间具有显著的随机性，是影响系统短期公平性的关键因素。
+
+\subsection{信道周期与节点周期的统计特性}
+\label{subsec:cycle_analysis}
+
+基于前文对信道忙期 $B_c$ 和信道假期 $V_c$ 的独立分析，本节将进一步推导完整的信道周期$ C_c $以及节点周期$ C $的统计特性。这一推导不仅能够表征系统的时间演化规律，更重要的是，周期长度的二阶矩（方差）将直接决定系统的短期公平性性能。
+
+\noindent \textbf{1. 信道周期 $C_c$ 的均值与方差}
+
+根据模型定义，一个完整的信道周期 $C_c$ 由一个忙期 $B_c$ 和随后的一个假期 $V_c$ 组成，即 $C_c = B_c + V_c$。
+在 CSMAST 机制下，忙期的长度取决于当前占用节点的连续发送意愿及碰撞发生概率，而假期的长度取决于竞争过程中的状态跳转。由于假期的开始意味着上一次忙期的状态记忆被重置（碰撞导致所有节点重新竞争），因此在统计上，$B_c$ 与 $V_c$ 可视为相互独立的随机变量。
+基于概率论中独立随机变量和的性质，信道周期的均值 $\overline{C}_c$ 和方差 $\sigma^2_{C_c}$ 可分别由各分量的统计量线性叠加得到：
+\begin{equation}
+	\overline{C}_c = \overline{B} + \overline{V}_c,
+\end{equation}
+\begin{equation}
+	\sigma^2_{C_c} = \sigma^2_B + \sigma^2_{V_c}.
+\end{equation}
+其中，$\overline{B}$ 和 $\sigma^2_B$ 已在忙期分析中给出，$\overline{V}_c$ 和 $\sigma^2_{V_c}$ 已在吸收马尔可夫链分析中导出。这一结果完整描述了公共信道资源在被占用与被争夺两种状态间切换的时间特征。
+
+\noindent \textbf{2. 节点周期 $C$ 与方差映射}
+
+为了评估用户间的公平性，我们的视角需要从公共信道切换回单个节点。定义\textbf{节点周期 $C$}为某一个特定节点两次连续获得信道控制权（即成功开启忙期）之间时间间隔。
+在包含 $n$ 个同质节点的饱和网络中，所有节点具有相同的统计特性（传输概率 $q$ 相同），信道上的每一次成功接入（即每一个信道周期 $C_c$）以等概率 $1/n$ 归属于任意一个节点。这意味着，对于指定节点而言，其成功接入信道的过程可以看作是对信道周期序列进行概率为 $1/n$ 的\textbf{稀疏采样（Thinning Process）}。
+换言之，一个节点平均需要等待 $n$ 个信道周期才能再次获得发送机会。因此，节点周期的均值 $\overline{C}$ 与信道周期均值满足如下倍数关系：
+\begin{equation}
+	\overline{C} = n \overline{C}_c.
+\end{equation}
+
+进一步地，根据更新过程理论（Renewal Theory）中关于点过程稀疏操作的结论，当网络节点规模 $n$ 较大且信道周期之间的相关性较弱时，节点周期的方差 $\sigma^2_C$ 与信道周期方差 $\sigma^2_{C_c}$ 之间存在近似关系：
+\begin{equation}
+	\label{eq:node_cycle_variance}
+	\sigma^2_C \approx n^2 \sigma^2_{C_c} - (1 - n)n\overline{C}_c \approx n^2 \sigma^2_{C_c}.
+\end{equation}
+上式中的近似 $\sigma^2_C \approx n^2 \sigma^2_{C_c}$ 是基于 $n$ 较大时第一项占主导地位而得到的。
+
+这一结论表明节点周期的波动性（方差）被网络规模 $n$ 的平方放大了。结合前文分析，当 $q$ 较小时，信道忙期的方差 $\sigma^2_B$ 很大（存在长时占用的可能），这将导致 $\sigma^2_{C_c}$ 增大，进而通过式 (\ref{eq:node_cycle_variance}) 剧烈放大节点周期的波动 $\sigma^2_C$。这种巨大的服务间隔波动，正是 CSMAST 在追求高吞吐量时可能牺牲公平性的数学根源，为下一节推导 Jain 公平性指数提供了直接的理论依据。
+
+\section{吞吐量与公平性的性能推导与分析}
+\label{sec:csmast_performance}
+
+基于前文构建的休假排队模型及信道/节点周期的统计特性，本节将正式推导 CSMAST 网络在饱和状态下的两个核心性能指标：网络吞吐量与 Jain 公平性指数。这不仅能够定量评估该机制的传输效率，还能揭示连续传输策略在系统效率与用户公平之间的内在权衡关系。
+
+\subsection{网络吞吐量分析}
+
+网络吞吐量 $\hat{\lambda}_{out}^{net}$ 定义为单位时间内信道成功传输的有效数据载荷量（以包/时隙为单位）。
+在计算该指标时，必须考虑到 CSMA 协议中成功状态（State S）的特殊性：虽然 State S 持续 $\tau_S$ 个时隙，但其中仅有 $y$ 个时隙用于实际的数据包传输，剩余的 1 个时隙（即 $\tau_I$）用于信道传播延迟及侦听开销。因此，信道忙期 $\overline{B}$ 并不能完全代表有效吞吐时间，需引入修正因子 $\eta = \frac{\tau_S - \tau_I}{\tau_S} = \frac{y}{y+1}$。
+
+结合前文推导的 $\overline{B}$ 和 $\overline{V}_c$ 表达式，饱和状态下的网络吞吐量可表示为：
+\begin{equation}
+	\hat{\lambda}_{out}^{net} = \frac{\tau_S - \tau_I}{\tau_S} \cdot \frac{\overline{B}}{\overline{B} + \overline{V}_c}.
+\end{equation}
+将 $p_0 = e^{-nq}$ 及 $\overline{B}, \overline{V}_c$ 的闭式解代入上式，经过代数化简，可得关于总负载 $nq$ 的显式函数：
+\begin{equation}
+	\label{eq:throughput_csmast}
+	\hat{\lambda}_{out}^{net} = \frac{nq(\tau_S - \tau_I)}{nq\tau_S + e^{nq}(1 - e^{-nq})^2 \tau_F + (1 - e^{-nq})\tau_I}.
+\end{equation}
+
+基于上述闭式解，我们给出关于 CSMAST 吞吐量极限的定理：
+
+\begin{theorem}[CSMAST 最大网络吞吐量]
+	\label{thm:csmast_max_throughput}
+	在饱和状态下，CSMAST 的网络吞吐量是关于总负载 $nq$ 的单调递减函数。其理论最大吞吐量在接入概率 $q \to 0$ 时取得，值为：
+	\begin{equation}
+		\lambda_{max}^{net} = \lim_{nq \to 0} \hat{\lambda}_{out}^{net} = \frac{\tau_S - \tau_I}{\tau_S + \tau_I}.
+	\end{equation}
+\end{theorem}
+
+\begin{proof}
+	对于单调性，令 $x = nq$ 表示系统总负载。饱和网络吞吐量可表示为 $g(x) = \frac{C x}{x \tau_S + F(x)}$，其中 $C = \tau_S - \tau_I > 0$，分母中的休假期相关项为 $F(x) = \tau_F e^x (1 - e^{-x})^2 + \tau_I (1 - e^{-x})$。
+	对 $g(x)$ 求导，其导数的符号完全取决于分子部分的判别式 $T(x) \triangleq F(x) - x F'(x)$。将 $F(x)$ 及其导数代入，并利用基本不等式 $1 - e^{-x} \le x$ 和 $e^{-x} \le 1$（对于 $x > 0$），可以证明在通常的系统参数设定下（即 $\tau_F \ge \tau_I$），判别式满足：$ T(x) \le 0 $
+	由于 $g'(x)$ 与 $T(x)$ 同号，因此 $g'(x) \le 0$ 在定义域内恒成立。这证明了 CSMAST 的网络吞吐量是关于总负载 $nq$ 的单调递减函数。
+	
+	对于最值，利用洛必达法则（L'Hôpital's rule）对式 (\ref{eq:throughput_csmast}) 在 $nq \to 0$ 处求极限。注意到分母中 $e^{nq}(1-e^{-nq})^2 \approx (nq)^2$ 为高阶小量，主要项为 $(1-e^{-nq})\tau_I \approx nq \tau_I$。分子近似为 $nq(\tau_S - \tau_I)$。分子分母约去 $nq$ 后，第一项 $nq\tau_S$ 趋于 0，剩余部分即为极限值 $\frac{\tau_S - \tau_I}{\tau_S + \tau_I}$。
+\end{proof}
+值得指出的是，本章构建的基于吸收马尔可夫链的休假排队模型具有良好的普适性。CSMAST 机制的核心增益源于其通过连续传输拉长了平均信道忙期 $\overline{B}$。若我们在模型中强制设定节点在完成单个数据包传输后必须释放信道（即令忙期退化为确定性常数 $\overline{B} = \tau_S$），则该模型即可还原为经典 CSMA 协议的性能描述。关于经典 CSMA 在同一模型框架下的详细推导及最大吞吐量计算，请参见附录\ref{app:classic_csma}。这一理论联系不仅验证了模型的通用性，也为后续的性能对比提供了统一的数学基准。
+
+定理 \ref{thm:csmast_max_throughput} 揭示了 CSMAST 的性能上限。以典型的参数配置（如 $\tau_S=5, \tau_F=3, \tau_I=1$）为例，CSMAST 的理论极限吞吐量可达 $4/6 \approx 0.667$，而相同参数下的经典 CSMA 仅能达到约 0.518。这证实了 CSMAST 通过连续传输机制，将空闲侦听 $\tau_I$ 和碰撞退避 $\tau_F$ 的时间成本在连续的数据包序列中进行了有效分摊（Amortization），从而获得了显著的吞吐量增益。
+
+\subsection{公平性性能分析}
+
+尽管连续传输机制通过分摊竞争开销显著提升了系统吞吐量，但其一旦接入、连续占用的特性不可避免地对节点间的公平性构成了挑战。为了量化这一影响，本节采用短期 Jain 公平性指数（Short-term Jain's Fairness Index, $J_T$）作为核心评估指标，并基于更新过程理论推导其闭式解。
+
+设 $\lambda_{out, i}^T$ 为节点 $i$ 在给定的观测时间窗 $T$ 内的短期归一化吞吐量。Jain 公平性指数定义如下：
+\begin{equation}
+	J_T = \frac{\left(\sum_{i=1}^n \lambda_{out, i}^T\right)^2}{n \sum_{i=1}^n \left(\lambda_{out, i}^T\right)^2}.
+\end{equation}
+由于网络中所有节点是同质的，$\lambda_{out, i}^T$ 可视为独立同分布的随机变量。根据大数定律，当节点数 $n$ 较大时，上述定义的期望形式可近似表示为关于随机变量矩的函数：
+\begin{equation}
+	\label{eq:jain_moment_form}
+	J_T \approx \frac{\mathbb{E}[\lambda_{out, i}^T]^2}{\mathbb{E}[(\lambda_{out, i}^T)^2]} = \frac{1}{1 + \frac{\text{Var}(\lambda_{out, i}^T)}{\mathbb{E}[\lambda_{out, i}^T]^2}}.
+\end{equation}
+因此，求解 $J_T$ 的关键在于推导短期吞吐量的均值 $\mathbb{E}[\lambda_{out, i}^T]$ 和方差 $\text{Var}(\lambda_{out, i}^T)$。
+
+在饱和网络中，节点 $i$ 的成功接入过程构成一个更新过程。令 $N_i(T)$ 表示节点 $i$ 在时间 $T$ 内成功完成的节点周期数（即获得的忙期次数）。短期吞吐量可表示为单位时间内传输的数据总量：
+\begin{equation}
+	\lambda_{out, i}^T \approx \frac{N_i(T) \cdot \overline{B}}{T}.
+\end{equation}
+当观测时间 $T$ 充分长（$T \gg \overline{C}$）时，根据更新理论的渐近性质，计数过程 $N_i(T)$ 近似服从正态分布\cite{bibid}，其均值和方差分别为：
+\begin{equation}
+	\mathbb{E}[N_i(T)] \approx \frac{T}{\overline{C}}, \quad \text{Var}(N_i(T)) \approx \frac{\sigma^2_C}{\overline{C}^3} T.
+\end{equation}
+基于此，我们可以直接得到短期吞吐量的统计特征：
+\begin{equation}
+	\mathbb{E}[\lambda_{out, i}^T] = \frac{\overline{B}}{\overline{C}}, \quad \text{Var}(\lambda_{out, i}^T) = \left( \frac{\overline{B}}{T} \right)^2 \text{Var}(N_i(T)) = \frac{\overline{B}^2 \sigma^2_C}{\overline{C}^3 T}.
+\end{equation}
+将上述均值和方差代入式 (\ref{eq:jain_moment_form})，经过化简并展开，得到 Jain 公平性指数的闭式表达式：
+\begin{equation}
+	\label{eq:jain_explicit}
+	J_T \approx \frac{1}{1 + \frac{n}{T} \cdot \frac{n^2 q^2 \tau_S^2 e^{nq} + (e^{nq}-1)^2 \tau_F^2 + 2(e^{nq}-1)\tau_F \tau_I + \tau_I^2}{nq \tau_S e^{nq} + (e^{nq}-1)^2 \tau_F + (e^{nq}-1)\tau_I}}.
+\end{equation}
+
+
+\section{仿真结果与分析}
+\label{sec:simulation_results}
+
+本节将通过蒙特卡洛（Monte Carlo）数值仿真来验证前文提出的理论模型及性能分析的准确性。仿真平台基于 MATLAB 构建，严格遵循第 4.1 节定义的异构时隙结构与碰撞信道模型。在所有仿真中，假设网络节点的缓冲区始终非空，节点仅在侦听到信道可用时才以特定的传输概率在下一时隙发起尝试。网络吞吐量的仿真值通过计算长时间内所有节点成功传输的接入请求数量 $N_{succ}$ 与有效传输时长 $(\tau_S - \tau_I)$ 的乘积除以总仿真时长 $T$ 获得。除非另有说明，仿真参数设置如下：网络包含 $n=100$ 个同质节点，单次仿真时长 $T=10^6$ 个时隙；状态持续时间参数设定为检测时隙 $x=2$，传输时隙 $y=4$，即 $\tau_I=1, \tau_F=3, \tau_S=5$。
+
+\vspace{0.5em}
+\noindent \textbf{1. 理论模型验证与性能权衡分析}
+
+图 \ref{fig:csmast_perf_q} 展示了在 CSMAST 方案下，网络吞吐量 $\hat{\lambda}_{out}^{net}$ 与短期 Jain 公平性指数 $J_T$ 随传输概率 $q$ 的变化情况。从图中可以清晰地观察到，仿真结果（标记点）与基于休假排队模型推导出的理论曲线（实线）高度吻合，从而验证了第 4.3 节中理论分析的准确性。具体而言，网络吞吐量 $\hat{\lambda}_{out}^{net}$ 呈现出随接入概率 $q$ 单调递减的趋势，并在 $q$ 趋近于 0 时达到理论峰值。根据设定参数，该峰值逼近 $\frac{\tau_S-\tau_I}{\tau_S+\tau_I} = \frac{4}{6} \approx 0.667$。然而，在获得高吞吐量的同时，系统在极小接入概率（$q \to 0^+$）下的公平性表现极差。这是因为在如此稀疏的接入条件下，一旦少数几个节点成功抢占信道，便利用连续传输机制长期维持高传输速率，而其余绝大多数节点只能处于空闲侦听状态，极少获得发送机会，从而导致严重的服务饥饿与公平性退化。值得注意的是，随着 $q$ 的适度增加，碰撞概率的上升打破了这种信道垄断，Jain 公平性指数 $J_T$ 迅速回升并接近 1，而此时网络吞吐量虽然有所下降但仍维持在较高水平。这表明 CSMAST 机制能够通过参数调整，在牺牲微小吞吐量的前提下有效地实现良好的吞吐量-公平性权衡。
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figure/chap4/throughput_fairness_vs_q.pdf}
+	\caption{CSMAST 网络吞吐量 $\hat{\lambda}_{out}^{net}$ 与短期 Jain 公平性指数 $J_T$ 随传输概率 $q$ 的变化 ($n=100, \tau_S=5, \tau_F=3, \tau_I=1$)}
+	\label{fig:csmast_perf_q}
+\end{figure}
+
+\vspace{0.5em}
+\noindent \textbf{2. 与经典 CSMA 协议的性能对比}
+
+为了评估所提方案的相对增益，图 \ref{fig:comparison_classic} 进一步展示了 CSMAST 与经典 CSMA 方案在吞吐量-公平性二维平面上的性能轨迹对比。其中，经典 CSMA 的性能曲线是基于附录\ref{app:classic_csma} 中推导的理论公式（式 \ref{eq:classic_csma_throughput} 和 式 \ref{eq:optimal_q_classic}）绘制的，确保了两者是在完全相同的时隙结构参数（$x, y$）与统一的分析框架下进行的公平比较。通过遍历传输概率 $q$，我们获得了两种方案在不同工作点下的性能包络。对比结果显示，在同等的公平性水平下，CSMAST 的吞吐量上限显著高于经典 CSMA。具体数据表明，经典 CSMA 的最大理论吞吐量约为 0.518，而 CSMAST 将这一上限提升至 0.667，实现了高达 28.8\% 的性能增益，在图中形成了一条明显位于上方的性能边界。
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figure/chap4/throughput_fairness_tradeoff.pdf}
+	\caption{CSMAST 与经典 CSMA 方案的吞吐量-公平性性能轨迹对比}
+	\label{fig:comparison_classic}
+\end{figure}
+
+深入分析图 \ref{fig:comparison_classic} 可以发现一个有趣的现象：当网络处于相对低吞吐量区域（$\hat{\lambda}_{out}^{net} < 0.518$，通常对应较高的 $q$ 值）时，两条性能曲线几乎完全重合。这种相似性源于两种方案在信道休假期（$V_c$）结构上的同质性——即在竞争激烈时，信道均频繁经历空闲与碰撞状态，导致两者的平均休假期长度 $\overline{V}_c$ 相近。此时，决定系统吞吐量的主要因素变为信道忙期 $\overline{B}$ 的长度。在低竞争（低 $q$）区域，CSMAST 能够利用连续传输显著拉长 $\overline{B}$，从而获得吞吐量优势；而在高竞争（高 $q$）区域，频繁的碰撞导致 CSMAST 的忙期被强制截断，其平均长度回落至接近单次传输时长，使得机制退化为经典 CSMA 的行为。另一方面，由于系统的公平性主要受控于休假期的波动特性，而两者在休假期的统计特征上高度相似，因此在相同的 $q$ 值下表现出近乎一致的公平性水平，最终体现为图中重叠的轨迹曲线。这一对比分析有力地证明了 CSMAST 机制在保持与现有协议兼容及同等公平性的基础上，能够有效突破传统 CSMA 的速率瓶颈。
+
+\section{本章小结}
+
+本章针对载波侦听网络在高负载下的效率瓶颈，提出了基于连续传输的 CSMAST 机制。考虑到 CSMA 协议显著的状态时长异构性，本章引入吸收马尔可夫链理论，构建了精细化的休假排队分析框架，成功推导了饱和状态下的网络吞吐量与 Jain 公平性指数的闭式解。理论与仿真分析表明，CSMAST 通过单次竞争、连续传输的策略有效摊销了信道侦听与碰撞开销，在典型配置下相比传统 CSMA 实现了约 28\% 的吞吐量增益；同时，研究还揭示了该机制中特有的吞吐量-公平性权衡规律，验证了其在提升非授权频段频谱利用率方面的显著优势与调控灵活性。

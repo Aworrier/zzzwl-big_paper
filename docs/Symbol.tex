@@ -1,0 +1,79 @@
+% 汇总全文中出现的主要数学符号及其含义
+
+\chapter{\heiti{数学符号}}
+
+\begin{longtable}{p{4.0cm}p{11.0cm}}
+    \toprule
+        \heiti{符号} &\heiti{含义}\\
+        \midrule
+        \endfirsthead
+
+        \toprule
+        \heiti{符号} &\heiti{含义}\\
+        \midrule
+        \endhead
+
+        \midrule
+        \multicolumn{2}{r}{\small（续表）}\\
+        \endfoot
+
+        \bottomrule
+        \endlastfoot
+
+        % 第二章符号
+        $n$ &网络节点总数\\
+        $\lambda$，$\hat{\lambda}$  &单节点到达速率/网络平均到达率\\
+        $p_{ne}$ &节点缓存非空概率\\
+        
+        % 第三章符号
+        $B,\ V,\ C$ &节点忙期/假期/周期长度（$C=B+V$）\\
+        $\lambda_{\mathrm{out}},\ \lambda_{\mathrm{out}}^a,\ \lambda_{\mathrm{out}}^d$ &系统吞吐量；接入吞吐量；数据吞吐量\\
+        $\Theta,\ \theta$ &任意空闲时隙内聚合接入请求总数随机变量；接入请求速率（尝试速率，饱和时记为 $\theta_{sa}$）\\
+        $q$ &节点在缓存非空时发起接入尝试的概率\\
+        $A_B,\ A_V$ &节点在忙期/假期内的新到达包数\\
+        $Q_t,\ P_t,\ Q,\ P$ &队列长度随机变量（时变/稳态）\\
+        $G_Q(z),\ G_P(z)$ &概率生成函数（PGF）\\
+        
+        % 第四章符号
+        $B_c,\ V_c,\ C_c$ &信道忙期/假期/周期长度（$C_c=B_c+V_c$）\\
+        $\overline{B},\ \overline{V}_c,\ \sigma_B^2,\ \sigma_{V_c}^2$ &信道忙期/假期均值及其方差\\
+        $p_0,\ p_1,\ p_2$ &无节点发送概率；恰有一个节点发送概率；至少两个节点发送概率\\
+        $x,\ y$ &碰撞检测所需时隙数；成功传输时隙数\\
+        $\tau_I,\ \tau_F,\ \tau_S$ &空闲侦听/碰撞失败/成功状态持续时间\\
+        $\mathbf{P},\ \mathbf{T},\ \mathbf{R}$ &马尔可夫链转移矩阵及其分块\\
+        $\mathbf{N}$ &基本矩阵（$\mathbf{N}=(\mathbf{I}-\mathbf{T})^{-1}$）\\
+        $\boldsymbol{\mu},\ \mathbf{F}$ &驻留时长向量及其加权和\\
+        $\eta$ &有效吞吐时间修正因子\\
+        $D$ &平均数据包时延\\
+        $J_T$ &公平性指标（Jain 指数）\\
+        
+        % 第五章符号
+        $T$ &仿真或观测时隙总数\\
+        $\mathbf{A},\ X(t)$ &到达矩阵（行为节点，列为时隙）；网络聚合到达序列\\
+        $\mathcal{T}_i,\ \Delta t_i^{(k)}$ &节点 $i$ 的到达时刻集合；到达间隔序列\\
+        $\mathrm{BI}_{\mathrm{net}},\ \mathrm{BI}_{\mathrm{node}}$ &网络突发度指标；节点突发度指标\\
+        $\Psi_{\mathrm{net}},\ \Psi_{\mathrm{node}}$ &网络周期性强度；节点周期性强度\\
+        $\mathrm{CV},\ \mathrm{ID}$ &变异系数；离散指数（Index of Dispersion）\\
+        $\mathbf{x}_{\text{traffic}},\ \mathbf{x}_{\mathrm{common}}$ &业务流量特征向量；通用网络参数向量\\
+        $\mathbf{x}_{\mathrm{proto}},\ \mathbf{m}$ &协议专属参数向量；有效性掩码向量\\
+        $\mathbf{y},\ \tilde{\mathbf{y}}$ &性能指标向量；归一化后的指标向量\\
+        $\hat{y}_k$ &第 $k$ 个任务的预测输出\\
+        $S(\cdot)$ &统一仿真映射（从输入到性能指标的映射）\\
+        $\mathrm{norm}(\cdot)$ &指标归一化算子\\
+        $U(\cdot)$ &综合效用函数\\
+        $w_i,\ \omega_k$ &效用加权系数；任务加权系数\\
+        $a,\ \mathcal{P}$ &候选协议类型标识；候选协议集合\\
+        $a^*,\ \mathbf{x}_{\mathrm{proto}}^*$ &最优协议类型；最优参数配置\\
+        $\mathcal{X}_a$ &协议 $a$ 的合法参数空间\\
+        $M,\ L,\ T_{\mathrm{frame}}$ &连续传输长度；副本/重传次数；帧长度\\
+        $C_{\mathrm{rx}},\ I_{\mathrm{impl}}$ &接收端计算负荷；协议实现复杂度\\
+        $C_{\max},\ I_{\max}$ &资源阈值（计算负荷、实现复杂度）\\
+        $D_{\text{in}},\ D_{\text{hidden}}$ &神经网络输入维度；隐藏层维度\\
+        $\mathbf{h}^{(\ell)},\ \mathbf{W}^{(\ell)}$ &第 $\ell$ 层的隐藏特征；第 $\ell$ 层的权重矩阵\\
+
+        $\mathcal{L}_{\text{total}}$ &多任务总损失函数\\
+        $\text{MSE},\ \text{MAE}$ &均方误差；平均绝对误差\\
+        $\rho$ &归一化网络负载\\
+
+\end{longtable}
+

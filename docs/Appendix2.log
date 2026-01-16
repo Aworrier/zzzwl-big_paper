@@ -1,0 +1,1031 @@
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.28)  24 NOV 2025 15:36
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**Appendix2.tex
+(./Appendix2.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-02-24>
+! Undefined control sequence.
+l.1 \chapter
+            {定理\ref{thm:throughput_monotonic}的证明}\label{app02}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \chapter{定
+              理\ref{thm:throughput_monotonic}的证明}\label{app02}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no 定 ("5B9A) in font nullfont!
+Missing character: There is no 理 ("7406) in font nullfont!
+! Undefined control sequence.
+<write> ...throughput_monotonic' on page \thepage 
+                                                  \space undefined\on@line .^^J
+l.1 \chapter{定理\ref{thm:throughput_monotonic}
+                                             的证明}\label{app02}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `thm:throughput_monotonic' on page  undefined on input
+ line 1.
+
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 证 ("8BC1) in font nullfont!
+Missing character: There is no 明 ("660E) in font nullfont!
+
+Overfull \hbox (30.86pt too wide) in paragraph at lines 1--2
+[][][] 
+ []
+
+! Undefined control sequence.
+l.5 \subsection
+               {定理\ref{thm:throughput_monotonic}的证明}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5 \subsection{定
+                 理\ref{thm:throughput_monotonic}的证明}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no 定 ("5B9A) in font nullfont!
+Missing character: There is no 理 ("7406) in font nullfont!
+! Undefined control sequence.
+<write> ...throughput_monotonic' on page \thepage 
+                                                  \space undefined\on@line .^^J
+l.5 \subsection{定理\ref{thm:throughput_monotonic}
+                                                的证明}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `thm:throughput_monotonic' on page  undefined on input
+ line 5.
+
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 证 ("8BC1) in font nullfont!
+Missing character: There is no 明 ("660E) in font nullfont!
+
+Overfull \hbox (30.86pt too wide) in paragraph at lines 5--7
+[][]
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 为
+     分析方便，定义
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no 为 ("4E3A) in font nullfont!
+Missing character: There is no 分 ("5206) in font nullfont!
+Missing character: There is no 析 ("6790) in font nullfont!
+Missing character: There is no 方 ("65B9) in font nullfont!
+Missing character: There is no 便 ("4FBF) in font nullfont!
+Missing character: There is no ， ("FF0C) in font nullfont!
+Missing character: There is no 定 ("5B9A) in font nullfont!
+Missing character: There is no 义 ("4E49) in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 8--9
+[] 
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 \begin{equation}
+                     
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 10--10
+[] 
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 10.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 10.
+
+Overfull \hbox (87.93835pt too wide) detected at line 13
+[]\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 q\OT1/cmr/m/n/10 ) = []
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.15 其
+      中$F(q)=\tau_{F}e^{nq}(1-e^{-nq})^{2}+\tau_{I}(1-e^{-nq})$。$f(q)$对$q$的导...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no 其 ("5176) in font nullfont!
+Missing character: There is no 中 ("4E2D) in font nullfont!
+Missing character: There is no 。 ("3002) in font nullfont!
+Missing character: There is no 对 ("5BF9) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 导 ("5BFC) in font nullfont!
+Missing character: There is no 数 ("6570) in font nullfont!
+Missing character: There is no 由 ("7531) in font nullfont!
+Missing character: There is no 给 ("7ED9) in font nullfont!
+Missing character: There is no 出 ("51FA) in font nullfont!
+Missing character: There is no ， ("FF0C) in font nullfont!
+Missing character: There is no 其 ("5176) in font nullfont!
+Missing character: There is no 符 ("7B26) in font nullfont!
+Missing character: There is no 号 ("53F7) in font nullfont!
+Missing character: There is no 取 ("53D6) in font nullfont!
+Missing character: There is no 决 ("51B3) in font nullfont!
+Missing character: There is no 于 ("4E8E) in font nullfont!
+Missing character: There is no 项 ("9879) in font nullfont!
+! Undefined control sequence.
+l.15 ...\prime}(q))^{2}}$给出，其符号取决于项$T(q)\triangleq
+                                                   F(q)-qF^{\prime}(q)$。
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no 。 ("3002) in font nullfont!
+
+Overfull \hbox (50.97568pt too wide) in paragraph at lines 15--16
+[]$\OML/cmm/m/it/10 F\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 q\OT1/cmr/m/n/10 ) =
+ []
+
+
+Overfull \hbox (41.70213pt too wide) in paragraph at lines 15--16
+\OML/cmm/m/it/10 ^^\[]e[]\OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@
+ []
+
+
+Overfull \hbox (36.41878pt too wide) in paragraph at lines 15--16
+\OML/cmm/m/it/10 e[]\OT1/cmr/m/n/10 )[] +
+ []
+
+
+Overfull \hbox (25.62646pt too wide) in paragraph at lines 15--16
+\OML/cmm/m/it/10 ^^\[]\OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@
+ []
+
+
+Overfull \hbox (79.48476pt too wide) in paragraph at lines 15--16
+\OML/cmm/m/it/10 e[]\OT1/cmr/m/n/10 )$$\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/
+cmm/m/it/10 q\OT1/cmr/m/n/10 )$$\OML/cmm/m/it/10 q$$f[]\OT1/cmr/m/n/10 (\OML/cm
+m/m/it/10 q\OT1/cmr/m/n/10 ) =
+ []
+
+
+Overfull \hbox (111.41623pt too wide) in paragraph at lines 15--16
+[]$$\OML/cmm/m/it/10 T\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 q\OT1/cmr/m/n/10 )\OML/
+cmm/m/it/10 F\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 q\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n
+/10 ^^@
+ []
+
+
+Overfull \hbox (28.04863pt too wide) in paragraph at lines 15--16
+\OML/cmm/m/it/10 qF[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 q\OT1/cmr/m/n/10 )$ 
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.17 由
+      于$F^{\prime}(q)=n\tau_{F}e^{nq}(1-e^{-nq})(1+e^{-nq})+n\tau_{I}e^{-nq}...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no 由 ("7531) in font nullfont!
+Missing character: There is no 于 ("4E8E) in font nullfont!
+Missing character: There is no ， ("FF0C) in font nullfont!
+Missing character: There is no 我 ("6211) in font nullfont!
+Missing character: There is no 们 ("4EEC) in font nullfont!
+Missing character: There is no 有 ("6709) in font nullfont!
+Missing character: There is no 。 ("3002) in font nullfont!
+Missing character: There is no 对 ("5BF9) in font nullfont!
+Missing character: There is no 于 ("4E8E) in font nullfont!
+Missing character: There is no 任 ("4EFB) in font nullfont!
+Missing character: There is no 何 ("4F55) in font nullfont!
+Missing character: There is no ， ("FF0C) in font nullfont!
+Missing character: There is no 通 ("901A) in font nullfont!
+Missing character: There is no 过 ("8FC7) in font nullfont!
+Missing character: There is no 应 ("5E94) in font nullfont!
+Missing character: There is no 用 ("7528) in font nullfont!
+Missing character: There is no 不 ("4E0D) in font nullfont!
+Missing character: There is no 等 ("7B49) in font nullfont!
+Missing character: There is no 式 ("5F0F) in font nullfont!
+Missing character: There is no 和 ("548C) in font nullfont!
+Missing character: There is no ， ("FF0C) in font nullfont!
+Missing character: There is no 其 ("5176) in font nullfont!
+Missing character: There is no 中 ("4E2D) in font nullfont!
+Missing character: There is no ， ("FF0C) in font nullfont!
+Missing character: There is no 我 ("6211) in font nullfont!
+Missing character: There is no 们 ("4EEC) in font nullfont!
+Missing character: There is no 得 ("5F97) in font nullfont!
+Missing character: There is no 到 ("5230) in font nullfont!
+Missing character: There is no ， ("FF0C) in font nullfont!
+Missing character: There is no 。 ("3002) in font nullfont!
+Missing character: There is no 因 ("56E0) in font nullfont!
+Missing character: There is no 此 ("6B64) in font nullfont!
+Missing character: There is no ， ("FF0C) in font nullfont!
+Missing character: There is no 当 ("5F53) in font nullfont!
+Missing character: There is no 时 ("65F6) in font nullfont!
+Missing character: There is no ， ("FF0C) in font nullfont!
+Missing character: There is no 对 ("5BF9) in font nullfont!
+Missing character: There is no 于 ("4E8E) in font nullfont!
+Missing character: There is no 所 ("6240) in font nullfont!
+Missing character: There is no 有 ("6709) in font nullfont!
+Missing character: There is no ， ("FF0C) in font nullfont!
+Missing character: There is no 。 ("3002) in font nullfont!
+Missing character: There is no 由 ("7531) in font nullfont!
+Missing character: There is no 于 ("4E8E) in font nullfont!
+Missing character: There is no 且 ("4E14) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 分 ("5206) in font nullfont!
+Missing character: There is no 母 ("6BCD) in font nullfont!
+Missing character: There is no 总 ("603B) in font nullfont!
+Missing character: There is no 是 ("662F) in font nullfont!
+Missing character: There is no 正 ("6B63) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no ， ("FF0C) in font nullfont!
+Missing character: There is no 因 ("56E0) in font nullfont!
+Missing character: There is no 此 ("6B64) in font nullfont!
+Missing character: There is no 。 ("3002) in font nullfont!
+Missing character: There is no 因 ("56E0) in font nullfont!
+Missing character: There is no 此 ("6B64) in font nullfont!
+Missing character: There is no ， ("FF0C) in font nullfont!
+Missing character: There is no 在 ("5728) in font nullfont!
+Missing character: There is no 下 ("4E0B) in font nullfont!
+Missing character: There is no ， ("FF0C) in font nullfont!
+! Undefined control sequence.
+l.17 ..._{F}\geq\tau_{I}>0$下，$\hat{\lambda}_{\text
+                                                  {out}}^{n}(q)$是$q$在$[0,1]$...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no 是 ("662F) in font nullfont!
+Missing character: There is no 在 ("5728) in font nullfont!
+Missing character: There is no 上 ("4E0A) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 单 ("5355) in font nullfont!
+Missing character: There is no 调 ("8C03) in font nullfont!
+Missing character: There is no 递 ("9012) in font nullfont!
+Missing character: There is no 减 ("51CF) in font nullfont!
+Missing character: There is no 函 ("51FD) in font nullfont!
+Missing character: There is no 数 ("6570) in font nullfont!
+Missing character: There is no 。 ("3002) in font nullfont!
+
+Overfull \hbox (53.78123pt too wide) in paragraph at lines 17--18
+[]$\OML/cmm/m/it/10 F[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 q\OT1/cmr/m/n/10 ) =
+ []
+
+
+Overfull \hbox (47.70448pt too wide) in paragraph at lines 17--18
+\OML/cmm/m/it/10 n^^\[]e[]\OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@
+ []
+
+
+Overfull \hbox (40.82156pt too wide) in paragraph at lines 17--18
+\OML/cmm/m/it/10 e[]\OT1/cmr/m/n/10 )(1 +
+ []
+
+
+Overfull \hbox (31.93265pt too wide) in paragraph at lines 17--18
+\OML/cmm/m/it/10 e[]\OT1/cmr/m/n/10 ) +
+ []
+
+
+Overfull \hbox (65.61691pt too wide) in paragraph at lines 17--18
+\OML/cmm/m/it/10 n^^\[]e[]$$T\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 q\OT1/cmr/m/n/10
+ ) =
+ []
+
+
+Overfull \hbox (41.70213pt too wide) in paragraph at lines 17--18
+\OML/cmm/m/it/10 ^^\[]e[]\OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@
+ []
+
+
+Overfull \hbox (43.59935pt too wide) in paragraph at lines 17--18
+\OML/cmm/m/it/10 e[]\OT1/cmr/m/n/10 )[(1 \OMS/cmsy/m/n/10 ^^@
+ []
+
+
+Overfull \hbox (31.93265pt too wide) in paragraph at lines 17--18
+\OML/cmm/m/it/10 e[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@
+ []
+
+
+Overfull \hbox (27.49197pt too wide) in paragraph at lines 17--18
+\OML/cmm/m/it/10 nq\OT1/cmr/m/n/10 (1 +
+ []
+
+
+Overfull \hbox (34.71043pt too wide) in paragraph at lines 17--18
+\OML/cmm/m/it/10 e[]\OT1/cmr/m/n/10 )] +
+ []
+
+
+Overfull \hbox (28.40425pt too wide) in paragraph at lines 17--18
+\OML/cmm/m/it/10 ^^\[]\OT1/cmr/m/n/10 [(1 \OMS/cmsy/m/n/10 ^^@
+ []
+
+
+Overfull \hbox (31.93265pt too wide) in paragraph at lines 17--18
+\OML/cmm/m/it/10 e[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@
+ []
+
+
+Overfull \hbox (49.2474pt too wide) in paragraph at lines 17--18
+\OML/cmm/m/it/10 nqe[]\OT1/cmr/m/n/10 ]$$\OML/cmm/m/it/10 q >
+ []
+
+
+Overfull \hbox (17.77783pt too wide) in paragraph at lines 17--18
+\OT1/cmr/m/n/10 0$$1 \OMS/cmsy/m/n/10 ^^@
+ []
+
+
+Overfull \hbox (26.49652pt too wide) in paragraph at lines 17--18
+\OML/cmm/m/it/10 e[] \OMS/cmsy/m/n/10 ^^T
+ []
+
+
+Overfull \hbox (32.21179pt too wide) in paragraph at lines 17--18
+\OML/cmm/m/it/10 x$$e[] \OMS/cmsy/m/n/10 ^^T
+ []
+
+
+Overfull \hbox (21.2708pt too wide) in paragraph at lines 17--18
+\OT1/cmr/m/n/10 1$$\OML/cmm/m/it/10 x \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (27.49197pt too wide) in paragraph at lines 17--18
+\OML/cmm/m/it/10 nq$$\OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@
+ []
+
+
+Overfull \hbox (31.93265pt too wide) in paragraph at lines 17--18
+\OML/cmm/m/it/10 e[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@
+ []
+
+
+Overfull \hbox (27.49197pt too wide) in paragraph at lines 17--18
+\OML/cmm/m/it/10 nq\OT1/cmr/m/n/10 (1 +
+ []
+
+
+Overfull \hbox (34.71036pt too wide) in paragraph at lines 17--18
+\OML/cmm/m/it/10 e[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^T
+ []
+
+
+Overfull \hbox (21.66673pt too wide) in paragraph at lines 17--18
+\OT1/cmr/m/n/10 0$$(1 \OMS/cmsy/m/n/10 ^^@
+ []
+
+
+Overfull \hbox (31.93265pt too wide) in paragraph at lines 17--18
+\OML/cmm/m/it/10 e[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@
+ []
+
+
+Overfull \hbox (41.64671pt too wide) in paragraph at lines 17--18
+\OML/cmm/m/it/10 nqe[] \OMS/cmsy/m/n/10 ^^T
+ []
+
+
+Overfull \hbox (26.57501pt too wide) in paragraph at lines 17--18
+\OT1/cmr/m/n/10 0$$\OML/cmm/m/it/10 ^^\[] \OMS/cmsy/m/n/10 ^^U
+ []
+
+
+Overfull \hbox (23.22705pt too wide) in paragraph at lines 17--18
+\OML/cmm/m/it/10 ^^\[]$$q \OMS/cmsy/m/n/10 2
+ []
+
+
+Overfull \hbox (51.5pt too wide) in paragraph at lines 17--18
+\OT1/cmr/m/n/10 (0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1]$$\OML/cmm/m/it/10 T\OT1
+/cmr/m/n/10 (\OML/cmm/m/it/10 q\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^T
+ []
+
+
+Overfull \hbox (23.05554pt too wide) in paragraph at lines 17--18
+\OT1/cmr/m/n/10 0$$\OML/cmm/m/it/10 A >
+ []
+
+
+Overfull \hbox (58.31258pt too wide) in paragraph at lines 17--18
+\OT1/cmr/m/n/10 0$$\OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 q\OT1/
+cmr/m/n/10 )$$\OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 q\OT1/cmr/m
+/n/10 ) \OMS/cmsy/m/n/10 ^^T
+ []
+
+
+Overfull \hbox (25.72014pt too wide) in paragraph at lines 17--18
+\OT1/cmr/m/n/10 0$$\OML/cmm/m/it/10 ^^\[] >
+ []
+
+
+Overfull \hbox (21.575pt too wide) in paragraph at lines 17--18
+\OML/cmm/m/it/10 ^^\[] \OMS/cmsy/m/n/10 ^^U
+ []
+
+
+Overfull \hbox (19.51526pt too wide) in paragraph at lines 17--18
+\OML/cmm/m/it/10 ^^\[] >
+ []
+
+
+Overfull \hbox (60.45313pt too wide) in paragraph at lines 17--18
+\OT1/cmr/m/n/10 0$$[](\OML/cmm/m/it/10 q\OT1/cmr/m/n/10 )$$\OML/cmm/m/it/10 q$$
+\OT1/cmr/m/n/10 [0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1]$ 
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.19 另
+      一方面，令$x=nq$。使用近似$e^{x}(1-e^{-x})^{2}\approx x^{2}$和$1-e^{-x}\approx x$...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no 另 ("53E6) in font nullfont!
+Missing character: There is no 一 ("4E00) in font nullfont!
+Missing character: There is no 方 ("65B9) in font nullfont!
+Missing character: There is no 面 ("9762) in font nullfont!
+Missing character: There is no ， ("FF0C) in font nullfont!
+Missing character: There is no 令 ("4EE4) in font nullfont!
+Missing character: There is no 。 ("3002) in font nullfont!
+Missing character: There is no 使 ("4F7F) in font nullfont!
+Missing character: There is no 用 ("7528) in font nullfont!
+Missing character: There is no 近 ("8FD1) in font nullfont!
+Missing character: There is no 似 ("4F3C) in font nullfont!
+Missing character: There is no 和 ("548C) in font nullfont!
+Missing character: There is no 对 ("5BF9) in font nullfont!
+Missing character: There is no 于 ("4E8E) in font nullfont!
+Missing character: There is no 小 ("5C0F) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no ， ("FF0C) in font nullfont!
+Missing character: There is no 式 ("5F0F) in font nullfont!
+Missing character: There is no ( ("28) in font nullfont!
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no 4 ("34) in font nullfont!
+Missing character: There is no ) ("29) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 分 ("5206) in font nullfont!
+Missing character: There is no 母 ("6BCD) in font nullfont!
+Missing character: There is no 变 ("53D8) in font nullfont!
+Missing character: There is no 为 ("4E3A) in font nullfont!
+Missing character: There is no 。 ("3002) in font nullfont!
+Missing character: There is no 因 ("56E0) in font nullfont!
+Missing character: There is no 此 ("6B64) in font nullfont!
+Missing character: There is no ， ("FF0C) in font nullfont!
+Missing character: There is no 对 ("5BF9) in font nullfont!
+Missing character: There is no 于 ("4E8E) in font nullfont!
+Missing character: There is no ， ("FF0C) in font nullfont!
+Missing character: There is no 可 ("53EF) in font nullfont!
+Missing character: There is no 以 ("4EE5) in font nullfont!
+Missing character: There is no 得 ("5F97) in font nullfont!
+Missing character: There is no 到 ("5230) in font nullfont!
+Missing character: There is no 式 ("5F0F) in font nullfont!
+Missing character: There is no ( ("28) in font nullfont!
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no 5 ("35) in font nullfont!
+Missing character: There is no ) ("29) in font nullfont!
+Missing character: There is no 。 ("3002) in font nullfont!
+
+Overfull \hbox (36.27078pt too wide) in paragraph at lines 19--20
+[]$\OML/cmm/m/it/10 x \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (37.18297pt too wide) in paragraph at lines 19--20
+\OML/cmm/m/it/10 nq$$e[]\OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@
+ []
+
+
+Overfull \hbox (34.87155pt too wide) in paragraph at lines 19--20
+\OML/cmm/m/it/10 e[]\OT1/cmr/m/n/10 )[] \OMS/cmsy/m/n/10 ^^Y
+ []
+
+
+Overfull \hbox (22.97922pt too wide) in paragraph at lines 19--20
+\OML/cmm/m/it/10 x[]$$\OT1/cmr/m/n/10 1 \OMS/cmsy/m/n/10 ^^@
+ []
+
+
+Overfull \hbox (26.49652pt too wide) in paragraph at lines 19--20
+\OML/cmm/m/it/10 e[] \OMS/cmsy/m/n/10 ^^Y
+ []
+
+
+Overfull \hbox (40.19821pt too wide) in paragraph at lines 19--20
+\OML/cmm/m/it/10 x$$x$$nq^^\[] \OT1/cmr/m/n/10 +
+ []
+
+
+Overfull \hbox (37.3772pt too wide) in paragraph at lines 19--20
+\OML/cmm/m/it/10 ^^\[]e[]\OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@
+ []
+
+
+Overfull \hbox (32.09384pt too wide) in paragraph at lines 19--20
+\OML/cmm/m/it/10 e[]\OT1/cmr/m/n/10 )[] +
+ []
+
+
+Overfull \hbox (25.62646pt too wide) in paragraph at lines 19--20
+\OML/cmm/m/it/10 ^^\[]\OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@
+ []
+
+
+Overfull \hbox (30.38542pt too wide) in paragraph at lines 19--20
+\OML/cmm/m/it/10 e[]\OT1/cmr/m/n/10 ) =
+ []
+
+
+Overfull \hbox (27.54659pt too wide) in paragraph at lines 19--20
+\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^\[] \OT1/cmr/m/n/10 +
+ []
+
+
+Overfull \hbox (20.62645pt too wide) in paragraph at lines 19--20
+\OML/cmm/m/it/10 ^^\[]\OT1/cmr/m/n/10 ) +
+ []
+
+
+Overfull \hbox (43.48538pt too wide) in paragraph at lines 19--20
+\OML/cmm/m/it/10 O\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 )$$\OML/
+cmm/m/it/10 q \OMS/cmsy/m/n/10 !
+ []
+
+
+Overfull \hbox (11.63893pt too wide) in paragraph at lines 19--20
+\OT1/cmr/m/n/10 0[]$ 
+ []
+
+! Undefined control sequence.
+l.21 \subsection
+                {经典CSMA吞吐量分析}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.21 \subsection{经
+                  典CSMA吞吐量分析}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no 经 ("7ECF) in font nullfont!
+Missing character: There is no 典 ("5178) in font nullfont!
+Missing character: There is no C ("43) in font nullfont!
+Missing character: There is no S ("53) in font nullfont!
+Missing character: There is no M ("4D) in font nullfont!
+Missing character: There is no A ("41) in font nullfont!
+Missing character: There is no 吞 ("541E) in font nullfont!
+Missing character: There is no 吐 ("5410) in font nullfont!
+Missing character: There is no 量 ("91CF) in font nullfont!
+Missing character: There is no 分 ("5206) in font nullfont!
+Missing character: There is no 析 ("6790) in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 21--23
+[]
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.24 在
+      \cite{Lin2013Toward}中，参数$a$表示传播延迟，状态S、状态F和状态I的保持时间指定为$\tau_{S}=1+a$，$\...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no 在 ("5728) in font nullfont!
+Missing character: There is no [ ("5B) in font nullfont!
+\citation{Lin2013Toward}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .^^J
+l.24 在\cite{Lin2013Toward}
+                          中，参数$a$表示传播延迟，状态S、状态F和状态I的保持时间指定为$\tau_{S}=1+a$，$\...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `Lin2013Toward' on page  undefined on input line 24.
+
+Missing character: There is no ] ("5D) in font nullfont!
+Missing character: There is no 中 ("4E2D) in font nullfont!
+Missing character: There is no ， ("FF0C) in font nullfont!
+Missing character: There is no 参 ("53C2) in font nullfont!
+Missing character: There is no 数 ("6570) in font nullfont!
+Missing character: There is no 表 ("8868) in font nullfont!
+Missing character: There is no 示 ("793A) in font nullfont!
+Missing character: There is no 传 ("4F20) in font nullfont!
+Missing character: There is no 播 ("64AD) in font nullfont!
+Missing character: There is no 延 ("5EF6) in font nullfont!
+Missing character: There is no 迟 ("8FDF) in font nullfont!
+Missing character: There is no ， ("FF0C) in font nullfont!
+Missing character: There is no 状 ("72B6) in font nullfont!
+Missing character: There is no 态 ("6001) in font nullfont!
+Missing character: There is no S ("53) in font nullfont!
+Missing character: There is no 、 ("3001) in font nullfont!
+Missing character: There is no 状 ("72B6) in font nullfont!
+Missing character: There is no 态 ("6001) in font nullfont!
+Missing character: There is no F ("46) in font nullfont!
+Missing character: There is no 和 ("548C) in font nullfont!
+Missing character: There is no 状 ("72B6) in font nullfont!
+Missing character: There is no 态 ("6001) in font nullfont!
+Missing character: There is no I ("49) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 保 ("4FDD) in font nullfont!
+Missing character: There is no 持 ("6301) in font nullfont!
+Missing character: There is no 时 ("65F6) in font nullfont!
+Missing character: There is no 间 ("95F4) in font nullfont!
+Missing character: There is no 指 ("6307) in font nullfont!
+Missing character: There is no 定 ("5B9A) in font nullfont!
+Missing character: There is no 为 ("4E3A) in font nullfont!
+Missing character: There is no ， ("FF0C) in font nullfont!
+Missing character: There is no ， ("FF0C) in font nullfont!
+Missing character: There is no 和 ("548C) in font nullfont!
+Missing character: There is no 。 ("3002) in font nullfont!
+Missing character: There is no 因 ("56E0) in font nullfont!
+Missing character: There is no 此 ("6B64) in font nullfont!
+Missing character: There is no ， ("FF0C) in font nullfont!
+Missing character: There is no 最 ("6700) in font nullfont!
+Missing character: There is no 大 ("5927) in font nullfont!
+Missing character: There is no 吞 ("541E) in font nullfont!
+Missing character: There is no 吐 ("5410) in font nullfont!
+Missing character: There is no 量 ("91CF) in font nullfont!
+Missing character: There is no 推 ("63A8) in font nullfont!
+Missing character: There is no 导 ("5BFC) in font nullfont!
+Missing character: There is no 为 ("4E3A) in font nullfont!
+! Undefined control sequence.
+l.24 ...au_{I}=a$。因此，最大吞吐量推导为$\hat{\lambda}_{\text
+                                                  {max}}=\frac{-W_{0}\left(-...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no 。 ("3002) in font nullfont!
+Missing character: There is no 基 ("57FA) in font nullfont!
+Missing character: There is no 于 ("4E8E) in font nullfont!
+Missing character: There is no 提 ("63D0) in font nullfont!
+Missing character: There is no 出 ("51FA) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 分 ("5206) in font nullfont!
+Missing character: There is no 析 ("6790) in font nullfont!
+Missing character: There is no 框 ("6846) in font nullfont!
+Missing character: There is no 架 ("67B6) in font nullfont!
+Missing character: There is no ， ("FF0C) in font nullfont!
+Missing character: There is no 可 ("53EF) in font nullfont!
+Missing character: There is no 以 ("4EE5) in font nullfont!
+Missing character: There is no 消 ("6D88) in font nullfont!
+Missing character: There is no 除 ("9664) in font nullfont!
+Missing character: There is no 参 ("53C2) in font nullfont!
+Missing character: There is no 数 ("6570) in font nullfont!
+Missing character: There is no ， ("FF0C) in font nullfont!
+Missing character: There is no 推 ("63A8) in font nullfont!
+Missing character: There is no 导 ("5BFC) in font nullfont!
+Missing character: There is no 出 ("51FA) in font nullfont!
+Missing character: There is no 经 ("7ECF) in font nullfont!
+Missing character: There is no 典 ("5178) in font nullfont!
+Missing character: There is no C ("43) in font nullfont!
+Missing character: There is no S ("53) in font nullfont!
+Missing character: There is no M ("4D) in font nullfont!
+Missing character: There is no A ("41) in font nullfont!
+Missing character: There is no 网 ("7F51) in font nullfont!
+Missing character: There is no 络 ("7EDC) in font nullfont!
+Missing character: There is no 吞 ("541E) in font nullfont!
+Missing character: There is no 吐 ("5410) in font nullfont!
+Missing character: There is no 量 ("91CF) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 更 ("66F4) in font nullfont!
+Missing character: There is no 通 ("901A) in font nullfont!
+Missing character: There is no 用 ("7528) in font nullfont!
+Missing character: There is no 表 ("8868) in font nullfont!
+Missing character: There is no 达 ("8FBE) in font nullfont!
+Missing character: There is no 式 ("5F0F) in font nullfont!
+Missing character: There is no ， ("FF0C) in font nullfont!
+Missing character: There is no 由 ("7531) in font nullfont!
+Missing character: There is no 下 ("4E0B) in font nullfont!
+Missing character: There is no 式 ("5F0F) in font nullfont!
+Missing character: There is no 给 ("7ED9) in font nullfont!
+Missing character: There is no 出 ("51FA) in font nullfont!
+
+Overfull \hbox (51.436pt too wide) in paragraph at lines 24--25
+[][]$\OML/cmm/m/it/10 a$$^^\[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (12.77782pt too wide) in paragraph at lines 24--25
+\OT1/cmr/m/n/10 1 +
+ []
+
+
+Overfull \hbox (26.86089pt too wide) in paragraph at lines 24--25
+\OML/cmm/m/it/10 a$$^^\[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (17.38197pt too wide) in paragraph at lines 24--25
+\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x \OT1/cmr/m/n/10 +
+ []
+
+
+Overfull \hbox (33.69006pt too wide) in paragraph at lines 24--25
+\OT1/cmr/m/n/10 1)\OML/cmm/m/it/10 a$$^^\[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (38.14325pt too wide) in paragraph at lines 24--25
+\OML/cmm/m/it/10 a$$[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (107.73164pt too wide) in paragraph at lines 24--25
+[]$$\OML/cmm/m/it/10 a$ 
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.26 \begin{equation}
+                     
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 26--26
+[] 
+ []
+
+! Undefined control sequence.
+l.28 ^^I\hat{\lambda}_{\text
+                            {out}}=\frac{\tau_{S}-\tau_{I}}{\tau_{S}}\,\frac...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (184.31439pt too wide) detected at line 29
+[][] \OT1/cmr/m/n/10 = [] [] = []\OML/cmm/m/it/10 ;
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.31 其
+      中$\overline{B}=\tau_{S}$，$\overline{V}_{c}=\frac{p_{2}\tau_{C}+p_{0}\t...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no 其 ("5176) in font nullfont!
+Missing character: There is no 中 ("4E2D) in font nullfont!
+Missing character: There is no ， ("FF0C) in font nullfont!
+Missing character: There is no ， ("FF0C) in font nullfont!
+Missing character: There is no 和 ("548C) in font nullfont!
+Missing character: There is no 、 ("3001) in font nullfont!
+Missing character: There is no 、 ("3001) in font nullfont!
+Missing character: There is no 在 ("5728) in font nullfont!
+Missing character: There is no 式 ("5F0F) in font nullfont!
+! Undefined control sequence.
+l.31 ...}{p_{1}}$，和$p_{0}$、$p_{1}$、$p_{2}$在式\eqref
+                                                  {eq:p0}-\eqref{eq:p2}中定义。通...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no q ("71) in font nullfont!
+Missing character: There is no : ("3A) in font nullfont!
+Missing character: There is no p ("70) in font nullfont!
+Missing character: There is no 0 ("30) in font nullfont!
+Missing character: There is no - ("2D) in font nullfont!
+! Undefined control sequence.
+l.31 ...{0}$、$p_{1}$、$p_{2}$在式\eqref{eq:p0}-\eqref
+                                                  {eq:p2}中定义。通过将$\hat{\lambd...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no q ("71) in font nullfont!
+Missing character: There is no : ("3A) in font nullfont!
+Missing character: There is no p ("70) in font nullfont!
+Missing character: There is no 2 ("32) in font nullfont!
+Missing character: There is no 中 ("4E2D) in font nullfont!
+Missing character: There is no 定 ("5B9A) in font nullfont!
+Missing character: There is no 义 ("4E49) in font nullfont!
+Missing character: There is no 。 ("3002) in font nullfont!
+Missing character: There is no 通 ("901A) in font nullfont!
+Missing character: There is no 过 ("8FC7) in font nullfont!
+Missing character: There is no 将 ("5C06) in font nullfont!
+! Undefined control sequence.
+l.31 ...-\eqref{eq:p2}中定义。通过将$\hat{\lambda}_{\text
+                                                  {out}}$对$q$求导，获得最佳传输概率为
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no 对 ("5BF9) in font nullfont!
+Missing character: There is no 求 ("6C42) in font nullfont!
+Missing character: There is no 导 ("5BFC) in font nullfont!
+Missing character: There is no ， ("FF0C) in font nullfont!
+Missing character: There is no 获 ("83B7) in font nullfont!
+Missing character: There is no 得 ("5F97) in font nullfont!
+Missing character: There is no 最 ("6700) in font nullfont!
+Missing character: There is no 佳 ("4F73) in font nullfont!
+Missing character: There is no 传 ("4F20) in font nullfont!
+Missing character: There is no 输 ("8F93) in font nullfont!
+Missing character: There is no 概 ("6982) in font nullfont!
+Missing character: There is no 率 ("7387) in font nullfont!
+Missing character: There is no 为 ("4E3A) in font nullfont!
+
+Overfull \hbox (38.64232pt too wide) in paragraph at lines 31--32
+[]$[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (32.84943pt too wide) in paragraph at lines 31--32
+\OML/cmm/m/it/10 ^^\[]$$[][] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (93.2071pt too wide) in paragraph at lines 31--32
+[]$$\OML/cmm/m/it/10 p[]$$p[]$$p[]$$[]$$q$ 
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.33 \begin{equation}
+                     
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 33--33
+[] 
+ []
+
+
+Overfull \hbox (98.55827pt too wide) detected at line 36
+[]\OML/cmm/m/it/10 q[] \OT1/cmr/m/n/10 = []\OML/cmm/m/it/10 ;
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.38 将
+      $q^{*}$代回吞吐量表达式得到经典CSMA的最大可实现网络吞吐量。
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no 将 ("5C06) in font nullfont!
+Missing character: There is no 代 ("4EE3) in font nullfont!
+Missing character: There is no 回 ("56DE) in font nullfont!
+Missing character: There is no 吞 ("541E) in font nullfont!
+Missing character: There is no 吐 ("5410) in font nullfont!
+Missing character: There is no 量 ("91CF) in font nullfont!
+Missing character: There is no 表 ("8868) in font nullfont!
+Missing character: There is no 达 ("8FBE) in font nullfont!
+Missing character: There is no 式 ("5F0F) in font nullfont!
+Missing character: There is no 得 ("5F97) in font nullfont!
+Missing character: There is no 到 ("5230) in font nullfont!
+Missing character: There is no 经 ("7ECF) in font nullfont!
+Missing character: There is no 典 ("5178) in font nullfont!
+Missing character: There is no C ("43) in font nullfont!
+Missing character: There is no S ("53) in font nullfont!
+Missing character: There is no M ("4D) in font nullfont!
+Missing character: There is no A ("41) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 最 ("6700) in font nullfont!
+Missing character: There is no 大 ("5927) in font nullfont!
+Missing character: There is no 可 ("53EF) in font nullfont!
+Missing character: There is no 实 ("5B9E) in font nullfont!
+Missing character: There is no 现 ("73B0) in font nullfont!
+Missing character: There is no 网 ("7F51) in font nullfont!
+Missing character: There is no 络 ("7EDC) in font nullfont!
+Missing character: There is no 吞 ("541E) in font nullfont!
+Missing character: There is no 吐 ("5410) in font nullfont!
+Missing character: There is no 量 ("91CF) in font nullfont!
+Missing character: There is no 。 ("3002) in font nullfont!
+)
+! Emergency stop.
+<*> Appendix2.tex
+                 
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 25 strings out of 476179
+ 532 string characters out of 5813072
+ 303507 words of memory out of 5000000
+ 20875 multiletter control sequences out of 15000+600000
+ 469275 words of font info for 30 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 18i,4n,19p,547b,101s stack positions out of 10000i,1000n,20000p,200000b,200000s
+No pages of output.

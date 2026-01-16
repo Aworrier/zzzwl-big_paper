@@ -1,0 +1,167 @@
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.28)  24 NOV 2025 15:35
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**Chapter_04.tex
+(./Chapter_04.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-02-24>
+! Undefined control sequence.
+l.1 \chapter
+            {面向CSMA网络的动态连续传输机制设计与分析优化}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \chapter{面
+              向CSMA网络的动态连续传输机制设计与分析优化}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no 面 ("9762) in font nullfont!
+Missing character: There is no 向 ("5411) in font nullfont!
+Missing character: There is no C ("43) in font nullfont!
+Missing character: There is no S ("53) in font nullfont!
+Missing character: There is no M ("4D) in font nullfont!
+Missing character: There is no A ("41) in font nullfont!
+Missing character: There is no 网 ("7F51) in font nullfont!
+Missing character: There is no 络 ("7EDC) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 动 ("52A8) in font nullfont!
+Missing character: There is no 态 ("6001) in font nullfont!
+Missing character: There is no 连 ("8FDE) in font nullfont!
+Missing character: There is no 续 ("7EED) in font nullfont!
+Missing character: There is no 传 ("4F20) in font nullfont!
+Missing character: There is no 输 ("8F93) in font nullfont!
+Missing character: There is no 机 ("673A) in font nullfont!
+Missing character: There is no 制 ("5236) in font nullfont!
+Missing character: There is no 设 ("8BBE) in font nullfont!
+Missing character: There is no 计 ("8BA1) in font nullfont!
+Missing character: There is no 与 ("4E0E) in font nullfont!
+Missing character: There is no 分 ("5206) in font nullfont!
+Missing character: There is no 析 ("6790) in font nullfont!
+Missing character: There is no 优 ("4F18) in font nullfont!
+Missing character: There is no 化 ("5316) in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 1--3
+[]
+ []
+
+! Undefined control sequence.
+l.4 \section
+            {引言}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4 \section{引
+              言}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no 引 ("5F15) in font nullfont!
+Missing character: There is no 言 ("8A00) in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 4--6
+[]
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7 载
+     波侦听多路访问（CSMA）作为无线网络中最基本的介质访问控制（MAC）协议之一，因其在多用户信道接入协调方面的简单性和有效性而被广泛应用。然而...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no 载 ("8F7D) in font nullfont!
+Missing character: There is no 波 ("6CE2) in font nullfont!
+Missing character: There is no 侦 ("4FA6) in font nullfont!
+Missing character: There is no 听 ("542C) in font nullfont!
+Missing character: There is no 多 ("591A) in font nullfont!
+Missing character: There is no 路 ("8DEF) in font nullfont!
+Missing character: There is no 访 ("8BBF) in font nullfont!
+Missing character: There is no 问 ("95EE) in font nullfont!
+Missing character: There is no （ ("FF08) in font nullfont!
+Missing character: There is no C ("43) in font nullfont!
+Missing character: There is no S ("53) in font nullfont!
+Missing character: There is no M ("4D) in font nullfont!
+Missing character: There is no A ("41) in font nullfont!
+Missing character: There is no ） ("FF09) in font nullfont!
+Missing character: There is no 作 ("4F5C) in font nullfont!
+Missing character: There is no 为 ("4E3A) in font nullfont!
+Missing character: There is no 无 ("65E0) in font nullfont!
+Missing character: There is no 线 ("7EBF) in font nullfont!
+Missing character: There is no 网 ("7F51) in font nullfont!
+Missing character: There is no 络 ("7EDC) in font nullfont!
+Missing character: There is no 中 ("4E2D) in font nullfont!
+Missing character: There is no 最 ("6700) in font nullfont!
+Missing character: There is no 基 ("57FA) in font nullfont!
+Missing character: There is no 本 ("672C) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 介 ("4ECB) in font nullfont!
+Missing character: There is no 质 ("8D28) in font nullfont!
+Missing character: There is no 访 ("8BBF) in font nullfont!
+Missing character: There is no 问 ("95EE) in font nullfont!
+Missing character: There is no 控 ("63A7) in font nullfont!
+Missing character: There is no 制 ("5236) in font nullfont!
+Missing character: There is no （ ("FF08) in font nullfont!
+Missing character: There is no M ("4D) in font nullfont!
+Missing character: There is no A ("41) in font nullfont!
+Missing character: There is no C ("43) in font nullfont!
+Missing character: There is no ） ("FF09) in font nullfont!
+Missing character: There is no 协 ("534F) in font nullfont!
+Missing character: There is no 议 ("8BAE) in font nullfont!
+Missing character: There is no 之 ("4E4B) in font nullfont!
+Missing character: There is no 一 ("4E00) in font nullfont!
+Missing character: There is no ， ("FF0C) in font nullfont!
+Missing character: There is no 因 ("56E0) in font nullfont!
+Missing character: There is no 其 ("5176) in font nullfont!
+Missing character: There is no 在 ("5728) in font nullfont!
+Missing character: There is no 多 ("591A) in font nullfont!
+Missing character: There is no 用 ("7528) in font nullfont!
+Missing character: There is no 户 ("6237) in font nullfont!
+Missing character: There is no 信 ("4FE1) in font nullfont!
+Missing character: There is no 道 ("9053) in font nullfont!
+Missing character: There is no 接 ("63A5) in font nullfont!
+Missing character: There is no 入 ("5165) in font nullfont!
+Missing character: There is no 协 ("534F) in font nullfont!
+Missing character: There is no 调 ("8C03) in font nullfont!
+Missing character: There is no 方 ("65B9) in font nullfont!
+Missing character: There is no 面 ("9762) in font nullfont!
+Missing character: There is no 的 ("7684) in font nullfont!
+Missing character: There is no 简 ("7B80) in font nullfont!
+Missing character: There is no 单 ("5355) in font nullfont!
+Missing character: There is no 性 ("6027) in font nullfont!
+Missing character: There is no 和 ("548C) in font nullfont!
+Missing character: There is no 有 ("6709) in font nullfont!
+Missing character: There is no 效 ("6548) in font nullfont!
+Missing character: There is no 性 ("6027) in font nullfont!
+Missing character: There is no 而 ("800C) in font nullfont!
+Missing character: There is no 被 ("88AB) in font nullfont!
+Missing character: There is no 广 ("5E7F) in font nullfont!
+Missing character: There is no 泛 ("6CDB) in font nullfont!
+Missing character: There is no

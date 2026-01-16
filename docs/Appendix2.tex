@@ -1,0 +1,34 @@
+
+\chapter{第四章相关内容证明}
+\label{app:classic_csma}
+
+
+本附录旨在利用本章提出的休假排队分析框架，对经典 CSMA（即不具备连续传输能力的 CSMA）的饱和吞吐量进行重新推导，从而为正文中的性能对比提供在相同参数体系下的理论基准。
+
+在现有的经典文献（如 \cite{Lin2013Toward}）中，CSMA 的最大吞吐量通常基于传播延迟参数 $a$ 进行推导。文献中设定状态持续时间为 $\tau_{S}=1+a$（成功），$\tau_{F}=(x+1)a$（碰撞），以及 $\tau_{I}=a$（空闲）。基于此假设得到的最大吞吐量表达式包含复杂的 Lambert W 函数项：
+\begin{equation}
+	\hat{\lambda}_{\text{max}} = \frac{-W_{0}\left(-\frac{1}{x(1+1/x)}\right)}{xa-(1-xa)\,W_{0}\left(-\frac{1}{x(1+1/x)}\right)}.
+\end{equation}
+然而，为了在统一的维度上对比 CSMAST 与经典 CSMA，我们需要消除特定参数 $a$ 的限制，利用通用的状态时长参数 $\tau_S, \tau_F, \tau_I$ 进行推导。
+
+基于本章建立的休假排队模型，我们可以将经典 CSMA 视为 CSMAST 的一种特例。两者在介质访问控制层面的核心差异仅体现在对信道忙期的构造方式上：
+在CSMAST 机制中，节点利用连续传输策略，只要未发生碰撞，便持续占用信道。因此，其信道忙期包含的成功传输次数服从参数为 $1-p_0$ 的几何分布，平均长度为 $\overline{B}_{st} = \tau_S / (1-e^{-\theta})$。
+而对于经典 CSMA 机制，节点遵循单次竞争、单次传输的原则。无论节点缓存是否仍有数据，在完成当前数据包的传输后必须释放信道，重新进入竞争状态。因此，经典 CSMA 的信道忙期（定义为$ B_{cl} $）是确定的，仅包含一次成功传输事件，即$ \overline{B}_{cl} = \tau_S $。
+另一方面，就信道休假期而言，由于两者在竞争接入阶段均遵循相同的先听后说（LBT）逻辑及碰撞退避规则，其状态转移特性完全一致。因此，前文推导的信道休假期均值 $\overline{V}_c$ 对经典 CSMA 依然适用：
+\begin{equation}
+	\overline{V}_c = \frac{p_{2}\tau_{F}+p_{0}\tau_{I}}{p_{1}},
+\end{equation}
+其中，$p_0 = e^{-\theta}$、$p_1 = \theta e^{-\theta}$ 和 $p_2 = 1 - p_0 - p_1$ 分别对应无传输、成功接入和发生碰撞的概率（$\theta = nq$）。
+
+将确定性忙期 $\overline{B}_{cl}$ 和通用休假期 $\overline{V}_c$ 代入网络吞吐量的定义式，并引入有效传输修正因子 $\eta = (\tau_S - \tau_I)/\tau_S$，可推导出经典 CSMA 在饱和状态下的网络吞吐量通用表达式：
+\begin{equation}
+	\label{eq:classic_csma_throughput}
+	\hat{\lambda}_{\text{out}}^{\text{cl}} = \frac{\tau_{S}-\tau_{I}}{\tau_{S}} \cdot \frac{\overline{B}_{cl}}{\overline{B}_{cl}+\overline{V}_{c}} = \frac{\tau_{S}-\tau_{I}}{\tau_{S}+\frac{p_{2}\tau_{F}+p_{0}\tau_{I}}{p_{1}}}.
+\end{equation}
+
+为了求解该系统的理论容量极限，我们将 $\hat{\lambda}_{\text{out}}^{\text{cl}}$ 视为传输概率 $q$ 的函数。通过求解最优化问题 $\frac{d \hat{\lambda}}{d q} = 0$，经过代数运算，可得经典 CSMA 取得最大吞吐量时的最佳传输概率 $q^{*}$：
+\begin{equation}
+	\label{eq:optimal_q_classic}
+	q^{*} = \frac{1 + W_{0}\left(\frac{\tau_{I}-\tau_{F}}{\tau_{F} e}\right)}{n},
+\end{equation}
+其中 $W_0(\cdot)$ 表示 Lambert W 函数的主分支。将 $q^{*}$ 代回式 \eqref{eq:classic_csma_throughput}，即可得到正文图 \ref{fig:comparison_classic}中经典 CSMA 性能曲线的理论上界。
