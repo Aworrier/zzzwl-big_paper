@@ -48,25 +48,25 @@
 \contentsline {section}{\numberline {5.1}问题建模与统一接入框架设计}{49}{section.5.1}%
 \contentsline {subsection}{\numberline {5.1.1}问题建模}{50}{subsection.5.1.1}%
 \contentsline {subsection}{\numberline {5.1.2}输入特征标准化与统一接口}{50}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}统一仿真映射与效用构造}{53}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.3}统一仿真映射与效用构造}{52}{subsection.5.1.3}%
 \contentsline {subsection}{\numberline {5.1.4}等价重写：资源约束下的联合优化形式}{54}{subsection.5.1.4}%
 \contentsline {section}{\numberline {5.2}基于离散事件仿真的接入协议数据集构建与仿真结果分析}{55}{section.5.2}%
 \contentsline {subsection}{\numberline {5.2.1}两阶段参数空间采样策略}{55}{subsection.5.2.1}%
 \contentsline {subsection}{\numberline {5.2.2}统一仿真器的设计与实现}{58}{subsection.5.2.2}%
 \contentsline {subsection}{\numberline {5.2.3}数据集构建与预处理}{60}{subsection.5.2.3}%
-\contentsline {subsection}{\numberline {5.2.4}仿真性能验证与对比\leavevmode {\color {red}在该小节中，还没有画图，可以先不用看。zzzwl}}{62}{subsection.5.2.4}%
-\contentsline {section}{\numberline {5.3}基于多任务深度学习的性能预测代理模型}{64}{section.5.3}%
+\contentsline {subsection}{\numberline {5.2.4}仿真性能验证与对比\leavevmode {\color {red}在该小节中，还没有画图，可以先不用看。zzzwl}}{61}{subsection.5.2.4}%
+\contentsline {section}{\numberline {5.3}基于多任务深度学习的性能预测代理模型}{63}{section.5.3}%
 \contentsline {subsection}{\numberline {5.3.1}基于硬参数共享的多任务网络架构}{64}{subsection.5.3.1}%
 \contentsline {paragraph}{架构设计原理}{64}{paragraph*.23}%
-\contentsline {subsubsection}{\numberline {5.3.1.1}前向传播过程}{66}{subsubsection.5.3.1.1}%
-\contentsline {subsection}{\numberline {5.3.2}多目标优化与训练策略}{66}{subsection.5.3.2}%
-\contentsline {paragraph}{加权多任务损失函数}{66}{paragraph*.25}%
-\contentsline {paragraph}{数据增强与正则化}{66}{paragraph*.26}%
-\contentsline {paragraph}{优化与学习率调度}{66}{paragraph*.27}%
-\contentsline {paragraph}{早停机制}{66}{paragraph*.28}%
+\contentsline {subsection}{\numberline {5.3.2}多目标优化与训练策略}{65}{subsection.5.3.2}%
+\contentsline {paragraph}{加权多任务损失函数}{65}{paragraph*.26}%
+\contentsline {paragraph}{数据增强与正则化}{66}{paragraph*.27}%
+\contentsline {paragraph}{优化与学习率调度}{66}{paragraph*.28}%
+\contentsline {paragraph}{早停机制}{66}{paragraph*.29}%
+\contentsline {subsection}{\numberline {5.3.3}代理模型在业务场景下的预测性能}{66}{subsection.5.3.3}%
 \contentsline {section}{\numberline {5.4}基于代理模型的快速预测与优化}{67}{section.5.4}%
-\contentsline {section}{\numberline {5.5}本章小结}{67}{section.5.5}%
-\contentsline {chapter}{参考文献}{69}{chapter*.29}%
+\contentsline {section}{\numberline {5.5}本章小结}{68}{section.5.5}%
+\contentsline {chapter}{参考文献}{69}{chapter*.32}%
 \contentsline {chapter}{\numberline {附录 A\hspace {.3em}}第三章相关内容证明}{71}{appendix.A}%
 \contentsline {section}{\numberline {附A.1}$ A_{V_0}$的PGF推导 }{71}{section.A.1}%
 \contentsline {section}{\numberline {附A.2}忙期服务过程 ($Q \to P$) 的详细推导}{71}{section.A.2}%
