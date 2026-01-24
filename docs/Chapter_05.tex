@@ -2,7 +2,7 @@
 \chapter{基于监督学习的智能协议与参数联合选择方法}
 \label{chapter5: ai_selector}
 现代无线网络，尤其是物联网场景，业务需求呈现出显著的多样性与动态性。不同业务在接入密度、数据包长度及时延敏感度等方面差异明显，使得单一随机接入协议难以在复杂多变的网络条件下始终保持最优性能。传统基于固定协议与静态参数配置的设计，难以同时兼顾吞吐量、时延、公平性、信令开销多维性能指标，存在明显局限。
-不同随机接入协议在吞吐性能、时延特性、信令开销方面表现各异。表~\ref{tab:protocol_comparison} 对 Slotted ALOHA(SA)、SAST、CBA典型协议进行了定性对比，可以看出，协议机制的增强虽可显著提升系统吞吐，但同时也可能带来更高的信令开销，进一步表明难以依靠单一协议适应所有场景。
+不同随机接入协议在吞吐性能、时延特性、信令开销方面表现各异。表~\ref{tab:protocol_comparison} 对 Slotted Aloha(SA)、SAST、CBA典型协议进行了定性对比，可以看出，协议机制的增强虽可显著提升系统吞吐，但同时也可能带来更高的信令开销，进一步表明难以依靠单一协议适应所有场景。
 
 \begin{table}[htbp]
 \centering
@@ -35,7 +35,6 @@ CBA & 高 & 中-高 & 高 \\
 \subsection{问题建模}
 
 为便于后续章节统一叙述，这里首先对问题进行简要建模。对于任意网络场景，我们用统一输入向量 $\mathbf{X}_{\mathrm{in}}$ 表征其关键配置与状态特征，包括业务流量特征、网络规模以及可选接入协议的候选范围及协议参数等。
-
 在给定 $\mathbf{X}_{\mathrm{in}}$ 后，我们通过统一仿真器或监督学习代理模型评估该配置下的系统性能。记该评估过程为一个映射 $S(\cdot)$，其输出为多维性能指标向量 $\mathbf{y}=S\big(\mathbf{X}_{\mathrm{in}}\big)$。为便于跨场景与跨协议比较，引入归一化算子 $\mathrm{norm}(\cdot)$，得到归一化后的指标向量 $\tilde{\mathbf{y}}=\mathrm{norm}(\mathbf{y})$。在此基础上，用综合效用函数 $U(\cdot)$ 将 $\tilde{\mathbf{y}}$ 映射为单一的效用得分。
 
 在上述定义下，我们希望从若干候选接入协议及其允许的参数配置中，选出使综合效用最大的那一组。该联合选择问题可形式化表述为：
@@ -48,7 +47,7 @@ U\!\left(\mathrm{norm}\!\left(S\big(\mathbf{X}_{\mathrm{in}}\big)\right)\right),
 其中决策变量为统一参数向量 $\mathbf{x}_{\mathrm{proto}}$，其首个分量为协议类型标识符，其余分量为对应协议参数。记 $\mathbf{x}_{\mathrm{proto}} = [a, \mathbf{x}_p^{\top}]^{\top}$，其中 $a \in \mathcal{P}$ 表示从候选集合中选取的协议类型，$\mathbf{x}_p \in \mathcal{X}_p$ 为该协议的参数向量，$\mathcal{X}_a$ 为协议 $a$ 的合法参数空间。图~\ref{fig:chap5_framework} 给出了统一接入框架及协议选择流程的示意，后续内容将围绕式~\eqref{eq:chap5_overview} 分别展开统一输入构造、性能指标与效用定义以及数据驱动决策方法的设计。
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.5\textwidth]{figure/chap5/model1.pdf}
+\includegraphics[width=0.3\textwidth]{figure/chap5/model1.pdf}
 \caption{统一接入框架与协议选择流程}
 \label{fig:chap5_framework}
 \end{figure}
@@ -65,24 +64,34 @@ $\mathbf{x}_{\mathrm{common}} = [n,\ T]^{\top}$,
 
 设到达矩阵 $\mathbf{A} \in \{0,1\}^{n \times T}$，其中 $A_{i,t}$ 表示节点 $i$ 在时隙 $t$ 是否有包到达。记网络聚合到达序列为 $X(t) = \sum_{i=1}^{n} A_{i,t}$，节点 $i$ 的到达时刻集合为 $\mathcal{T}_i = \{t : A_{i,t} = 1\}$，到达间隔序列为 $\{\Delta t_i^{(k)}\}$，其中 $\Delta t_i^{(k)}$ 为节点 $i$ 第 $k$ 次与第 $k+1$ 次到达的时间间隔。基于此，五维特征定义如下：
 
-\begin{enumerate}[leftmargin=*]
-	\item \textbf{归一化网络平均到达率 $\hat{\lambda}$}：表征系统整体流量强度，定义为网络聚合到达序列的单位节点归一化时间平均值 $\hat{\lambda} = \frac{1}{nT} \sum_{t=1}^{T} X(t) = \frac{1}{nT} \sum_{t=1}^{T} \sum_{i=1}^{n} A_{i,t}$。特征 $\hat{\lambda} \in [0, 1]$ 反映了系统的平均活跃节点占比，是区分低流量强度、适中流量强度与拥塞情形的核心指标。
-	
-	\item \textbf{网络突发度指标 $\mathrm{BI}_{\mathrm{net}}$}：基于网络聚合流量的离散指数（Index of Dispersion）定义。记 $\mu_X = \mathbb{E}[X(t)]$，$\sigma_X^2 = \mathrm{Var}(X(t))$，则离散指数为 $\mathrm{ID}_{\mathrm{net}} = \frac{\sigma_X^2}{\mu_X}$。为将其归一化至 $(-1, 1)$ 区间，定义突发度指标为 $\mathrm{BI}_{\mathrm{net}} = \frac{\mathrm{ID}_{\mathrm{net}} - 1}{\mathrm{ID}_{\mathrm{net}} + 1}$。当 $\mathrm{BI}_{\mathrm{net}} \approx 0$ 时，流量接近泊松分布；$\mathrm{BI}_{\mathrm{net}} > 0$ 表示流量具有强突发性；$\mathrm{BI}_{\mathrm{net}} < 0$ 则表示流量呈现周期性或规则结构。
-	
-	\item \textbf{节点突发度指标 $\mathrm{BI}_{\mathrm{node}}$}：基于节点到达间隔的变异系数刻画单节点突发性。对节点 $i$，定义其到达间隔的变异系数为 $\mathrm{CV}_i = \frac{\sqrt{\mathrm{Var}(\Delta t_i)}}{\mathbb{E}[\Delta t_i]}$，其中 $\mathbb{E}[\Delta t_i]$ 与 $\mathrm{Var}(\Delta t_i)$ 分别为节点 $i$ 到达间隔的均值与方差。对所有节点的变异系数取平均后归一化：$\mathrm{BI}_{\mathrm{node}} = \frac{\overline{\mathrm{CV}} - 1}{\overline{\mathrm{CV}} + 1}$，其中 $\overline{\mathrm{CV}} = \frac{1}{n} \sum_{i=1}^{n} \mathrm{CV}_i$。特征 $\mathrm{BI}_{\mathrm{node}} \in (-1, 1)$ 反映了节点级流量的突发程度，数值越大表示节点到达越不规则。
-	
-	\item \textbf{网络周期性强度 $\Psi_{\mathrm{net}}$}：通过网络聚合到达序列 $X(t)$ 的自相关函数度量周期性。记去均值后的序列为 $\tilde{X}(t) = X(t) - \mu_X$，自相关函数为 $R(\tau) = \frac{1}{T} \sum_{t=1}^{T-\tau} \tilde{X}(t) \tilde{X}(t+\tau)$。定义周期性强度为最大归一化自相关值：$\Psi_{\mathrm{net}} = \max_{1 \le \tau \le \tau_{\max}} \frac{R(\tau)}{R(0)}$，其中 $\tau_{\max}$ 为最大检测周期长度。特征 $\Psi_{\mathrm{net}} \in [0, 1]$，数值越大表示网络流量的周期性越强。
-	
-	\item \textbf{节点周期性强度 $\Psi_{\mathrm{node}}$}：基于节点到达间隔的归一化变异系数刻画单节点周期性。该指标利用到达间隔的相对变异程度度量其规则性：当到达间隔方差相对于均值平方的比值越小时，到达模式越接近确定性周期过程。对节点 $i$，定义其周期性指标为 $P_i = \max\left(0,\ 1 - \frac{\mathrm{Var}(\Delta t_i)}{\left(\mathbb{E}[\Delta t_i]\right)^2}\right)$，其中 $\frac{\mathrm{Var}(\Delta t_i)}{\left(\mathbb{E}[\Delta t_i]\right)^2}$ 为归一化变异系数的平方。对全部节点的周期性指标取算术平均，得到节点层周期性强度：$\Psi_{\mathrm{node}} = \frac{1}{n} \sum_{i=1}^{n} P_i$。特征 $\Psi_{\mathrm{node}} \in [0, 1]$，数值越大表示节点到达间隔越规则，周期性越强。
-\end{enumerate}
+\begin{table}[htbp]
+\centering
+\caption{业务流量特征参数定义与物理含义}
+\label{tab:traffic_feature_def}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{p{2.3cm} p{1cm} p{7cm} p{4.5cm}}
+\toprule
+\textbf{名称} & \textbf{变量} & \textbf{计算公式} & \textbf{物理含义} \\
+\midrule
+归一化网络平均到达率 & $\hat{\lambda}$ & $\hat{\lambda} = \frac{1}{nT}\sum_{t=1}^{T}\sum_{i=1}^{n}A_{i,t}$ & 表征系统整体流量强度，反映平均活跃节点占比 \\
+\midrule
+网络突发度指标 & $\mathrm{BI}_{\mathrm{net}}$ & $\mathrm{BI}_{\mathrm{net}} = \frac{\mathrm{ID}_{\mathrm{net}}-1}{\mathrm{ID}_{\mathrm{net}}+1}$，$\mathrm{ID}_{\mathrm{net}} = \frac{\mathrm{Var}(X(t))}{\mathbb{E}[X(t)]}$ & 刻画网络聚合流量的突发性，越大越突发，越小越周期/规则 \\
+\midrule
+节点突发度指标 & $\mathrm{BI}_{\mathrm{node}}$ & $\mathrm{BI}_{\mathrm{node}} = \frac{\overline{\mathrm{CV}}-1}{\overline{\mathrm{CV}}+1}$，$\overline{\mathrm{CV}} = \frac{1}{n}\sum_{i=1}^{n}\frac{\sqrt{\mathrm{Var}(\Delta t_i)}}{\mathbb{E}[\Delta t_i]}$ & 刻画单节点到达间隔的突发性，越大越不规则 \\
+\midrule
+网络周期性强度 & $\Psi_{\mathrm{net}}$ & $\Psi_{\mathrm{net}} = \max_{1\le\tau\le\tau_{\max}}\frac{R(\tau)}{R(0)}$，$R(\tau) = \frac{1}{T}\sum_{t=1}^{T-\tau}\tilde{X}(t)\tilde{X}(t+\tau)$ & 网络聚合到达序列的周期性强度，越大周期性越强 \\
+\midrule
+节点周期性强度 & $\Psi_{\mathrm{node}}$ & $\Psi_{\mathrm{node}} = \frac{1}{n}\sum_{i=1}^{n}\max\left(0,1-\frac{\mathrm{Var}(\Delta t_i)}{(\mathbb{E}[\Delta t_i])^2}\right)$ & 单节点到达间隔的周期性强度，越大越规则 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 对于协议专属参数 $\mathbf{x}_{\mathrm{proto}}$ 及有效性掩码 $\mathbf{m}$，本文采用统一参数超集与掩码的表示方案，以在多协议共存场景下建立统一的输入接口。设候选接入协议集合为 $\mathcal{P} = \{a_1, a_2,  a_3\}$，包括 SA、SAST、CBA协议。每一种协议 $a \in \mathcal{P}$ 对应一组可调参数集合 $\mathcal{X}_p$。
 为消除因协议参数维度不一致而产生的维度非对齐问题，本文将候选协议集合中所有参数的并集统一放入一个高维参数向量 $\mathbf{x}_{\mathrm{proto}} \in \mathbb{R}^{d_{\max}}$，其中 $d_{\max} = 1 + \max_{a  \in \mathcal{P}} |\mathcal{X}_p|$ 为统一向量维度，包含协议标识符及所有协议参数的超集。该向量的第一个分量为协议类型标识符 $a \in \mathcal{P}$，其余分量包含接入概率 $q$、连续传输长度 $M$等所有可能的协议参数；当某一协议不涉及其中部分参数时，对应维度仍保留作为占位符。统一参数向量的完整形式为：
 $\mathbf{x}_{\mathrm{proto}} = [a, q,\ M, \ldots]^{\top}$, 
 其中省略号对应除列示参数外的其余占位分量。
 
-为严格刻画占位参数在当前协议下的有效性，引入与 $\mathbf{x}_{\mathrm{proto}}$ 同维的二值掩码向量 $\mathbf{m} \in \{0,1\}^{d_{\max}}$。掩码的具体应用将在后续的数据采样阶段详细阐述。在预处理与模型输入阶段，对应掩码为零的参数分量通过元素级乘积 $\mathbf{x}_{\mathrm{proto}} \odot \mathbf{m}$ 被统一置零或屏蔽，从而在保留统一维度表示的同时，防止无效参数对后续学习与优化过程造成干扰。输入特征与性能指标的摘要见表~\ref{tab:input_features}。
+为严格刻画占位参数在当前协议下的有效性，引入与 $\mathbf{x}_{\mathrm{proto}}$ 同维的二值掩码向量 $\mathbf{m} \in \{0,1\}^{d_{\max}}$。在预处理与模型输入阶段，对应掩码为零的参数分量通过元素级乘积 $\mathbf{x}_{\mathrm{proto}} \odot \mathbf{m}$ 被统一置零或屏蔽，从而在保留统一维度表示的同时，防止无效参数对后续学习与优化过程造成干扰。输入特征与性能指标的摘要见表~\ref{tab:input_features}。
 最终与前文一致，完整标准化输入向量表示为
 \begin{equation}
 \mathbf{X}_{\mathrm{in}} = \big[\mathbf{x}_{\text{traffic}},\ \mathbf{x}_{\mathrm{common}},\ \mathbf{x}_{\mathrm{proto}},\ \mathbf{m}\big].
@@ -144,7 +153,7 @@ $\mathbf{x}_{\mathrm{proto}} = [a, q,\ M, \ldots]^{\top}$,
 	=\big[\tilde{\lambda}_{\mathrm{out}},\ \tilde{D},\ \tilde{J}_T,\ \tilde{C}_{\mathrm{rx}},\ \tilde{I}_{\mathrm{impl}}\big].
 \end{equation}
 
-在此基础上，为将多维指标映射为单一可优化目标，本文采用加权线性综合效用函数
+在此基础上，为将多维指标映射为单一可优化目标，本文采用加权线性效用函数
 \begin{equation}
 	U\big(\tilde{\mathbf{y}}\big)=
 	w_{\lambda}\tilde{\lambda}_{\mathrm{out}}
@@ -154,7 +163,7 @@ $\mathbf{x}_{\mathrm{proto}} = [a, q,\ M, \ldots]^{\top}$,
 \end{equation}
 其中 $w_i\ge 0$ 且 $\sum_i w_i=1$。权重向量 $\{w_i\}$ 用于表征业务对吞吐、时延、公平性以及信令开销的偏好，可依据应用需求设定；同时，可通过改变权重进行敏感性分析，以检验联合选择结论的稳健性。
 
-\subsection{等价重写：资源约束下的联合优化形式}
+\subsection{等价资源约束下的联合优化问题}
 为便于后续代理模型训练与快速优化算法中目标计算、约束检查与可行域投影的统一实现，本节将式~\eqref{eq:chap5_overview} 所述问题改写为标准约束优化形式。该表述与原问题在决策变量、优化目标及约束条件上完全等价，区别仅在于将隐式关系显式展开，以适配标准优化求解器的输入要求。
 
 优化问题的标准形式表述如下：
@@ -168,9 +177,7 @@ $\mathbf{x}_{\mathrm{proto}} = [a, q,\ M, \ldots]^{\top}$,
 		& S\big(\mathbf{x}_{\mathrm{proto}}\big) \le S_{\max}.
 	\end{aligned}
 \end{equation}
-
 式~\eqref{eq:chap5_constrained} 的决策变量为统一参数向量 $\mathbf{x}_{\mathrm{proto}}$，其第一个分量 $\mathbf{x}_{\mathrm{proto}}[1]$ 为协议标识符，其余分量为各协议参数。决策变量需满足所选协议的合法参数空间约束，通过掩码 $\mathbf{m}$ 界定有效参数维度。第一行约束显式构建统一输入向量，第二行约束定义从输入到归一化性能指标的映射关系。第三行约束限定信令开销不超过系统资源阈值 $S_{\max}$。
-
 可以看到，该优化问题的解为满足全部约束的最优统一参数向量 $\mathbf{x}_{\mathrm{proto}}^*$，其中包含了最优协议类型及其对应参数。
 
 
@@ -186,28 +193,20 @@ $\mathbf{x}_{\mathrm{proto}} = [a, q,\ M, \ldots]^{\top}$,
 \subsection{两阶段参数空间采样策略}
 \label{subsec:grid_sampling}
 
-训练数据的质量与参数空间覆盖率直接影响后续代理模型的预测精度。本小节需要在由业务流量特征参数 $\mathbf{x}_{\text{traffic}}$ 与协议专属参数 $\mathbf{x}_{\mathrm{proto}}$ 共同构成的混合参数空间内生成样本。为便于组织采样与对比评估，本文将该混合空间分解为三个相互独立但在实验配置中联合遍历的维度，即流量强度维度、流量形态维度与协议参数维度。其中，流量强度维度由归一化网络平均到达率 $\hat{\lambda}$ 表征，用于刻画系统所处的低流量强度、中等流量强度与拥塞状态；流量形态维度用于刻画在相同平均流量强度下到达过程的统计差异；协议参数维度用于描述不同协议机制下的关键控制参数组合。基于上述分解可以看出，若在三维联合空间上直接采用单一粒度的均匀网格进行采样，一方面会在性能变化相对平缓的区域产生大量冗余样本，另一方面又容易在性能转折与峰值附近等关键区域出现采样不足，从而削弱后续代理模型对关键决策边界与最优工作点邻域的刻画能力。为在控制样本总量的同时兼顾全局覆盖与局部精度，本文对流量强度维度与协议参数维度采用两阶段自适应采样策略；与之相对，流量形态维度采用固定离散场景集合并在两个阶段中保持一致遍历，以构造可控对比基座并保证跨协议样本的可比性。具体而言，每一条样本由一组协议参数配置与一个流量强度取值共同确定，并在预先固定的流量形态场景集合下分别生成到达序列与性能标签，第一阶段用于快速获得性能曲线的整体轮廓并定位关键工作区间，第二阶段在关键区间内加密采样以刻画转折与峰值邻域的细粒度变化。
+训练数据的质量与参数空间覆盖率直接影响后续代理模型的预测精度。本小节需要在由业务流量特征参数 $\mathbf{x}_{\text{traffic}}$ 与协议专属参数 $\mathbf{x}_{\mathrm{proto}}$ 共同构成的混合参数空间内生成样本。为便于组织采样与对比评估，本文将该混合空间分解为三个相互独立但在实验配置中联合遍历的维度，即流量强度维度、流量形态维度与协议参数维度。其中，流量强度维度由归一化网络平均到达率 $\hat{\lambda}$ 表征，用于刻画系统所处的低流量强度、中等流量强度与拥塞状态；流量形态维度用于刻画在相同平均流量强度下到达过程的统计差异；协议参数维度用于描述不同协议机制下的关键控制参数组合。基于上述分解可以看出，若在三维联合空间上直接采用单一粒度的均匀网格进行采样，一方面会在性能变化相对平缓的区域产生大量冗余样本，另一方面又容易在性能转折与峰值附近等关键区域出现采样不足，从而削弱后续代理模型对关键决策边界与最优工作点邻域的刻画能力。为在控制样本总量的同时兼顾全局覆盖与局部精度，本文对流量强度维度与协议参数维度采用两阶段自适应采样策略；与之相对，流量形态维度采用固定离散场景集合并在两个阶段中保持一致遍历，以构造可控对比基座并保证跨协议样本的可比性。具体而言，每一条样本由一组协议参数配置与一个流量强度取值共同确定，并在预先固定的流量形态场景集合下分别生成到达序列与性能标签，第一阶段用于快速获得性能曲线的整体轮廓并定位关键工作区间，第二阶段在关键区间内加密采样以刻画转折与峰值邻域的细粒度变化。 图~\ref{fig:dataset_sampling_strategy} 给出了两阶段采样策略的流程图，下面分别介绍各维度的具体设计与实现细节。
 
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=0.99\textwidth]{figure/chap5/数据集采样策略.pdf}
+	\caption{两阶段参数空间采样策略流程图}
+	\label{fig:dataset_sampling_strategy}
+\end{figure}
 在流量形态维度上，本文以离散场景集合的方式给出典型到达过程。具体而言，本文考虑三类典型业务流量场景。场景一为均匀到达，用于模拟节点独立随机到达，常见于大规模传感器网络分散采集，其流量特征为 $\mathrm{BI}_{\mathrm{net}} \approx 0$ 且 $\Psi_{\mathrm{net}} \approx 0$，对应近似泊松到达过程。场景二为突发到达，用于刻画事件驱动型应用的集中上报特性，通过批量到达过程建模，其流量特征为 $\mathrm{BI}_{\mathrm{net}} \in [0.3, 0.7]$ 且 $\Psi_{\mathrm{net}} \in [0, 0.2]$，表征中等至强突发性。场景三为周期到达，用于模拟周期性传感采样或时隙同步传输，其流量特征为 $\mathrm{BI}_{\mathrm{net}} \in [-0.5, -0.2]$ 且 $\Psi_{\mathrm{net}} \in [0.6, 0.9]$，体现规则周期结构。后续采样过程中，对于每一个流量强度取值与每一组协议参数配置，均在上述三类流量形态下分别生成样本，从而在平均流量强度一致的条件下对不同到达过程差异进行可控对比。
 
 
 
 \textbf{第一阶段：粗粒度均匀采样。}
-第一阶段旨在以较少样本量快速覆盖参数空间全域，识别各协议的性能分布特征。对于业务流量特征参数 $\mathbf{x}_{\text{traffic}}$，其核心参数归一化网络平均到达率 $\hat{\lambda}$ 需根据各协议的理论性能上界设定合理的采样范围。值得注意的是，\textbf{不同随机接入协议的理论容量与有效工作范围存在显著差异}，这直接决定了其适用的流量强度区间。例如，经典Slotted ALOHA（SA）协议的理论最大吞吐量为 $1/e \approx 0.368$，对应的有效到达率通常限制在 $0.5$ 以内；SAST协议通过连续传输机制将理论最大吞吐提升至约0.5，有效范围扩展至 $0.7$ 左右；而CBA协议通过连接建立与批量传输机制可在更高负载下保持较高吞吐，但同时需要依赖单节点缓存队列存在足够多数据报文，有效工作区间可扩展至 $0.8$ 左右。
-
-若对所有协议采用统一的宽泛采样范围（如 $\hat{\lambda} \in [0, 1]$），将导致以下严重的采样偏差问题：低容量协议（如SA）的绝大多数样本会落入其性能已饱和或甚至退化的超容量区域，这些样本对学习真实性能曲线形态无实质帮助；相反，对于高容量协议，用于描述其真正工作区间（通常位于中等至高负载）的样本会严重不足，导致代理模型在这些关键工作点的预测精度下降。为此，本文根据各协议的理论吞吐上界与实际有效工作范围，为每种协议精心设计了差异化的 $\hat{\lambda}$ 采样区间，确保每种协议的样本都集中在其实际可工作的负载区域内。
-具体而言，对于归一化网络平均到达率 $\hat{\lambda}$，各协议的粗采样范围设定如下：
-\begin{itemize}[leftmargin=*]
-	\item SA协议：$\hat{\lambda} \in [0.01, 0.5]$，步长 $\Delta\hat{\lambda} = 0.05$，约10个采样点；
-	\item SAST协议：$\hat{\lambda} \in [0.01, 0.7]$，步长 $\Delta\hat{\lambda} = 0.05$，约13个采样点；
-	\item CBA协议：$\hat{\lambda} \in [0.01, 0.7]$，步长 $\Delta\hat{\lambda} = 0.05$，约13个采样点；
-\end{itemize}
-对于每一个 $\hat{\lambda}$ 的粗采样点，流量生成模块分别在上述三类流量形态场景下生成到达序列，从而在相同平均流量强度条件下对不同到达过程差异进行对比评估。尽管三类场景的归一化网络平均到达率相同，但流量特征向量 $\mathbf{x}_{\text{traffic}}$ 的其他分量存在显著差异，进而导致协议性能表现产生差异。
-
-对于协议专属参数 $\mathbf{x}_{\mathrm{proto}}$ 的采样，本文采用分协议定制化策略。每种协议具有不同的有效参数集合 $\mathcal{X}_a$，其中包含连续型与离散型参数。对于\textbf{连续型协议参数}（如接入概率 $q$），在其有效范围内均匀设置若干采样点；对于\textbf{离散型协议参数}（如连续传输长度 $M$），则遍历其所有实际可行的典型取值。例如，$M$ 通常设置 $\{5, 10, 15, 20\}$ 四个值。协议参数的笛卡尔积生成该协议的参数配置空间。
-
-通过对协议类型、归一化网络平均到达率、业务流量场景以及协议专属参数的全面组合，生成第一阶段的粗采样配置集合。对于每种协议，采样点数由协议的到达率采样数、3种业务流量场景，以及各协议参数的采样点数共同决定。这样的组合方式确保了数据集不仅覆盖了协议与参数的多样性，还确保了对不同流量模式的全面刻画。
-对粗采样配置中的每组参数组合，通过统一仿真器 $S(\cdot)$ 评估其性能指标。基于粗采样结果，可以初步识别各协议在不同业务流量场景与到达率组合下的性能规律，尤其是吞吐量在特定场景下的峰值位置。
+第一阶段旨在以较少样本量快速覆盖参数空间全域，识别各协议的性能分布特征。对于业务流量特征参数 $\mathbf{x}_{\text{traffic}}$，其核心参数归一化网络平均到达率 $\hat{\lambda}$ 需根据各协议的理论性能上界设定合理的采样范围。值得注意的是，不同随机接入协议的理论容量与有效工作范围存在显著差异，这直接决定了其适用的流量强度区间。例如，经典Slotted Aloha（SA）协议的理论最大吞吐量为 $1/e \approx 0.368$，对应的有效到达率通常限制在 $0.5$ 以内；SAST协议通过连续传输机制将理论最大吞吐提升至约0.5，有效范围扩展至 $0.7$ 左右；而CBA协议通过连接建立与批量传输机制可在更高负载下保持较高吞吐，但同时需要依赖单节点缓存队列存在足够多数据报文，有效工作区间可扩展至 $0.8$ 左右。
 
 若对所有协议采用统一的宽泛采样范围（如 $\hat{\lambda} \in [0, 1]$），将导致以下严重的采样偏差问题：低容量协议（如SA）的绝大多数样本会落入其性能已饱和或甚至退化的超容量区域，这些样本对学习真实性能曲线形态无实质帮助；相反，对于高容量协议，用于描述其真正工作区间（通常位于中等至高负载）的样本会严重不足，导致代理模型在这些关键工作点的预测精度下降。为此，本文根据各协议的理论吞吐上界与实际有效工作范围，为每种协议精心设计了差异化的 $\hat{\lambda}$ 采样区间，确保每种协议的样本都集中在其实际可工作的负载区域内。
 具体而言，对于归一化网络平均到达率 $\hat{\lambda}$，各协议的粗采样范围设定如下：
@@ -219,13 +218,13 @@ $\mathbf{x}_{\mathrm{proto}} = [a, q,\ M, \ldots]^{\top}$,
 
 对于每一个 $\hat{\lambda}$ 的粗采样点，流量生成模块分别在上述三类流量形态场景下生成到达序列，从而在相同平均流量强度条件下对不同到达过程差异进行对比评估。尽管三类场景的归一化网络平均到达率相同，但流量特征向量 $\mathbf{x}_{\text{traffic}}$ 的其他分量存在显著差异，进而导致协议性能表现产生差异。
 
-对于协议专属参数 $\mathbf{x}_{\mathrm{proto}}$ 的采样，本文采用分协议定制化策略。每种协议具有不同的有效参数集合 $\mathcal{X}_a$，其中包含连续型与离散型参数。对于\textbf{连续型协议参数}（如接入概率 $q$），在其有效范围内均匀设置若干采样点；对于\textbf{离散型协议参数}（如连续传输长度 $M$），则遍历其所有实际可行的典型取值。例如，$M$ 通常设置 $\{1, 2, 4,8\}$ 四个值。协议参数的笛卡尔积生成该协议的参数配置空间。
+对于协议专属参数 $\mathbf{x}_{\mathrm{proto}}$ 的采样，本文采用分协议定制化策略。每种协议具有不同的有效参数集合 $\mathcal{X}_a$，其中包含连续型与离散型参数。对于连续型协议参数，如接入概率 $q$，在其有效范围内均匀设置若干采样点；对于离散型协议参数，如连续传输长度 $M$，则遍历其所有实际可行的典型取值。例如，$M$ 通常设置 $\{1, 2, 4,8\}$ 四个值。协议参数的笛卡尔积生成该协议的参数配置空间。
 
 通过对协议类型、归一化网络平均到达率、业务流量场景以及协议专属参数的全面组合，生成第一阶段的粗采样配置集合。对于每种协议，采样点数由协议的到达率采样数、3种业务流量场景，以及各协议参数的采样点数共同决定。这样的组合方式确保了数据集不仅覆盖了协议与参数的多样性，还确保了对不同流量模式的全面刻画。
 对粗采样配置中的每组参数组合，通过统一仿真器 $S(\cdot)$ 评估其性能指标。基于粗采样结果，可以初步识别各协议在不同业务流量场景与到达率组合下的性能规律，尤其是吞吐量在特定场景下的峰值位置。
 
 \textbf{第二阶段：峰值区域细采样。}
-第二阶段针对粗采样结果中识别出的性能关键区域进行加密采样，以捕捉性能曲线的精细变化特征。具体而言，对于每种协议，分析其粗采样得到的吞吐量曲线，识别峰值吞吐量对应的到达率区间。以SAST协议为例，若粗采样显示其峰值吞吐出现在约0.5（包/时隙）的到达率处，则在该值附近（如区间0.45-0.55）以更细的步长进行二次采样，额外生成十几到二十多个样本点。
+第二阶段针对粗采样结果中识别出的性能关键区域进行加密采样，以捕捉性能曲线的精细变化特征。具体而言，对于每种协议，分析其粗采样得到的吞吐量曲线，识别峰值吞吐量对应的到达率区间。以SAST协议为例，若粗采样显示其峰值吞吐出现在约0.5包/时隙的到达率处，则在该值附近以更细的步长进行二次采样，额外生成十几到二十多个样本点。
 
 细采样不仅针对业务流量到达率参数，还需要扩展至协议专属参数。例如对于SA协议，在性能转折区域需要对协议参数进行加密采样。第二阶段的样本规模根据各协议峰值区域的范围而定，每种协议需要额外增加数百到千级别的样本点。
 
@@ -234,20 +233,20 @@ $\mathbf{x}_{\mathrm{proto}} = [a, q,\ M, \ldots]^{\top}$,
 \subsection{统一仿真器的设计与实现}
 \label{subsec:unified_simulator}
 
-统一仿真器 $S(\cdot)$ 是连接输入配置与性能指标的核心映射模块，其设计需同时满足多协议支持、精确性与可扩展性要求。本文基于离散事件仿真框架采用模块化设计实现该仿真器，通过各模块的协调完成对六种随机接入协议的统一建模与性能评估。
+统一仿真器 $S(\cdot)$ 是连接输入配置与性能指标的核心映射模块，其设计需同时满足多协议支持、精确性与可扩展性要求。本文基于离散事件仿真框架采用模块化设计实现该仿真器，通过各模块的协调完成对三种随机接入协议的统一建模与性能评估。
 
 统一仿真器采用分层模块化架构，包含以下核心组件：
 
 \begin{itemize}[leftmargin=*]
-	\item \textbf{配置解析模块}：解析统一输入向量 $\mathbf{X}_{\mathrm{in}}$，提取网络参数 $\mathbf{x}_{\text{common}}$（节点数 $n$、时隙数 $T$）、流量类型标识 $\text{traffic\_type}$(该标识需要自定义)、流量特征向量 $\mathbf{x}_{\text{traffic}}$（仅包含$\hat{\lambda}$）以及协议专属参数向量 $\mathbf{x}_{\mathrm{proto}}$（其首个分量为协议类型标识 $a$，其余分量为协议参数）。
+	\item \textbf{配置解析模块}：解析统一输入向量 $\mathbf{X}_{\mathrm{in}}$，提取网络参数 $\mathbf{x}_{\text{common}}$、流量特征向量 $\mathbf{x}_{\text{traffic}}$以及协议专属参数向量 $\mathbf{x}_{\mathrm{proto}}$。其中$\mathbf{x}_{\text{traffic}}$仅能配置$\hat{\lambda}$。另外还需额外输入流量类型标识 $\text{traffic\_type}$以指明流量类型。
 
 	\item \textbf{流量生成和特征提取模块}：依据流量类型标识 $\text{traffic\_type}$ 选择到达过程模型（均匀到达采用泊松过程、突发到达采用Markov调制泊松过程、周期到达采用确定性周期同步，这些生成过程会预设生成参数），并在给定平均到达率 $\hat{\lambda}$ 下为各节点按时隙生成到达包序列。由于生成参数固定，得到的流量序列仅覆盖有限组预定义的突发强度与周期强度，从而保证不同实验配置间的可复现性。基于生成的到达包序列，计算并输出 $\mathbf{x}_{\text{traffic}}$ 中除 $\hat{\lambda}$ 外的其余特征指标 $\mathrm{BI}_{\mathrm{net}}$、$\mathrm{BI}_{\mathrm{node}}$、$\Psi_{\mathrm{net}}$ 和 $\Psi_{\mathrm{node}}$。
 
-	\item \textbf{协议执行与仿真模块}：协议策略由协议专属参数向量 $\mathbf{x}_{\mathrm{proto}}$ 参数化，其中其首个分量确定协议类型 $a$。具体而言，协议类型 $a$ 对应协议执行引擎，$\mathbf{x}_{\mathrm{proto}}$ 剩余分量则对应一组参数化的协议策略。仿真器在仿真前先初始化到正确的协议执行引擎，并在每个时隙依据该策略完成发送决策、副本生成与队列状态更新；同时与信道仿真子模块协同完成并行发送的冲突检测。协议执行引擎会对各协议的关键机制进行封装，具体如下：
+	\item \textbf{协议执行与仿真模块}：协议策略由协议专属参数向量 $\mathbf{x}_{\mathrm{proto}}$ 参数化，其首个分量确定协议类型 $a$。具体而言，协议类型 $a$ 对应协议执行引擎，$\mathbf{x}_{\mathrm{proto}}$ 剩余分量则对应一组参数化的协议策略。仿真器在仿真前先初始化到正确的协议执行引擎，并在每个时隙依据该策略完成发送决策、副本生成与队列状态更新；同时与信道仿真子模块协同完成并行发送的冲突检测。协议执行引擎会对各协议的关键机制进行封装，具体如下：
 	\begin{itemize}[leftmargin=*, itemsep=0.2em]
-		\item \textbf{SA}：时隙ALOHA，节点在有包时以固定接入概率 $q$ 发送。
-		\item \textbf{SAST}：连续传输时隙ALOHA，若上一时隙成功则接入概率置1连续发送，否则回到概率发送。
-		\item \textbf{CBA}：基于连接的Aloha，以固定概率$q$建立连接，连接成功后会无竞争发送$M$个包。
+		\item \textbf{SA}：时隙Aloha，节点在有包时以固定接入概率 $q$ 发送。
+		\item \textbf{SAST}：连续传输时隙Aloha，若上一时隙成功则接入概率置为1连续发送，否则回到概率发送。
+		\item \textbf{CBA}：基于连接的Aloha，若节点缓存队列数据包大于等于M，会以固定概率$q$建立连接，连接成功后会无竞争发送$M$个包。
 	\end{itemize}
 
 	\item \textbf{性能统计模块}：实时记录成功发送包数、累计时延、各节点吞吐、SIC解码次数等统计量，在仿真完成后计算最终的吞吐量 $\lambda_{\mathrm{out}}$、平均时延 $D$、公平性指数 $J_T$、计算负荷 $C_{\mathrm{rx}}$ 及实现复杂度 $I_{\mathrm{impl}}$。
@@ -267,7 +266,7 @@ $\mathbf{x}_{\mathrm{proto}} = [a, q,\ M, \ldots]^{\top}$,
 	流量生成与特征提取：基于 $\text{traffic\_type}$ 和归一化网络平均到达率 $\hat{\lambda}$ 选择到达过程（参数预设），生成到达矩阵 $\mathbf{A}\in\{0,1\}^{n\times T}$，并计算更新 $\mathrm{BI}_{\mathrm{net}}$、$\mathrm{BI}_{\mathrm{node}}$、$\Psi_{\mathrm{net}}$、$\Psi_{\mathrm{node}}$\\
 	加载协议引擎以及参数：根据$a$加载协议执行引擎，根据$\mathbf{x}_{\mathrm{proto}}$加载协议策略\\
 
-	性能统计初始化：$\text{success\_counter} \leftarrow 0, \text{delay\_counter} \leftarrow 0$ 等\\
+	性能统计初始化：$\text{success\_counter} \leftarrow 0, \text{delay\_counter} \leftarrow 0, \text{signaling\_cost} \leftarrow 0$\\
 	\For{$t = 1$ \textbf{to} $T$}{
 		1. 到达生成：由到达矩阵$\mathbf{A}\in\{0,1\}^{n\times T}$确定各节点的包入队情况\;
 		
@@ -292,19 +291,21 @@ $\mathbf{x}_{\mathrm{proto}} = [a, q,\ M, \ldots]^{\top}$,
 	\caption{统一仿真器关键参数汇总}
 	\label{tab:simulator_params}
 	\renewcommand{\arraystretch}{1.2}
-	\begin{tabular}{llll}
+	\setlength{\tabcolsep}{7pt}
+	\begin{tabular}{@{}l l l p{6cm}@{}}
 		\toprule
 		\textbf{参数类别} & \textbf{符号} & \textbf{典型值/范围} & \textbf{说明} \\
 		\midrule
 		\multirow{4}{*}{基本参数} 
 		& $n$ & 100 & 网络节点数 \\
 		& $T$ & $3 \times 10^5$ & 仿真时隙数 \\
-		& $\text{traffic\_type}$ & \{U, B, P\} & 流量类型：均匀(U)、突发(B)、周期(P) \\
+		& $\text{traffic\_type}$ & \{U, B, P\} & 均匀(U)、突发(B)、周期(P) \\
 		& $\hat{\lambda}$ & $[0.001, 0.7]$ & 归一化网络平均到达率 \\
 		\midrule
-		\multirow{2}{*}{SA/SAST 参数} & $q$ & $[0.001, 0.1]$ & 接入概率 \\
+		\multirow{1}{*}{SA/SAST参数} 
+		& $q$ & $[0.001, 0.1]$ & 接入概率 \\
 		\midrule
-		\multirow{2}{*}{CBA 参数} 
+		\multirow{2}{*}{CBA参数} 
 		& $q$ & $[0.001, 0.1]$ & 接入概率 \\
 		& $M$ & $[5, 20]$ & 连续传输长度 \\
 		\bottomrule
@@ -315,20 +316,19 @@ $\mathbf{x}_{\mathrm{proto}} = [a, q,\ M, \ldots]^{\top}$,
 \subsection{数据集构建与预处理}
 \label{subsec:dataset_construction}
 
-\textcolor{red}{在该小节中的数据，不一定是准确的，后续还要修订，这里仅给出大致叙述逻辑。zzzwl}
 
 基于两阶段采样策略与统一仿真器，本文构建了覆盖六种协议、多种流量强度与参数配置的综合性能数据集。数据集构建过程如下：
 
 \begin{enumerate}[leftmargin=*]
-	\item \textbf{采样执行}：对于候选协议集合 $\mathcal{P} = \{\text{SA, SAST, CBA}\}$ 中的每种协议，按照\ref{subsec:grid_sampling}节所述的网格搜索策略生成参数组合。采样变量与仿真器关键参数一一对应，具体参数名及典型取值范围见表~\ref{tab:simulator_params}。以SA为例，关键参数包括归一化网络平均到达率$\hat{\lambda} \in [0.01, 0.5]$（10个采样点），与接入概率 $q \in [0.001, 0.1]$（20个采样点），共生成 $10 \times 20 = 200$ 组配置。
+	\item \textbf{采样执行}：针对候选协议集合 $\mathcal{P} = \{\text{SA, SAST, CBA}\}$，依照前述网格搜索策略生成参数组合。各采样变量与仿真器关键参数一一对应，具体参数名称及典型取值范围详见表~\ref{tab:simulator_params}。以SA协议为例，主要参数包括归一化网络平均到达率$\hat{\lambda}$和接入概率 $q$，分别在设定区间内均匀采样，最终形成多组参数配置。
 
-	\item \textbf{仿真执行}：对每组参数配置 $\mathbf{X}_{\text{in}}^{(i)}$，调用统一仿真器执行仿真实验。仿真器在固定网络规模（$n=100$）与仿真时隙数（$T=3 \times 10^5$）下运行，对应表~\ref{tab:simulator_params}中的基本参数配置。为降低随机性影响，每组配置重复运行5次独立实验，取性能指标的平均值作为最终标签 $\mathbf{y}^{(i)}$。
+	\item \textbf{仿真执行}：对每组参数配置，调用统一仿真器进行仿真实验。仿真器在固定网络规模和仿真时隙数下运行，具体参数设置参见表~\ref{tab:simulator_params}。为减小随机性影响，每组配置重复多次独立实验，最终以各项性能指标的均值作为该配置的性能标签。
 
-	\item \textbf{数据清洗}：剔除仿真失败或出现异常值的样本（如数值溢出、队列发散等），并对极端异常值进行标记。表~\ref{tab:dataset_summary}中的"采样配置数"与"有效样本数"反映了数据清洗前后的样本统计。各协议最终保留的有效样本数分别为：SA（395）、SAST（782）、CBA（791），合计 1968 个有效样本。
+	\item \textbf{数据清洗}：对仿真结果进行筛查，剔除仿真失败或出现异常值的样本，并对极端异常值进行标记。表~\ref{tab:dataset_summary}中的“采样配置数”与“有效样本数”分别反映了数据清洗前后的样本统计。
 
-	\item \textbf{归一化处理}：对连续型特征（如归一化网络平均到达率 $\hat{\lambda}$、接入概率 $q$）保持在其定义域内，流量特征（$\mathrm{BI}_{\mathrm{net}}$、$\mathrm{BI}_{\mathrm{node}}$、$\Psi_{\mathrm{net}}$、$\Psi_{\mathrm{node}}$）已在特征提取时归一化至特定范围；对离散型特征（协议类型、连续传输长度 $M$ 等）采用整数编码或独热编码。性能指标 $\mathbf{y}$ 采用Z-Score标准化，以加速模型训练收敛。
+	\item \textbf{归一化处理}：对连续型特征保持在定义域内，流量特征已在特征提取阶段归一化至特定区间。离散型特征采用适当的编码方式。性能指标采用标准化处理，以提升后续模型训练的效率和稳定性。
 
-	\item \textbf{数据划分}：按照 8:1:1 的比例将数据集划分为训练集、验证集与测试集。为保证协议类型在三个子集中均衡分布，采用分层随机划分策略，避免数据泄露与类别不平衡问题。
+	\item \textbf{数据划分}：将数据集划分为训练集、验证集和测试集。为保证协议类型在各子集中分布均衡，采用分层随机划分策略，确保数据划分的科学性和代表性。
 \end{enumerate}
 
 表~\ref{tab:dataset_summary} 总结了最终数据集的统计特性。
@@ -354,17 +354,12 @@ $\mathbf{x}_{\mathrm{proto}} = [a, q,\ M, \ldots]^{\top}$,
 通过上述数据集构建流程，本文获得了覆盖多协议、多参数配置与多种流量形态的仿真样本库。需要强调的是，数据集中的性能标签由统一仿真器在统一网络规模与统一统计口径下生成，且两阶段采样保证了各协议在其有效工作区间内具有足够的样本密度。因此，该数据集不仅用于后续代理模型训练，同时也可作为可复现的性能基准来源。基于此，下一小节将在不额外引入新的仿真设置前提下，对数据集进行面向基准对比的组织与可视化分析，给出不同协议在典型流量形态与流量强度变化下的性能差异，为后续学习模型的效果评估提供参照。
 
 
-\subsection{仿真性能验证与对比\textcolor{red}{在该小节中，还没有画图，可以先不用看。zzzwl}}
+\subsection{仿真性能验证与对比}
 \label{subsec:protocol_performance_comparison}
-
-为在代理模型训练之前建立可复现的性能基准，并验证多协议共存框架的必要性，本小节直接基于5.2.3节构建的数据集开展对比分析。具体而言，本文将数据集按流量形态与协议类型进行分组，并在每一组内选取代表性协议参数配置作为对比切片。在保持网络规模、统计口径与标签生成方式一致的条件下，通过绘制吞吐量、时延、公平性与信令开销等指标随归一化网络平均到达率 $\hat{\lambda}$ 变化的曲线，展示不同协议在典型场景下的性能演化规律，从而形成后续代理模型训练与预测结果的基准参照。
-
-\textbf{代表性参数选取。} 本小节统一采用综合效用 $U(\tilde{\mathbf{y}})$ 最优的原则选取协议内的代表型参数。其中效用权重设置为 $w_{\lambda}=0.4$、$w_D=0.3$、$w_J=0.2$、$w_S=0.1$，其中 $w_S$ 表示信令开销的权重。
-
-\textcolor{red}{在该小节中，结果先用其他内容替代。zzzwl}
+为在代理模型训练之前建立可复现的性能基准，并验证多协议共存框架的必要性，本小节直接基于\ref{subsec:dataset_construction}节构建的数据集开展对比分析。具体而言，本文将数据集按流量形态与协议类型进行分组，并在每一组内设置参数配置作为对比切片。在保持网络规模、统计口径与标签生成方式一致的条件下，通过绘制吞吐量、时延、公平性与信令开销等指标随归一化网络平均到达率 $\hat{\lambda}$和 传输概率$q$ 变化的曲线，展示不同协议在典型场景下的性能演化规律，从而形成后续代理模型训练与预测结果的基准参照。
 
 \textbf{吞吐量对比。} 
-图~\ref{fig:protocol_throughput_comparison1} 给出了不同协议随 $\hat{\lambda}$ 变化的输出吞吐量 $\lambda_{\mathrm{out}}$ 曲线。
+图~\ref{fig:protocol_throughput_comparison} 给出了不同协议随 $\hat{\lambda}$ 变化的输出吞吐量 $\lambda_{\mathrm{out}}$ 曲线。
 \begin{figure}[t]
 	\centering
 	\subfloat[均匀场景]{
@@ -433,7 +428,7 @@ $\mathbf{x}_{\mathrm{proto}} = [a, q,\ M, \ldots]^{\top}$,
 
 
 \textbf{综合效用评估。} 
-为进一步量化多维性能的整体收益，图~\ref{fig:protocol_utility_comparison} 展示了基于式~\eqref{eq:chap5_constrained} 定义的综合效用 $U(\tilde{\mathbf{y}})$ 对比结果。
+本小节采用综合效用 $U(\tilde{\mathbf{y}})$ 的效用权重设置为 $w_{\lambda}=0.4$、$w_D=0.3$、$w_J=0.2$、$w_S=0.1$。图~\ref{fig:protocol_utility_comparison} 展示了基于式~\eqref{eq:chap5_constrained} 定义的综合效用 $U(\tilde{\mathbf{y}})$ 对比结果。
 
 \begin{figure}[t]
 	\centering
@@ -464,7 +459,7 @@ $\mathbf{x}_{\mathrm{proto}} = [a, q,\ M, \ldots]^{\top}$,
 \label{sec:mt_dnn_model}
 
 尽管离散事件仿真器能够精确评估特定协议配置下的网络性能，但其计算开销极为高昂。以典型配置（如 $n=100$ 节点、$T=3\times 10^5$ 时隙）为例，单次仿真往往需要数十秒至数分钟，若需在多协议、多参数、不同流量场景下进行大规模参数搜索，整体仿真时间将呈指数级增长。例如，全面遍历全部协议参数组合和流量场景时，单轮全局仿真累计耗时可达数百小时，远超实际系统对实时决策的响应要求。这种高昂的仿真代价不仅严重制约了在线优化和自适应调整的可行性，也使得在实际部署中难以支撑动态环境下的快速协议切换和参数重配置。因此，需一种能够在保证预测精度的同时，将性能评估延迟从分钟级大幅缩减至毫秒级的方法。
-为解决上述瓶颈，本节基于5.2节构建的仿真数据集，设计并训练高效的深度学习代理模型。该模型采用多任务深度神经网络（MT-DNN）架构，能够利用单一网络同时预测吞吐量、时延、公平性等多维性能指标，实现从输入特征到性能评估的毫秒级快速映射，为后续的协议优化决策提供实时支持。
+为解决上述瓶颈，本节基于\ref{subsec:dataset_construction}节构建的仿真数据集，设计并训练高效的深度学习代理模型。该模型采用多任务深度神经网络（MT-DNN）架构，能够利用单一网络同时预测吞吐量、时延、公平性等多维性能指标，实现从输入特征到性能评估的毫秒级快速映射，为后续的协议优化决策提供实时支持。
 
 \subsection{基于硬参数共享的多任务网络架构}
 \label{subsec:hard_sharing}
@@ -473,36 +468,26 @@ $\mathbf{x}_{\mathrm{proto}} = [a, q,\ M, \ldots]^{\top}$,
 
 \paragraph{架构设计原理}
 硬参数共享架构由以下三个核心模块组成：
-
 \begin{itemize}[leftmargin=*]
-\item \textbf{输入归一化层}：采用 LayerNorm 对输入特征进行归一化，消除不同特征量纲差异，稳定梯度流。
-\item \textbf{共享特征提取层}：包含2-3个堆叠的全连接层（可配置深度），每层配备 LayerNorm、GELU 激活函数与 Dropout。共享层学习所有任务通用的网络状态表征。
-\item \textbf{任务特定头部}：每个任务配置独立的单层线性映射，实现从共享特征到任务输出的最终转换。
+	\item \textbf{输入归一化层}：采用 LayerNorm 对输入特征进行归一化，消除不同特征量纲差异，稳定梯度流。
+	\item \textbf{共享特征提取层}：由两至三层全连接网络堆叠而成，每层均配备 LayerNorm、GELU 激活函数和 Dropout。该部分负责提取所有任务通用的网络状态表征。
+	\item \textbf{任务特定头部}：针对每个任务设置独立的单层线性映射，实现从共享特征到任务输出的最终转换。
 \end{itemize}
 
-网络的数学表述如下。设输入特征维度为 $D_{\text{in}}$，共享层隐藏维度为 $D_{\text{hidden}}$（如128），共享层深度为 $L \in \{2, 3\}$。则共享特征提取过程为：
+网络的数学描述如下。设输入特征维度为 $D_{\text{in}}$，共享层隐藏维度为 $D_{\text{hidden}}$，共享层深度为 $L$。首先对输入特征与掩码向量逐元素相乘并归一化：
 \begin{equation}
-\mathbf{h}^{(0)} = \text{LayerNorm}(\mathbf{X}_{\text{in}} \odot \mathbf{m}),
+	\mathbf{h}^{(0)} = \text{LayerNorm}(\mathbf{X}_{\text{in}} \odot \mathbf{m})
 \end{equation}
-其中 $\mathbf{m}$ 为掩码向量，用于屏蔽无效参数分量。随后逐层计算：
+其中 $\mathbf{m}$ 为掩码向量，用于屏蔽无效参数分量。随后依次进行特征变换和非线性映射：
 \begin{equation}
-\mathbf{h}^{(\ell)} = \text{Dropout}\left( \sigma\left( \text{LayerNorm}(\mathbf{W}^{(\ell)} \mathbf{h}^{(\ell-1)} + \mathbf{b}^{(\ell)}) \right) \right), \quad \ell = 1, \ldots, L,
+	\mathbf{h}^{(\ell)} = \text{Dropout}\left( \sigma\left( \text{LayerNorm}(\mathbf{W}^{(\ell)} \mathbf{h}^{(\ell-1)} + \mathbf{b}^{(\ell)}) \right) \right), \quad \ell = 1, \ldots, L
 \end{equation}
-其中 $\sigma = \text{GELU}$ 为激活函数，Dropout 比率设为 0.1。第 $k$ 个任务的输出为：
+其中 $\sigma$ 表示 GELU 激活函数，Dropout 比率为 0.1。对于第 $k$ 个任务，输出通过线性映射获得：
 \begin{equation}
-\hat{y}_k = \text{Linear}(\mathbf{h}^{(L)}) = \mathbf{w}_k^{\top} \mathbf{h}^{(L)} + b_k,
+	\hat{y}_k = \mathbf{w}_k^{\top} \mathbf{h}^{(L)} + b_k
 \end{equation}
-各任务无需额外激活函数，直接输出连续值。
+各任务输出为连续值，无需额外激活函数。
 
-表 \ref{tab:nn_architecture} 给出了具体的网络配置。
-\begin{figure}[t]
-	\centering
-	\includegraphics[width=0.6\textwidth]{figure/chap5/神经网络训练流程.pdf}
-	\caption{多任务深度神经网络代理模型的训练流程示意图}
-	\label{fig:nn_training_flow}
-\end{figure}
-
-图~\ref{fig:nn_training_flow} 展示了多任务深度神经网络代理模型的完整训练流程。该流程包括数据预处理、特征归一化、模型前向传播、多任务损失计算、参数优化与验证集监控等关键环节。通过合理设计训练管线，能够有效提升模型的泛化能力和预测精度，为后续的协议优化与快速决策提供坚实的数据驱动基础。
 \begin{table}[htbp]
 	\centering
 	\caption{多任务代理模型的神经网络架构}
@@ -539,33 +524,41 @@ $\mathbf{x}_{\mathrm{proto}} = [a, q,\ M, \ldots]^{\top}$,
 	\end{tabular}
 \end{table}
 
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=0.6\textwidth]{figure/chap5/神经网络训练流程.pdf}
+	\caption{多任务深度神经网络代理模型的训练流程示意图}
+	\label{fig:nn_training_flow}
+\end{figure}
 
-参数量估计：在标准配置下（$D_{\text{in}} \approx 100$，$D_{\text{hidden}}=128$，$K=5$ 任务），模型参数量约 3000-4500，样本/参数比约 100-200，此比例可有效防止过拟合。
-\subsection{多目标优化与训练策略}
+图~\ref{fig:nn_training_flow} 展示了多任务深度神经网络代理模型的完整训练流程。该流程包括数据预处理、特征归一化、模型前向传播、多任务损失计算、参数优化与验证集监控等关键环节。通过合理设计训练管线，能够有效提升模型的泛化能力和预测精度，为后续的协议优化与快速决策提供坚实的数据驱动基础。在标准配置下，模型输入特征维度约为 100，隐藏层宽度设置为 128，输出端包含 5 个任务分支。整体网络参数量约为 3000--4500。结合前述数据集规模，样本量与参数量之比约为 100--200，能够有效支撑模型的泛化能力并抑制过拟合风险。该参数规模兼顾了模型表达能力与实际训练可行性，适用于大规模业务场景下的高效性能预测需求。
+
+
+\subsection{多目标协同优化与训练策略}
 \label{subsec:training}
 
-为了平衡多任务间的学习动态，模型训练采用多项策略\textbf{协同}实现：
+针对多任务学习中存在的任务间竞争与梯度冲突问题，本文设计了一套综合训练框架。该框架通过构建加权损失函数消除量纲差异，引入多维正则化机制提升模型泛化能力，并结合自适应学习率调度策略以确保模型收敛至全局最优。
 
-\paragraph{加权多任务损失函数}
-考虑到不同性能指标的数值尺度与学习难度差异，损失函数定义为：
+\vspace{0.5em} % 增加一点段间距，使结构更清晰
+
+\noindent 1. 加权多任务损失函数构建
+
+鉴于系统吞吐量、时延等关键性能指标与计算开销等资源指标在数值量纲及学习难度上存在显著差异，直接求和会导致模型训练偏向于数值较大的任务。为此，本文采用基于最小最大归一化的加权均方误差损失函数：
 \begin{equation}
-	\mathcal{L}_{\text{total}} = \sum_{k=1}^{K} \omega_k \cdot \text{MSE}(\hat{y}_k, y_k^{\text{norm}}),
+	\mathcal{L}_{\text{total}} = \sum_{k=1}^{K} \omega_k \cdot \left\| \hat{y}_k - \tilde{y}_k \right\|_2^2,
 \end{equation}
-其中 $y_k^{\text{norm}}$ 为标准化后的目标值（Z-Score 标准化），$\omega_k$ 为第 $k$ 个任务的权重系数。在实践中，关键性能指标（吞吐、时延、公平性）设权重为 1.0，而资源类指标（计算负荷、实现复杂度）设权重为 0.01，以强调性能优先。
+其中，$\tilde{y}_k$ 表示第 $k$ 个任务的归一化标签，$\hat{y}_k$ 为模型输出，$\omega_k$ 为任务权重系数，用以体现不同优化目标的优先级。实验中，核心通信指标的权重设定为 $1.0$，资源类指标权重设定为 $0.01$。该权重分配能够保证模型在基本性能方面的优化，同时对计算开销进行软约束，避免辅助任务主导梯度下降方向。
 
-\paragraph{数据增强与正则化}
-在训练过程中，对输入特征添加高斯噪声进行数据增强，噪声标准差设为 0.03，模拟真实测量的随机波动。同时采用\textbf{强正则化}策略以防止过拟合：
-\begin{itemize}[leftmargin=*]
-\item Dropout 比率：0.1（每层共享特征提取）
-\item L2 权重衰减：$5 \times 10^{-4}$（AdamW 优化器）
-\item 梯度裁剪：梯度范数上界设为 1.0
-\end{itemize}
+\vspace{0.5em}
+\noindent 2. 鲁棒性增强与正则化机制
 
-\paragraph{优化与学习率调度}
-采用 AdamW 优化器进行端到端训练，初始学习率设为 $1 \times 10^{-2}$。当验证损失连续 20 个 epoch 无改善时，采用 ReduceLROnPlateau 策略将学习率衰减为原来的 0.5 倍，最小学习率下界为 $10^{-6}$，避免学习过于缓慢。
+为缓解深度神经网络易出现的过拟合现象，并提升模型对真实信道测量噪声的鲁棒性，本文采用数据增强与结构正则化相结合的策略。具体而言，训练阶段在输入特征向量中叠加零均值高斯白噪声，以模拟实际环境中的测量误差，提升模型对噪声的容忍能力。在特征提取层引入 Dropout 机制，丢弃率为 $0.1$，并配合 AdamW 优化器施加 $L_2$ 权重衰减，系数为 $5 \times 10^{-4}$，以限制模型参数复杂度。训练过程中设定梯度范数阈值为 $1.0$，通过梯度裁剪防止反向传播中的梯度爆炸，保障训练过程的数值稳定性。
 
-\paragraph{早停机制}
-监控验证集损失，当其连续 30 个 epoch 无改善时触发早停，保存验证损失最低时刻的模型检查点。此设计平衡了收敛速度与泛化性能。
+\vspace{0.5em}
+\noindent 3. 自适应优化与收敛控制
+
+模型采用端到端的监督学习方式进行参数更新。初始学习率设定为 $1 \times 10^{-2}$，并采用动态调度策略，当验证集损失在连续 20 个训练周期内未出现显著下降时，学习率自动衰减 50\%，下限设为 $10^{-6}$。该策略有助于模型在训练初期快速逼近最优点，并在后期进行精细化搜索。此外，训练过程中引入早停机制，若验证集损失连续 30 个训练周期无改善，则立即终止训练并回滚至最优检查点，从而在训练效率与泛化性能之间取得最佳平衡。
+
 
 \subsection{代理模型在业务场景下的预测性能}
 
@@ -588,19 +581,11 @@ $\mathbf{x}_{\mathrm{proto}} = [a, q,\ M, \ldots]^{\top}$,
 	\end{tabular}
 \end{table}
 
-可以看出，代理模型在所有任务上均取得了较低的误差和较高的$R^2$值，能够有效复现仿真器的多维性能输出。进一步地，图~\ref{fig:nn_pred_vs_true} 展示了模型预测值与真实值的散点对比（以吞吐量为例），绝大多数点分布在理想对角线附近，表明模型具有良好的泛化能力和实用性。
-
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.6\textwidth]{figure/chap5/Sim11.jpg}
-	\caption{代理模型预测值与真实值对比（以吞吐量为例）}
-	\label{fig:nn_pred_vs_true}
-\end{figure}
 
 \textbf{总结：} 综上所述，所提出的多任务深度神经网络代理模型在各项性能指标上均表现出优异的预测能力。无论是吞吐量、时延还是公平性与信令开销，模型均能实现高精度的拟合，$R^2$值均超过0.97，满足实际业务场景下对快速、准确性能评估的需求。这为后续基于代理模型的协议优化与自适应决策奠定了坚实基础。
 
 \section{基于代理模型的快速预测与优化}
-yu
+
 在代理模型 $f_{\phi}$ 训练完成后，原先耗时的协议优化问题便转化为一个可在毫秒级求解的数学优化问题。给定一个业务场景的流量特征 $\bm{x}_\text{traffic}$，目标是快速找到最优的统一参数向量 $\mathbf{x}_{\text{proto}}^*$（包含最优协议类型及其对应参数）：
 \begin{equation}
 	\mathbf{x}_{\text{proto}}^* = \arg\max_{\mathbf{x}_{\text{proto}}} U\big(f_{\phi}(\bm{x}_{\text{traffic}}, \mathbf{x}_{\text{proto}}, \dots)\big)

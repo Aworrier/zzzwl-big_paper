@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.28)  23 JAN 2026 14:36
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.28)  24 JAN 2026 11:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1403,18 +1403,25 @@ File: figure/chap3/packet_delay_unsaturated.pdf Graphic file (type pdf)
 File: figure/chap3/access_delay_saturated.pdf Graphic file (type pdf)
 <use figure/chap3/access_delay_saturated.pdf>
  [30]
-Underfull \vbox (badness 2197) has occurred while \output is active []
-
- [31]
 File: figure/chap3/2step_sdt.pdf Graphic file (type pdf)
 <use figure/chap3/2step_sdt.pdf>
 File: figure/chap3/sast_scheme.pdf Graphic file (type pdf)
 <use figure/chap3/sast_scheme.pdf>
+
+Underfull \vbox (badness 2197) has occurred while \output is active []
+
+ [31]
+Underfull \vbox (badness 2042) has occurred while \output is active []
+
+ [32]
 File: figure/chap3/str_vs_q_saturated.pdf Graphic file (type pdf)
 <use figure/chap3/str_vs_q_saturated.pdf>
 File: figure/chap3/str_vs_lambda_unsaturated.pdf Graphic file (type pdf)
 <use figure/chap3/str_vs_lambda_unsaturated.pdf>
- [32] [33]) [34]
+
+Underfull \vbox (badness 1655) has occurred while \output is active []
+
+ [33]) [34]
 \openout2 = `docs/Chapter_04.aux'.
 
  (./docs/Chapter_04.tex
@@ -1455,11 +1462,14 @@ Package natbib Warning: Citation `bibid' on page 45 undefined on input line 275.
 File: figure/chap4/throughput_fairness_vs_q.pdf Graphic file (type pdf)
 <use figure/chap4/throughput_fairness_vs_q.pdf>
 
-Underfull \vbox (badness 4013) has occurred while \output is active []
+Underfull \vbox (badness 6125) has occurred while \output is active []
 
  [46]
 File: figure/chap4/throughput_fairness_tradeoff.pdf Graphic file (type pdf)
 <use figure/chap4/throughput_fairness_tradeoff.pdf>
+
+Underfull \vbox (badness 6316) has occurred while \output is active []
+
  [47]) [48]
 \openout2 = `docs/Chapter_05.aux'.
 
@@ -1478,32 +1488,68 @@ Underfull \vbox (badness 2460) has occurred while \output is active []
 ]
 File: figure/chap5/model1.pdf Graphic file (type pdf)
 <use figure/chap5/model1.pdf>
- [50] [51]
-Overfull \hbox (5.12645pt too wide) in paragraph at lines 80--84
-\TU/SimSun(0)/m/n/12.045 案，|  以 在 多 协 议 共 存 场 景 下 建 立 统 一 的 输 入 接 口。|  设 候 选 接 入 协 议 集 合 为 $\OMS/cmsy/m/n/12.045 P \OT1/cmr/m/n/12.045 = \OMS/cmsy/m/n/12.045 f\OML/cmm/m/it/12.045 a[]; a[]; a[]\OMS/cmsy/m/n/12.045 g$\TU/SimSun(0)/m/n/12.045 ，|
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [50]
+Underfull \hbox (badness 1308) in paragraph at lines 76--76
+[]|\TU/SimSun(0)/m/n/12.045 归 一 化 网 络
  []
 
 
-Underfull \vbox (badness 2582) has occurred while \output is active []
+Underfull \hbox (badness 1308) in paragraph at lines 78--78
+[]|\TU/SimSun(0)/m/n/12.045 网 络 突 发 度
+ []
+
+
+Underfull \hbox (badness 1308) in paragraph at lines 80--80
+[]|\TU/SimSun(0)/m/n/12.045 节 点 突 发 度
+ []
+
+
+Underfull \hbox (badness 1308) in paragraph at lines 82--82
+[]|\TU/SimSun(0)/m/n/12.045 网 络 周 期 性
+ []
+
+
+Underfull \hbox (badness 4013) in paragraph at lines 82--82
+[]|$\OT1/cmr/m/n/12.045 ^^I[] = [][] []$\TU/SimSun(0)/m/n/12.045 ，| $\OML/cmm/m/it/12.045 R\OT1/cmr/m/n/12.045 (\OML/cmm/m/it/12.045 ^^\\OT1/cmr/m/n/12.045 ) =
+ []
+
+
+Underfull \hbox (badness 1308) in paragraph at lines 84--84
+[]|\TU/SimSun(0)/m/n/12.045 节 点 周 期 性
+ []
+
+
+Overfull \hbox (16.13295pt too wide) in paragraph at lines 72--87
+ [][] 
+ []
+
+
+Overfull \hbox (5.12645pt too wide) in paragraph at lines 89--93
+\TU/SimSun(0)/m/n/12.045 案，|  以 在 多 协 议 共 存 场 景 下 建 立 统 一 的 输 入 接 口。|  设 候 选 接 入 协 议 集 合 为 $\OMS/cmsy/m/n/12.045 P \OT1/cmr/m/n/12.045 = \OMS/cmsy/m/n/12.045 f\OML/cmm/m/it/12.045 a[]; a[]; a[]\OMS/cmsy/m/n/12.045 g$\TU/SimSun(0)/m/n/12.045 ，|
+ []
+
+[51]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [52]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [53] [54]
-Underfull \vbox (badness 1521) has occurred while \output is active []
+File: figure/chap5/数据集采样策略.pdf Graphic file (type pdf)
+<use figure/chap5/数据集采样策略.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [55]
-Underfull \vbox (badness 3514) has occurred while \output is active []
-
- [56]
 Underfull \vbox (badness 2035) has occurred while \output is active []
 
- [57] [58]
-Overfull \hbox (2.97993pt too wide) in paragraph at lines 295--312
- [][] 
- []
+ [56] [57]
+Underfull \vbox (badness 7740) has occurred while \output is active []
 
-[59] [60] [61]
+ [58] [59]
 File: figure/chap5/Sim11.jpg Graphic file (type bmp)
 <figure/chap5/Sim11.jpg>
 File: figure/chap5/Sim12.jpg Graphic file (type bmp)
@@ -1522,29 +1568,31 @@ File: figure/chap5/Sim32.jpg Graphic file (type bmp)
 <figure/chap5/Sim32.jpg>
 File: figure/chap5/Sim33.jpg Graphic file (type bmp)
 <figure/chap5/Sim33.jpg>
+ [60]
 File: figure/chap5/Sim41.jpg Graphic file (type bmp)
 <figure/chap5/Sim41.jpg>
 File: figure/chap5/Sim42.jpg Graphic file (type bmp)
 <figure/chap5/Sim42.jpg>
 File: figure/chap5/Sim43.jpg Graphic file (type bmp)
 <figure/chap5/Sim43.jpg>
- [62]
+ [61]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [63]
+ [62]
 File: figure/chap5/神经网络训练流程.pdf Graphic file (type pdf)
 <use figure/chap5/神经网络训练流程.pdf>
- [64] [65]
-File: figure/chap5/Sim11.jpg Graphic file (type bmp)
-<figure/chap5/Sim11.jpg>
- [66]
+ [63]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [67]) [68] (./main.bbl) [69
+ [64]
+File: figure/chap5/Sim11.jpg Graphic file (type bmp)
+<figure/chap5/Sim11.jpg>
+ [65] [66]) [67] [68
 
 
 
 
+] (./main.bbl) [69
 
 ] [70
 
@@ -1627,15 +1675,15 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: EB4A3DDD14EA7623019679B101D8AA94;5637.
+(rerunfilecheck)             Checksum: 587CD22BF13D4F67B11068BD06476958;5637.
  ) 
 Here is how much of TeX's memory you used:
- 35627 strings out of 476179
- 752739 string characters out of 5813072
- 1079845 words of memory out of 5000000
- 55597 multiletter control sequences out of 15000+600000
+ 35604 strings out of 476179
+ 750820 string characters out of 5813072
+ 1081910 words of memory out of 5000000
+ 55573 multiletter control sequences out of 15000+600000
  489733 words of font info for 164 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 103i,14n,111p,1195b,677s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 103i,15n,111p,1195b,677s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on main.pdf (82 pages).

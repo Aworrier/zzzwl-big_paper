@@ -528,6 +528,30 @@ $ 	\gamma = \frac{\lambda[\lambda(1-e^{-\theta}) + (1-\lambda)(1-p_A)]}{(1-\lamb
 \section{SAST在5G网络中的应用与性能对比}
 \label{sec:5g_case_study}
 
+\begin{figure}[t]
+	\centering
+	% --- 子图 (a): 2-step SDT ---
+	\begin{subfigure}[b]{0.45\textwidth}
+		\centering
+		
+		\includegraphics[width=\textwidth]{figure/chap3/2step_sdt.pdf}
+		\caption{2-step SDT 方案}
+		\label{fig:flow_2step}
+	\end{subfigure}
+	\hfill % 弹性间距
+	% --- 子图 (b): SAST ---
+	\begin{subfigure}[b]{0.45\textwidth}
+		\centering
+		
+		\includegraphics[width=\textwidth]{figure/chap3/sast_scheme.pdf}
+		\caption{SAST 方案}
+		\label{fig:flow_sast}
+	\end{subfigure}
+	
+	\caption{用户与基站间的信令交互流程对比}
+	\label{fig:signaling_process}
+\end{figure}
+
 为了验证 SAST 机制在实际通信系统中的应用潜力，本节将其应用于 5G 新空口（NR）系统，并以 3GPP Release 17 标准中定义的\textbf{2步小数据传输（2-step SDT）}方案作为基准进行对比。我们将引入\textbf{信令吞吐比（Signaling-to-Throughput Ratio, STR）}作为核心评估指标，量化分析 SAST 在降低控制信令开销方面的优势。
 
 \subsection{2步SDT随机接入方案}
@@ -546,29 +570,7 @@ SAST 机制在 5G NR 系统中的部署具有高度的兼容性，表现为复�
 
 如图 \ref{fig:signaling_process}(b) 所示，具体的协议执行流程如下：节点首先将队首（HoL）数据包封装在 MsgA（包含前导码）中发送，这与标准 2-step SDT 完全一致。一旦收到基站反馈的 MsgB（即 ACK），确认信道占用成功，节点随即进入连续传输阶段。关键的演进在于，后续数据包将直接在 PUSCH 信道发送，\textbf{无需再次携带前导码}。基站对每个后续数据包逐一反馈 ACK，直至缓存清空或发生碰撞（收到 NACK）导致传输中断，节点退回竞争状态。
 
-\begin{figure}[htbp]
-	\centering
-	% --- 子图 (a): 2-step SDT ---
-	\begin{subfigure}[b]{0.45\textwidth}
-		\centering
-		% 请替换为左侧子图的实际文件名
-		\includegraphics[width=\textwidth]{figure/chap3/2step_sdt.pdf}
-		\caption{2-step SDT 方案}
-		\label{fig:flow_2step}
-	\end{subfigure}
-	\hfill % 弹性间距
-	% --- 子图 (b): SAST ---
-	\begin{subfigure}[b]{0.45\textwidth}
-		\centering
-		% 请替换为右侧子图的实际文件名
-		\includegraphics[width=\textwidth]{figure/chap3/sast_scheme.pdf}
-		\caption{SAST 方案}
-		\label{fig:flow_sast}
-	\end{subfigure}
-	
-	\caption{用户与基站间的信令交互流程对比}
-	\label{fig:signaling_process}
-\end{figure}
+
 
 为了量化上述机制带来的信令增益，我们分析其信令吞吐比（STR）。在 SAST 的一个成功接入周期内，平均可连续传输 $\overline{B}$ 个数据包。除 HoL 包外，后续 $\overline{B}-1$ 个数据包的信令开销取决于忙期的结束方式：若传输因缓存清空而正常结束（概率 $p_0$），仅消耗数据包对应的 ACK 信令；若因碰撞而异常中断（概率 $1-p_0$），则最后一个失败的数据包会额外消耗发送与 NACK 的信令资源。
 
@@ -586,7 +588,7 @@ SAST 机制在 5G NR 系统中的部署具有高度的兼容性，表现为复�
 
 为了直观展示两种方案的性能差异，图 \ref{fig:str_comparison} 对比了不同负载条件下 STR 随传输概率 $q$ 的变化。
 
-\begin{figure}[htbp]
+\begin{figure}[t]
 	\centering
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering

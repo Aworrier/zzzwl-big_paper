@@ -297,7 +297,7 @@
 
 图 \ref{fig:csmast_perf_q} 展示了在 CSMAST 方案下，网络吞吐量 $\hat{\lambda}_{out}^{net}$ 与短期 Jain 公平性指数 $J_T$ 随传输概率 $q$ 的变化情况。从图中可以清晰地观察到，仿真结果（标记点）与基于休假排队模型推导出的理论曲线（实线）高度吻合，从而验证了第 4.3 节中理论分析的准确性。具体而言，网络吞吐量 $\hat{\lambda}_{out}^{net}$ 呈现出随接入概率 $q$ 单调递减的趋势，并在 $q$ 趋近于 0 时达到理论峰值。根据设定参数，该峰值逼近 $\frac{\tau_S-\tau_I}{\tau_S+\tau_I} = \frac{4}{6} \approx 0.667$。然而，在获得高吞吐量的同时，系统在极小接入概率（$q \to 0^+$）下的公平性表现极差。这是因为在如此稀疏的接入条件下，一旦少数几个节点成功抢占信道，便利用连续传输机制长期维持高传输速率，而其余绝大多数节点只能处于空闲侦听状态，极少获得发送机会，从而导致严重的服务饥饿与公平性退化。值得注意的是，随着 $q$ 的适度增加，碰撞概率的上升打破了这种信道垄断，Jain 公平性指数 $J_T$ 迅速回升并接近 1，而此时网络吞吐量虽然有所下降但仍维持在较高水平。这表明 CSMAST 机制能够通过参数调整，在牺牲微小吞吐量的前提下有效地实现良好的吞吐量-公平性权衡。
 
-\begin{figure}[htbp]
+\begin{figure}[t]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figure/chap4/throughput_fairness_vs_q.pdf}
 	\caption{CSMAST 网络吞吐量 $\hat{\lambda}_{out}^{net}$ 与短期 Jain 公平性指数 $J_T$ 随传输概率 $q$ 的变化 ($n=100, \tau_S=5, \tau_F=3, \tau_I=1$)}
@@ -309,7 +309,7 @@
 
 为了评估所提方案的相对增益，图 \ref{fig:comparison_classic} 进一步展示了 CSMAST 与经典 CSMA 方案在吞吐量-公平性二维平面上的性能轨迹对比。其中，经典 CSMA 的性能曲线是基于附录\ref{app:classic_csma} 中推导的理论公式（式 \ref{eq:classic_csma_throughput} 和 式 \ref{eq:optimal_q_classic}）绘制的，确保了两者是在完全相同的时隙结构参数（$x, y$）与统一的分析框架下进行的公平比较。通过遍历传输概率 $q$，我们获得了两种方案在不同工作点下的性能包络。对比结果显示，在同等的公平性水平下，CSMAST 的吞吐量上限显著高于经典 CSMA。具体数据表明，经典 CSMA 的最大理论吞吐量约为 0.518，而 CSMAST 将这一上限提升至 0.667，实现了高达 28.8\% 的性能增益，在图中形成了一条明显位于上方的性能边界。
 
-\begin{figure}[htbp]
+\begin{figure}[t]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figure/chap4/throughput_fairness_tradeoff.pdf}
 	\caption{CSMAST 与经典 CSMA 方案的吞吐量-公平性性能轨迹对比}

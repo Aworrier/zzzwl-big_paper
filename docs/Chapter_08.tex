@@ -20,7 +20,7 @@
 
 \subsection{协议与业务场景的统一描述}
 
-系统支持多种随机接入协议，如 Slotted ALOHA、Connection-based ALOHA (CBA)、SAST、R-ALOHA、CRDSA、IRSA 等。  
+系统支持多种随机接入协议，如 Slotted Aloha、Connection-based Aloha (CBA)、SAST、R-Aloha、CRDSA、IRSA 等。  
 为实现统一特征空间表示，需要对任务的输入输出特征设计。
 
 \subsubsection{输入参数定义和分类}
@@ -66,7 +66,7 @@ x^{(\text{mask})}_k =
 \]
 其中：
 \begin{itemize}
-	\item $p$ 表示预测得到的最优协议类型（例如：ALOHA, CBA, IRSA等）；
+	\item $p$ 表示预测得到的最优协议类型（例如：Aloha, CBA, IRSA等）；
 	\item $\mathbf{x}^*_\text{proto}$ 表示该协议下的最优协议特有参数（如 $q^*, M^*, L^*, F^*$ 等）。
 \end{itemize}
 即，模型的任务是根据当前网络环境特征，\textbf{联合输出协议类型与其最优参数配置}。
