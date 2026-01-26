@@ -208,6 +208,7 @@ $\mathbf{x}_{\mathrm{proto}} = [a, q,\ M, \ldots]^{\top}$,
 \textbf{第一阶段：粗粒度均匀采样。}
 第一阶段旨在以较少样本量快速覆盖参数空间全域，识别各协议的性能分布特征。对于业务流量特征参数 $\mathbf{x}_{\text{traffic}}$，其核心参数归一化网络平均到达率 $\hat{\lambda}$ 需根据各协议的理论性能上界设定合理的采样范围。值得注意的是，不同随机接入协议的理论容量与有效工作范围存在显著差异，这直接决定了其适用的流量强度区间。例如，经典Slotted Aloha（SA）协议的理论最大吞吐量为 $1/e \approx 0.368$，对应的有效到达率通常限制在 $0.5$ 以内；SAST协议通过连续传输机制将理论最大吞吐提升至约0.5，有效范围扩展至 $0.7$ 左右；而CBA协议通过连接建立与批量传输机制可在更高负载下保持较高吞吐，但同时需要依赖单节点缓存队列存在足够多数据报文，有效工作区间可扩展至 $0.8$ 左右。
 
+\textcolor{red}{
 若对所有协议采用统一的宽泛采样范围（如 $\hat{\lambda} \in [0, 1]$），将导致以下严重的采样偏差问题：低容量协议（如SA）的绝大多数样本会落入其性能已饱和或甚至退化的超容量区域，这些样本对学习真实性能曲线形态无实质帮助；相反，对于高容量协议，用于描述其真正工作区间（通常位于中等至高负载）的样本会严重不足，导致代理模型在这些关键工作点的预测精度下降。为此，本文根据各协议的理论吞吐上界与实际有效工作范围，为每种协议精心设计了差异化的 $\hat{\lambda}$ 采样区间，确保每种协议的样本都集中在其实际可工作的负载区域内。
 具体而言，对于归一化网络平均到达率 $\hat{\lambda}$，各协议的粗采样范围设定如下：
 \begin{itemize}[leftmargin=*]
@@ -215,6 +216,7 @@ $\mathbf{x}_{\mathrm{proto}} = [a, q,\ M, \ldots]^{\top}$,
 	\item SAST协议：$\hat{\lambda} \in [0.01, 0.7]$，步长 $\Delta\hat{\lambda} = 0.05$，约13个采样点；
 	\item CBA协议：$\hat{\lambda} \in [0.01, 0.7]$，步长 $\Delta\hat{\lambda} = 0.05$，约13个采样点；
 \end{itemize}
+}
 
 对于每一个 $\hat{\lambda}$ 的粗采样点，流量生成模块分别在上述三类流量形态场景下生成到达序列，从而在相同平均流量强度条件下对不同到达过程差异进行对比评估。尽管三类场景的归一化网络平均到达率相同，但流量特征向量 $\mathbf{x}_{\text{traffic}}$ 的其他分量存在显著差异，进而导致协议性能表现产生差异。
 
@@ -249,7 +251,7 @@ $\mathbf{x}_{\mathrm{proto}} = [a, q,\ M, \ldots]^{\top}$,
 		\item \textbf{CBA}：基于连接的Aloha，若节点缓存队列数据包大于等于M，会以固定概率$q$建立连接，连接成功后会无竞争发送$M$个包。
 	\end{itemize}
 
-	\item \textbf{性能统计模块}：实时记录成功发送包数、累计时延、各节点吞吐、SIC解码次数等统计量，在仿真完成后计算最终的吞吐量 $\lambda_{\mathrm{out}}$、平均时延 $D$、公平性指数 $J_T$、计算负荷 $C_{\mathrm{rx}}$ 及实现复杂度 $I_{\mathrm{impl}}$。
+	\item \textbf{性能统计模块}：实时记录成功发送包数、累计时延、各节点吞吐、信令开销等统计量，在仿真完成后计算最终的吞吐量 $\lambda_{\mathrm{out}}$、平均时延 $D$、公平性指数 $J_T$、信令开销 $S$。
 \end{itemize}
 
 上述模块通过统一接口在离散事件仿真框架下协同运行，从而实现对多协议、多参数配置的统一评估。下面给出统一仿真器的核心实现流程，其执行流程遵循初始化、时隙迭代与结果汇总三个阶段：
@@ -358,98 +360,141 @@ $\mathbf{x}_{\mathrm{proto}} = [a, q,\ M, \ldots]^{\top}$,
 \label{subsec:protocol_performance_comparison}
 为在代理模型训练之前建立可复现的性能基准，并验证多协议共存框架的必要性，本小节直接基于\ref{subsec:dataset_construction}节构建的数据集开展对比分析。具体而言，本文将数据集按流量形态与协议类型进行分组，并在每一组内设置参数配置作为对比切片。在保持网络规模、统计口径与标签生成方式一致的条件下，通过绘制吞吐量、时延、公平性与信令开销等指标随归一化网络平均到达率 $\hat{\lambda}$和 传输概率$q$ 变化的曲线，展示不同协议在典型场景下的性能演化规律，从而形成后续代理模型训练与预测结果的基准参照。
 
-\textbf{吞吐量对比。} 
-图~\ref{fig:protocol_throughput_comparison} 给出了不同协议随 $\hat{\lambda}$ 变化的输出吞吐量 $\lambda_{\mathrm{out}}$ 曲线。
-\begin{figure}[t]
-	\centering
-	\subfloat[均匀场景]{
-		\includegraphics[width=0.3\textwidth]{figure/chap5/Sim11.jpg}
-		\label{fig:protocol_throughput_comparison1}
-	}
-	\hfill
-	\subfloat[突发场景]{
-		\includegraphics[width=0.3\textwidth]{figure/chap5/Sim12.jpg}
-		\label{fig:protocol_throughput_comparison2}
-	}
-	\hfill
-	\subfloat[周期场景]{
-		\includegraphics[width=0.3\textwidth]{figure/chap5/Sim13.jpg}
-		\label{fig:protocol_throughput_comparison3}
-	}
-	\caption{不同协议在传输概率变化下的吞吐量对比（固定平均到达率为 $\hat{\lambda}=0.3$）。}
-	\label{fig:protocol_throughput_comparison}
+% \textbf{吞吐量对比。} 
+% 图~\ref{fig:protocol_throughput_comparison} 给出了不同协议随 $\hat{\lambda}$ 变化的输出吞吐量 $\lambda_{\mathrm{out}}$ 曲线。
+% \begin{figure}[t]
+% 	\centering
+% 	\subfloat[均匀场景]{
+% 		\includegraphics[width=0.3\textwidth]{figure/chap5/Sim11.jpg}
+% 		\label{fig:protocol_throughput_comparison1}
+% 	}
+% 	\hfill
+% 	\subfloat[突发场景]{
+% 		\includegraphics[width=0.3\textwidth]{figure/chap5/Sim12.jpg}
+% 		\label{fig:protocol_throughput_comparison2}
+% 	}
+% 	\hfill
+% 	\subfloat[周期场景]{
+% 		\includegraphics[width=0.3\textwidth]{figure/chap5/Sim13.jpg}
+% 		\label{fig:protocol_throughput_comparison3}
+% 	}
+% 	\caption{不同协议在传输概率变化下的吞吐量对比（固定平均到达率为 $\hat{\lambda}=0.3$）。}
+% 	\label{fig:protocol_throughput_comparison}
+% \end{figure}
+
+% \textbf{时延对比。} 
+% 图~\ref{fig:protocol_delay_comparison} 展示了平均时延 $D$ 随 $\hat{\lambda}$ 的变化趋势。
+
+% \begin{figure}[t]
+% 	\centering
+% 	\subfloat[均匀场景]{
+% 		\includegraphics[width=0.3\textwidth]{figure/chap5/Sim21.jpg}
+% 		\label{fig:protocol_delay_comparison1}
+% 	}
+% 	\hfill
+% 	\subfloat[突发场景]{
+% 		\includegraphics[width=0.3\textwidth]{figure/chap5/Sim22.jpg}
+% 		\label{fig:protocol_delay_comparison2}
+% 	}
+% 	\hfill
+% 	\subfloat[周期场景]{
+% 		\includegraphics[width=0.3\textwidth]{figure/chap5/Sim23.jpg}
+% 		\label{fig:protocol_delay_comparison3}
+% 	}
+% 	\caption{不同协议在传输概率变化下的平均时延对比（固定平均到达率为 $\hat{\lambda}=0.3$）。}
+% 	\label{fig:protocol_delay_comparison}
+% \end{figure}
+
+
+% \textbf{公平性评估。} 
+% 图~\ref{fig:protocol_fairness_comparison} 给出了公平性指标（Jain 指数）在不同协议下的变化特征。
+% \begin{figure}[t]
+% 	\centering
+% 	\subfloat[均匀场景]{
+% 		\includegraphics[width=0.3\textwidth]{figure/chap5/Sim31.jpg}
+% 		\label{fig:protocol_fairness_comparison1}
+% 	}
+% 	\hfill
+% 	\subfloat[突发场景]{
+% 		\includegraphics[width=0.3\textwidth]{figure/chap5/Sim32.jpg}
+% 		\label{fig:protocol_fairness_comparison2}
+% 	}
+% 	\hfill
+% 	\subfloat[周期场景]{
+% 		\includegraphics[width=0.3\textwidth]{figure/chap5/Sim33.jpg}
+% 		\label{fig:protocol_fairness_comparison3}
+% 	}
+% 	\caption{不同协议在传输概率变化下的公平性对比（固定平均到达率为 $\hat{\lambda}=0.3$）。}
+% 	\label{fig:protocol_fairness_comparison}
+% \end{figure}
+
+
+% \textbf{综合效用评估。} 
+% 本小节采用综合效用 $U(\tilde{\mathbf{y}})$ 的效用权重设置为 $w_{\lambda}=0.4$、$w_D=0.3$、$w_J=0.2$、$w_S=0.1$。图~\ref{fig:protocol_utility_comparison} 展示了基于式~\eqref{eq:chap5_constrained} 定义的综合效用 $U(\tilde{\mathbf{y}})$ 对比结果。
+
+% \begin{figure}[t]
+% 	\centering
+% 	\subfloat[均匀场景]{
+% 		\includegraphics[width=0.3\textwidth]{figure/chap5/Sim41.jpg}
+% 		\label{fig:protocol_utility_comparison1}
+% 	}
+% 	\hfill
+% 	\subfloat[突发场景]{
+% 		\includegraphics[width=0.3\textwidth]{figure/chap5/Sim42.jpg}
+% 		\label{fig:protocol_utility_comparison2}
+% 	}
+% 	\hfill
+% 	\subfloat[周期场景]{
+% 		\includegraphics[width=0.3\textwidth]{figure/chap5/Sim43.jpg}
+% 		\label{fig:protocol_utility_comparison3}
+% 	}
+% 	\caption{不同协议在传输概率变化下的综合效用对比（固定平均到达率为 $\hat{\lambda}=0.3$）。}
+% 	\label{fig:protocol_utility_comparison}
+% \end{figure}
+
+% === 1. 将下列内容剪切到5.2.4节合适位置（如“仿真性能验证与对比”小节中） ===
+
+\subsection{不同\(\lambda\)下均匀流量场景的性能对比}
+为进一步展示不同协议在均匀流量（uniform）场景下随接入概率\(q\)变化的性能差异，本文对\(\lambda=0.001, 0.003, 0.005, 0.01\)四种典型到达率下的时延、吞吐量、公平性、信令开销等指标进行了仿真对比，结果如下图所示。
+
+% 延迟对比
+\begin{figure}[htbp]
+    \centering
+    % 四个子图
+    \subfloat[$\lambda=0.01$]{\includegraphics[width=0.24\textwidth]{figure/chap5/delay_vs_q_xprefix__lambda=0.01,traffic_type=uniform.png}}
+    \subfloat[$\lambda=0.001$]{\includegraphics[width=0.24\textwidth]{figure/chap5/delay_vs_q_xprefix__lambda=0.001,traffic_type=uniform.png}}
+    \subfloat[$\lambda=0.003$]{\includegraphics[width=0.24\textwidth]{figure/chap5/delay_vs_q_xprefix__lambda=0.003,traffic_type=uniform.png}}
+    \subfloat[$\lambda=0.005$]{\includegraphics[width=0.24\textwidth]{figure/chap5/delay_vs_q_xprefix__lambda=0.005,traffic_type=uniform.png}}
+    \caption{不同$\lambda$下均匀流量场景的平均时延$D$随$q$变化对比}
+    \label{fig:delay_vs_q_uniform}
 \end{figure}
 
-\textbf{时延对比。} 
-图~\ref{fig:protocol_delay_comparison} 展示了平均时延 $D$ 随 $\hat{\lambda}$ 的变化趋势。
+% 公平性对比
+\begin{figure}[htbp]
+    \centering
+    \subfloat[$\lambda=0.01$]{\includegraphics[width=0.24\textwidth]{figure/chap5/fairness_vs_q_xprefix__lambda=0.01,traffic_type=uniform.png}}
+    \subfloat[$\lambda=0.001$]{\includegraphics[width=0.24\textwidth]{figure/chap5/fairness_vs_q_xprefix__lambda=0.001,traffic_type=uniform.png}}
+    \subfloat[$\lambda=0.003$]{\includegraphics[width=0.24\textwidth]{figure/chap5/fairness_vs_q_xprefix__lambda=0.003,traffic_type=uniform.png}}
+    \subfloat[$\lambda=0.005$]{\includegraphics[width=0.24\textwidth]{figure/chap5/fairness_vs_q_xprefix__lambda=0.005,traffic_type=uniform.png}}
+    \caption{不同$\lambda$下均匀流量场景的公平性$J_T$随$q$变化对比}
+    \label{fig:fairness_vs_q_uniform}
+\end{figure}
 
-\begin{figure}[t]
-	\centering
-	\subfloat[均匀场景]{
-		\includegraphics[width=0.3\textwidth]{figure/chap5/Sim21.jpg}
-		\label{fig:protocol_delay_comparison1}
-	}
-	\hfill
-	\subfloat[突发场景]{
-		\includegraphics[width=0.3\textwidth]{figure/chap5/Sim22.jpg}
-		\label{fig:protocol_delay_comparison2}
-	}
-	\hfill
-	\subfloat[周期场景]{
-		\includegraphics[width=0.3\textwidth]{figure/chap5/Sim23.jpg}
-		\label{fig:protocol_delay_comparison3}
-	}
-	\caption{不同协议在传输概率变化下的平均时延对比（固定平均到达率为 $\hat{\lambda}=0.3$）。}
-	\label{fig:protocol_delay_comparison}
+% 信令开销对比
+\begin{figure}[htbp]
+    \centering
+    \subfloat[$\lambda=0.01$]{\includegraphics[width=0.24\textwidth]{figure/chap5/signaling_overhead_vs_q_xprefix__lambda=0.01,traffic_type=uniform.png}}
+    \subfloat[$\lambda=0.001$]{\includegraphics[width=0.24\textwidth]{figure/chap5/signaling_overhead_vs_q_xprefix__lambda=0.001,traffic_type=uniform.png}}
+    \subfloat[$\lambda=0.003$]{\includegraphics[width=0.24\textwidth]{figure/chap5/signaling_overhead_vs_q_xprefix__lambda=0.003,traffic_type=uniform.png}}
+    \subfloat[$\lambda=0.005$]{\includegraphics[width=0.24\textwidth]{figure/chap5/signaling_overhead_vs_q_xprefix__lambda=0.005,traffic_type=uniform.png}}
+    \caption{不同$\lambda$下均匀流量场景的信令开销$S$随$q$变化对比}
+    \label{fig:signaling_vs_q_uniform}
 \end{figure}
 
 
-\textbf{公平性评估。} 
-图~\ref{fig:protocol_fairness_comparison} 给出了公平性指标（Jain 指数）在不同协议下的变化特征。
-\begin{figure}[t]
-	\centering
-	\subfloat[均匀场景]{
-		\includegraphics[width=0.3\textwidth]{figure/chap5/Sim31.jpg}
-		\label{fig:protocol_fairness_comparison1}
-	}
-	\hfill
-	\subfloat[突发场景]{
-		\includegraphics[width=0.3\textwidth]{figure/chap5/Sim32.jpg}
-		\label{fig:protocol_fairness_comparison2}
-	}
-	\hfill
-	\subfloat[周期场景]{
-		\includegraphics[width=0.3\textwidth]{figure/chap5/Sim33.jpg}
-		\label{fig:protocol_fairness_comparison3}
-	}
-	\caption{不同协议在传输概率变化下的公平性对比（固定平均到达率为 $\hat{\lambda}=0.3$）。}
-	\label{fig:protocol_fairness_comparison}
-\end{figure}
+上述结果直观展现了在不同流量强度下，三类协议在主要性能指标上的变化趋势，为后续协议选择与参数优化提供了数据支撑。
 
-
-\textbf{综合效用评估。} 
-本小节采用综合效用 $U(\tilde{\mathbf{y}})$ 的效用权重设置为 $w_{\lambda}=0.4$、$w_D=0.3$、$w_J=0.2$、$w_S=0.1$。图~\ref{fig:protocol_utility_comparison} 展示了基于式~\eqref{eq:chap5_constrained} 定义的综合效用 $U(\tilde{\mathbf{y}})$ 对比结果。
-
-\begin{figure}[t]
-	\centering
-	\subfloat[均匀场景]{
-		\includegraphics[width=0.3\textwidth]{figure/chap5/Sim41.jpg}
-		\label{fig:protocol_utility_comparison1}
-	}
-	\hfill
-	\subfloat[突发场景]{
-		\includegraphics[width=0.3\textwidth]{figure/chap5/Sim42.jpg}
-		\label{fig:protocol_utility_comparison2}
-	}
-	\hfill
-	\subfloat[周期场景]{
-		\includegraphics[width=0.3\textwidth]{figure/chap5/Sim43.jpg}
-		\label{fig:protocol_utility_comparison3}
-	}
-	\caption{不同协议在传输概率变化下的综合效用对比（固定平均到达率为 $\hat{\lambda}=0.3$）。}
-	\label{fig:protocol_utility_comparison}
-\end{figure}
-
+% === 2. 小结部分只保留简要总结，不再重复上述仿真结果 ===
 
 % =========================================================
 % 第 5.3 节：基于多任务深度学习的性能预测代理模型
@@ -584,7 +629,7 @@ $\mathbf{x}_{\mathrm{proto}} = [a, q,\ M, \ldots]^{\top}$,
 
 \textbf{总结：} 综上所述，所提出的多任务深度神经网络代理模型在各项性能指标上均表现出优异的预测能力。无论是吞吐量、时延还是公平性与信令开销，模型均能实现高精度的拟合，$R^2$值均超过0.97，满足实际业务场景下对快速、准确性能评估的需求。这为后续基于代理模型的协议优化与自适应决策奠定了坚实基础。
 
-\section{基于代理模型的快速预测与优化}
+\section{基于代理模型的快速搜索与预测}
 
 在代理模型 $f_{\phi}$ 训练完成后，原先耗时的协议优化问题便转化为一个可在毫秒级求解的数学优化问题。给定一个业务场景的流量特征 $\bm{x}_\text{traffic}$，目标是快速找到最优的统一参数向量 $\mathbf{x}_{\text{proto}}^*$（包含最优协议类型及其对应参数）：
 \begin{equation}
@@ -596,6 +641,21 @@ $\mathbf{x}_{\mathrm{proto}} = [a, q,\ M, \ldots]^{\top}$,
 	\item \textbf{演化算法}：如遗传算法，能够并行地在参数空间中进行全局搜索，对目标函数的形态要求较低，鲁棒性较好。
 \end{itemize}
 通过这些先进的优化算法，系统能够在业务状态发生变化时，实现对接入策略的快速、自适应调整。
+
+在实际业务场景中，网络流量的类型分布与强度往往表现出显著的动态时变特性。值得注意的是，系统执行协议切换的决策时刻与流量特征发生突变的时刻通常存在时间上的非同步性。为了验证代理模型在此类非平稳环境下的效用预测能力与鲁棒性，本文设计了针对性的仿真实验。
+
+实验设定流量特征的变更发生在 $t=0,100,200,\ldots$ 等时刻，而系统的协议切换决策则设定在 $t=50,150,250,\ldots$ 等时刻，从而在两者之间引入了固定的时间偏移。每次协议切换决策均基于当前时刻之前的统计窗口进行，具体的观测区间分别为 $[0,50]$、$[100,150]$ 以及 $[200,250]$ 等。对于每一个观测窗口，系统首先统计期间内的流量特征，利用代理模型预测该状态下的最优协议形式及参数配置，并计算其预期效用；随后，通过全局搜索方式获取该窗口下的真实最优协议参数及理论效用上限，以此作为评估基准。
+
+实验的具体执行流程包括生成流量变化序列与协议切换时间点、提取各窗口内的流量统计特征、基于代理模型进行参数寻优与效用计算，以及对比理论最优解并绘制分析曲线。实验结果如图~\ref{fig:utility_vs_traffic} 所示，该图直观展示了在连续的切换窗口下，代理模型推荐策略与理论最优方案的效用对比情况。
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.99\textwidth]{figure/chap5/utility_vs_traffic.pdf}
+	\caption{动态业务场景下代理模型推荐策略与最优策略的效用对比。横坐标表示按时序排列的协议切换窗口编号，纵坐标表示对应的综合效用 $U(\tilde{\mathbf{y}})$。}
+	\label{fig:utility_vs_traffic}
+\end{figure}
+
+从图~\ref{fig:utility_vs_traffic} 展示的趋势可以看出，尽管流量变化与决策时刻存在时间上的不重合，代理模型在绝大多数窗口下依然能够实现对最优协议参数效用的高精度逼近。两条曲线的高度拟合表明，本文提出的模型能够有效捕捉动态窗口内的流量特征，具备在复杂多变的业务场景中提供可靠决策支持的实用性与有效性。
 
 
 \section{本章小结}

@@ -1,4 +1,4 @@
-\contentsline {chapter}{\heiti {数学符号}}{III}{chapter*.1}%
+\contentsline {chapter}{\heiti {数学符号}}{V}{chapter*.1}%
 \contentsline {chapter}{\numberline {第1章\hspace {.3em}}绪论}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}研究背景与问题提出}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}研究目的及意义}{2}{section.1.2}%
@@ -55,14 +55,15 @@
 \contentsline {subsection}{\numberline {5.2.2}统一仿真器的设计与实现}{57}{subsection.5.2.2}%
 \contentsline {subsection}{\numberline {5.2.3}数据集构建与预处理}{58}{subsection.5.2.3}%
 \contentsline {subsection}{\numberline {5.2.4}仿真性能验证与对比}{60}{subsection.5.2.4}%
-\contentsline {section}{\numberline {5.3}基于多任务深度学习的性能预测代理模型}{62}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}基于硬参数共享的多任务网络架构}{63}{subsection.5.3.1}%
-\contentsline {paragraph}{架构设计原理}{63}{paragraph*.25}%
+\contentsline {subsection}{\numberline {5.2.5}不同\(\lambda \)下均匀流量场景的性能对比}{61}{subsection.5.2.5}%
+\contentsline {section}{\numberline {5.3}基于多任务深度学习的性能预测代理模型}{61}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}基于硬参数共享的多任务网络架构}{62}{subsection.5.3.1}%
+\contentsline {paragraph}{架构设计原理}{62}{paragraph*.24}%
 \contentsline {subsection}{\numberline {5.3.2}多目标协同优化与训练策略}{64}{subsection.5.3.2}%
 \contentsline {subsection}{\numberline {5.3.3}代理模型在业务场景下的预测性能}{65}{subsection.5.3.3}%
-\contentsline {section}{\numberline {5.4}基于代理模型的快速预测与优化}{67}{section.5.4}%
+\contentsline {section}{\numberline {5.4}基于代理模型的快速搜索与预测}{65}{section.5.4}%
 \contentsline {section}{\numberline {5.5}本章小结}{67}{section.5.5}%
-\contentsline {chapter}{参考文献}{69}{chapter*.30}%
+\contentsline {chapter}{参考文献}{69}{chapter*.29}%
 \contentsline {chapter}{\numberline {附录 A\hspace {.3em}}第三章相关内容证明}{71}{appendix.A}%
 \contentsline {section}{\numberline {附A.1}$ A_{V_0}$的PGF推导 }{71}{section.A.1}%
 \contentsline {section}{\numberline {附A.2}忙期服务过程 ($Q \to P$) 的详细推导}{71}{section.A.2}%
