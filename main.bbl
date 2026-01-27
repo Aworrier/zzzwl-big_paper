@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 \providecommand{\bibauthor}[1]{#1}
 \providecommand{\bibeditor}[1]{#1}
 \providecommand{\bibtranslator}[1]{#1}
@@ -24,9 +24,40 @@
 \providecommand{\bibdate}[1]{#1}
 \providecommand{\biburl}[1]{url{#1}}
 
+\bibitem{2023_ITUFramework}
+\bibauthor{{International Telecommunication Union}}\@. \bibtitle{Framework and overall objectives of the future development of {IMT} for 2030 and beyond}\thinspace{}\textnormal{: }\bibnumber{ITU-R M.2160-0}\bibmark{[R]}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibinstitution{ITU-R}\@, \bibyear{2023}\@.
+
+\bibitem{2023_6Groad}
+\bibauthor{WANG C-X\@, YOU X\@, GAO X, et~al}\@. \bibtitle{On the Road to {6G}: Visions, Requirements, Key Technologies, and Testbeds}\bibmark{[J/OL]}\@. \bibjournal{IEEE Communications Surveys \& Tutorials}\@, \bibyear{2023}\@, \bibvolume{25}\bibnumber{(2)}\thinspace{}\textnormal{: }\bibpages{905\thinspace{}\textnormal{--}\thinspace{}974}\@. \url{http://dx.doi.org/10.1109/COMST.2023.3249835}\@.
+
+\bibitem{2024_V2x}
+\bibauthor{RAJALAKSHMI P\@, OTHERS}\@. \bibtitle{Towards 6G V2X Sidelink: Survey of Resource Allocation—Mathematical Formulations, Challenges, and Proposed Solutions}\bibmark{[J]}\@. \bibjournal{IEEE Open Journal of Vehicular Technology}\@, \bibyear{2024}\@, \bibvolume{5}\thinspace{}\textnormal{: }\bibpages{344\thinspace{}\textnormal{--}\thinspace{}383}\@.
+
+\bibitem{2020_2stepRA}
+\bibauthor{KIM J\@, LEE G\@, KIM S, et~al}\@. \bibtitle{Two-step random access for 5G system: Latest trends and challenges}\bibmark{[J]}\@. \bibjournal{IEEE Network}\@, \bibyear{2020}\@, \bibvolume{35}\bibnumber{(1)}\thinspace{}\textnormal{: }\bibpages{273\thinspace{}\textnormal{--}\thinspace{}279}\@.
+
+\bibitem{2018_V2Xwireless}
+\bibauthor{POPOVSKI P\@, NIELSEN J~J\@, STEFANOVIC C, et~al}\@. \bibtitle{Wireless access for ultra-reliable low-latency communication: Principles and building blocks}\bibmark{[J]}\@. \bibjournal{Ieee Network}\@, \bibyear{2018}\@, \bibvolume{32}\bibnumber{(2)}\thinspace{}\textnormal{: }\bibpages{16\thinspace{}\textnormal{--}\thinspace{}23}\@.
+
+\bibitem{20246_6GIndustrial}
+\bibauthor{ZEYDAN E\@, ARSLAN S\@, TURK Y}\@. \bibtitle{6G wireless communications for industrial automation: Scenarios, requirements and challenges}\bibmark{[J]}\@. \bibjournal{Journal of Industrial Information Integration}\@, \bibyear{2024}\@, \bibvolume{42}\thinspace{}\textnormal{: }\bibpages{100732}\@.
+
+\bibitem{2025_NDTnetwork}
+\bibauthor{TRAN D-H\@, WAHEED N\@, SAPUTRA Y~M, et~al}\@. \bibtitle{Network digital twin for 6g and beyond: An end-to-end view across multi-domain network ecosystems}\bibmark{[J]}\@. \bibjournal{IEEE Open Journal of the Communications Society}\@, \bibyear{2025}\@.
+
+\bibitem{2013_4gLTERA}
+\bibauthor{DAHLMAN E\@, PARKVALL S\@, SKOLD J}\@. \bibbooktitle{4G: LTE/LTE-advanced for mobile broadband}\bibmark{[M]}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Academic press}\@, \bibyear{2013}\@.
+
+\bibitem{3GPP_TS36213}
+\bibauthor{ANON}\@. \bibtitle{3GPP TS 36.213: Evolved Universal Terrestrial Radio Access (E-UTRA); Physical layer procedures}\bibmark{[S]}\@. \bibyear{2019}\@.
+
+\bibitem{2013_LTE_mMTC}
+\bibauthor{LAYA A\@, ALONSO L\@, ALONSO-ZARATE J}\@. \bibtitle{Is the random access channel of LTE and LTE-A suitable for M2M communications? A survey of alternatives}\bibmark{[J]}\@. \bibjournal{IEEE Communications Surveys \& Tutorials}\@, \bibyear{2013}\@, \bibvolume{16}\bibnumber{(1)}\thinspace{}\textnormal{: }\bibpages{4\thinspace{}\textnormal{--}\thinspace{}16}\@.
+
+\bibitem{2015_ACBmMTC}
+\bibauthor{CHENG R-G\@, CHEN J\@, CHEN D-W, et~al}\@. \bibtitle{Modeling and analysis of an extended access barring algorithm for machine-type communications in LTE-A networks}\bibmark{[J]}\@. \bibjournal{IEEE Transactions on Wireless Communications}\@, \bibyear{2015}\@, \bibvolume{14}\bibnumber{(6)}\thinspace{}\textnormal{: }\bibpages{2956\thinspace{}\textnormal{--}\thinspace{}2968}\@.
+
 \bibitem{Lin2013Toward}
-\bibauthor{LIN D}\@. \bibtitle{Toward a coherent theory of {CSMA} and
-  aloha}\bibmark{[J]}\@. \bibjournal{IEEE Transactions on Wireless
-  Communications}\@, \bibyear{2013}\@, \bibvolume{12}\bibnumber{(7)}\@.
+\bibauthor{LIN D}\@. \bibtitle{Toward a coherent theory of {CSMA} and aloha}\bibmark{[J]}\@. \bibjournal{IEEE Transactions on Wireless Communications}\@, \bibyear{2013}\@, \bibvolume{12}\bibnumber{(7)}\@.
 
 \end{thebibliography}
