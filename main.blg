@@ -14,55 +14,73 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: Bibliography/Reference.bib
+Warning--string name "apr" is undefined
+--line 229 of file Bibliography/Reference.bib
+Warning--string name "jan" is undefined
+--line 303 of file Bibliography/Reference.bib
+Warning--string name "apr" is undefined
+--line 327 of file Bibliography/Reference.bib
 Warning--string name "jul" is undefined
---line 799 of file Bibliography/Reference.bib
+--line 351 of file Bibliography/Reference.bib
+Warning--string name "mar" is undefined
+--line 371 of file Bibliography/Reference.bib
+Warning--string name "jul" is undefined
+--line 395 of file Bibliography/Reference.bib
 Warning--I didn't find a database entry for "2026unsourced"
 Warning--I didn't find a database entry for ""
 Warning--I didn't find a database entry for "..."
+Warning--I didn't find a database entry for "Abramson1970Aloha"
+Warning--I didn't find a database entry for "Dai2013CSMAAloha"
+Warning--I didn't find a database entry for "Lien2012ACB"
+Warning--I didn't find a database entry for "Bockelmann2016MassiveAccess"
 Warning--I didn't find a database entry for "bibid"
+Warning--I didn't find a database entry for "Lin2013Toward"
 Warning--Require address: 2023_ITUFramework
 Warning--Require citedate: 2023_6Groad
 Warning--Require address: 2013_4gLTERA
-Warning--Require author: 3GPP_TS36213
-You've used 12 entries,
+Warning--Require author: 3GPP_TS36321
+Warning--Require address: 3GPP_TS36321
+Warning--Require author: 3GPP_TS38321_R17
+Warning--Require address: 3GPP_TS38321_R17
+You've used 32 entries,
             3107 wiz_defined-function locations,
-            806 strings with 8902 characters,
-and the built_in function-call counts, 20497 in all, are:
-= -- 2260
-> -- 41
-< -- 94
-+ -- 1853
-- -- 134
-* -- 584
-:= -- 2355
+            950 strings with 12683 characters,
+and the built_in function-call counts, 57807 in all, are:
+= -- 6333
+> -- 108
+< -- 248
++ -- 4926
+- -- 379
+* -- 1672
+:= -- 6271
 add.period$ -- 0
-call.type$ -- 12
-change.case$ -- 58
+call.type$ -- 32
+change.case$ -- 152
 chr.to.int$ -- 0
-cite$ -- 16
-duplicate$ -- 2828
-empty$ -- 725
-format.name$ -- 116
-if$ -- 5468
+cite$ -- 39
+duplicate$ -- 8297
+empty$ -- 2291
+format.name$ -- 304
+if$ -- 15283
 int.to.chr$ -- 0
-int.to.str$ -- 12
+int.to.str$ -- 32
 missing$ -- 0
-newline$ -- 63
-num.names$ -- 12
-pop$ -- 263
+newline$ -- 123
+num.names$ -- 32
+pop$ -- 845
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 184
+skip$ -- 475
 stack$ -- 0
-substring$ -- 2396
-swap$ -- 562
+substring$ -- 6959
+swap$ -- 1709
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 4
-while$ -- 253
-width$ -- 14
-write$ -- 189
-(There were 9 warnings)
+warning$ -- 7
+while$ -- 763
+width$ -- 34
+write$ -- 492
+(There were 22 warnings)

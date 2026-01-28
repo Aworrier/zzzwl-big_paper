@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.10)  27 JAN 2026 15:48
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.10)  28 JAN 2026 16:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1263,31 +1263,6 @@ Package natbib Warning: Citation `' on page 1 undefined on input line 17.
 
 
 ]
-
-Package natbib Warning: Citation `...' on page 2 undefined on input line 21.
-
-
-Package natbib Warning: Citation `...' on page 2 undefined on input line 21.
-
-
-Package natbib Warning: Citation `...' on page 2 undefined on input line 21.
-
-
-Package natbib Warning: Citation `...' on page 2 undefined on input line 22.
-
-
-Package natbib Warning: Citation `...' on page 2 undefined on input line 25.
-
-
-Package natbib Warning: Citation `...' on page 2 undefined on input line 25.
-
-
-Package natbib Warning: Citation `...' on page 2 undefined on input line 25.
-
-
-Package natbib Warning: Citation `...' on page 2 undefined on input line 25.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
@@ -1301,43 +1276,49 @@ Package natbib Warning: Citation `...' on page 3 undefined on input line 28.
 Package natbib Warning: Citation `...' on page 3 undefined on input line 28.
 
 
-Package natbib Warning: Citation `...' on page 3 undefined on input line 28.
+Package natbib Warning: Citation `' on page 3 undefined on input line 28.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3] [4]
 
-Package natbib Warning: Citation `...' on page 5 undefined on input line 60.
+Package natbib Warning: Citation `...' on page 5 undefined on input line 61.
 
 
-Underfull \vbox (badness 3514) has occurred while \output is active []
+Underfull \vbox (badness 6876) has occurred while \output is active []
 
  [5]
 
-Package natbib Warning: Citation `...' on page 6 undefined on input line 77.
+Package natbib Warning: Citation `Abramson1970Aloha' on page 6 undefined on input line 74.
+
+
+Package natbib Warning: Citation `Dai2013CSMAAloha' on page 6 undefined on input line 74.
+
+
+Package natbib Warning: Citation `Lien2012ACB' on page 6 undefined on input line 79.
+
+
+Package natbib Warning: Citation `Bockelmann2016MassiveAccess' on page 6 undefined on input line 81.
 
 [6]
 
-Package natbib Warning: Citation `...' on page 7 undefined on input line 79.
+Package natbib Warning: Citation `' on page 7 undefined on input line 85.
 
 
-Package natbib Warning: Citation `...' on page 7 undefined on input line 79.
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7]
+
+Package natbib Warning: Citation `...' on page 8 undefined on input line 94.
 
 
-Package natbib Warning: Citation `...' on page 7 undefined on input line 87.
+Package natbib Warning: Citation `...' on page 8 undefined on input line 94.
 
 
-Package natbib Warning: Citation `...' on page 7 undefined on input line 89.
+Underfull \vbox (badness 3965) has occurred while \output is active []
 
-[7]
-
-Package natbib Warning: Citation `...' on page 8 undefined on input line 96.
-
-
-Package natbib Warning: Citation `...' on page 8 undefined on input line 98.
-
-[8]
+ [8]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [9]
@@ -1674,9 +1655,9 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 (fontspec)             <->"FangSong/OT:script=hani;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
-) [71
+ [71
 
-] [72
+] [72]) [73] [74
 
 
 ]
@@ -1715,37 +1696,40 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 Underfull \vbox (badness 4266) has occurred while \output is active []
 
- [73
+ [75
 
 
 ]
 File: figure/appdix/P2Q_Absorbing_Markov_chain.pdf Graphic file (type pdf)
 <use figure/appdix/P2Q_Absorbing_Markov_chain.pdf>
- [74]
+ [76]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [75]
+ [77]
 Underfull \vbox (badness 1173) has occurred while \output is active []
 
- [76]
+ [78]
 Underfull \vbox (badness 3449) has occurred while \output is active []
 
- [77]) [78]
+ [79]) [80]
 \openout2 = `docs/Appendix2.aux'.
 
  (./docs/Appendix2.tex
 附录 B
 
+Package natbib Warning: Citation `Lin2013Toward' on page 81 undefined on input line 8.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [79
+ [81
 
 
 
 
 
 
-]) [80]
+]) [82]
 
 Package natbib Warning: There were undefined citations.
 
@@ -1760,12 +1744,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: A30555938AF911C8A4F256E22A558429;5637.
  ) 
 Here is how much of TeX's memory you used:
- 36099 strings out of 478622
- 776420 string characters out of 5847481
+ 36157 strings out of 478622
+ 777533 string characters out of 5847481
  1883290 words of memory out of 5000000
- 55433 multiletter control sequences out of 15000+600000
+ 55491 multiletter control sequences out of 15000+600000
  537808 words of font info for 199 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 103i,15n,111p,1253b,663s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 103i,15n,111p,1253b,782s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.xdv (86 pages, 1207804 bytes).
+Output written on main.xdv (88 pages, 1253512 bytes).
