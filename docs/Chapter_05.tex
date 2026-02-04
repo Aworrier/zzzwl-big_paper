@@ -47,7 +47,7 @@ U\!\left(\mathrm{norm}\!\left(S\big(\mathbf{X}_{\mathrm{in}}\big)\right)\right),
 其中决策变量为统一参数向量 $\mathbf{x}_{\mathrm{proto}}$，其首个分量为协议类型标识符，其余分量为对应协议参数。记 $\mathbf{x}_{\mathrm{proto}} = [a, \mathbf{x}_p^{\top}]^{\top}$，其中 $a \in \mathcal{P}$ 表示从候选集合中选取的协议类型，$\mathbf{x}_p \in \mathcal{X}_p$ 为该协议的参数向量，$\mathcal{X}_a$ 为协议 $a$ 的合法参数空间。图~\ref{fig:chap5_framework} 给出了统一接入框架及协议选择流程的示意，后续内容将围绕式~\eqref{eq:chap5_overview} 分别展开统一输入构造、性能指标与效用定义以及数据驱动决策方法的设计。
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.3\textwidth]{figure/chap5/model1.pdf}
+\includegraphics[width=0.95\textwidth]{figure/chap5/model1.pdf}
 \caption{统一接入框架与协议选择流程}
 \label{fig:chap5_framework}
 \end{figure}
@@ -302,14 +302,14 @@ $\mathbf{x}_{\mathrm{proto}} = [a, q,\ M, \ldots]^{\top}$,
 		& $n$ & 100 & 网络节点数 \\
 		& $T$ & $3 \times 10^5$ & 仿真时隙数 \\
 		& $\text{traffic\_type}$ & \{U, B, P\} & 均匀(U)、突发(B)、周期(P) \\
-		& $\hat{\lambda}$ & $[0.001, 0.7]$ & 归一化网络平均到达率 \\
+		& $\hat{\lambda}$ & ${0.1, 0.3, 0.5, 0.1}$ & 归一化网络平均到达率 \\
 		\midrule
 		\multirow{1}{*}{SA/SAST参数} 
 		& $q$ & $[0.001, 0.1]$ & 接入概率 \\
 		\midrule
 		\multirow{2}{*}{CBA参数} 
 		& $q$ & $[0.001, 0.1]$ & 接入概率 \\
-		& $M$ & $[5, 20]$ & 连续传输长度 \\
+		& $M$ & ${1,2,4}$ & 连续传输长度 \\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -356,9 +356,9 @@ $\mathbf{x}_{\mathrm{proto}} = [a, q,\ M, \ldots]^{\top}$,
 通过上述数据集构建流程，本文获得了覆盖多协议、多参数配置与多种流量形态的仿真样本库。需要强调的是，数据集中的性能标签由统一仿真器在统一网络规模与统一统计口径下生成，且两阶段采样保证了各协议在其有效工作区间内具有足够的样本密度。因此，该数据集不仅用于后续代理模型训练，同时也可作为可复现的性能基准来源。基于此，下一小节将在不额外引入新的仿真设置前提下，对数据集进行面向基准对比的组织与可视化分析，给出不同协议在典型流量形态与流量强度变化下的性能差异，为后续学习模型的效果评估提供参照。
 
 
-\subsection{仿真性能验证与对比}
-\label{subsec:protocol_performance_comparison}
-为在代理模型训练之前建立可复现的性能基准，并验证多协议共存框架的必要性，本小节直接基于\ref{subsec:dataset_construction}节构建的数据集开展对比分析。具体而言，本文将数据集按流量形态与协议类型进行分组，并在每一组内设置参数配置作为对比切片。在保持网络规模、统计口径与标签生成方式一致的条件下，通过绘制吞吐量、时延、公平性与信令开销等指标随归一化网络平均到达率 $\hat{\lambda}$和 传输概率$q$ 变化的曲线，展示不同协议在典型场景下的性能演化规律，从而形成后续代理模型训练与预测结果的基准参照。
+% \subsection{仿真性能验证与对比}
+% \label{subsec:protocol_performance_comparison}
+% 为在代理模型训练之前建立可复现的性能基准，并验证多协议共存框架的必要性，本小节直接基于\ref{subsec:dataset_construction}节构建的数据集开展对比分析。具体而言，本文将数据集按流量形态与协议类型进行分组，并在每一组内设置参数配置作为对比切片。在保持网络规模、统计口径与标签生成方式一致的条件下，通过绘制吞吐量、时延、公平性与信令开销等指标随归一化网络平均到达率 $\hat{\lambda}$和 传输概率$q$ 变化的曲线，展示不同协议在典型场景下的性能演化规律，从而形成后续代理模型训练与预测结果的基准参照。
 
 % \textbf{吞吐量对比。} 
 % 图~\ref{fig:protocol_throughput_comparison} 给出了不同协议随 $\hat{\lambda}$ 变化的输出吞吐量 $\lambda_{\mathrm{out}}$ 曲线。
@@ -454,45 +454,45 @@ $\mathbf{x}_{\mathrm{proto}} = [a, q,\ M, \ldots]^{\top}$,
 
 % === 1. 将下列内容剪切到5.2.4节合适位置（如“仿真性能验证与对比”小节中） ===
 
-\subsection{不同\(\lambda\)下均匀流量场景的性能对比}
-为进一步展示不同协议在均匀流量（uniform）场景下随接入概率\(q\)变化的性能差异，本文对\(\lambda=0.001, 0.003, 0.005, 0.01\)四种典型到达率下的时延、吞吐量、公平性、信令开销等指标进行了仿真对比，结果如下图所示。
+% \subsection{不同\(\lambda\)下均匀流量场景的性能对比}
+% 为进一步展示不同协议在均匀流量（uniform）场景下随接入概率\(q\)变化的性能差异，本文对\(\lambda=0.001, 0.003, 0.005, 0.01\)四种典型到达率下的时延、吞吐量、公平性、信令开销等指标进行了仿真对比，结果如下图所示。
 
-% 延迟对比
-\begin{figure}[htbp]
-    \centering
-    % 四个子图
-    \subfloat[$\lambda=0.01$]{\includegraphics[width=0.24\textwidth]{figure/chap5/delay_vs_q_xprefix__lambda=0.01,traffic_type=uniform.png}}
-    \subfloat[$\lambda=0.001$]{\includegraphics[width=0.24\textwidth]{figure/chap5/delay_vs_q_xprefix__lambda=0.001,traffic_type=uniform.png}}
-    \subfloat[$\lambda=0.003$]{\includegraphics[width=0.24\textwidth]{figure/chap5/delay_vs_q_xprefix__lambda=0.003,traffic_type=uniform.png}}
-    \subfloat[$\lambda=0.005$]{\includegraphics[width=0.24\textwidth]{figure/chap5/delay_vs_q_xprefix__lambda=0.005,traffic_type=uniform.png}}
-    \caption{不同$\lambda$下均匀流量场景的平均时延$D$随$q$变化对比}
-    \label{fig:delay_vs_q_uniform}
-\end{figure}
+% % 延迟对比
+% \begin{figure}[htbp]
+%     \centering
+%     % 四个子图
+%     \subfloat[$\lambda=0.01$]{\includegraphics[width=0.24\textwidth]{figure/chap5/delay_vs_q_xprefix__lambda=0.01,traffic_type=uniform.png}}
+%     \subfloat[$\lambda=0.001$]{\includegraphics[width=0.24\textwidth]{figure/chap5/delay_vs_q_xprefix__lambda=0.001,traffic_type=uniform.png}}
+%     \subfloat[$\lambda=0.003$]{\includegraphics[width=0.24\textwidth]{figure/chap5/delay_vs_q_xprefix__lambda=0.003,traffic_type=uniform.png}}
+%     \subfloat[$\lambda=0.005$]{\includegraphics[width=0.24\textwidth]{figure/chap5/delay_vs_q_xprefix__lambda=0.005,traffic_type=uniform.png}}
+%     \caption{不同$\lambda$下均匀流量场景的平均时延$D$随$q$变化对比}
+%     \label{fig:delay_vs_q_uniform}
+% \end{figure}
 
-% 公平性对比
-\begin{figure}[htbp]
-    \centering
-    \subfloat[$\lambda=0.01$]{\includegraphics[width=0.24\textwidth]{figure/chap5/fairness_vs_q_xprefix__lambda=0.01,traffic_type=uniform.png}}
-    \subfloat[$\lambda=0.001$]{\includegraphics[width=0.24\textwidth]{figure/chap5/fairness_vs_q_xprefix__lambda=0.001,traffic_type=uniform.png}}
-    \subfloat[$\lambda=0.003$]{\includegraphics[width=0.24\textwidth]{figure/chap5/fairness_vs_q_xprefix__lambda=0.003,traffic_type=uniform.png}}
-    \subfloat[$\lambda=0.005$]{\includegraphics[width=0.24\textwidth]{figure/chap5/fairness_vs_q_xprefix__lambda=0.005,traffic_type=uniform.png}}
-    \caption{不同$\lambda$下均匀流量场景的公平性$J_T$随$q$变化对比}
-    \label{fig:fairness_vs_q_uniform}
-\end{figure}
+% % 公平性对比
+% \begin{figure}[htbp]
+%     \centering
+%     \subfloat[$\lambda=0.01$]{\includegraphics[width=0.24\textwidth]{figure/chap5/fairness_vs_q_xprefix__lambda=0.01,traffic_type=uniform.png}}
+%     \subfloat[$\lambda=0.001$]{\includegraphics[width=0.24\textwidth]{figure/chap5/fairness_vs_q_xprefix__lambda=0.001,traffic_type=uniform.png}}
+%     \subfloat[$\lambda=0.003$]{\includegraphics[width=0.24\textwidth]{figure/chap5/fairness_vs_q_xprefix__lambda=0.003,traffic_type=uniform.png}}
+%     \subfloat[$\lambda=0.005$]{\includegraphics[width=0.24\textwidth]{figure/chap5/fairness_vs_q_xprefix__lambda=0.005,traffic_type=uniform.png}}
+%     \caption{不同$\lambda$下均匀流量场景的公平性$J_T$随$q$变化对比}
+%     \label{fig:fairness_vs_q_uniform}
+% \end{figure}
 
-% 信令开销对比
-\begin{figure}[htbp]
-    \centering
-    \subfloat[$\lambda=0.01$]{\includegraphics[width=0.24\textwidth]{figure/chap5/signaling_overhead_vs_q_xprefix__lambda=0.01,traffic_type=uniform.png}}
-    \subfloat[$\lambda=0.001$]{\includegraphics[width=0.24\textwidth]{figure/chap5/signaling_overhead_vs_q_xprefix__lambda=0.001,traffic_type=uniform.png}}
-    \subfloat[$\lambda=0.003$]{\includegraphics[width=0.24\textwidth]{figure/chap5/signaling_overhead_vs_q_xprefix__lambda=0.003,traffic_type=uniform.png}}
-    \subfloat[$\lambda=0.005$]{\includegraphics[width=0.24\textwidth]{figure/chap5/signaling_overhead_vs_q_xprefix__lambda=0.005,traffic_type=uniform.png}}
-    \caption{不同$\lambda$下均匀流量场景的信令开销$S$随$q$变化对比}
-    \label{fig:signaling_vs_q_uniform}
-\end{figure}
+% % 信令开销对比
+% \begin{figure}[htbp]
+%     \centering
+%     \subfloat[$\lambda=0.01$]{\includegraphics[width=0.24\textwidth]{figure/chap5/signaling_overhead_vs_q_xprefix__lambda=0.01,traffic_type=uniform.png}}
+%     \subfloat[$\lambda=0.001$]{\includegraphics[width=0.24\textwidth]{figure/chap5/signaling_overhead_vs_q_xprefix__lambda=0.001,traffic_type=uniform.png}}
+%     \subfloat[$\lambda=0.003$]{\includegraphics[width=0.24\textwidth]{figure/chap5/signaling_overhead_vs_q_xprefix__lambda=0.003,traffic_type=uniform.png}}
+%     \subfloat[$\lambda=0.005$]{\includegraphics[width=0.24\textwidth]{figure/chap5/signaling_overhead_vs_q_xprefix__lambda=0.005,traffic_type=uniform.png}}
+%     \caption{不同$\lambda$下均匀流量场景的信令开销$S$随$q$变化对比}
+%     \label{fig:signaling_vs_q_uniform}
+% \end{figure}
 
 
-上述结果直观展现了在不同流量强度下，三类协议在主要性能指标上的变化趋势，为后续协议选择与参数优化提供了数据支撑。
+% 上述结果直观展现了在不同流量强度下，三类协议在主要性能指标上的变化趋势，为后续协议选择与参数优化提供了数据支撑。
 
 % === 2. 小结部分只保留简要总结，不再重复上述仿真结果 ===
 
@@ -571,12 +571,12 @@ $\mathbf{x}_{\mathrm{proto}} = [a, q,\ M, \ldots]^{\top}$,
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=0.6\textwidth]{figure/chap5/神经网络训练流程.pdf}
+	\includegraphics[width=0.95\textwidth]{figure/chap5/神经网络训练流程.pdf}
 	\caption{多任务深度神经网络代理模型的训练流程示意图}
 	\label{fig:nn_training_flow}
 \end{figure}
 
-图~\ref{fig:nn_training_flow} 展示了多任务深度神经网络代理模型的完整训练流程。该流程包括数据预处理、特征归一化、模型前向传播、多任务损失计算、参数优化与验证集监控等关键环节。通过合理设计训练管线，能够有效提升模型的泛化能力和预测精度，为后续的协议优化与快速决策提供坚实的数据驱动基础。在标准配置下，模型输入特征维度约为 100，隐藏层宽度设置为 128，输出端包含 5 个任务分支。整体网络参数量约为 3000--4500。结合前述数据集规模，样本量与参数量之比约为 100--200，能够有效支撑模型的泛化能力并抑制过拟合风险。该参数规模兼顾了模型表达能力与实际训练可行性，适用于大规模业务场景下的高效性能预测需求。
+图~\ref{fig:nn_training_flow} 展示了多任务深度神经网络代理模型的完整训练流程。该流程包括数据预处理、特征归一化、模型前向传播、多任务损失计算、参数优化与验证集监控等关键环节。通过合理设计训练管线，能够有效提升模型的泛化能力和预测精度，为后续的协议优化与快速决策提供坚实的数据驱动基础。在标准配置下，模型输入特征维度约为 100，隐藏层宽度设置为 128，输出端包含 4 个任务分支。整体网络参数量约为 3000--4500。结合前述数据集规模，样本量与参数量之比约为 100--200，能够有效支撑模型的泛化能力并抑制过拟合风险。该参数规模兼顾了模型表达能力与实际训练可行性，适用于大规模业务场景下的高效性能预测需求。
 
 
 \subsection{多目标协同优化与训练策略}
@@ -618,17 +618,45 @@ $\mathbf{x}_{\mathrm{proto}} = [a, q,\ M, \ldots]^{\top}$,
 		\toprule
 		\textbf{性能指标} & \textbf{MSE} & \textbf{MAE} & \textbf{$R^2$} \\
 		\midrule
-		吞吐量 $\lambda_{\mathrm{out}}$ & 0.0021 & 0.033 & 0.985 \\
-		平均时延 $D$ & 0.0045 & 0.051 & 0.972 \\
+		吞吐量 $\lambda_{\mathrm{out}}$ & 0.001 & 0.016 & 0.98 \\
+		平均时延 $D$ & 0.0045 & 0.017 & 0.919 \\
 		公平性 $J_T$ & 0.0017 & 0.029 & 0.988 \\
-		信令开销 $S$ & 0.0032 & 0.041 & 0.976 \\
+		信令开销 $S$ & 0.0002 & 0.0121 & 0.994 \\
 		\bottomrule
 	\end{tabular}
 \end{table}
 
-
 \textbf{总结：} 综上所述，所提出的多任务深度神经网络代理模型在各项性能指标上均表现出优异的预测能力。无论是吞吐量、时延还是公平性与信令开销，模型均能实现高精度的拟合，$R^2$值均超过0.97，满足实际业务场景下对快速、准确性能评估的需求。这为后续基于代理模型的协议优化与自适应决策奠定了坚实基础。
 
+\begin{figure}[htbp]
+	\centering
+	% (a) 吞吐量
+	\subfloat[吞吐量 $\lambda_{\mathrm{out}}$]{
+		\includegraphics[width=0.45\textwidth]{figure/chap5/throughput_vs_q_xprefix__lambda__0.003_traffic_type__uniform.png}
+		\label{fig:ai_vs_sim_uniform_003_thr}
+	}
+	% (b) 平均时延
+	\subfloat[平均时延 $D$]{
+		\includegraphics[width=0.45\textwidth]{figure/chap5/delay_vs_q_xprefix__lambda__0.003_traffic_type__uniform.png}
+		\label{fig:ai_vs_sim_uniform_003_delay}
+	}\\
+	% (c) 公平性
+	\subfloat[公平性 $J_T$]{
+		\includegraphics[width=0.45\textwidth]{figure/chap5/fairness_vs_q_xprefix__lambda__0.003_traffic_type__uniform.png}
+		\label{fig:ai_vs_sim_uniform_003_fairness}
+	}
+	% (d) 信令开销
+	\subfloat[信令开销 $S$]{
+		\includegraphics[width=0.45\textwidth]{figure/chap5/signaling_overhead_vs_q_xprefix__lambda__0.003_traffic_type__uniform.png}
+		\label{fig:ai_vs_sim_uniform_003_signaling}
+	}
+	\caption{单节点到达率 $\lambda=0.003$，流量类型为 uniform 场景下，AI代理模型预测曲线（实线）与真实仿真结果（离散点）的性能对比。\\
+	(a) 吞吐量 $\lambda_{\mathrm{out}}$：展示了不同协议参数下系统的吞吐能力，AI模型预测与仿真结果高度吻合，说明模型能有效捕捉系统负载变化趋势。\\
+	(b) 平均时延 $D$：反映了数据包在系统中的平均传输时延，AI预测曲线与仿真点基本重合，验证了模型对时延性能的准确刻画。\\
+	(c) 公平性 $J_T$：衡量各节点资源分配的均衡性，结果显示AI模型能够较好地反映协议参数变化对公平性的影响。\\
+	(d) 信令开销 $S$：描述了系统在不同参数下的信令消耗，AI预测与仿真结果趋势一致，表明模型在信令开销估计方面具有较高可靠性。}
+	\label{fig:ai_vs_sim_uniform_003}
+\end{figure}
 \section{基于代理模型的快速搜索与预测}
 
 在代理模型 $f_{\phi}$ 训练完成后，原先耗时的协议优化问题便转化为一个可在毫秒级求解的数学优化问题。给定一个业务场景的流量特征 $\bm{x}_\text{traffic}$，目标是快速找到最优的统一参数向量 $\mathbf{x}_{\text{proto}}^*$（包含最优协议类型及其对应参数）：
