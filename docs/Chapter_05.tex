@@ -1,5 +1,6 @@
 
 \chapter{基于监督学习的智能协议与参数联合选择方法}
+
 \label{chapter5: ai_selector}
 现代无线网络，尤其是物联网场景，业务需求呈现出显著的多样性与动态性。不同业务在接入密度、数据包长度及时延敏感度等方面差异明显，使得单一随机接入协议难以在复杂多变的网络条件下始终保持最优性能。传统基于固定协议与静态参数配置的设计，难以同时兼顾吞吐量、时延、公平性、信令开销多维性能指标，存在明显局限。
 不同随机接入协议在吞吐性能、时延特性、信令开销方面表现各异。表~\ref{tab:protocol_comparison} 对 Slotted Aloha(SA)、SAST、CBA典型协议进行了定性对比，可以看出，协议机制的增强虽可显著提升系统吞吐，但同时也可能带来更高的信令开销，进一步表明难以依靠单一协议适应所有场景。
@@ -150,7 +151,7 @@ $\mathbf{x}_{\mathrm{proto}} = [a, q,\ M, \ldots]^{\top}$,
 其中效用型指标是指数值增大表示性能提升的指标，如吞吐量 $\lambda_{\mathrm{out}}$ 和公平性 $J_T$；成本型指标是指数值减小表示性能改善的指标，如时延 $D$ 与信令开销 $S$。该归一化方法将所有指标映射至 $[0,1]$ 区间，并保证归一化后的指标均满足数值越大性能越优的单调关系。由此得到归一化指标向量
 \begin{equation}
 	\tilde{\mathbf{y}}=\mathrm{norm}(\mathbf{y})
-	=\big[\tilde{\lambda}_{\mathrm{out}},\ \tilde{D},\ \tilde{J}_T,\ \tilde{C}_{\mathrm{rx}},\ \tilde{I}_{\mathrm{impl}}\big].
+	=\big[\tilde{\lambda}_{\mathrm{out}},\ \tilde{D},\ \tilde{J}_T,\ \tilde{S}\big].
 \end{equation}
 
 在此基础上，为将多维指标映射为单一可优化目标，本文采用加权线性效用函数
@@ -576,7 +577,7 @@ $\mathbf{x}_{\mathrm{proto}} = [a, q,\ M, \ldots]^{\top}$,
 	\label{fig:nn_training_flow}
 \end{figure}
 
-图~\ref{fig:nn_training_flow} 展示了多任务深度神经网络代理模型的完整训练流程。该流程包括数据预处理、特征归一化、模型前向传播、多任务损失计算、参数优化与验证集监控等关键环节。通过合理设计训练管线，能够有效提升模型的泛化能力和预测精度，为后续的协议优化与快速决策提供坚实的数据驱动基础。在标准配置下，模型输入特征维度约为 100，隐藏层宽度设置为 128，输出端包含 4 个任务分支。整体网络参数量约为 3000--4500。结合前述数据集规模，样本量与参数量之比约为 100--200，能够有效支撑模型的泛化能力并抑制过拟合风险。该参数规模兼顾了模型表达能力与实际训练可行性，适用于大规模业务场景下的高效性能预测需求。
+图~\ref{fig:nn_training_flow} 给出多任务深度神经网络代理模型的训练流程，包括数据预处理、特征归一化、前向传播、多任务损失计算、参数优化与验证集监控等环节。在标准配置下，模型输入特征维度约为 100，隐藏层宽度 128，输出端包含 4 个任务分支，参数量约为 3000--4500。结合前述数据集规模，样本量与参数量之比约为 100--200，可用于评估模型复杂度与样本规模的匹配程度。
 
 
 \subsection{多目标协同优化与训练策略}
@@ -628,62 +629,109 @@ $\mathbf{x}_{\mathrm{proto}} = [a, q,\ M, \ldots]^{\top}$,
 
 \textbf{总结：} 综上所述，所提出的多任务深度神经网络代理模型在各项性能指标上均表现出优异的预测能力。无论是吞吐量、时延还是公平性与信令开销，模型均能实现高精度的拟合，$R^2$值均超过0.97，满足实际业务场景下对快速、准确性能评估的需求。这为后续基于代理模型的协议优化与自适应决策奠定了坚实基础。
 
-\begin{figure}[htbp]
-	\centering
-	% (a) 吞吐量
-	\subfloat[吞吐量 $\lambda_{\mathrm{out}}$]{
-		\includegraphics[width=0.45\textwidth]{figure/chap5/throughput_vs_q_xprefix__lambda__0.003_traffic_type__uniform.png}
-		\label{fig:ai_vs_sim_uniform_003_thr}
-	}
-	% (b) 平均时延
-	\subfloat[平均时延 $D$]{
-		\includegraphics[width=0.45\textwidth]{figure/chap5/delay_vs_q_xprefix__lambda__0.003_traffic_type__uniform.png}
-		\label{fig:ai_vs_sim_uniform_003_delay}
-	}\\
-	% (c) 公平性
-	\subfloat[公平性 $J_T$]{
-		\includegraphics[width=0.45\textwidth]{figure/chap5/fairness_vs_q_xprefix__lambda__0.003_traffic_type__uniform.png}
-		\label{fig:ai_vs_sim_uniform_003_fairness}
-	}
-	% (d) 信令开销
-	\subfloat[信令开销 $S$]{
-		\includegraphics[width=0.45\textwidth]{figure/chap5/signaling_overhead_vs_q_xprefix__lambda__0.003_traffic_type__uniform.png}
-		\label{fig:ai_vs_sim_uniform_003_signaling}
-	}
-	\caption{单节点到达率 $\lambda=0.003$，流量类型为 uniform 场景下，AI代理模型预测曲线（实线）与真实仿真结果（离散点）的性能对比。\\
-	(a) 吞吐量 $\lambda_{\mathrm{out}}$：展示了不同协议参数下系统的吞吐能力，AI模型预测与仿真结果高度吻合，说明模型能有效捕捉系统负载变化趋势。\\
-	(b) 平均时延 $D$：反映了数据包在系统中的平均传输时延，AI预测曲线与仿真点基本重合，验证了模型对时延性能的准确刻画。\\
-	(c) 公平性 $J_T$：衡量各节点资源分配的均衡性，结果显示AI模型能够较好地反映协议参数变化对公平性的影响。\\
-	(d) 信令开销 $S$：描述了系统在不同参数下的信令消耗，AI预测与仿真结果趋势一致，表明模型在信令开销估计方面具有较高可靠性。}
+\begin{figure}[t]
+    \centering
+    % (a) 吞吐量
+    \subfloat[吞吐量 $\lambda_{\mathrm{out}}$]{
+        \includegraphics[width=0.49\textwidth]{figure/chap5/metric_throughput_lambda0.003_uniform.png}
+        \label{fig:ai_vs_sim_uniform_003_thr}
+    }
+    % (b) 平均时延
+    \subfloat[平均时延 $D$]{
+        \includegraphics[width=0.49\textwidth]{figure/chap5/metric_delay_lambda0.003_uniform.png}
+        \label{fig:ai_vs_sim_uniform_003_delay}
+    }\\
+    % (c) 公平性
+    \subfloat[公平性 $J_T$]{
+        \includegraphics[width=0.49\textwidth]{figure/chap5/metric_fairness_lambda0.003_uniform.png}
+        \label{fig:ai_vs_sim_uniform_003_fairness}
+    }
+    % (d) 信令开销
+    \subfloat[信令开销 $S$]{
+        \includegraphics[width=0.49\textwidth]{figure/chap5/metric_signaling_lambda0.003_uniform.png}
+        \label{fig:ai_vs_sim_uniform_003_signaling}
+    }
+	\caption{单节点到达率 $\lambda=0.003$、uniform 流量场景下，代理模型预测曲线（实线）与仿真结果（离散点）的性能对比。\\
+		(a) 吞吐量 $\lambda_{\mathrm{out}}$：展示不同协议参数下系统的吞吐能力，预测曲线与仿真点在主要拐点附近一致。\\
+		(b) 平均时延 $D$：反映数据包平均传输时延，预测曲线与仿真点在参数区间内对齐。\\
+		(c) 公平性 $J_T$：衡量节点资源分配均衡性，预测曲线能反映参数变化对公平性的影响。\\
+		(d) 信令开销 $S$：描述系统信令消耗，预测与仿真结果在整体趋势上吻合。}
 	\label{fig:ai_vs_sim_uniform_003}
 \end{figure}
+
+\begin{figure}[t]
+	\centering
+	\subfloat[吞吐优先]{
+		\includegraphics[width=0.48\textwidth]{figure/chap5/utility_throughput_priority_lambda0.003_uniform.png}
+		\label{fig:utility_priority_uniform_003_thr}
+	}
+	\hfill
+	\subfloat[时延优先]{
+		\includegraphics[width=0.48\textwidth]{figure/chap5/utility_delay_priority_lambda0.003_uniform.png}
+		\label{fig:utility_priority_uniform_003_delay}
+	}
+	\hfill
+	\subfloat[信令优先]{
+		\includegraphics[width=0.55\textwidth]{figure/chap5/utility_signaling_priority_lambda0.003_uniform.png}
+		\label{fig:utility_priority_uniform_003_signaling}
+	}
+	\caption{均匀流量、$\lambda=0.003$ 场景下，不同权重偏好对应的综合效用 $U$ 曲线对比。}
+	\label{fig:utility_priority_uniform_003}
+\end{figure}
+\subsection{代理模型曲线一致性与效用曲线对比说明}
+为评估代理模型的拟合程度，本节以均匀流量、单节点到达率 $\lambda=0.003$ 为例，对不同协议参数 $q$ 下的性能曲线进行对比。图~\ref{fig:ai_vs_sim_uniform_003} 中实线为预测、离散点为仿真结果，四类指标在参数区间内的变化趋势一致，峰值与拐点位置可对齐。
+
+进一步，为反映不同业务偏好下的综合性能，本节同时考察效用函数 $U(\tilde{\mathbf{y}})$ 的变化趋势，并将三种典型权重配置合并展示：吞吐优先、时延优先与信令优先。对应曲线见图~\ref{fig:utility_priority_uniform_003} 的三个子图。三条曲线在峰值位置与拐点处的差异，体现了权重设置对最优参数选择的影响：吞吐优先更倾向于高负载区间的参数组合；时延优先与信令优先则更偏向保守配置以降低排队与控制开销。该对比说明在统一代理模型输出基础上，仅需调整权重即可实现面向不同业务目标的快速策略切换。
+
+
+
 \section{基于代理模型的快速搜索与预测}
-
-在代理模型 $f_{\phi}$ 训练完成后，原先耗时的协议优化问题便转化为一个可在毫秒级求解的数学优化问题。给定一个业务场景的流量特征 $\bm{x}_\text{traffic}$，目标是快速找到最优的统一参数向量 $\mathbf{x}_{\text{proto}}^*$（包含最优协议类型及其对应参数）：
+在代理模型 $f_{\phi}$ 训练完成后，协议优化问题可转化为单次决策窗口内的参数搜索问题。给定业务场景的流量特征 $\bm{x}_\text{traffic}$，目标是求得统一参数向量 $\mathbf{x}_{\text{proto}}^*$, 即：
 \begin{equation}
-	\mathbf{x}_{\text{proto}}^* = \arg\max_{\mathbf{x}_{\text{proto}}} U\big(f_{\phi}(\bm{x}_{\text{traffic}}, \mathbf{x}_{\text{proto}}, \dots)\big)
+	\mathbf{x}_{\text{proto}}^* = \arg\max_{\mathbf{x}_{\text{proto}}} U\big(f_{\phi}(\bm{x}_\text{traffic}, \mathbf{x}_{\text{proto}}, \dots)\big)
 \end{equation}
-由于代理模型 $f_{\phi}$ 的评估速度极快，我们可以采用高效的搜索算法来求解此优化问题。针对该问题的混合离散—连续参数空间特性，可以选择以下优化策略：
+由于 $f_{\phi}$ 的评估开销较低，本文采用直接网格搜索以保证可复现性。针对混合离散—连续参数空间，该方法在候选协议与参数域内逐点评估并选择效用最大值。
+
+在实际业务场景中，网络流量类型与强度具备显著的动态时变性，且协议切换决策与流量突变往往非同步。为贴合工程流程，本文采用滑动观测窗口在线更新流量特征，并在每个决策时刻执行一次快速搜索。具体流程为：
+\begin{enumerate}[leftmargin=*]
+	\item \textbf{状态观测}：在窗口 $[t-\Delta t, t]$ 内统计流量特征 $\bm{x}_\text{traffic}$；
+	\item \textbf{直接搜索}：对 $\mathcal{P}$ 中各协议进行枚举，并在其参数域内快速搜索；
+	\item \textbf{协议自切换}：选择效用最高且满足约束的协议与参数，触发协议切换并下发配置；
+\end{enumerate}
+
+在验证实验中，流量特征变更设定为 $t=0,3\times10^5,6\times10^5,\ldots$，协议切换决策与其同步，即同样在 $t=0,3\times10^5,6\times10^5,\ldots$ 执行，均以 $3\times10^5$ 个时隙为周期。每个决策窗口内基于直接搜索得到代理模型推荐策略，并以离线穷举得到的近似最优效用作为参考上界。
+
+为保证对比的可复现性与逻辑一致性，设定流量在连续 10 个窗口内发生 10 次变化，每个窗口长度为 $3\times10^5$ 个时隙。每次变化同时指定流量形态与归一化平均到达率 $\hat{\lambda}$，形成“低负载→中负载→高负载→恢复”的周期性序列，覆盖均匀、突发与周期三类场景，具体如下：
+\begin{enumerate}[leftmargin=*]
+	\item 窗口1（$t\in[0,3\times10^5)$）：均匀到达（U），$\hat{\lambda}=0.10$；
+	\item 窗口2（$t\in[3\times10^5,6\times10^5)$）：突发到达（B），$\hat{\lambda}=0.30$；
+	\item 窗口3（$t\in[6\times10^5,9\times10^5)$）：周期到达（P），$\hat{\lambda}=0.50$；
+	\item 窗口4（$t\in[9\times10^5,12\times10^5)$）：均匀到达（U），$\hat{\lambda}=0.70$；
+	\item 窗口5（$t\in[12\times10^5,15\times10^5)$）：突发到达（B），$\hat{\lambda}=0.50$；
+	\item 窗口6（$t\in[15\times10^5,18\times10^5)$）：周期到达（P），$\hat{\lambda}=0.30$；
+	\item 窗口7（$t\in[18\times10^5,21\times10^5)$）：均匀到达（U），$\hat{\lambda}=0.20$；
+	\item 窗口8（$t\in[21\times10^5,24\times10^5)$）：突发到达（B），$\hat{\lambda}=0.60$；
+	\item 窗口9（$t\in[24\times10^5,27\times10^5)$）：周期到达（P），$\hat{\lambda}=0.40$；
+	\item 窗口10（$t\in[27\times10^5,30\times10^5)$）：均匀到达（U），$\hat{\lambda}=0.15$。
+\end{enumerate}
+该序列在形态与强度上交替变化，包含升载与降载过程，并引入形态切换带来的统计差异，用于考察单一协议在动态流量下的适配性，并与动态切换+调参策略对比。
+
+为明确改进来源，本文设置两类基线策略：
 \begin{itemize}[leftmargin=*]
-	\item \textbf{贝叶斯优化}：尤其适用于黑盒函数且评估成本较高的优化问题，在评估成本已显著降低的条件下，仍能有效平衡探索与利用，以较少迭代次数逼近全局最优解。
-	\item \textbf{演化算法}：如遗传算法，能够并行地在参数空间中进行全局搜索，对目标函数的形态要求较低，鲁棒性较好。
+	\item \textbf{基线1：单一协议固定参数。} 采用 SA 协议，传输概率 $q=0.01$ 恒定不变，用作静态配置参考。
+	\item \textbf{基线2：协议固定、参数可调。} 固定协议为 CBA，仅在协议内调参。对 $q$ 进行网格穷举（有效区间内均匀取 100 个采样点，并在峰值邻域额外加密 50 点），$M\in\{1,2,4\}$ 逐一遍历，取效用最大者作为该窗口的最优配置。
 \end{itemize}
-通过这些先进的优化算法，系统能够在业务状态发生变化时，实现对接入策略的快速、自适应调整。
 
-在实际业务场景中，网络流量的类型分布与强度往往表现出显著的动态时变特性。值得注意的是，系统执行协议切换的决策时刻与流量特征发生突变的时刻通常存在时间上的非同步性。为了验证代理模型在此类非平稳环境下的效用预测能力与鲁棒性，本文设计了针对性的仿真实验。
-
-实验设定流量特征的变更发生在 $t=0,100,200,\ldots$ 等时刻，而系统的协议切换决策则设定在 $t=50,150,250,\ldots$ 等时刻，从而在两者之间引入了固定的时间偏移。每次协议切换决策均基于当前时刻之前的统计窗口进行，具体的观测区间分别为 $[0,50]$、$[100,150]$ 以及 $[200,250]$ 等。对于每一个观测窗口，系统首先统计期间内的流量特征，利用代理模型预测该状态下的最优协议形式及参数配置，并计算其预期效用；随后，通过全局搜索方式获取该窗口下的真实最优协议参数及理论效用上限，以此作为评估基准。
-
-实验的具体执行流程包括生成流量变化序列与协议切换时间点、提取各窗口内的流量统计特征、基于代理模型进行参数寻优与效用计算，以及对比理论最优解并绘制分析曲线。实验结果如图~\ref{fig:utility_vs_traffic} 所示，该图直观展示了在连续的切换窗口下，代理模型推荐策略与理论最优方案的效用对比情况。
+实验流程包括生成流量变化序列、提取窗口特征、在线搜索与协议切换，以及对比最优效用曲线与上述指标的变化趋势。实验结果如图~\ref{fig:utility_vs_traffic} 所示，展示了连续切换窗口下推荐策略与单一协议策略的性能对比。
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.99\textwidth]{figure/chap5/utility_vs_traffic.pdf}
-	\caption{动态业务场景下代理模型推荐策略与最优策略的效用对比。横坐标表示按时序排列的协议切换窗口编号，纵坐标表示对应的综合效用 $U(\tilde{\mathbf{y}})$。}
+	\includegraphics[width=0.99\textwidth]{figure/chap5/utility_dynamic_combined.png}
+	\caption{动态业务场景下代理模型推荐策略与基线策略的效用对比。横坐标表示按时序排列的协议切换窗口编号，纵坐标表示对应的综合效用 $U(\tilde{\mathbf{y}})$。}
 	\label{fig:utility_vs_traffic}
 \end{figure}
 
-从图~\ref{fig:utility_vs_traffic} 展示的趋势可以看出，尽管流量变化与决策时刻存在时间上的不重合，代理模型在绝大多数窗口下依然能够实现对最优协议参数效用的高精度逼近。两条曲线的高度拟合表明，本文提出的模型能够有效捕捉动态窗口内的流量特征，具备在复杂多变的业务场景中提供可靠决策支持的实用性与有效性。
+
 
 
 \section{本章小结}
