@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.10)  8 FEB 2026 13:16
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.10)  27 FEB 2026 12:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1231,7 +1231,18 @@ LaTeX Font Warning: Font shape `TU/SimHei(0)/b/n' undefined
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [4]
+ [4] (./main.lof)
+\tf@lof=\write6
+\openout6 = `main.lof'.
+
+ (./main.lot [5
+
+
+])
+\tf@lot=\write7
+\openout7 = `main.lot'.
+
+ [6]
 \openout2 = `docs/Symbol.aux'.
 
  (./docs/Symbol.tex
@@ -1239,12 +1250,12 @@ LaTeX Font Warning: Font shape `TU/SimHei(0)/b/n' undefined
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\heiti' on input line 3.
 
-[5
+[7
 
 
 
 
-]) [6]
+]) [8]
 \openout2 = `docs/Chapter_011.aux'.
 
  (./docs/Chapter_011.tex
@@ -1257,64 +1268,60 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 ]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 6876) has occurred while \output is active []
 
  [2]
 
-Package natbib Warning: Citation `...' on page 3 undefined on input line 28.
+Package natbib Warning: Citation `3GPP_TR38.843' on page 3 undefined on input line 30.
 
 
-Package natbib Warning: Citation `...' on page 3 undefined on input line 28.
+Package natbib Warning: Citation `3GPP_RP-234039' on page 3 undefined on input line 30.
 
 
-Package natbib Warning: Citation `...' on page 3 undefined on input line 28.
+Package natbib Warning: Citation `3GPP_R2-2313456' on page 3 undefined on input line 32.
 
 
-Package natbib Warning: Citation `' on page 3 undefined on input line 28.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 6876) has occurred while \output is active []
 
  [3]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1521) has occurred while \output is active []
 
  [4]
-Underfull \vbox (badness 3078) has occurred while \output is active []
-
- [5]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6]
+ [5]
 
-Package natbib Warning: Citation `...' on page 7 undefined on input line 80.
-
-
-Package natbib Warning: Citation `...' on page 7 undefined on input line 80.
+Package natbib Warning: Citation `...' on page 6 undefined on input line 89.
 
 
-Package natbib Warning: Citation `...' on page 7 undefined on input line 82.
+Package natbib Warning: Citation `...' on page 6 undefined on input line 89.
 
 
-Package natbib Warning: Citation `...' on page 7 undefined on input line 84.
+Package natbib Warning: Citation `...' on page 6 undefined on input line 91.
+
+[6]
+
+Package natbib Warning: Citation `...' on page 7 undefined on input line 93.
 
 
-Package natbib Warning: Citation `...' on page 7 undefined on input line 86.
-
-[7]
-
-Package natbib Warning: Citation `...' on page 8 undefined on input line 88.
-
-[8] [9] [10]) [11] [12
+Package natbib Warning: Citation `...' on page 7 undefined on input line 95.
 
 
+Package natbib Warning: Citation `...' on page 7 undefined on input line 97.
 
 
-]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7] [8] [9] [10]) [11] [12]
 \openout2 = `docs/Chapter_02.aux'.
 
  (./docs/Chapter_02.tex
 第2章
 [13
+
+
+
+
 
 
 ] [14] [15]) [16]
@@ -1725,16 +1732,16 @@ Package rerunfilecheck Warning: File `main.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 3CA323A6A193C2B3E5BBB5396F406BB7;5640
-(rerunfilecheck)             After:  979581EAB80EBF373119D204B9046D4D;5645.
+(rerunfilecheck)             Before: 15D4EA631FAB951CCDCAFE6DE93EC8FE;5494
+(rerunfilecheck)             After:  1C0EBF46A7A3CB7C05B7848CA5B8C1D7;5454.
  ) 
 Here is how much of TeX's memory you used:
- 36177 strings out of 478622
- 775769 string characters out of 5847481
+ 36220 strings out of 478622
+ 777885 string characters out of 5847481
  1881290 words of memory out of 5000000
- 55518 multiletter control sequences out of 15000+600000
+ 55555 multiletter control sequences out of 15000+600000
  537800 words of font info for 198 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  103i,15n,111p,1195b,834s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (88 pages).
+Output written on main.pdf (90 pages).

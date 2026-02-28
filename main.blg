@@ -1,0 +1,89 @@
+This is BibTeX, Version 0.99d (TeX Live 2023)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+A level-1 auxiliary file: docs/Symbol.aux
+A level-1 auxiliary file: docs/Chapter_011.aux
+A level-1 auxiliary file: docs/Chapter_02.aux
+A level-1 auxiliary file: docs/Chapter_03.aux
+A level-1 auxiliary file: docs/Chapter_04.aux
+A level-1 auxiliary file: docs/Chapter_05.aux
+The style file: Bibliography/bibtex-style/gbt7714-2005.bst
+A level-1 auxiliary file: docs/Appendix1.aux
+A level-1 auxiliary file: docs/Appendix2.aux
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: Bibliography/Reference.bib
+Warning--string name "apr" is undefined
+--line 229 of file Bibliography/Reference.bib
+Warning--string name "jan" is undefined
+--line 303 of file Bibliography/Reference.bib
+Warning--string name "apr" is undefined
+--line 327 of file Bibliography/Reference.bib
+Warning--string name "jul" is undefined
+--line 351 of file Bibliography/Reference.bib
+Warning--string name "mar" is undefined
+--line 371 of file Bibliography/Reference.bib
+Warning--string name "jul" is undefined
+--line 395 of file Bibliography/Reference.bib
+Warning--string name "jan" is undefined
+--line 535 of file Bibliography/Reference.bib
+Warning--string name "feb" is undefined
+--line 559 of file Bibliography/Reference.bib
+Warning--I didn't find a database entry for "..."
+Warning--I didn't find a database entry for ""
+Warning--I didn't find a database entry for "bibid"
+Warning--I didn't find a database entry for "Lin2013Toward"
+Warning--Require address: 2023_ITUFramework
+Warning--Require citedate: 2023_6Groad
+Warning--Require citedate: 2026_unsourced
+Warning--Require address: 2013_4gLTERA
+Warning--Require author: 3GPP_TS36321
+Warning--Require address: 3GPP_TS36321
+Warning--Require author: 3GPP_TS38321_R17
+Warning--Require address: 3GPP_TS38321_R17
+Warning--Require author: 2016_IEEE80211
+Warning--Require citedate: 2021_AI_ACCESS
+Warning--Require citedate: 2024_AI_ACCESS2
+You've used 41 entries,
+            3107 wiz_defined-function locations,
+            1003 strings with 14531 characters,
+and the built_in function-call counts, 74629 in all, are:
+= -- 8199
+> -- 136
+< -- 313
++ -- 6379
+- -- 482
+* -- 2127
+:= -- 8076
+add.period$ -- 0
+call.type$ -- 41
+change.case$ -- 190
+chr.to.int$ -- 0
+cite$ -- 52
+duplicate$ -- 10754
+empty$ -- 2955
+format.name$ -- 380
+if$ -- 19737
+int.to.chr$ -- 0
+int.to.str$ -- 41
+missing$ -- 0
+newline$ -- 150
+num.names$ -- 41
+pop$ -- 1100
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 593
+stack$ -- 0
+substring$ -- 9032
+swap$ -- 2188
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 11
+while$ -- 983
+width$ -- 43
+write$ -- 625
+(There were 23 warnings)

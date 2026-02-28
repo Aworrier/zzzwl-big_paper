@@ -130,6 +130,15 @@
     \fancyhead[CE]{\zihao{-5}\@ctitle}
 }
 
+%%% AI修改
+% 图表目录页面样式
+\fancypagestyle{listoffiguretable}{
+	\fancyhf{}
+	\fancyfoot[C]{\zihao{-5}\thepage}
+	\fancyhead[CO]{\zihao{-5}{中山大学\@degree 学位论文}}
+	\fancyhead[CE]{\zihao{-5}\@ctitle}
+}
+
 % 表格与图片标题设定
 \renewcommand{\thefigure}{\thechapter-\arabic{figure}}
 \renewcommand{\thetable}{\thechapter-\arabic{table}}
