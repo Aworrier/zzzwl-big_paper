@@ -31,7 +31,6 @@ Warning--string name "jan" is undefined
 Warning--string name "feb" is undefined
 --line 559 of file Bibliography/Reference.bib
 Warning--I didn't find a database entry for "..."
-Warning--I didn't find a database entry for ""
 Warning--I didn't find a database entry for "bibid"
 Warning--I didn't find a database entry for "Lin2013Toward"
 Warning--Require address: 2023_ITUFramework
@@ -42,48 +41,50 @@ Warning--Require author: 3GPP_TS36321
 Warning--Require address: 3GPP_TS36321
 Warning--Require author: 3GPP_TS38321_R17
 Warning--Require address: 3GPP_TS38321_R17
+Warning--Require address: 3GPP_TR38.843
+Warning--Require citedate: 3GPP_TR38.843
+Warning--Require address: 3GPP_R2-2313456
 Warning--Require author: 2016_IEEE80211
 Warning--Require citedate: 2021_AI_ACCESS
-Warning--Require citedate: 2024_AI_ACCESS2
-You've used 41 entries,
+You've used 43 entries,
             3107 wiz_defined-function locations,
-            1003 strings with 14531 characters,
-and the built_in function-call counts, 74629 in all, are:
-= -- 8199
-> -- 136
-< -- 313
-+ -- 6379
-- -- 482
-* -- 2127
-:= -- 8076
+            1020 strings with 14846 characters,
+and the built_in function-call counts, 73591 in all, are:
+= -- 8009
+> -- 138
+< -- 319
++ -- 6242
+- -- 479
+* -- 2172
+:= -- 7969
 add.period$ -- 0
-call.type$ -- 41
+call.type$ -- 43
 change.case$ -- 190
 chr.to.int$ -- 0
-cite$ -- 52
-duplicate$ -- 10754
-empty$ -- 2955
+cite$ -- 56
+duplicate$ -- 10498
+empty$ -- 2950
 format.name$ -- 380
-if$ -- 19737
+if$ -- 19464
 int.to.chr$ -- 0
-int.to.str$ -- 41
+int.to.str$ -- 43
 missing$ -- 0
-newline$ -- 150
-num.names$ -- 41
-pop$ -- 1100
+newline$ -- 156
+num.names$ -- 43
+pop$ -- 1080
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 593
+skip$ -- 625
 stack$ -- 0
-substring$ -- 9032
-swap$ -- 2188
+substring$ -- 8806
+swap$ -- 2242
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 11
-while$ -- 983
-width$ -- 43
-write$ -- 625
-(There were 23 warnings)
+warning$ -- 13
+while$ -- 974
+width$ -- 45
+write$ -- 654
+(There were 24 warnings)

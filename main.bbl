@@ -36,9 +36,6 @@
 \bibitem{2026_unsourced}
 \bibauthor{OZATES M\@, AHMADI M~J\@, KAZEMI M, et~al}\@. \bibtitle{Unsourced Random Access: A Comprehensive Survey}\bibmark{[J/OL]}\@. \bibjournal{IEEE Communications Surveys \& Tutorials}\@, \bibyear{2026}\@, \bibvolume{28}\thinspace{}\textnormal{: }\bibpages{955\thinspace{}\textnormal{--}\thinspace{}984}\@. \url{http://dx.doi.org/10.1109/COMST.2025.3637685}\@.
 
-\bibitem{2020_2stepRA}
-\bibauthor{KIM J\@, LEE G\@, KIM S, et~al}\@. \bibtitle{Two-step random access for 5G system: Latest trends and challenges}\bibmark{[J]}\@. \bibjournal{IEEE Network}\@, \bibyear{2020}\@, \bibvolume{35}\bibnumber{(1)}\thinspace{}\textnormal{: }\bibpages{273\thinspace{}\textnormal{--}\thinspace{}279}\@.
-
 \bibitem{2018_V2Xwireless}
 \bibauthor{POPOVSKI P\@, NIELSEN J~J\@, STEFANOVIC C, et~al}\@. \bibtitle{Wireless access for ultra-reliable low-latency communication: Principles and building blocks}\bibmark{[J]}\@. \bibjournal{Ieee Network}\@, \bibyear{2018}\@, \bibvolume{32}\bibnumber{(2)}\thinspace{}\textnormal{: }\bibpages{16\thinspace{}\textnormal{--}\thinspace{}23}\@.
 
@@ -57,9 +54,6 @@
 \bibitem{2013_LTE_mMTC}
 \bibauthor{LAYA A\@, ALONSO L\@, ALONSO-ZARATE J}\@. \bibtitle{Is the random access channel of LTE and LTE-A suitable for M2M communications? A survey of alternatives}\bibmark{[J]}\@. \bibjournal{IEEE Communications Surveys \& Tutorials}\@, \bibyear{2013}\@, \bibvolume{16}\bibnumber{(1)}\thinspace{}\textnormal{: }\bibpages{4\thinspace{}\textnormal{--}\thinspace{}16}\@.
 
-\bibitem{2015_ACBmMTC}
-\bibauthor{CHENG R-G\@, CHEN J\@, CHEN D-W, et~al}\@. \bibtitle{Modeling and analysis of an extended access barring algorithm for machine-type communications in LTE-A networks}\bibmark{[J]}\@. \bibjournal{IEEE Transactions on Wireless Communications}\@, \bibyear{2015}\@, \bibvolume{14}\bibnumber{(6)}\thinspace{}\textnormal{: }\bibpages{2956\thinspace{}\textnormal{--}\thinspace{}2968}\@.
-
 \bibitem{2012_ACB1}
 \bibauthor{LIEN S-Y\@, LIAU T-H\@, KAO C-Y, et~al}\@. \bibtitle{Cooperative Access Class Barring for Machine-to-Machine Communications}\bibmark{[J]}\@. \bibjournal{IEEE Transactions on Wireless Communications}\@, \bibyear{2012}\@, \bibvolume{11}\bibnumber{(1)}\thinspace{}\textnormal{: }\bibpages{27\thinspace{}\textnormal{--}\thinspace{}32}\@.
 
@@ -68,6 +62,9 @@
 
 \bibitem{2016_multipreamble}
 \bibauthor{CHOI J}\@. \bibtitle{On the Adaptive Determination of the Number of Preambles in RACH for MTC}\bibmark{[J]}\@. \bibjournal{IEEE Communications Letters}\@, \bibyear{2016}\@, \bibvolume{20}\bibnumber{(7)}\thinspace{}\textnormal{: }\bibpages{1385\thinspace{}\textnormal{--}\thinspace{}1388}\@.
+
+\bibitem{2020_2stepRA}
+\bibauthor{KIM J\@, LEE G\@, KIM S, et~al}\@. \bibtitle{Two-step random access for 5G system: Latest trends and challenges}\bibmark{[J]}\@. \bibjournal{IEEE Network}\@, \bibyear{2020}\@, \bibvolume{35}\bibnumber{(1)}\thinspace{}\textnormal{: }\bibpages{273\thinspace{}\textnormal{--}\thinspace{}279}\@.
 
 \bibitem{3GPP_TS38321_R17}
 \bibauthor{ANON}\@. \bibtitle{NR; Medium Access Control (MAC) Protocol Specification (Release 17)}\thinspace{}\textnormal{: }\bibnumber{TS 38.321 V17.0.0}\bibmark{[R]}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibinstitution{3rd Generation Partnership Project (3GPP)}\@, \bibyear{2022}\@.
@@ -80,6 +77,15 @@
 
 \bibitem{2024_NRU}
 \bibauthor{RAN T}\@. \bibtitle{Physical Layer Procedures for Shared Spectrum Channel Access}\bibmark{[J]}\@. \bibjournal{Release}\@, \bibyear{2024}\@, \bibvolume{15}\thinspace{}\textnormal{: }\bibpages{V15}\@.
+
+\bibitem{3GPP_TR38.843}
+\bibauthor{{3GPP}}\@. \bibtitle{{Study on Artificial Intelligence (AI)/Machine Learning (ML) for NR Air Interface (Release 18)}}\thinspace{}\textnormal{: }\bibnumber{TR 38.843}\bibmark{[R/OL]}\@. \bibversion{V18.0.0}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibinstitution{3rd Generation Partnership Project (3GPP)}\@, \bibyear{2024}\@. \url{https://www.3gpp.org/ftp/Specs/archive/38_series/38.843/}\@.
+
+\bibitem{3GPP_RP-234039}
+\bibauthor{{3GPP}}\@. \bibtitle{{New WID on Artificial Intelligence (AI)/Machine Learning (ML) for NR Air Interface - Phase 3}}\thinspace{}\textnormal{: }\bibnumber{RP-234039}\bibmark{[R]}\@. \bibaddress{Edinburgh, UK}\thinspace{}\textnormal{: }\bibinstitution{3rd Generation Partnership Project (3GPP)}\@, \bibyear{2023}\@.
+
+\bibitem{3GPP_R2-2313456}
+\bibauthor{{3GPP}}\@. \bibtitle{{AI/ML based random access control and load balancing}}\thinspace{}\textnormal{: }\bibnumber{R2-2313456}\bibmark{[R]}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibinstitution{3rd Generation Partnership Project (3GPP)}\@, \bibyear{2023}\@.
 
 \bibitem{1970_Aloha}
 \bibauthor{ABRAMSON N}\@. \bibtitle{The {Aloha} System}\bibmark{[J]}\@. \bibjournal{Computer-Communication Networks}\@, \bibyear{1970}\thinspace{}\textnormal{: }\bibpages{281\thinspace{}\textnormal{--}\thinspace{}305}\@.
@@ -145,6 +151,6 @@
 \bibauthor{\'{A}lvaro VALCARCE\@, HOYDIS J}\@. \bibtitle{Toward Joint Learning of Optimal {MAC} Signaling and Wireless Channel Access}\bibmark{[J/OL]}\@. \bibjournal{IEEE Transactions on Cognitive Communications and Networking}\@, \bibyear{2021}\@, \bibvolume{7}\bibnumber{(4)}\thinspace{}\textnormal{: }\bibpages{1233\thinspace{}\textnormal{--}\thinspace{}1243}\@. \url{http://dx.doi.org/10.1109/TCCN.2021.3080677}\@.
 
 \bibitem{2024_AI_ACCESS2}
-\bibauthor{MIUCCIO L\@, RIOLO S\@, SAMARAKOON S, et~al}\@. \bibtitle{On Learning Generalized Wireless {MAC} Communication Protocols via a Feasible Multi-Agent Reinforcement Learning Framework}\bibmark{[J/OL]}\@. \bibjournal{IEEE Transactions on Machine Learning in Communications and Networking}\@, \bibyear{2024}\@, \bibvolume{2}\thinspace{}\textnormal{: }\bibpages{298\thinspace{}\textnormal{--}\thinspace{}317}\@. \url{http://dx.doi.org/10.1109/TMLCN.2024.3368367}\@.
+\bibauthor{MIUCCIO L\@, RIOLO S\@, SAMARAKOON S, et~al}\@. \bibtitle{On Learning Generalized Wireless {MAC} Communication Protocols via a Feasible Multi-Agent Reinforcement Learning Framework}\bibmark{[J]}\@. \bibjournal{IEEE Transactions on Machine Learning in Communications and Networking}\@, \bibyear{2024}\@, \bibvolume{2}\thinspace{}\textnormal{: }\bibpages{298\thinspace{}\textnormal{--}\thinspace{}317}\@.
 
 \end{thebibliography}
