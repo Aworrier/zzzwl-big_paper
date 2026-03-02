@@ -5,26 +5,17 @@
 \contentsline {subsection}{\numberline {1.2.1}基于传统 Aloha 的随机接入协议及其改进研究}{4}{subsection.1.2.1}%
 \contentsline {subsection}{\numberline {1.2.2}基于载波监听的随机接入协议及其改进研究}{6}{subsection.1.2.2}%
 \contentsline {subsection}{\numberline {1.2.3}AI 驱动的无线接入与 MAC 协议设计研究进展}{8}{subsection.1.2.3}%
-\contentsline {section}{\numberline {1.3}本文研究目标与内容}{9}{section.1.3}%
+\contentsline {section}{\numberline {1.3}本文研究目标与内容}{10}{section.1.3}%
 \contentsline {section}{\numberline {1.4}本文创新点}{10}{section.1.4}%
-\contentsline {section}{\numberline {1.5}本文的章节安排}{11}{section.1.5}%
+\contentsline {section}{\numberline {1.5}本文章节安排}{11}{section.1.5}%
 \contentsline {chapter}{\numberline {第2章\hspace {.3em}}随机接入网络及其建模方法}{13}{chapter.2}%
 \contentsline {section}{\numberline {2.1}典型随机接入标准方案及其演进}{13}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}概率性接入范式的数学抽象：多信道时隙Aloha}{13}{subsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.1.1}物理层过程与MAC层等价性}{13}{subsubsection.2.1.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.1.2}原子传输操作与发送概率参数}{14}{subsubsection.2.1.1.2}%
-\contentsline {subsection}{\numberline {2.1.2}侦听型接入范式的数学抽象：p-坚持CSMA}{14}{subsection.2.1.2}%
-\contentsline {subsubsection}{\numberline {2.1.2.1}空闲评估与指数退避流程}{14}{subsubsection.2.1.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.2.2}时间异构性与p-坚持CSMA映射}{15}{subsubsection.2.1.2.2}%
-\contentsline {subsection}{\numberline {2.1.3}预留型接入范式的数学抽象：基于连接的Aloha}{15}{subsection.2.1.3}%
-\contentsline {subsubsection}{\numberline {2.1.3.1}竞争-授权-独占传输的三阶段模型}{15}{subsubsection.2.1.3.1}%
-\contentsline {subsubsection}{\numberline {2.1.3.2}基于连接的Aloha（CBA）的参数化表示}{16}{subsubsection.2.1.3.2}%
-\contentsline {subsection}{\numberline {2.1.4}随机接入的关键控制维度与多维权衡}{17}{subsection.2.1.4}%
-\contentsline {subsubsection}{\numberline {2.1.4.1}三个正交维度的识别}{17}{subsubsection.2.1.4.1}%
-\contentsline {subsubsection}{\numberline {2.1.4.2}协议在三维空间中的位置与固化特征}{18}{subsubsection.2.1.4.2}%
-\contentsline {section}{\numberline {2.2}连续传输机制的基本原理}{19}{section.2.2}%
-\contentsline {section}{\numberline {2.3}通用系统场景与模型假设}{19}{section.2.3}%
-\contentsline {section}{\numberline {2.4}基于休假排队理论的分析方法}{21}{section.2.4}%
+\contentsline {subsection}{\numberline {2.1.1}基于连接的5G NR随机接入过程}{13}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}面向短报文传输的5G NR随机接入机制}{14}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}NR-U中基于LBT的随机接入过程}{15}{subsection.2.1.3}%
+\contentsline {section}{\numberline {2.2}连续传输机制的基本原理}{17}{section.2.2}%
+\contentsline {section}{\numberline {2.3}通用系统场景与模型假设}{18}{section.2.3}%
+\contentsline {section}{\numberline {2.4}基于休假排队理论的分析方法}{20}{section.2.4}%
 \contentsline {section}{\numberline {2.5}关键性能指标定义}{21}{section.2.5}%
 \contentsline {subsection}{\numberline {2.5.1}吞吐量指标}{21}{subsection.2.5.1}%
 \contentsline {subsection}{\numberline {2.5.2}时延指标}{22}{subsection.2.5.2}%
@@ -71,13 +62,13 @@
 \contentsline {subsection}{\numberline {5.2.3}数据集构建与预处理}{69}{subsection.5.2.3}%
 \contentsline {section}{\numberline {5.3}基于多任务深度学习的性能预测代理模型}{70}{section.5.3}%
 \contentsline {subsection}{\numberline {5.3.1}基于硬参数共享的多任务网络架构}{70}{subsection.5.3.1}%
-\contentsline {paragraph}{架构设计原理}{71}{paragraph*.23}%
+\contentsline {paragraph}{架构设计原理}{71}{paragraph*.26}%
 \contentsline {subsection}{\numberline {5.3.2}多目标协同优化与训练策略}{72}{subsection.5.3.2}%
 \contentsline {subsection}{\numberline {5.3.3}代理模型在业务场景下的预测性能}{73}{subsection.5.3.3}%
 \contentsline {subsection}{\numberline {5.3.4}代理模型曲线一致性与效用曲线对比说明}{74}{subsection.5.3.4}%
 \contentsline {section}{\numberline {5.4}基于代理模型的快速搜索与预测}{76}{section.5.4}%
 \contentsline {section}{\numberline {5.5}本章小结}{77}{section.5.5}%
-\contentsline {chapter}{参考文献}{79}{chapter*.30}%
+\contentsline {chapter}{参考文献}{79}{chapter*.33}%
 \contentsline {chapter}{\numberline {附录 A\hspace {.3em}}第三章相关内容证明}{83}{appendix.A}%
 \contentsline {section}{\numberline {附A.1}$ A_{V_0}$的PGF推导 }{83}{section.A.1}%
 \contentsline {section}{\numberline {附A.2}忙期服务过程 ($Q \to P$) 的详细推导}{83}{section.A.2}%

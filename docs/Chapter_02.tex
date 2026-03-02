@@ -6,239 +6,159 @@
 \section{典型随机接入标准方案及其演进}
 \label{sec:standard_schemes}
 
-本节从\textbf{机理分析}与\textbf{数学抽象}的视角，对现有随机接入协议的内在结构进行解构。我们不重点讨论应用场景与标准演进，而是聚焦于协议在MAC层的本质运作原理，并以统一的数学模型对其进行映射与参数化。这一抽象为后续章节中连续传输机制的设计（第\ref{chapter3: SAST }、\ref{chapter4: CSMAST }章）以及AI多协议选择（第\ref{chapter5: ai_selector}章）奠定了理论基础。
+本节从\textbf{机理分析}与\textbf{数学抽象}的视角，对现有随机接入协议的内在结构进行解构。我们不重点讨论应用场景与标准演进，而是聚焦于协议在MAC层的本质运作原理，并并建立与经典随机接入模型之间的对应关系。该抽象框架为后续连续传输机制设计（第~\ref{chapter3: SAST }、\ref{chapter4: CSMAST } 章）
+以及 AI 多协议选择（第~\ref{chapter5: ai_selector} 章）提供统一理论基础。
 
-\subsection{概率性接入范式的数学抽象：多信道时隙Aloha}
-\label{sec:probabilistic_paradigm}
+\subsection{基于连接的5G NR随机接入过程}
+\label{subsec:cba_mapping}
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=0.95\linewidth]{figure/chap2/5G NR标准随机接入过程.pdf}
+	\caption{5G NR 四步/两步标准随机接入流程示意图}
+	\label{fig:cba_access}
+\end{figure}
 
-\subsubsection{物理层过程与MAC层等价性}
+5g NR 随机接入过程，从先前的 4G LTE 随机接入过程演变而来。在 5G NR 的基于连接的数据传输模式下，终端在初始随机接入成功后，由基站分配专用无线资源，并在连接期间进行数据传输。现提出的标准方案中存在四步接入和两步接入两种流程，前者在竞争阶段包含更多的握手消息以提高可靠性，而后者则通过合并前导码与数据包来降低接入时延。两种流程图表示如\ref{fig:cba_access}所示。
 
-5G NR Release 17标准中的两步小数据传输（2-step SDT）方案在物理层的设计如下：节点在初次接入时，将前导码（Preamble）与数据负载（Data Payload）合并封装在第一个消息MsgA中进行发送。MsgA的结构包含：
+从接入机理上看，无论四步还是两步，都具有明显的两阶段结构：（1）竞争建立阶段：终端通过随机接入获得资源授权；（2）独占传输阶段：终端在被分配资源上进行连续数据发送。第一阶段与 Slotted Aloha 具有相同的概率竞争特征，而第二阶段则表现为无竞争的资源独占。
+
+因此，可将该结构抽象为一种竞争-预留模型，记为$\text{CBA}(q, M)$,其中：$q$ 为接入阶段的竞争概率；$M$ 为一次竞争成功后可连续占用的传输时隙数。当 $M=1$ 时，该模型退化为标准 Aloha；当 $M>1$ 时，竞争成本可在多个数据包之间分摊，从而提升单位数据的有效吞吐效率。
+因此，5G 基于连接的数据传输机制在 MAC 层抽象上可视为 Connection-Based Aloha 的一种实现。
+
+\subsection{面向短报文传输的5G NR随机接入机制}
+\label{subsec:sdt_mapping}
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=0.95\linewidth]{figure/chap2/5G NR SDT标准随机接入过程.pdf}
+	\caption{5G NR 四步/两步 SDT 标准随机接入流程示意图}
+	\label{fig:sdt_access}
+\end{figure}
+在 5G NR 的短数据传输（Short Data Transmission, SDT）场景中，终端在无既有连接状态下，需要首先通过随机接入建立初始通信。在四步SDT标准接入方案中，终端通过发送 Msg1 前导码发起接入，在Msg3传输短报文；而在两步 SDT 标准接入方案中，终端将前导码与数据封装于 MsgA 中一并发送。
+尽管信令流程存在差异，但在初始接入阶段，多个终端在离散配置的 PRACH 时隙中独立发起发送请求。两种流程图表示如\ref{fig:sdt_access} 所示。
+
+
+从 MAC 层视角，每个终端在一个接入机会内仅面临两种决策：发起发送或者保持静默。
+该决策可抽象为一次伯努利试验，其发送概率记为 $q \in [0,1]$。不同终端之间的发送行为在统计意义上相互独立。
+因此，短报文随机接入在 MAC 抽象层面可视为一种\textbf{时隙化概率竞争机制}，其行为结构与经典的 Slotted Aloha 模型一致，也就是节点在离散时隙中以概率 $q$ 发送，
+当且仅当该时隙内恰有一个节点发送时，接入成功。
+因此，在不考虑物理层调制、编码等实现细节的前提下，5G 短报文随机接入的接入结构可在理论上等价映射为 Slotted Aloha。
+
+\subsection{NR-U中基于LBT的随机接入过程}
+\label{sec:csma_mapping}
+
+在 NR-U（New Radio in Unlicensed Spectrum）场景中，终端在非授权频段发送数据前必须执行Listen-Before-Talk (LBT) 机制。这里假设设备终端已经完成初始接入过程进入到 RRC\_CONNECTED 状态，并且在后续数据传输过程中需要遵守 LBT 规则。根据 3GPP 规范\cite{3gpp38213}，LBT 可分为四种类型（Cat 1–4），其复杂程度与竞争控制能力逐级增强。
 \begin{itemize}
-	\item 前导码序列：用于基站的节点检测与信道估计，长度固定为 $L_{pre}$ 比特。
-	\item 数据负载：用户业务数据，长度为 $L_{data}$ 比特。
+    \item Cat 1：无需 LBT；
+    \item Cat 2：固定持续时间的信道检测；
+    \item Cat 3：随机退避但无指数扩展；
+    \item Cat 4：带指数退避的随机退避机制。
 \end{itemize}
+其中，Cat 4 引入了随机退避与竞争窗口扩展，其结构最接近经典 CSMA/CA。因此，本节重点分析 Cat 4 机制的流程如图\ref{fig:lbt_process}所示，即
 
-从物理层的角度看，MsgA的传输涉及复杂的波形设计（OFDM调制）、多天线处理（天线阵列）与编码方案（Polar码或LDPC码）。然而，在\textbf{介质访问控制（MAC）层}，其核心逻辑可以抽象为以下过程：
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.9\linewidth]{figure/chap2/5G NR标准LBT过程.pdf}
+\caption{NR-U中基于LBT的随机接入流程}
+\label{fig:lbt_process}
+\end{figure}
 
-在时间轴上，系统被划分为等长的\textbf{前导码资源块（Preamble Resource Block, PRB）时隙}。每个时隙对应一个特定的前导码序列（或前导码+数据块组合）。节点在每个时隙以概率 $q$ 独立地选择发送MsgA，与其他节点争抢有限的前导码与无线资源。基站通过前导码检测识别"哪些节点在本时隙发送"，从而实现节点识别与冲突检测。
+\begin{enumerate}[label=\textbf{步骤 \arabic*：}, leftmargin=*, itemsep=1ex]
 
-这一过程在MAC抽象层上等价于\textbf{多信道时隙Aloha（Multi-channel Slotted Aloha）}：多个节点在同一时隙内以概率 $q$ 竞争访问多个前导码资源（视作多个并行的"信道"）。与经典单信道时隙Aloha相比，多信道结构提升了吞吐量上界，但竞争的基本机制保持不变。
+    \item \textbf{确定信道接入优先级与参数} \\  
+    终端在发起传输前，根据业务 QoS 要求选择信道接入优先级类别（Channel Access Priority Class, CAPC）。    每个 CAPC 对应一组预定义的 LBT 参数，包括延迟持续时间参数 $m_p$、竞争窗口最小值 $CW_{\min}$、最大值 $CW_{\max}$，以及最大信道占用时间（Maximum Channel Occupancy Time, MCOT）。
+    MCOT 受监管约束限制，用于保证与其他系统的公平共存。
 
-\subsubsection{原子传输操作与发送概率参数}
+    \item \textbf{竞争窗口更新与退避计数初始化} \\  
+    终端根据上一轮传输结果更新竞争窗口 $CW$：
+    \begin{itemize}
+        \item 若传输成功或为初始传输，则 $CW = CW_{\min}$；
+        \item 若传输被判定为失败（例如未收到 HARQ-ACK 或检测到冲突），则
+        $CW \leftarrow \min(2CW+1, CW_{\max})$。
+    \end{itemize}
+    随后在整数区间 $[0, CW]$ 内均匀随机选择退避计数值 $N$。
+	
+    \item \textbf{执行延迟持续时间（Defer Duration）检测} \\  
+    在开始退避计数前，终端必须检测信道在连续时间$T_d = 16\mu s + m_p \times 9\mu s$
+    内保持空闲（典型 5 GHz 配置）。若期间检测到信道忙，则需等待信道重新空闲，并重新执行完整的延迟持续时间检测。
 
-为了建立统一的理论框架，我们定义\textbf{原子传输操作（Atomic Transmission Operation, ATO）}的概念：
+    \item \textbf{退避计数与 CCA 时隙监听} \\  
+    终端在 $9\mu s$ 的 CCA 时隙上执行退避计数：
+    \begin{itemize}
+        \item 若信道空闲，则 $N \leftarrow N-1$；
+        \item 若信道忙，则冻结计数器，
+        待信道重新空闲并重新满足步骤 3 的延迟持续时间要求后恢复倒计时。
+    \end{itemize}
+    当 $N=0$ 时，终端获得发送机会。
 
-\textbf{定义 2.1}：原子传输操作是MAC层的最小竞争单元。对于概率性接入而言，一个ATO对应一个时隙内的一次发送决策：节点要么以概率 $q$ 在某一时隙发送，要么以概率 $1-q$ 保持沉默。
-
-基于该定义，概率性接入范式的核心参数为\textbf{发送概率 $q \in [0,1]$}。该参数直接控制系统的竞争激烈度：
-\begin{itemize}
-	\item $q$ 过小：节点频繁沉默，发送机会少，吞吐量低。
-	\item $q$ 过大：碰撞概率高，重传次数增加，有效吞吐量下降。
-	\item 最优 $q^* = 1/n$（在节点数为 $n$ 的情况下）：使得吞吐量达到接近理论最大值 $1/e \approx 36.8\%$。
-\end{itemize}
-
-在高密度、大规模节点场景下，由于 $n$ 动态变化且基站难以实时获知，$q$ 的自适应调节成为关键挑战。第\ref{chapter5: ai_selector}章中的AI协议选择方案将通过强化学习动态优化此参数。
-
-\subsection{侦听型接入范式的数学抽象：p-坚持CSMA}
-\label{sec:sensing_paradigm}
-
-\subsubsection{空闲评估与指数退避流程}
-
-5G NR-U（非授权频段）中的先听后说（LBT）Category 4机制的运作流程为：
-
-\textbf{步骤1（CCA—清信道评估）}：节点在准备发送前，首先进行能量检测（Energy Detection），评估信道空闲程度。CCA的评估时隙长度为 $\tau$ 微秒（标准中通常为 $\tau \in \{16, 25\}$微秒）。
-
-\textbf{步骤2（后退判定）}：若评估结果为"信道忙"（其他节点正在传输），则节点进入退避（Backoff）阶段，随机等待 $\tau \sim U[0, W]$ 时隙后重新评估，其中 $W$ 为初始竞争窗（Contention Window）。
-
-\textbf{步骤3（指数退避）}：若碰撞发生（多个节点同时发送），则竞争窗指数增大 $W \leftarrow 2W$（最多增长到 $W_{max}$），下一次尝试时采用更大的退避范围。
-
-\textbf{步骤4（发送）}：若CCA评估为"信道空闲"连续 $\tau$ 时隙，则节点可以发送数据包。
-
-\subsubsection{时间异构性与p-坚持CSMA映射}
-
-与Aloha的"盲目发送"不同，CSMA的关键特征是引入了\textbf{感知开销}。我们在MAC抽象层将LBT的流程映射为\textbf{p-坐持CSMA模型}：
-
-\textbf{定义 2.2}：p-坚持CSMA是一种感知-竞争混合协议，其工作流程为：
-\begin{enumerate}
-	\item 当节点有数据待发时，先进行一个"感知时隙"（Sensing Slot），耗时 $\tau_s$。
-	\item 若感知结果为"空闲"，则以概率 $p$ 立即发送（对应LBT的CCA通过后直接发送），以概率 $1-p$ 延迟一个"退避时隙"（Backoff Slot），耗时 $\tau_b$。
-	\item 若感知结果为"忙"，则立即进入指数退避，等待 $\tau_b \cdot \text{Backoff}(W)$ 时间。
+    \item \textbf{数据发送与 MCOT 约束} \\  
+    终端在获得信道后进行数据传输，
+    传输持续时间不得超过该 CAPC 对应的 $T_{mcot,p}$。
+    传输结束后，
+    根据成功或失败结果更新 $CW$，
+    为下一次接入做准备。
 \end{enumerate}
 
-关键观察是：**时间异构性**——感知时隙与传输时隙的时长不同 ($\tau_s \ll L_{data}$)。这是CSMA与Aloha在时间结构上的根本区别：
-
-\begin{table}[h]
-	\centering
-	\caption{Aloha与CSMA的时间结构对比}
-	\label{tab:time_structure}
-	\begin{tabular}{|c|c|c|}
-		\hline
-		\textbf{协议} & \textbf{时隙长度} & \textbf{特点} \\
-		\hline
-		Aloha & 均匀，$L_{slot} = L_{data}$ & 时间齐次；全盲竞争 \\
-		\hline
-		CSMA & 异构，$\tau_s \ll L_{data}$ & 时间异构；感知先行 \\
-		\hline
-	\end{tabular}
-\end{table}
-
-基于此，CSMA的核心参数不仅包括\textbf{发送概率 $p$}（对应Aloha中的 $q$），还包括\textbf{感知开销 $\tau_s$}。感知开销的引入带来两重效应：
-\begin{itemize}
-	\item \textbf{正向}：通过提前感知信道状态，可有效降低碰撞概率。
-	\item \textbf{负向}：感知本身消耗时间资源，在高负载场景下可能导致频繁退避，信道利用率反而低于最优Aloha。
-\end{itemize}
-
-第\ref{chapter4: CSMAST }章的CSMAST机制设计将在保留侦听优势的同时，通过连续传输规则优化来降低频繁竞争的开销。
-
-\subsection{预留型接入范式的数学抽象：基于连接的Aloha}
-\label{sec:reservation_paradigm}
-
-\subsubsection{竞争-授权-独占传输的三阶段模型}
-
-预留型接入（Reservation-based Access）的典型代表包括：（1）5G NR的标准四步RACH机制（5G NR-U）；（2）NR的预配授权（Configured Grant）方案；（3）传统的预约Aloha（Reservation Aloha, R-Aloha）。这些机制的共同特点是将接入过程分解为\textbf{三个非重叠的阶段}：
-
-\textbf{第一阶段（竞争请求）}：多个节点以Aloha或CSMA方式竞争发送**接入请求**或**前导码**，争夺基站的注意。此阶段涉及碰撞风险。
-
-\textbf{第二阶段（授权分配）}：基站接收到接入请求后，对成功的节点进行识别，并向其分配专用的\textbf{传输资源块（RB）或时隙集合}。资源分配信息通过下行控制信号（Msg2/RA response）反馈给节点。此阶段的信令开销为\textbf{预留建立成本（Setup Cost）}。
-
-\textbf{第三阶段（独占数据传输）}：被授权的节点在分配的资源上进行\textbf{无竞争的数据传输}。由于资源已被基站预留，节点无需再进行竞争，避免了碰撞风险。
-
-\subsubsection{基于连接的Aloha（CBA）的参数化表示}
-
-为了将预留型接入统一纳入理论框架，我们定义\textbf{基于连接的Aloha（Connection-Based Aloha, CBA）}模型：
-
-\textbf{定义 2.3}：CBA是一个两阶段模型，形式化定义为 $\text{CBA}(q, T_{setup}, M)$，其中：
-\begin{itemize}
-	\item $q$：第一阶段（竞争请求阶段）的发送概率，控制接入请求的发起强度，取值范围同Aloha的 $q$。
-	\item $T_{setup}$：第二阶段（授权分配）的信令开销，单位为时隙。包括接入响应消息（Msg2）、连接建立确认等。该项是预留机制相比直接竞争的\textbf{额外成本}。
-	\item $M$：第三阶段（数据传输）的连续传输长度，即基站为单个节点分配的时隙数（或时间窗口）。在CBA中，通常 $M$ 由基站根据节点缓存队列长度动态分配，或预先固定。
-\end{itemize}
-
-CBA的核心权衡为：\textbf{用初始建立开销 $T_{setup}$ 换取碰撞自由（Contention-free）的数据传输}。形式上，单个节点完成一个完整竞争-传输周期的时间成本为：
-
-\begin{equation}
-T_{CBA} = \underbrace{\mathbb{E}[T_{\text{comp}}]}_{\text{平均竞争时延}} + \underbrace{T_{setup}}_{\text{建立开销}} + \underbrace{M}_{\text{数据传输时隙}}
-\end{equation}
-
-其中 $\mathbb{E}[T_{\text{comp}}]$ 为平均竞争延迟（Aloha中的接入时延）。
-
-相比之下，纯Aloha不含预留阶段，每个数据包均需独立竞争：
-
-\begin{equation}
-T_{\text{Aloha}} = \underbrace{\mathbb{E}[T_{\text{comp}}]}_{\text{平均竞争时延}} + \underbrace{L_{data}}_{\text{单包长度}}
-\end{equation}
-
-CBA的优劣在于：
-\begin{itemize}
-	\item \textbf{优势}：当 $M > 1$ 时，每个数据包的平均竞争开销从 $\mathbb{E}[T_{\text{comp}}]$ 降低为 $(\mathbb{E}[T_{\text{comp}}] + T_{setup})/M$。若 $M$ 足够大，可忽略相对开销。
-	\item \textbf{劣势}：若 $M$ 过小或流量突发性强，$T_{setup}$ 的分摊效果不明显，甚至可能成为瓶颈。此外，基站需为每个活跃节点维护连接状态，管理复杂度上升。
-\end{itemize}
-
-这一权衡在第\ref{chapter5: ai_selector}章的AI协议选择中将被量化为效用函数中的显式项。
-
-\subsection{随机接入的关键控制维度与多维权衡}
-\label{sec:control_dimensions}
-
-\subsubsection{三个正交维度的识别}
-
-通过对上述三类协议的分析，我们识别出随机接入系统的\textbf{三个正交的控制维度}：
-
-\textbf{1. 接入强度维度（Access Intensity Dimension）}
-
-该维度对应\textbf{发送概率参数 $q$}（在Aloha与CBA的第一阶段）或\textbf{侦听/发送概率参数 $p$}（在CSMA中）。该参数直接控制节点的竞争激进程度：
-\begin{equation}
-\text{Access Intensity}: q \in [0,1] \text{ (Aloha/CBA) 或 } p \in [0,1] \text{ (CSMA)}
-\end{equation}
-
-接入强度的增加会导致碰撞率上升，进而增加平均竞争延迟 $\mathbb{E}[T_{\text{comp}}]$。最优值通常位于 $q^* = 1/n$ 或类似的中间值。
-
-\textbf{2. 占用时长维度（Occupancy Duration Dimension）}
-
-该维度对应\textbf{连续传输长度参数 $M$}（表示单个节点一次竞争获胜后可连续发送的数据包数）。此维度在传统协议中通常固定为 $M=1$（每个包需要独立竞争），而\textbf{本论文的核心创新在于解锁此维度}，允许 $M > 1$：
-
-\begin{equation}
-\text{Occupancy Duration}: M \in \{1, 2, \ldots, M_{max}\}
-\end{equation}
-
-$M$ 的增加能够降低单位数据包的平均竞争成本，但可能导致以下副作用：
-\begin{itemize}
-	\item 不同节点的资源占有时间不均，引发\textbf{短期不公平性}。
-	\item 其他节点的等待延迟增加，可能影响服务质量。
-\end{itemize}
-
-第\ref{chapter3: SAST }、\ref{chapter4: CSMAST }章的SAST（Successive Aloha with Successive Transmission）与CSMAST（CSMA with Successive Transmission）机制正是通过灵活设计 $M$ 的控制规则，在吞吐量与时延/公平性间实现最优权衡。
-
-\textbf{3. 感知维度（Sensing/Avoidance Dimension）}
-
-该维度对应\textbf{感知开销参数 $\tau_s$}（在CSMA中）或更广义的"信道状态知识"。Aloha对应 $\tau_s = 0$（完全盲竞争），而CSMA对应 $\tau_s > 0$（主动感知）：
-
-\begin{equation}
-\text{Sensing Overhead}: \tau_s \geq 0 \text{ (Aloha: } \tau_s=0\text{; CSMA: } \tau_s>0\text{)}
-\end{equation}
-
-增加感知开销能够降低碰撞概率，但消耗额外的时间与能量资源。感知维度的最优值取决于信道动态性与节点密度。
-
-\subsubsection{协议在三维空间中的位置与固化特征}
-
-现有的标准协议在三维空间 $(q/p, M, \tau_s)$ 中通常处于\textbf{固定或部分固化}的位置：
-
-\begin{table}[h]
-	\centering
-	\caption{典型随机接入协议在三维控制空间中的映射}
-	\label{tab:protocol_mapping}
-		\begin{tabular}{|m{1.8cm}|m{2.5cm}|m{2.5cm}|m{2.5cm}|}
-			\hline
-			\textbf{协议} & \textbf{接入强度} $(q/p)$ & \textbf{占用时长} $(M)$ & \textbf{感知维度} $(\tau_s)$ \\
-			\hline
-			Aloha（标准） & 动态可调 & 固定为1 & 0 \\
-			\hline
-			CSMA/CA（Wi-Fi） & 通过退避动态调 & 固定为1 & $>0$（关键） \\
-			\hline
-			CBA & 第一阶段可调 & 预分配，较固定 & 0（第一阶段）或可选 \\
-			\hline
-			\textbf{SAST}（本文） & \textbf{动态可调} & \textbf{连续可变，$M \geq 1$} & 0 \\
-			\hline
-			\textbf{CSMAST}（本文） & \textbf{动态可调} & \textbf{连续可变，$M \geq 1$} & \textbf{$>0$（保留）} \\
-		\hline
-	\end{tabular}
-\end{table}
-
-\textbf{关键洞察}：本文提出的SAST与CSMAST机制的创新之处在于\textbf{对占用时长维度 $M$ 的智能解锁}：
-\begin{itemize}
-	\item SAST在保持Aloha简洁性（$\tau_s=0$）的同时，引入动态 $M$ 控制，显著提升吞吐量。
-	\item CSMAST在保留CSMA的碰撞规避优势（$\tau_s > 0$）同时，结合动态 $M$ 控制，在不同业务负载下实现灵活权衡。
-\end{itemize}
-
-第\ref{chapter5: ai_selector}章的AI多协议选择算法将在此三维空间中进行协议搜索与参数优化，实现\textbf{跨协议、多维度的联合优化}。
-
-\textbf{总结}：本节通过机理分析与数学抽象，将复杂的通信标准解构为三类协议范式，并识别出其在三个正交维度上的特征。这一抽象框架为后续的连续传输机制设计（第3、4章）与AI协议选择（第5章）奠定了坚实的理论与参数化基础，避免了孤立地讨论各章内容而产生的逻辑断层。
+从接入机制的本质出发，Type 4 LBT 与经典 CSMA/CA 在 MAC 层具有一一对应的竞争逻辑：二者均遵循“先侦听、后发送”的信道占用原则，均通过随机退避计数分散并发发送时机，并在失败后通过竞争窗口扩展抑制后续冲突概率。因而，在以时隙化 CCA、理想碰撞信道和饱和/非饱和队列业务为前提的理论分析框架下，NR-U 的 LBT 过程可等效抽象为 CSMA 型随机接入网络。该抽象保留了影响吞吐量、时延与公平性的主要竞争行为，同时忽略物理层调制、频谱监管细节与跨系统共存策略等次要差异，因此可作为后续 CSMA 网络建模与性能推导的合理基础。
 
 \section{连续传输机制的基本原理}
 \label{sec:continuous_transmission_principle}
 
-针对现有单次随机接入机制在信道利用率上的不足，连续传输（Successive Transmission, ST）作为一种通用的增强型策略被引入到MAC层设计中。传统的随机接入协议，无论是Aloha还是CSMA，通常遵循一次竞争传输一个数据包的原则，即节点每发送完一个数据包后，即便缓存中仍有剩余数据，也必须释放信道控制权，重新进入竞争或退避流程。这种机制在高负载场景下导致了大量的时间资源被浪费在反复的竞争、回退和握手过程中。连续传输机制的核心思想在于竞争获胜后的节点暂时保留对信道的占用权，即允许节点在成功发送队首数据包（或握手信号）从而确立信道优势后，暂时保留对信道的占用权，连续发送缓存队列中的后续数据包，直到队列清空或发生新的冲突。
 
-引入连续传输机制的本质优势在于大幅降低了单位数据包的竞争开销（Contention Overhead）。通过将一次成功的信道竞争转化为多次连续的数据传输机会，系统能够将昂贵的接入成本（如空闲等待时间、前导码开销等）分摊到多个数据包上，从而显著提升信道的有效利用率。然而，连续传输也带来了新的挑战，例如可能导致的节点间公平性下降以及隐藏终端问题的加剧。因此，如何将连续传输机制有机地融合到Aloha和CSMA这两类截然不同的协议框架中，并在提升吞吐量的同时兼顾时延与公平性，是本文后续章节研究的重点。
 
+传统随机接入协议（如 Aloha 与 CSMA）通常采用一次竞争、发送一个数据包的工作方式：节点每完成一次发送后都需释放信道，并重新进入竞争或退避过程。该机制在中高负载下会反复消耗竞争时隙，使大量时间开销停留在侦听、退避与握手环节而非有效载荷传输。为降低这部分重复开销，本文引入连续传输（Successive Transmission, ST）机制：节点一旦竞争成功并完成队首分组发送，可在满足协议约束的条件下继续发送后续缓存分组，直到队列清空或触发释放条件，再重新进入竞争过程。
+
+如图\ref{fig:ra_vs_st} 所示，传统机制下每个数据包通常对应一次独立竞争，竞争开销与数据包数量近似线性增长；而在 ST 机制下，一次竞争成功可支撑多个数据包连续发送，使竞争开销由“按包重复发生”转变为“按轮次分摊”。因此，ST 的核心增益在于降低单位数据包的平均竞争开销（Contention Overhead），并在不改变随机接入基本竞争框架的前提下提升有效信道利用率与系统吞吐效率。
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=0.95\linewidth]{figure/chap2/连续传输机制对比图.pdf}
+	\caption{传统随机接入与连续传输机制的对比图}
+	\label{fig:ra_vs_st}
+\end{figure}
 \section{通用系统场景与模型假设}
 \label{sec:general_system_model}
 
-为了构建具有普适性的理论分析框架，并为后续章节中不同接入机制（SAST及CSMAST）的性能对比提供统一基准，本论文针对上行无线通信网络设定了一系列通用的系统模型假设。本章考虑一个包含 $n$ 个同质终端节点（User Equipment, UE）和一个中心基站（Base Station, BS，也可称为接收机）的上行随机接入网络系统。具体的系统假设如下：
+
+为构建具有普适性与可扩展性的理论分析框架，并为后续章节中不同接入机制（SAST 与 CSMAST）的性能比较提供统一分析基准，本文首先建立一个抽象化的上行随机接入网络系统模型。在保证物理拓扑结构一致性的前提下，通过对节点行为机制进行差异化建模，实现对多种接入范式的统一刻画与对比分析。
+
+本章节考虑一个包含 $n$ 个同质终端节点（User Equipment, UE）和一个中心基站（Base Station, BS，亦作为统一接收机）的上行通用无线随机接入系统，如图~\ref{fig:system_model} 所示。所有节点通过共享无线信道向同一接收机发送数据，接收机负责信号接收、译码与反馈。系统中仅接收机设计接收结构，而节点之间不存在显式协调或直接通信机制。
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=0.9\linewidth]{figure/chap2/通用系统场景.pdf}
+	\caption{通用系统场景示意图}
+	\label{fig:system_model}
+\end{figure}
+
+需要特别说明的是，尽管后续各章节的分析重点不同，但“接收机—节点”物理拓扑关系在全文中保持一致。不同章节之间的差异主要体现在节点侧接入策略与控制逻辑的设计，而非系统结构本身的改变。具体而言：
+
+\begin{itemize}
+	\item 在第~\ref{chapter3: SAST }章中，基站主要承担集中接收与反馈功能，终端节点的行为建模侧重于概率发送与连续传输的传输策略，系统分析聚焦于基于连续传输的时隙 ALOHA 机制的性能刻画；
+	
+	\item 在第~\ref{chapter4: CSMAST }章中，基站仍作为统一接收实体，而终端节点行为进一步扩展为“侦听—退避—发送”的竞争式接入过程，系统模型引入载波监听机制和连续传输，用以刻画 CSMAST 协议的动态行为和性能分析；
+	
+	\item 在第~\ref{chapter5: ai_selector}章中，在保持统一拓扑结构不变的前提下，研究重点转向不同协议与参数组合下的性能评估与接入协议智能切换机制。此时节点配备有多重接入协议策略，其具体接入行为被抽象为可切换的策略集合，分析核心从单一接入协议到多接入协议策略集合的性能。
+\end{itemize}
+
+在上述通用系统场景框架下，具体系统假设如下：
 
 \begin{itemize}
 	\item \textbf{网络拓扑与流量模型}：网络由 $n$ 个统计特性相同的同质节点组成。各节点的数据包到达过程独立且同分布（i.i.d.）。
 	
-	为了便于第\ref{chapter3: SAST }、\ref{chapter4: CSMAST }章的排队论解析推导，本文在\textbf{理论分析模型}中假设各节点的包到达过程均服从参数为 $\lambda$ （单位：包/时隙）的伯努利过程，即每个节点在每个时隙有新数据包到达的概率为 $\lambda$，且不同时隙的到达事件相互独立。这一简化假设使得系统动态可精确刻画为离散时间马尔可夫链，便于应用休假排队理论进行闭式求解。
+	为了便于第\ref{chapter3: SAST }、\ref{chapter4: CSMAST }章的排队论解析推导，本文在\textbf{理论分析模型}中假设各节点的包到达过程均服从参数为 $\lambda$ （单位：包/时隙）的伯努利过程，即每个节点在每个时隙有新数据包到达的概率为 $\lambda$，且不同时隙的到达事件相互独立，因而系统的总到达率为 $\hat{\lambda} = n\lambda$。这一简化假设使得系统动态可精确刻画为离散时间马尔可夫链，便于应用休假排队理论进行闭式求解。
 	
-	然而，现实通信场景中流量往往呈现复杂的统计特性。为了验证所提机制在复杂业务场景下的适应性，本文进一步在\textbf{仿真与业务模型}中引入广义流量模型，包括：
+	然而，现实通信场景中的到达过程通常具有显著的非平稳性与多尺度统计特征。为与第\ref{chapter5: ai_selector}章保持一致，本文在仿真与业务建模中采用统一流量特征向量
+	$\mathbf{x}_{\text{traffic}}=[\hat{\lambda},\ \mathrm{BI}_{\mathrm{net}},\ \mathrm{BI}_{\mathrm{node}},\ \Psi_{\mathrm{net}},\ \Psi_{\mathrm{node}}]^{\top}$，
+	其中网络突发度与网络周期性强度分别定义为
+	$\mathrm{BI}_{\mathrm{net}}=\frac{\mathrm{ID}_{\mathrm{net}}-1}{\mathrm{ID}_{\mathrm{net}}+1}$、
+	$\mathrm{ID}_{\mathrm{net}}=\frac{\mathrm{Var}(X(t))}{\mathbb{E}[X(t)]}$，以及
+	$\Psi_{\mathrm{net}}=\max_{1\le\tau\le\tau_{\max}}\frac{R(\tau)}{R(0)}$。
+	在该定义下，本文采用与第\ref{chapter5: ai_selector}章一致的三类典型流量形态：
 	\begin{itemize}
-		\item \textbf{突发业务（Bursty Traffic）}：采用Markov调制泊松过程（Markov Modulated Poisson Process, MMPP）建模，通过突发度指标 $B$（定义为方差与均值之比，$B = \sigma^2 / \lambda$）来刻画流量的突发程度。$B=1$ 对应泊松流，$B>1$ 表示超泊松的突发流，$B<1$ 表示欠泊松的平滑流。
-		
-		\item \textbf{周期业务（Periodic Traffic）}：针对物联网、传感器网络等具有周期性特征的应用场景，定义周期性强度指标 $P$ 来刻画业务的周期特性。节点在特定时隙周期内生成数据包的概率更高，从而形成周期性的负载波动。
+		\item \textbf{均匀到达场景（U）}：$\mathrm{BI}_{\mathrm{net}}\approx 0$ 且 $\Psi_{\mathrm{net}}\approx 0$，对应近似泊松到达；
+		\item \textbf{突发到达场景（B）}：$\mathrm{BI}_{\mathrm{net}}\in[0.3,0.7]$ 且 $\Psi_{\mathrm{net}}\in[0,0.2]$，采用 MMPP/批量到达过程刻画事件驱动型集中上报；
+		\item \textbf{周期到达场景（P）}：$\mathrm{BI}_{\mathrm{net}}\in[-0.5,-0.2]$ 且 $\Psi_{\mathrm{net}}\in[0.6,0.9]$，刻画规则采样或同步上报业务。
 	\end{itemize}
 	
-	这些广义流量模型的具体参数设置将在第\ref{chapter5: ai_selector}章的仿真实验部分详细阐述（见表5-2）。
+	上述流量特征的完整定义与计算公式见第\ref{chapter5: ai_selector}章表~\ref{tab:traffic_feature_def}，具体参数配置与采样策略见该章仿真实验部分。
 	
 	\item \textbf{时隙结构与同步}：系统采用离散时间模型，时间轴被划分为连续且等长的时隙（Time Slot）。时隙长度被标准化为传输一个固定长度数据包所需的时间。系统假定所有节点保持严格的时钟同步，因此所有数据包的传输只能在每个时隙的起始时刻发起。
 	
@@ -255,14 +175,16 @@ $M$ 的增加能够降低单位数据包的平均竞争成本，但可能导致�
 	\end{itemize}
 \end{itemize}
 
-基于上述通用假设，后续章节将分别探讨在引入连续传输机制后，基于 Aloha 和 CSMA 协议的具体性能表现。
+基于上述通用假设，后续章节将在统一场景下展开递进分析：第~\ref{chapter3: SAST }章聚焦 SAST 机制下 Aloha 型接入的吞吐量与时延等性能特性，第~\ref{chapter4: CSMAST }章分析 CSMAST 机制下的性能边界；在此基础上，第~\ref{chapter5: ai_selector}章进一步面向多业务与动态负载环境，综合吞吐量、时延、公平性与信令开销等指标，研究多协议智能切换与参数自适应优化问题。
 
 \section{基于休假排队理论的分析方法}
 \label{sec:vacation_queuing_theory}
 
-鉴于引入连续传输机制后，节点行为呈现出明显的忙碌与空闲循环交替的特征，传统的简单马尔可夫链模型难以精确刻画系统的动态性能。因此，本文引入离散时间休假排队理论（Discrete-time Vacation Queuing Theory）作为核心数学工具。在这一理论框架下，节点或信道的状态被分解为忙期（Busy Period）和休假期（Vacation Period）两个基本过程。其中，忙期对应于节点成功抢占信道并连续传输数据的服务时段，而休假期则涵盖了节点因缓存为空而闲置、因信道繁忙而退避、或因发生碰撞而等待重传的所有非服务时段。
+在引入连续传输机制后，节点与信道状态呈现出显著的“服务—休假”交替特征：当节点竞争成功并占用信道时，系统进入忙期；当节点因退避、碰撞重传或队列暂空而未进行有效传输时，系统进入休假期。该过程具有明显的循环更新结构，使得仅依赖低维状态转移的传统马尔可夫描述在表达能力与可解性之间面临权衡。为此，本文采用离散时间休假排队理论（Discrete-time Vacation Queuing Theory）作为后续理论推导的统一分析框架。
 
-通过建立休假排队模型，我们可以将复杂的网络竞争行为解耦为对忙期长度分布和休假期长度分布的独立分析。具体而言，信道视角的分析聚焦于聚合流量下的忙期与休假期交替规律，由此推导系统的吞吐量性能；而节点视角的分析则侧重于单个用户队列在休假期内的积压增长与忙期内的服务消减过程，结合概率生成函数（PGF）及其变换性质，可以精确求解队列长度的稳态分布，进而根据Little定律推导出数据包的平均时延。这种基于休假排队的建模方法不仅能够统一描述Aloha和CSMA网络中的连续传输行为，还为解析求解系统在饱和与非饱和状态下的关键性能指标提供了严谨的数学路径。
+在该框架中，复杂竞争行为被重构为忙期长度与休假期长度两类随机过程的耦合分析问题。前者刻画一次成功接入后连续服务的持续能力，后者刻画节点在非服务阶段经历的等待、退避与重试代价。基于这一分解，系统关键性能可由可解释的统计量统一表征：忙期主导有效数据服务能力，休假期主导竞争开销与等待时延。
+
+进一步地，本文从“信道视角”与“节点视角”两个层面开展分析。信道视角关注聚合流量下忙期—休假期交替规律，以推导系统吞吐量及其稳定工作区间；节点视角关注单节点队列在休假期内的积压增长与忙期内的服务消减，结合概率生成函数（PGF）及其变换性质求取队列稳态分布，并据此利用 Little 定律得到平均时延表达式。由此建立的分析路径可在统一数学框架下同时覆盖 Aloha 与 CSMA 两类机制，并为第~\ref{chapter3: SAST }章、第~\ref{chapter4: CSMAST }章及第~\ref{chapter5: ai_selector}章中的性能推导、对比与策略优化提供一致且可复用的理论基础。
 
 \section{关键性能指标定义}
 \label{sec:performance_metrics}

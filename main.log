@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.28)  2 MAR 2026 11:04
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.28)  2 MAR 2026 23:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1226,14 +1226,17 @@ LaTeX Font Warning: Font shape `TU/SimHei(0)/b/n' undefined
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [4] (./main.lof)
-\tf@lof=\write6
-\openout6 = `main.lof'.
+ [4] (./main.lof
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- (./main.lot [5
+ [5
 
 
 ])
+\tf@lof=\write6
+\openout6 = `main.lof'.
+
+ (./main.lot)
 \tf@lot=\write7
 \openout7 = `main.lot'.
 
@@ -1266,42 +1269,60 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Underfull \vbox (badness 6876) has occurred while \output is active []
 
  [2]
-Underfull \vbox (badness 6876) has occurred while \output is active []
+Overfull \hbox (4.2931pt too wide) in paragraph at lines 31--32
+[]\TU/SimSun(0)/m/n/12.045 随 着 人 工 智 能 技 术 在 无 线 通 信 系 统 中 的 逐 步 融 合，| \TU/TimesNewRoman(0)/m/n/12.045 3GPP \TU/SimSun(0)/m/n/12.045 自 \TU/TimesNewRoman(0)/m/n/12.045 Release 18 |\TU/SimSun(0)/m/n/12.045 （\TU/TimesNewRoman(0)/m/n/12.045 5G-Advanced\TU/SimSun(0)/m/n/12.045 ）|
+ []
 
- [3]
-Underfull \vbox (badness 1521) has occurred while \output is active []
 
- [4]
+Underfull \vbox (badness 3514) has occurred while \output is active []
+
+ [3] [4]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [5]
 
-Package natbib Warning: Citation `...' on page 6 undefined on input line 89.
+Package natbib Warning: Citation `...' on page 6 undefined on input line 79.
 
 
-Package natbib Warning: Citation `...' on page 6 undefined on input line 89.
-
-
-Package natbib Warning: Citation `...' on page 6 undefined on input line 91.
+Package natbib Warning: Citation `...' on page 6 undefined on input line 79.
 
 [6]
 
-Package natbib Warning: Citation `...' on page 7 undefined on input line 93.
+Package natbib Warning: Citation `...' on page 7 undefined on input line 81.
 
 
-Package natbib Warning: Citation `...' on page 7 undefined on input line 95.
+Package natbib Warning: Citation `...' on page 7 undefined on input line 83.
 
 
-Package natbib Warning: Citation `...' on page 7 undefined on input line 97.
+Package natbib Warning: Citation `...' on page 7 undefined on input line 85.
 
 
+Package natbib Warning: Citation `...' on page 7 undefined on input line 87.
+
+
+Underfull \vbox (badness 3514) has occurred while \output is active []
+
+ [7] [8]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7] [8] [9] [10]) [11] [12]
+ [9] [10]
+
+LaTeX Warning: Reference `fig:sast_model' on page 11 undefined on input line 158.
+
+[11]
+
+LaTeX Warning: Reference `fig:ml_framework' on page 12 undefined on input line 164.
+
+
+LaTeX Warning: Reference `fig:thesis_framework' on page 12 undefined on input line 169.
+
+) [12]
 \openout2 = `docs/Chapter_02.aux'.
 
  (./docs/Chapter_02.tex
 第2章
+File: figure/chap2/5G NR标准随机接入过程.pdf Graphic file (type pdf)
+<use figure/chap2/5G NR标准随机接入过程.pdf>
 [13
 
 
@@ -1309,67 +1330,39 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-] [14] [15] [16]
-Overfull \hbox (2.70496pt too wide) in paragraph at lines 170--171
-[]\TU/SimSun(0)/m/n/12.045 第[]\TU/TimesNewRoman(0)/m/n/12.045 3[]\TU/SimSun(0)/m/n/12.045 、| []\TU/TimesNewRoman(0)/m/n/12.045 4[]\TU/SimSun(0)/m/n/12.045 章 的 \TU/TimesNewRoman(0)/m/n/12.045 SAST |\TU/SimSun(0)/m/n/12.045 （\TU/TimesNewRoman(0)/m/n/12.045 Successive Aloha with Successive Transmission\TU/SimSun(0)/m/n/12.045 ）|  与 \TU/TimesNewRoman(0)/m/n/12.045 CSMAST |\TU/SimSun(0)/m/n/12.045 （\TU/TimesNewRoman(0)/m/n/12.045 CSMA
- []
+]
+File: figure/chap2/5G NR SDT标准随机接入过程.pdf Graphic file (type pdf)
+<use figure/chap2/5G NR SDT标准随机接入过程.pdf>
+ [14]
+File: figure/chap2/5G NR标准LBT过程.pdf Graphic file (type pdf)
+<use figure/chap2/5G NR标准LBT过程.pdf>
+ [15]
+Underfull \vbox (badness 3838) has occurred while \output is active []
 
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 192--192
-[]|\TU/SimSun(0)/b/n/12.045 接 入 强 度
- []
+ [16]
+File: figure/chap2/连续传输机制对比图.pdf Graphic file (type pdf)
+<use figure/chap2/连续传输机制对比图.pdf>
+ [17]
+File: figure/chap2/通用系统场景.pdf Graphic file (type pdf)
+<use figure/chap2/通用系统场景.pdf>
 
+Underfull \vbox (badness 1215) has occurred while \output is active []
 
-Underfull \hbox (badness 10000) in paragraph at lines 192--192
-[]|\TU/SimSun(0)/b/n/12.045 占 用 时 长
- []
+ [18]
+Underfull \vbox (badness 2359) has occurred while \output is active []
 
-
-Overfull \hbox (3.0051pt too wide) in paragraph at lines 196--196
-[]|\TU/TimesNewRoman(0)/m/n/12.045 CSMA/CA
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 196--196
-[]|\TU/SimSun(0)/m/n/12.045 通 过 退 避 动
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 198--198
-[]|\TU/SimSun(0)/m/n/12.045 第 一 阶 段 可
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 200--200
-[]|\TU/SimSun(0)/b/n/12.045 连 续 可 变，|
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 202--202
-[]|\TU/TimesNewRoman(0)/b/n/12.045 CSMAST
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 202--202
-[]|\TU/SimSun(0)/b/n/12.045 连 续 可 变，|
- []
-
-[18]
-Underfull \vbox (badness 2126) has occurred while \output is active []
-
- [19]
+ [19] [20]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [20]
-Underfull \vbox (badness 1152) has occurred while \output is active []
-
  [21]
-Underfull \vbox (badness 2980) has occurred while \output is active []
+Underfull \vbox (badness 1348) has occurred while \output is active []
 
- [22]
-Underfull \vbox (badness 1748) has occurred while \output is active []
+ [22]) [23] [24
 
- [23]) [24]
+
+
+
+]
 \openout2 = `docs/Chapter_03.aux'.
 
  (./docs/Chapter_03.tex
@@ -1377,10 +1370,6 @@ Underfull \vbox (badness 1748) has occurred while \output is active []
 File: figure/chap3/two_node_sast.pdf Graphic file (type pdf)
 <use figure/chap3/two_node_sast.pdf>
 [25
-
-
-
-
 
 
 ]
@@ -1768,20 +1757,14 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: F9DD0A4F5DF9383917BB1F450060AEB1;5492
-(rerunfilecheck)             After:  F6B9F1D671B6D30651EA6822667C502B;5454.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 5A4158E8A88F3ECFD0571E05787992D4;5446.
  ) 
 Here is how much of TeX's memory you used:
- 35922 strings out of 476179
- 766689 string characters out of 5813072
- 1080381 words of memory out of 5000000
- 55872 multiletter control sequences out of 15000+600000
+ 35939 strings out of 476179
+ 765997 string characters out of 5813072
+ 1080528 words of memory out of 5000000
+ 55883 multiletter control sequences out of 15000+600000
  494772 words of font info for 194 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  103i,15n,111p,1195b,833s stack positions out of 10000i,1000n,20000p,200000b,200000s

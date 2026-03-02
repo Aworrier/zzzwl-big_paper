@@ -1,18 +1,16 @@
 \addvspace {10.0pt}
 \addvspace {10.0pt}
 \addvspace {10.0pt}
-\contentsline {table}{\numberline {2-1}{\ignorespaces Aloha与CSMA的时间结构对比\relax }}{15}{table.caption.2}%
-\contentsline {table}{\numberline {2-2}{\ignorespaces 典型随机接入协议在三维控制空间中的映射\relax }}{18}{table.caption.3}%
 \addvspace {10.0pt}
 \addvspace {10.0pt}
 \addvspace {10.0pt}
-\contentsline {table}{\numberline {5-1}{\ignorespaces 不同随机接入协议的定性性能对比\relax }}{59}{table.caption.15}%
-\contentsline {table}{\numberline {5-2}{\ignorespaces 业务流量特征参数定义与物理含义\relax }}{61}{table.caption.17}%
-\contentsline {table}{\numberline {5-3}{\ignorespaces 标准化输入与性能指标摘要\relax }}{62}{table.caption.18}%
-\contentsline {table}{\numberline {5-4}{\ignorespaces 统一仿真器关键参数汇总\relax }}{69}{table.caption.21}%
-\contentsline {table}{\numberline {5-5}{\ignorespaces 仿真数据集统计摘要\relax }}{70}{table.caption.22}%
-\contentsline {table}{\numberline {5-6}{\ignorespaces 多任务代理模型的神经网络架构\relax }}{71}{table.caption.24}%
-\contentsline {table}{\numberline {5-7}{\ignorespaces 代理模型在测试集上的预测误差与拟合优度\relax }}{73}{table.caption.26}%
+\contentsline {table}{\numberline {5-1}{\ignorespaces 不同随机接入协议的定性性能对比\relax }}{59}{table.caption.18}%
+\contentsline {table}{\numberline {5-2}{\ignorespaces 业务流量特征参数定义与物理含义\relax }}{61}{table.caption.20}%
+\contentsline {table}{\numberline {5-3}{\ignorespaces 标准化输入与性能指标摘要\relax }}{62}{table.caption.21}%
+\contentsline {table}{\numberline {5-4}{\ignorespaces 统一仿真器关键参数汇总\relax }}{69}{table.caption.24}%
+\contentsline {table}{\numberline {5-5}{\ignorespaces 仿真数据集统计摘要\relax }}{70}{table.caption.25}%
+\contentsline {table}{\numberline {5-6}{\ignorespaces 多任务代理模型的神经网络架构\relax }}{71}{table.caption.27}%
+\contentsline {table}{\numberline {5-7}{\ignorespaces 代理模型在测试集上的预测误差与拟合优度\relax }}{73}{table.caption.29}%
 \addvspace {10.0pt}
 \addvspace {10.0pt}
 \addvspace {10.0pt}
