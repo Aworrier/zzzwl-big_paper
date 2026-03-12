@@ -1,0 +1,77 @@
+@article{2024_TMLCN_Feasible,
+  author={Miuccio, Luciano and Riolo, Salvatore and Samarakoon, Sumudu and Panno, Daniela and Bennis, Mehdi},
+  journal={IEEE Trans. Mach. Learn. Commun. Netw.},
+  title={On Learning Generalized Wireless {MAC} Communication Protocols via a Feasible Multi-Agent Reinforcement Learning Framework},
+  year={2024},
+  volume={2},
+  pages={298--317},
+  doi={10.1109/TMLCN.2024.3368367}
+}
+
+@inproceedings{2023_ICC_IntrinsicRewards,
+  author={Miuccio, Luciano and Riolo, Salvatore and Bennis, Mehdi and Panno, Daniela},
+  booktitle={Proc. IEEE Int. Conf. Commun. (ICC)},
+  title={On Learning Intrinsic Rewards for Faster Multi-Agent Reinforcement Learning based {MAC} Protocol Design in 6G Wireless Networks},
+  year={2023},
+  pages={466--471},
+  doi={10.1109/ICC45041.2023.10278726}
+}
+
+@inproceedings{2022_GLOBECOM_Abstraction,
+  author={Miuccio, Luciano and Riolo, Salvatore and Samarakoon, Sumudu and Panno, Daniela and Bennis, Mehdi},
+  booktitle={Proc. IEEE Global Commun. Conf. (GLOBECOM)},
+  title={Learning Generalized Wireless {MAC} Communication Protocols via Abstraction},
+  year={2022},
+  pages={2322--2327},
+  doi={10.1109/GLOBECOM48099.2022.10001610}
+}
+
+@article{2021_TCCN_JointLearning,
+  author={Valcarce, Alvaro and Hoydis, Jakob},
+  journal={IEEE Trans. Cogn. Commun. Netw.},
+  title={Toward Joint Learning of Optimal {MAC} Signaling and Wireless Channel Access},
+  year={2021},
+  volume={7},
+  number={4},
+  pages={1233--1243},
+  doi={10.1109/TCCN.2021.3080677}
+}
+
+@article{2021_ACCESS_SelfDriving,
+  author={Pasandi, Hamidreza B. and Nadeem, Tamer},
+  journal={IEEE Access},
+  title={Towards a Learning-Based Framework for Self-Driving Design of Networking Protocols},
+  year={2021},
+  volume={9},
+  pages={34829--34844},
+  doi={10.1109/ACCESS.2021.3061729}
+}
+
+@inproceedings{2020_ICAIIC_MACDesign,
+  author={Pasandi, Hamidreza B. and Nadeem, Tamer},
+  booktitle={Proc. Int. Conf. Artif. Intell. Inf. Commun. (ICAIIC)},
+  title={{MAC} Protocol Design Optimization Using Deep Learning},
+  year={2020},
+  pages={709--715},
+  doi={10.1109/ICAIIC48513.2020.9065254}
+}
+
+@inproceedings{2019_ICCT_Selection,
+  author={Kou, Kaizhi and Lei, Lei and Zhang, Lei and Cai, Shaobin and Shen, Gang},
+  booktitle={Proc. IEEE Int. Conf. Commun. Technol. (ICCT)},
+  title={Intelligent Selection: A Neural Network-Based {MAC} Protocol-Selection Mechanism for Wireless Ad Hoc Networks},
+  year={2019},
+  pages={424--429},
+  doi={10.1109/ICCT46805.2019.8947101}
+}
+
+@article{2019_JSAC_DLMA,
+  author={Yu, Yue and Wang, Tianyu and Liew, Soung Chang},
+  journal={IEEE J. Sel. Areas Commun.},
+  title={Deep-Reinforcement Learning Multiple Access for Heterogeneous Wireless Networks},
+  year={2019},
+  volume={37},
+  number={6},
+  pages={1277--1290},
+  doi={10.1109/JSAC.2019.2904329}
+}

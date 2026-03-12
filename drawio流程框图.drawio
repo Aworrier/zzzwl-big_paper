@@ -1,0 +1,564 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1" pages="6">
+  <diagram name="Page-1" id="KfDGOFp9Pe0-3lB0xr9n">
+    <mxGraphModel dx="1554" dy="922" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-49" connectable="0" parent="1" style="group;labelBorderColor=default;" value="" vertex="1">
+          <mxGeometry height="704.5751633986928" width="1110" x="30" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-1" parent="PRSYhA1jqBPMFQWKFCv2-49" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;fontSize=14;fontStyle=1;align=center;verticalAlign=middle;spacingTop=10;spacingBottom=10;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="面&lt;br&gt;向&lt;br&gt;复&lt;br&gt;杂&lt;br&gt;物&lt;br&gt;联&lt;br&gt;网&lt;br&gt;场&lt;br&gt;景&lt;br&gt;的&lt;br&gt;B&lt;br&gt;5&lt;br&gt;G&lt;br&gt;接&lt;br&gt;入&lt;br&gt;机&lt;br&gt;制&lt;br&gt;设&lt;br&gt;计&lt;br&gt;与&lt;br&gt;优&lt;br&gt;化&lt;br&gt;研&lt;br&gt;究" vertex="1">
+          <mxGeometry height="543.5294117647059" width="64.53488372093022" y="90.58823529411765" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-2" parent="PRSYhA1jqBPMFQWKFCv2-49" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1;fontColor=#1A1A1A;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="绪论（第一章）" vertex="1">
+          <mxGeometry height="40.26143790849673" width="361.3953488372093" x="154.88372093023256" y="30.19607843137255" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-3" parent="PRSYhA1jqBPMFQWKFCv2-49" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1;fontColor=#1A1A1A;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="随机接入网络及其建模方法（第二章）" vertex="1">
+          <mxGeometry height="40.26143790849673" width="361.3953488372093" x="154.88372093023256" y="150.98039215686273" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-4" parent="PRSYhA1jqBPMFQWKFCv2-49" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1;fontColor=#1A1A1A;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="面向 Aloha 网络的连续传输机制设计（第三章）" vertex="1">
+          <mxGeometry height="40.26143790849673" width="361.3953488372093" x="154.88372093023256" y="271.7647058823529" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-5" parent="PRSYhA1jqBPMFQWKFCv2-49" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1;fontColor=#1A1A1A;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="面向 CSMA 网络的连续传输机制设计（第四章）" vertex="1">
+          <mxGeometry height="40.26143790849673" width="361.3953488372093" x="154.88372093023256" y="392.54901960784315" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-6" parent="PRSYhA1jqBPMFQWKFCv2-49" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1;fontColor=#1A1A1A;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="基于监督学习的智能协议与参数选择（第五章）" vertex="1">
+          <mxGeometry height="40.26143790849673" width="361.3953488372093" x="154.88372093023256" y="513.3333333333334" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-7" parent="PRSYhA1jqBPMFQWKFCv2-49" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1;fontColor=#1A1A1A;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="总结与展望（第六章）" vertex="1">
+          <mxGeometry height="40.26143790849673" width="361.3953488372093" x="154.88372093023256" y="634.1176470588235" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-8" parent="PRSYhA1jqBPMFQWKFCv2-49" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#808080;dashed=1;dashPattern=8 4;strokeWidth=1.5;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="" vertex="1">
+          <mxGeometry height="100.65359477124183" width="516.2790697674418" x="593.7209302325581" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-9" parent="PRSYhA1jqBPMFQWKFCv2-49" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#808080;dashed=1;dashPattern=8 4;strokeWidth=1.5;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="" vertex="1">
+          <mxGeometry height="100.65359477124183" width="516.2790697674418" x="593.7209302325581" y="120.7843137254902" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-10" parent="PRSYhA1jqBPMFQWKFCv2-49" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#808080;dashed=1;dashPattern=8 4;strokeWidth=1.5;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="" vertex="1">
+          <mxGeometry height="100.65359477124183" width="516.2790697674418" x="593.7209302325581" y="241.5686274509804" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-11" parent="PRSYhA1jqBPMFQWKFCv2-49" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#808080;dashed=1;dashPattern=8 4;strokeWidth=1.5;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="" vertex="1">
+          <mxGeometry height="100.65359477124183" width="516.2790697674418" x="593.7209302325581" y="362.3529411764706" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-12" parent="PRSYhA1jqBPMFQWKFCv2-49" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#808080;dashed=1;dashPattern=8 4;strokeWidth=1.5;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="" vertex="1">
+          <mxGeometry height="100.65359477124183" width="516.2790697674418" x="593.7209302325581" y="483.1372549019608" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-13" parent="PRSYhA1jqBPMFQWKFCv2-49" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#808080;dashed=1;dashPattern=8 4;strokeWidth=1.5;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="" vertex="1">
+          <mxGeometry height="100.65359477124183" width="516.2790697674418" x="593.7209302325581" y="603.9215686274509" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-14" parent="PRSYhA1jqBPMFQWKFCv2-49" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontColor=#333333;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="选题背景与问题提出" vertex="1">
+          <mxGeometry height="35.228758169934636" width="232.32558139534882" x="613.0813953488372" y="10.065359477124183" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-15" parent="PRSYhA1jqBPMFQWKFCv2-49" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontColor=#333333;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="国内外研究现状" vertex="1">
+          <mxGeometry height="35.228758169934636" width="232.32558139534882" x="858.313953488372" y="10.065359477124183" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-16" parent="PRSYhA1jqBPMFQWKFCv2-49" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontColor=#333333;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="本文研究目标与内容" vertex="1">
+          <mxGeometry height="35.228758169934636" width="232.32558139534882" x="613.0813953488372" y="55.359477124183" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-17" parent="PRSYhA1jqBPMFQWKFCv2-49" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontColor=#333333;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="本文创新点与章节安排" vertex="1">
+          <mxGeometry height="35.228758169934636" width="232.32558139534882" x="858.313953488372" y="55.359477124183" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-18" parent="PRSYhA1jqBPMFQWKFCv2-49" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontColor=#333333;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="典型随机接入标准方案及其演进" vertex="1">
+          <mxGeometry height="35.228758169934636" width="477.5581395348837" x="613.0813953488372" y="130.84967320261438" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-19" parent="PRSYhA1jqBPMFQWKFCv2-49" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontColor=#333333;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="连续传输机制的基本原理" vertex="1">
+          <mxGeometry height="35.228758169934636" width="232.32558139534882" x="613.0813953488372" y="176.1437908496732" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-20" parent="PRSYhA1jqBPMFQWKFCv2-49" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontColor=#333333;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="通用系统场景与排队模型" vertex="1">
+          <mxGeometry height="35.228758169934636" width="232.32558139534882" x="858.313953488372" y="176.1437908496732" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-21" parent="PRSYhA1jqBPMFQWKFCv2-49" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontColor=#333333;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="SAST系统模型与机制描述" vertex="1">
+          <mxGeometry height="35.228758169934636" width="232.32558139534882" x="613.0813953488372" y="251.6339869281046" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-22" parent="PRSYhA1jqBPMFQWKFCv2-49" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontColor=#333333;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="基于休假排队的模型分析" vertex="1">
+          <mxGeometry height="35.228758169934636" width="232.32558139534882" x="858.313953488372" y="251.6339869281046" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-23" parent="PRSYhA1jqBPMFQWKFCv2-49" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontColor=#333333;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="吞吐量与时延性能优化" vertex="1">
+          <mxGeometry height="35.228758169934636" width="232.32558139534882" x="613.0813953488372" y="296.9281045751634" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-24" parent="PRSYhA1jqBPMFQWKFCv2-49" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontColor=#333333;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="在5G网络中的应用对比" vertex="1">
+          <mxGeometry height="35.228758169934636" width="232.32558139534882" x="858.313953488372" y="296.9281045751634" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-25" parent="PRSYhA1jqBPMFQWKFCv2-49" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontColor=#333333;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="CSMAST模型与机制描述" vertex="1">
+          <mxGeometry height="35.228758169934636" width="232.32558139534882" x="613.0813953488372" y="372.41830065359477" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-26" parent="PRSYhA1jqBPMFQWKFCv2-49" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontColor=#333333;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="马尔可夫链性能指标分析" vertex="1">
+          <mxGeometry height="35.228758169934636" width="232.32558139534882" x="858.313953488372" y="372.41830065359477" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-27" parent="PRSYhA1jqBPMFQWKFCv2-49" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontColor=#333333;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="吞吐量与公平性的权衡分析" vertex="1">
+          <mxGeometry height="35.228758169934636" width="232.32558139534882" x="613.0813953488372" y="417.7124183006536" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-28" parent="PRSYhA1jqBPMFQWKFCv2-49" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontColor=#333333;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="仿真验证与基线对比" vertex="1">
+          <mxGeometry height="35.228758169934636" width="232.32558139534882" x="858.313953488372" y="417.7124183006536" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-29" parent="PRSYhA1jqBPMFQWKFCv2-49" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontColor=#333333;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="统一接入框架与问题建模" vertex="1">
+          <mxGeometry height="35.228758169934636" width="232.32558139534882" x="613.0813953488372" y="493.20261437908493" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-30" parent="PRSYhA1jqBPMFQWKFCv2-49" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontColor=#333333;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="接入协议数据集构建与仿真" vertex="1">
+          <mxGeometry height="35.228758169934636" width="232.32558139534882" x="858.313953488372" y="493.20261437908493" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-31" parent="PRSYhA1jqBPMFQWKFCv2-49" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontColor=#333333;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="多任务DNN代理模型设计" vertex="1">
+          <mxGeometry height="35.228758169934636" width="232.32558139534882" x="613.0813953488372" y="538.4967320261438" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-32" parent="PRSYhA1jqBPMFQWKFCv2-49" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontColor=#333333;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="基于代理模型的快速决策" vertex="1">
+          <mxGeometry height="35.228758169934636" width="232.32558139534882" x="858.313953488372" y="538.4967320261438" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-33" parent="PRSYhA1jqBPMFQWKFCv2-49" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontColor=#333333;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="全文工作总结" vertex="1">
+          <mxGeometry height="40.26143790849673" width="193.60465116279067" x="632.4418604651162" y="634.1176470588235" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-34" parent="PRSYhA1jqBPMFQWKFCv2-49" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontColor=#333333;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="未来研究展望" vertex="1">
+          <mxGeometry height="40.26143790849673" width="193.60465116279067" x="877.6744186046511" y="634.1176470588235" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-35" edge="1" parent="PRSYhA1jqBPMFQWKFCv2-49" source="PRSYhA1jqBPMFQWKFCv2-1" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=2;strokeColor=#808080;endArrow=none;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" target="PRSYhA1jqBPMFQWKFCv2-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-36" edge="1" parent="PRSYhA1jqBPMFQWKFCv2-49" source="PRSYhA1jqBPMFQWKFCv2-1" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=2;strokeColor=#808080;endArrow=none;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" target="PRSYhA1jqBPMFQWKFCv2-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-37" edge="1" parent="PRSYhA1jqBPMFQWKFCv2-49" source="PRSYhA1jqBPMFQWKFCv2-1" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=2;strokeColor=#808080;endArrow=none;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" target="PRSYhA1jqBPMFQWKFCv2-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-38" edge="1" parent="PRSYhA1jqBPMFQWKFCv2-49" source="PRSYhA1jqBPMFQWKFCv2-1" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=2;strokeColor=#808080;endArrow=none;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" target="PRSYhA1jqBPMFQWKFCv2-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-39" edge="1" parent="PRSYhA1jqBPMFQWKFCv2-49" source="PRSYhA1jqBPMFQWKFCv2-1" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=2;strokeColor=#808080;endArrow=none;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" target="PRSYhA1jqBPMFQWKFCv2-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-40" edge="1" parent="PRSYhA1jqBPMFQWKFCv2-49" source="PRSYhA1jqBPMFQWKFCv2-1" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=2;strokeColor=#808080;endArrow=none;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" target="PRSYhA1jqBPMFQWKFCv2-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-41" edge="1" parent="PRSYhA1jqBPMFQWKFCv2-49" source="PRSYhA1jqBPMFQWKFCv2-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=1.5;strokeColor=#B3B3B3;endArrow=none;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" target="PRSYhA1jqBPMFQWKFCv2-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-42" edge="1" parent="PRSYhA1jqBPMFQWKFCv2-49" source="PRSYhA1jqBPMFQWKFCv2-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=1.5;strokeColor=#B3B3B3;endArrow=none;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" target="PRSYhA1jqBPMFQWKFCv2-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-43" edge="1" parent="PRSYhA1jqBPMFQWKFCv2-49" source="PRSYhA1jqBPMFQWKFCv2-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=1.5;strokeColor=#B3B3B3;endArrow=none;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" target="PRSYhA1jqBPMFQWKFCv2-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-44" edge="1" parent="PRSYhA1jqBPMFQWKFCv2-49" source="PRSYhA1jqBPMFQWKFCv2-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=1.5;strokeColor=#B3B3B3;endArrow=none;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" target="PRSYhA1jqBPMFQWKFCv2-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-45" edge="1" parent="PRSYhA1jqBPMFQWKFCv2-49" source="PRSYhA1jqBPMFQWKFCv2-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=1.5;strokeColor=#B3B3B3;endArrow=none;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" target="PRSYhA1jqBPMFQWKFCv2-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PRSYhA1jqBPMFQWKFCv2-46" edge="1" parent="PRSYhA1jqBPMFQWKFCv2-49" source="PRSYhA1jqBPMFQWKFCv2-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=1.5;strokeColor=#B3B3B3;endArrow=none;fontFamily=times new roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" target="PRSYhA1jqBPMFQWKFCv2-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="YTQj_tfn2IdJy9A6Xu8z" name="章节安排流程框图">
+    <mxGraphModel dx="1295" dy="768" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="X5EsHokfOqda1bQfDvtM-206" connectable="0" parent="1" style="group;labelBorderColor=default;" value="" vertex="1">
+          <mxGeometry height="704.5751633986928" width="1110" x="40" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-207" parent="X5EsHokfOqda1bQfDvtM-206" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#003D7A;fontColor=#ffffff;strokeColor=#00264D;fontSize=14;fontStyle=1;align=center;verticalAlign=middle;spacingTop=10;spacingBottom=10;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="面&lt;br&gt;向&lt;br&gt;复&lt;br&gt;杂&lt;br&gt;物&lt;br&gt;联&lt;br&gt;网&lt;br&gt;场&lt;br&gt;景&lt;br&gt;的&lt;br&gt;B&lt;br&gt;5&lt;br&gt;G&lt;br&gt;接&lt;br&gt;入&lt;br&gt;机&lt;br&gt;制&lt;br&gt;设&lt;br&gt;计&lt;br&gt;与&lt;br&gt;优&lt;br&gt;化&lt;br&gt;研&lt;br&gt;究" vertex="1">
+          <mxGeometry height="543.5294117647059" width="64.53488372093022" y="90.58823529411765" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-208" parent="X5EsHokfOqda1bQfDvtM-206" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EBF3FA;strokeColor=#628CB6;fontSize=14;fontStyle=1;fontColor=#1A1A1A;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="绪论（第一章）" vertex="1">
+          <mxGeometry height="40.26143790849673" width="361.3953488372093" x="154.88372093023256" y="30.19607843137255" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-209" parent="X5EsHokfOqda1bQfDvtM-206" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EBF3FA;strokeColor=#628CB6;fontSize=14;fontStyle=1;fontColor=#1A1A1A;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="随机接入网络及其建模方法（第二章）" vertex="1">
+          <mxGeometry height="40.26143790849673" width="361.3953488372093" x="154.88372093023256" y="150.98039215686273" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-210" parent="X5EsHokfOqda1bQfDvtM-206" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EBF3FA;strokeColor=#628CB6;fontSize=14;fontStyle=1;fontColor=#1A1A1A;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="面向 Aloha 网络的连续传输机制设计（第三章）" vertex="1">
+          <mxGeometry height="40.26143790849673" width="361.3953488372093" x="154.88372093023256" y="271.7647058823529" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-211" parent="X5EsHokfOqda1bQfDvtM-206" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EBF3FA;strokeColor=#628CB6;fontSize=14;fontStyle=1;fontColor=#1A1A1A;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="面向 CSMA 网络的连续传输机制设计（第四章）" vertex="1">
+          <mxGeometry height="40.26143790849673" width="361.3953488372093" x="154.88372093023256" y="392.54901960784315" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-212" parent="X5EsHokfOqda1bQfDvtM-206" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EBF3FA;strokeColor=#628CB6;fontSize=14;fontStyle=1;fontColor=#1A1A1A;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="基于监督学习的智能协议与参数选择（第五章）" vertex="1">
+          <mxGeometry height="40.26143790849673" width="361.3953488372093" x="154.88372093023256" y="513.3333333333334" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-213" parent="X5EsHokfOqda1bQfDvtM-206" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EBF3FA;strokeColor=#628CB6;fontSize=14;fontStyle=1;fontColor=#1A1A1A;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="总结与展望（第六章）" vertex="1">
+          <mxGeometry height="40.26143790849673" width="361.3953488372093" x="154.88372093023256" y="634.1176470588235" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-214" parent="X5EsHokfOqda1bQfDvtM-206" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#73889E;dashed=1;dashPattern=8 4;strokeWidth=1.5;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="" vertex="1">
+          <mxGeometry height="100.65359477124183" width="516.2790697674418" x="593.7209302325581" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-215" parent="X5EsHokfOqda1bQfDvtM-206" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#73889E;dashed=1;dashPattern=8 4;strokeWidth=1.5;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="" vertex="1">
+          <mxGeometry height="100.65359477124183" width="516.2790697674418" x="593.7209302325581" y="120.7843137254902" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-216" parent="X5EsHokfOqda1bQfDvtM-206" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#73889E;dashed=1;dashPattern=8 4;strokeWidth=1.5;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="" vertex="1">
+          <mxGeometry height="100.65359477124183" width="516.2790697674418" x="593.7209302325581" y="241.5686274509804" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-217" parent="X5EsHokfOqda1bQfDvtM-206" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#73889E;dashed=1;dashPattern=8 4;strokeWidth=1.5;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="" vertex="1">
+          <mxGeometry height="100.65359477124183" width="516.2790697674418" x="593.7209302325581" y="362.3529411764706" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-218" parent="X5EsHokfOqda1bQfDvtM-206" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#73889E;dashed=1;dashPattern=8 4;strokeWidth=1.5;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="" vertex="1">
+          <mxGeometry height="100.65359477124183" width="516.2790697674418" x="593.7209302325581" y="483.1372549019608" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-219" parent="X5EsHokfOqda1bQfDvtM-206" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#73889E;dashed=1;dashPattern=8 4;strokeWidth=1.5;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="" vertex="1">
+          <mxGeometry height="100.65359477124183" width="516.2790697674418" x="593.7209302325581" y="603.9215686274509" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-220" parent="X5EsHokfOqda1bQfDvtM-206" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F8FA;strokeColor=#A1B4C7;fontColor=#262626;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="选题背景与问题提出" vertex="1">
+          <mxGeometry height="35.228758169934636" width="232.32558139534882" x="613.0813953488372" y="10.065359477124183" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-221" parent="X5EsHokfOqda1bQfDvtM-206" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F8FA;strokeColor=#A1B4C7;fontColor=#262626;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="国内外研究现状" vertex="1">
+          <mxGeometry height="35.228758169934636" width="232.32558139534882" x="858.313953488372" y="10.065359477124183" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-222" parent="X5EsHokfOqda1bQfDvtM-206" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F8FA;strokeColor=#A1B4C7;fontColor=#262626;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="本文研究目标与内容" vertex="1">
+          <mxGeometry height="35.228758169934636" width="232.32558139534882" x="613.0813953488372" y="55.359477124183" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-223" parent="X5EsHokfOqda1bQfDvtM-206" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F8FA;strokeColor=#A1B4C7;fontColor=#262626;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="本文创新点与章节安排" vertex="1">
+          <mxGeometry height="35.228758169934636" width="232.32558139534882" x="858.313953488372" y="55.359477124183" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-224" parent="X5EsHokfOqda1bQfDvtM-206" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F8FA;strokeColor=#A1B4C7;fontColor=#262626;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="典型随机接入标准方案及其演进" vertex="1">
+          <mxGeometry height="35.228758169934636" width="477.5581395348837" x="613.0813953488372" y="130.84967320261438" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-225" parent="X5EsHokfOqda1bQfDvtM-206" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F8FA;strokeColor=#A1B4C7;fontColor=#262626;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="连续传输机制的基本原理" vertex="1">
+          <mxGeometry height="35.228758169934636" width="232.32558139534882" x="613.0813953488372" y="176.1437908496732" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-226" parent="X5EsHokfOqda1bQfDvtM-206" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F8FA;strokeColor=#A1B4C7;fontColor=#262626;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="通用系统场景与排队模型" vertex="1">
+          <mxGeometry height="35.228758169934636" width="232.32558139534882" x="858.313953488372" y="176.1437908496732" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-227" parent="X5EsHokfOqda1bQfDvtM-206" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F8FA;strokeColor=#A1B4C7;fontColor=#262626;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="SAST系统模型与机制描述" vertex="1">
+          <mxGeometry height="35.228758169934636" width="232.32558139534882" x="613.0813953488372" y="251.6339869281046" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-228" parent="X5EsHokfOqda1bQfDvtM-206" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F8FA;strokeColor=#A1B4C7;fontColor=#262626;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="基于休假排队的模型分析" vertex="1">
+          <mxGeometry height="35.228758169934636" width="232.32558139534882" x="858.313953488372" y="251.6339869281046" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-229" parent="X5EsHokfOqda1bQfDvtM-206" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F8FA;strokeColor=#A1B4C7;fontColor=#262626;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="吞吐量与时延性能优化" vertex="1">
+          <mxGeometry height="35.228758169934636" width="232.32558139534882" x="613.0813953488372" y="296.9281045751634" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-230" parent="X5EsHokfOqda1bQfDvtM-206" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F8FA;strokeColor=#A1B4C7;fontColor=#262626;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="在5G网络中的应用对比" vertex="1">
+          <mxGeometry height="35.228758169934636" width="232.32558139534882" x="858.313953488372" y="296.9281045751634" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-231" parent="X5EsHokfOqda1bQfDvtM-206" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F8FA;strokeColor=#A1B4C7;fontColor=#262626;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="CSMAST模型与机制描述" vertex="1">
+          <mxGeometry height="35.228758169934636" width="232.32558139534882" x="613.0813953488372" y="372.41830065359477" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-232" parent="X5EsHokfOqda1bQfDvtM-206" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F8FA;strokeColor=#A1B4C7;fontColor=#262626;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="马尔可夫链性能指标分析" vertex="1">
+          <mxGeometry height="35.228758169934636" width="232.32558139534882" x="858.313953488372" y="372.41830065359477" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-233" parent="X5EsHokfOqda1bQfDvtM-206" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F8FA;strokeColor=#A1B4C7;fontColor=#262626;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="吞吐量与公平性的权衡分析" vertex="1">
+          <mxGeometry height="35.228758169934636" width="232.32558139534882" x="613.0813953488372" y="417.7124183006536" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-234" parent="X5EsHokfOqda1bQfDvtM-206" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F8FA;strokeColor=#A1B4C7;fontColor=#262626;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="仿真验证与基线对比" vertex="1">
+          <mxGeometry height="35.228758169934636" width="232.32558139534882" x="858.313953488372" y="417.7124183006536" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-235" parent="X5EsHokfOqda1bQfDvtM-206" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F8FA;strokeColor=#A1B4C7;fontColor=#262626;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="统一接入框架与问题建模" vertex="1">
+          <mxGeometry height="35.228758169934636" width="232.32558139534882" x="613.0813953488372" y="493.20261437908493" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-236" parent="X5EsHokfOqda1bQfDvtM-206" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F8FA;strokeColor=#A1B4C7;fontColor=#262626;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="接入协议数据集构建与仿真" vertex="1">
+          <mxGeometry height="35.228758169934636" width="232.32558139534882" x="858.313953488372" y="493.20261437908493" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-237" parent="X5EsHokfOqda1bQfDvtM-206" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F8FA;strokeColor=#A1B4C7;fontColor=#262626;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="多任务DNN代理模型设计" vertex="1">
+          <mxGeometry height="35.228758169934636" width="232.32558139534882" x="613.0813953488372" y="538.4967320261438" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-238" parent="X5EsHokfOqda1bQfDvtM-206" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F8FA;strokeColor=#A1B4C7;fontColor=#262626;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="基于代理模型的快速决策" vertex="1">
+          <mxGeometry height="35.228758169934636" width="232.32558139534882" x="858.313953488372" y="538.4967320261438" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-239" parent="X5EsHokfOqda1bQfDvtM-206" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F8FA;strokeColor=#A1B4C7;fontColor=#262626;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="全文工作总结" vertex="1">
+          <mxGeometry height="40.26143790849673" width="193.60465116279067" x="632.4418604651162" y="634.1176470588235" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-240" parent="X5EsHokfOqda1bQfDvtM-206" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F8FA;strokeColor=#A1B4C7;fontColor=#262626;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="未来研究展望" vertex="1">
+          <mxGeometry height="40.26143790849673" width="193.60465116279067" x="877.6744186046511" y="634.1176470588235" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-241" edge="1" parent="X5EsHokfOqda1bQfDvtM-206" source="X5EsHokfOqda1bQfDvtM-207" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=2;strokeColor=#4D6B8C;endArrow=none;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" target="X5EsHokfOqda1bQfDvtM-208">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-242" edge="1" parent="X5EsHokfOqda1bQfDvtM-206" source="X5EsHokfOqda1bQfDvtM-207" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=2;strokeColor=#4D6B8C;endArrow=none;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" target="X5EsHokfOqda1bQfDvtM-209">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-243" edge="1" parent="X5EsHokfOqda1bQfDvtM-206" source="X5EsHokfOqda1bQfDvtM-207" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=2;strokeColor=#4D6B8C;endArrow=none;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" target="X5EsHokfOqda1bQfDvtM-210">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-244" edge="1" parent="X5EsHokfOqda1bQfDvtM-206" source="X5EsHokfOqda1bQfDvtM-207" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=2;strokeColor=#4D6B8C;endArrow=none;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" target="X5EsHokfOqda1bQfDvtM-211">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-245" edge="1" parent="X5EsHokfOqda1bQfDvtM-206" source="X5EsHokfOqda1bQfDvtM-207" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=2;strokeColor=#4D6B8C;endArrow=none;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" target="X5EsHokfOqda1bQfDvtM-212">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-246" edge="1" parent="X5EsHokfOqda1bQfDvtM-206" source="X5EsHokfOqda1bQfDvtM-207" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=2;strokeColor=#4D6B8C;endArrow=none;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" target="X5EsHokfOqda1bQfDvtM-213">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-247" edge="1" parent="X5EsHokfOqda1bQfDvtM-206" source="X5EsHokfOqda1bQfDvtM-208" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=1.5;strokeColor=#8CA3B8;endArrow=none;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" target="X5EsHokfOqda1bQfDvtM-214">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-248" edge="1" parent="X5EsHokfOqda1bQfDvtM-206" source="X5EsHokfOqda1bQfDvtM-209" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=1.5;strokeColor=#8CA3B8;endArrow=none;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" target="X5EsHokfOqda1bQfDvtM-215">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-249" edge="1" parent="X5EsHokfOqda1bQfDvtM-206" source="X5EsHokfOqda1bQfDvtM-210" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=1.5;strokeColor=#8CA3B8;endArrow=none;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" target="X5EsHokfOqda1bQfDvtM-216">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-250" edge="1" parent="X5EsHokfOqda1bQfDvtM-206" source="X5EsHokfOqda1bQfDvtM-211" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=1.5;strokeColor=#8CA3B8;endArrow=none;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" target="X5EsHokfOqda1bQfDvtM-217">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-251" edge="1" parent="X5EsHokfOqda1bQfDvtM-206" source="X5EsHokfOqda1bQfDvtM-212" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=1.5;strokeColor=#8CA3B8;endArrow=none;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" target="X5EsHokfOqda1bQfDvtM-218">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="X5EsHokfOqda1bQfDvtM-252" edge="1" parent="X5EsHokfOqda1bQfDvtM-206" source="X5EsHokfOqda1bQfDvtM-213" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=1.5;strokeColor=#8CA3B8;endArrow=none;fontFamily=Times New Roman;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" target="X5EsHokfOqda1bQfDvtM-219">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="nbkVwQJ0Vcd7fC16Yggy" name="问题背景:IOT现状挑战">
+    <mxGraphModel dx="1295" dy="768" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="NZcnY7wqvfpQcgQZ6Qv0-65" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="530" width="1020" x="75" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="NZcnY7wqvfpQcgQZ6Qv0-44" parent="NZcnY7wqvfpQcgQZ6Qv0-65" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F8FA;strokeColor=#A1B4C7;fontFamily=Times New Roman;fontSize=15;fontStyle=1;fontColor=#003D7A;verticalAlign=top;spacingTop=15;strokeWidth=1.5;dashed=1;" value="复杂物联网应用场景 (业务源端)" vertex="1">
+          <mxGeometry height="440" width="280" as="geometry" />
+        </mxCell>
+        <mxCell id="NZcnY7wqvfpQcgQZ6Qv0-45" parent="NZcnY7wqvfpQcgQZ6Qv0-65" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EBF3FA;strokeColor=#628CB6;fontFamily=Times New Roman;fontSize=15;fontStyle=1;fontColor=#003D7A;verticalAlign=top;spacingTop=15;strokeWidth=1.5;" value="5G/B5G 蜂窝通信系统 (无线接入网络)" vertex="1">
+          <mxGeometry height="440" width="360" x="321" as="geometry" />
+        </mxCell>
+        <mxCell id="NZcnY7wqvfpQcgQZ6Qv0-46" parent="NZcnY7wqvfpQcgQZ6Qv0-65" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF7F5;strokeColor=#D6A39E;fontFamily=Times New Roman;fontSize=15;fontStyle=1;fontColor=#8A3129;verticalAlign=top;spacingTop=15;strokeWidth=1.5;dashed=1;" value="MAC层接入核心挑战 (研究动机)" vertex="1">
+          <mxGeometry height="440" width="280" x="740" as="geometry" />
+        </mxCell>
+        <mxCell id="NZcnY7wqvfpQcgQZ6Qv0-47" parent="NZcnY7wqvfpQcgQZ6Qv0-65" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#A1B4C7;fontColor=#333333;fontStyle=1;spacing=5;" value="工业互联网 (IIoT)&lt;br&gt;&lt;font style=&#39;font-size: 12px; font-weight: normal; color: #555555;&#39;&gt;传感器上报、AGV、协同控制&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="230" x="25" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="NZcnY7wqvfpQcgQZ6Qv0-48" parent="NZcnY7wqvfpQcgQZ6Qv0-65" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#A1B4C7;fontColor=#333333;fontStyle=1;spacing=5;" value="智能车联网 (V2X)&lt;br&gt;&lt;font style=&#39;font-size: 12px; font-weight: normal; color: #555555;&#39;&gt;周期状态广播、突发事件预警&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="230" x="25" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="NZcnY7wqvfpQcgQZ6Qv0-49" parent="NZcnY7wqvfpQcgQZ6Qv0-65" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#A1B4C7;fontColor=#333333;fontStyle=1;spacing=5;" value="大规模传感与智慧城市&lt;br&gt;&lt;font style=&#39;font-size: 12px; font-weight: normal; color: #555555;&#39;&gt;海量智能电表、分布环境监测&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="230" x="25" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="NZcnY7wqvfpQcgQZ6Qv0-50" parent="NZcnY7wqvfpQcgQZ6Qv0-65" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EBF3FA;strokeColor=none;fontColor=#003D7A;align=left;spacingLeft=15;fontSize=13;spacingTop=5;" value="&lt;b&gt;业务统计特征：&lt;/b&gt;&lt;br&gt;• 海量短报文并发连接&lt;br&gt;• 强突发性与非平稳性&lt;br&gt;• 多时间尺度动态演化" vertex="1">
+          <mxGeometry height="120" width="230" x="25" y="295" as="geometry" />
+        </mxCell>
+        <mxCell id="NZcnY7wqvfpQcgQZ6Qv0-51" parent="NZcnY7wqvfpQcgQZ6Qv0-65" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#4D6B8C;fontColor=#003D7A;fontStyle=1;dashed=1;spacing=5;" value="场景一：授权频谱接入&lt;br&gt;&lt;font style=&#39;font-size: 12px; font-weight: normal; color: #333;&#39;&gt;短报文传输 (SDT) &lt;br&gt;抽象机制: Aloha 类随机竞争&lt;/font&gt;" vertex="1">
+          <mxGeometry height="70" width="300" x="360" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="NZcnY7wqvfpQcgQZ6Qv0-52" parent="NZcnY7wqvfpQcgQZ6Qv0-65" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#A1B4C7;fontColor=#333333;spacingTop=5;" value="&lt;b&gt;海量同质/异构&lt;br&gt;物联网终端&lt;/b&gt;" vertex="1">
+          <mxGeometry height="90" width="130" x="341" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="NZcnY7wqvfpQcgQZ6Qv0-53" parent="NZcnY7wqvfpQcgQZ6Qv0-65" style="triangle;whiteSpace=wrap;html=1;fillColor=#003D7A;fontColor=#ffffff;strokeColor=#00264D;direction=north;spacingBottom=5;" value="&lt;b&gt;5G 基站&lt;br&gt;(gNB)&lt;/b&gt;" vertex="1">
+          <mxGeometry height="130" width="110" x="560" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="NZcnY7wqvfpQcgQZ6Qv0-54" parent="NZcnY7wqvfpQcgQZ6Qv0-65" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#4D6B8C;fontColor=#003D7A;fontStyle=1;dashed=1;spacing=5;" value="场景二：非授权频谱接入&lt;br&gt;&lt;font style=&#39;font-size: 12px; font-weight: normal; color: #333;&#39;&gt;共享信道 (NR-U LBT) &lt;br&gt;抽象机制: CSMA 类载波侦听&lt;/font&gt;" vertex="1">
+          <mxGeometry height="70" width="300" x="360" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="NZcnY7wqvfpQcgQZ6Qv0-55" parent="NZcnY7wqvfpQcgQZ6Qv0-65" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#D6A39E;fontColor=#8A3129;fontStyle=1;spacing=5;strokeWidth=1.5;" value="机制瓶颈一：重复竞争&lt;br&gt;&lt;font style=&#39;font-size: 12px; font-weight: normal; color: #555555;&#39;&gt;“按包重复竞争”导致大量时间&lt;br&gt;与信令消耗在退避与侦听上&lt;/font&gt;" vertex="1">
+          <mxGeometry height="75" width="230" x="765" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="NZcnY7wqvfpQcgQZ6Qv0-56" parent="NZcnY7wqvfpQcgQZ6Qv0-65" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#D6A39E;fontColor=#8A3129;fontStyle=1;spacing=5;strokeWidth=1.5;" value="机制瓶颈二：并发拥塞&lt;br&gt;&lt;font style=&#39;font-size: 12px; font-weight: normal; color: #555555;&#39;&gt;中高负载下碰撞率激增，&lt;br&gt;导致吞吐量下降与时延劣化&lt;/font&gt;" vertex="1">
+          <mxGeometry height="75" width="230" x="765" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="NZcnY7wqvfpQcgQZ6Qv0-57" parent="NZcnY7wqvfpQcgQZ6Qv0-65" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#D6A39E;fontColor=#8A3129;fontStyle=1;spacing=5;strokeWidth=1.5;" value="系统瓶颈三：动态失配&lt;br&gt;&lt;font style=&#39;font-size: 12px; font-weight: normal; color: #555555;&#39;&gt;固定协议与静态参数配置&lt;br&gt;难以适应时变、异构的流量&lt;/font&gt;" vertex="1">
+          <mxGeometry height="75" width="230" x="765" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="NZcnY7wqvfpQcgQZ6Qv0-58" edge="1" parent="NZcnY7wqvfpQcgQZ6Qv0-65" source="NZcnY7wqvfpQcgQZ6Qv0-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=2;strokeColor=#4D6B8C;fontColor=#333333;fontSize=13;fontStyle=1;" target="NZcnY7wqvfpQcgQZ6Qv0-45" value="上行流量驱动">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NZcnY7wqvfpQcgQZ6Qv0-59" edge="1" parent="NZcnY7wqvfpQcgQZ6Qv0-65" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.9;exitY=0.3;entryX=0.008;entryY=0.471;strokeWidth=1.5;strokeColor=#4D6B8C;dashed=1;fontColor=#333333;fontSize=11;entryDx=0;entryDy=0;entryPerimeter=0;" target="NZcnY7wqvfpQcgQZ6Qv0-53" value="竞争接入">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="464" y="193" />
+              <mxPoint x="501" y="193" />
+              <mxPoint x="501" y="220" />
+              <mxPoint x="612" y="220" />
+            </Array>
+            <mxPoint x="464.1377674149942" y="202.8753882025021" as="sourcePoint" />
+            <mxPoint x="611" y="273" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NZcnY7wqvfpQcgQZ6Qv0-60" edge="1" parent="NZcnY7wqvfpQcgQZ6Qv0-65" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.9;exitY=0.7;entryX=0.012;entryY=0.47;strokeWidth=2;strokeColor=#4D6B8C;fontColor=#333333;fontSize=11;entryDx=0;entryDy=0;entryPerimeter=0;" target="NZcnY7wqvfpQcgQZ6Qv0-53" value="数据发送">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="464" y="253" />
+              <mxPoint x="501" y="253" />
+              <mxPoint x="501" y="240" />
+              <mxPoint x="612" y="240" />
+            </Array>
+            <mxPoint x="464.1377674149942" y="243.124611797498" as="sourcePoint" />
+            <mxPoint x="611" y="273" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NZcnY7wqvfpQcgQZ6Qv0-61" edge="1" parent="NZcnY7wqvfpQcgQZ6Qv0-65" source="NZcnY7wqvfpQcgQZ6Qv0-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=2;strokeColor=#8A3129;fontColor=#8A3129;fontSize=13;fontStyle=1" target="NZcnY7wqvfpQcgQZ6Qv0-46" value="引发性能矛盾">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NZcnY7wqvfpQcgQZ6Qv0-62" parent="NZcnY7wqvfpQcgQZ6Qv0-65" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#003D7A;strokeColor=none;fontColor=#ffffff;fontStyle=1;fontSize=16;" value="本文切入点：底层机制级连续传输扩展 (降开销) ➕ 上层系统级 AI 自适应决策 (抗动态)" vertex="1">
+          <mxGeometry height="50" width="700" x="160" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="NZcnY7wqvfpQcgQZ6Qv0-63" edge="1" parent="NZcnY7wqvfpQcgQZ6Qv0-65" source="NZcnY7wqvfpQcgQZ6Qv0-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;entryX=0.2;entryY=0;strokeWidth=2;strokeColor=#003D7A;dashed=1;endArrow=classic;" target="NZcnY7wqvfpQcgQZ6Qv0-62">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NZcnY7wqvfpQcgQZ6Qv0-64" edge="1" parent="NZcnY7wqvfpQcgQZ6Qv0-65" source="NZcnY7wqvfpQcgQZ6Qv0-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;entryX=0.8;entryY=0;strokeWidth=2;strokeColor=#8A3129;dashed=1;endArrow=classic;" target="NZcnY7wqvfpQcgQZ6Qv0-62">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="pxSBab9KegHMWGLuZWQJ" name="Aloha类随机接入协议研究技术脉络">
+    <mxGraphModel dx="1554" dy="922" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="8TBLl8yjGGrPTM66MPcr-2" connectable="0" parent="1" style="group;autosizeText=1;" value="" vertex="1">
+          <mxGeometry height="289.6296296296296" width="1130" x="20" y="10.370370370370381" as="geometry" />
+        </mxCell>
+        <mxCell id="1LWQUsClrXU8AzRMe0_A-38" parent="8TBLl8yjGGrPTM66MPcr-2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#003D7A;strokeColor=#00264D;fontColor=#ffffff;fontStyle=1;fontFamily=Times New Roman;spacing=5;container=0;autosizeText=1;fontSize=20;" value="传统 Aloha 基础机制&lt;br&gt;&lt;font style=&#39;font-size: 12px; font-weight: normal;&#39;&gt;时隙离散并发 / 碰撞即退避重传&lt;/font&gt;" vertex="1">
+          <mxGeometry height="62.96296296296296" width="314.6835443037975" x="400.50632911392404" as="geometry" />
+        </mxCell>
+        <mxCell id="1LWQUsClrXU8AzRMe0_A-39" parent="8TBLl8yjGGrPTM66MPcr-2" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EBF3FA;strokeColor=#628CB6;fontColor=#003D7A;fontStyle=1;spacing=5;container=0;autosizeText=1;fontSize=18;" value="路径一：流量调度与接入控制&lt;br&gt;&lt;font style=&#39;font-size: 11px; font-weight: normal; color: #555;&#39;&gt;机制：自适应发送概率、差异化退避&lt;br&gt;特点：无需改动物理层，缓解轻中载拥塞&lt;/font&gt;" vertex="1">
+          <mxGeometry height="81.85185185185185" width="343.2911392405063" y="113.33333333333331" as="geometry" />
+        </mxCell>
+        <mxCell id="1LWQUsClrXU8AzRMe0_A-40" parent="8TBLl8yjGGrPTM66MPcr-2" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EBF3FA;strokeColor=#628CB6;fontColor=#003D7A;fontStyle=1;spacing=5;container=0;autosizeText=1;fontSize=16;" value="路径二：多维度资源扩展&lt;br&gt;&lt;font style=&#39;font-size: 11px; font-weight: normal; color: #555;&#39;&gt;机制：多信道OFDMA、预约接入预映射&lt;br&gt;特点：并行降低单源竞争，但增大了同步开销&lt;/font&gt;" vertex="1">
+          <mxGeometry height="81.85185185185185" width="343.2911392405063" x="386.2025316455696" y="113.33333333333331" as="geometry" />
+        </mxCell>
+        <mxCell id="1LWQUsClrXU8AzRMe0_A-41" parent="8TBLl8yjGGrPTM66MPcr-2" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EBF3FA;strokeColor=#628CB6;fontColor=#003D7A;fontStyle=1;spacing=5;container=0;autosizeText=1;fontSize=16;" value="路径三：接收端增强与多包接收&lt;br&gt;&lt;font style=&#39;font-size: 11px; font-weight: normal; color: #555;&#39;&gt;机制：SIC消除 (CRDSA)、非正交多址 (NOMA)&lt;br&gt;特点：突破吞吐量上限，但硬件复杂度/功耗极高&lt;/font&gt;" vertex="1">
+          <mxGeometry height="81.85185185185185" width="357.59493670886076" x="772.4050632911392" y="113.33333333333331" as="geometry" />
+        </mxCell>
+        <mxCell id="1LWQUsClrXU8AzRMe0_A-42" parent="8TBLl8yjGGrPTM66MPcr-2" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF7F5;strokeColor=#D6A39E;fontColor=#8A3129;fontStyle=1;fontFamily=Times New Roman;dashed=1;spacingLeft=10;container=0;autosizeText=1;fontSize=18;" value="现有局限性：强动态、大规模场景下，难以在【低复杂度】与【高吞吐/低时延】之间取得均衡，未从根本解决“按包重复竞争”的开销问题。" vertex="1">
+          <mxGeometry height="50.370370370370374" width="1130" y="239.25925925925924" as="geometry" />
+        </mxCell>
+        <mxCell id="1LWQUsClrXU8AzRMe0_A-43" edge="1" parent="8TBLl8yjGGrPTM66MPcr-2" source="1LWQUsClrXU8AzRMe0_A-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=1.5;strokeColor=#73889E;autosizeText=1;" target="1LWQUsClrXU8AzRMe0_A-39">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="557.8481012658228" y="81.85185185185185" />
+              <mxPoint x="171.64556962025316" y="81.85185185185185" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1LWQUsClrXU8AzRMe0_A-44" edge="1" parent="8TBLl8yjGGrPTM66MPcr-2" source="1LWQUsClrXU8AzRMe0_A-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=1.5;strokeColor=#73889E;autosizeText=1;" target="1LWQUsClrXU8AzRMe0_A-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1LWQUsClrXU8AzRMe0_A-45" edge="1" parent="8TBLl8yjGGrPTM66MPcr-2" source="1LWQUsClrXU8AzRMe0_A-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=1.5;strokeColor=#73889E;autosizeText=1;" target="1LWQUsClrXU8AzRMe0_A-41">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="557.8481012658228" y="81.85185185185185" />
+              <mxPoint x="951.2025316455696" y="81.85185185185185" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1LWQUsClrXU8AzRMe0_A-46" edge="1" parent="8TBLl8yjGGrPTM66MPcr-2" source="1LWQUsClrXU8AzRMe0_A-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;exitX=0.5;exitY=1;entryX=0.15;entryY=0;strokeWidth=1.5;strokeColor=#D6A39E;dashed=1;autosizeText=1;" target="1LWQUsClrXU8AzRMe0_A-42">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1LWQUsClrXU8AzRMe0_A-47" edge="1" parent="8TBLl8yjGGrPTM66MPcr-2" source="1LWQUsClrXU8AzRMe0_A-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=1.5;strokeColor=#D6A39E;dashed=1;autosizeText=1;" target="1LWQUsClrXU8AzRMe0_A-42">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1LWQUsClrXU8AzRMe0_A-48" edge="1" parent="8TBLl8yjGGrPTM66MPcr-2" source="1LWQUsClrXU8AzRMe0_A-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;exitX=0.5;exitY=1;entryX=0.85;entryY=0;strokeWidth=1.5;strokeColor=#D6A39E;dashed=1;autosizeText=1;" target="1LWQUsClrXU8AzRMe0_A-42">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="nZdb8a9xb91aLgbOfDh3" name="CSMA/LBT类随机接入协议研究技术脉络">
+    <mxGraphModel dx="1554" dy="922" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="uEB2bZCqmNAqUQUNVUVe-37" connectable="0" parent="1" style="group;fontSize=13;autosizeText=0;" value="CSMA" vertex="1">
+          <mxGeometry height="380" width="1110" x="20" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="uEB2bZCqmNAqUQUNVUVe-14" parent="uEB2bZCqmNAqUQUNVUVe-37" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#003D7A;strokeColor=#00264D;fontColor=#ffffff;fontStyle=1;fontFamily=Times New Roman;spacing=5;autosizeText=0;fontSize=28;" value="传统 CSMA / LBT 基础机制&lt;br&gt;&lt;font style=&#39;font-size: 12px; font-weight: normal;&#39;&gt;载波侦听 (先听后发) / 随机退避与竞争窗口扩展&lt;/font&gt;" vertex="1">
+          <mxGeometry height="82.6086956521739" width="388.49999999999994" x="346.87499999999994" as="geometry" />
+        </mxCell>
+        <mxCell id="uEB2bZCqmNAqUQUNVUVe-15" parent="uEB2bZCqmNAqUQUNVUVe-37" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EBF3FA;strokeColor=#628CB6;fontColor=#003D7A;fontStyle=1;spacing=5;autosizeText=0;fontSize=15;" value="路线一：经典性能建模与理论分析&lt;br&gt;&lt;font style=&#39;font-size: 11px; font-weight: normal; color: #555;&#39;&gt;机制：Bianchi二维马尔可夫链、饱和/非饱和分析&lt;br&gt;特点：揭示侦听/碰撞时长与系统稳态的内在关系&lt;/font&gt;" vertex="1">
+          <mxGeometry height="107.3913043478261" width="346.87499999999994" y="148.69565217391303" as="geometry" />
+        </mxCell>
+        <mxCell id="uEB2bZCqmNAqUQUNVUVe-16" parent="uEB2bZCqmNAqUQUNVUVe-37" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EBF3FA;strokeColor=#628CB6;fontColor=#003D7A;fontStyle=1;spacing=5;autosizeText=0;fontSize=14;" value="路线二：退避与竞争窗口优化&lt;br&gt;&lt;font style=&#39;font-size: 11px; font-weight: normal; color: #555;&#39;&gt;机制：自适应BEB、优先级退避 (EDCA)、碰撞优先&lt;br&gt;特点：改善公平性与时延，但高度依赖网络状态感知&lt;/font&gt;" vertex="1">
+          <mxGeometry height="107.3913043478261" width="346.87499999999994" x="374.62499999999994" y="148.69565217391303" as="geometry" />
+        </mxCell>
+        <mxCell id="uEB2bZCqmNAqUQUNVUVe-17" parent="uEB2bZCqmNAqUQUNVUVe-37" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EBF3FA;strokeColor=#628CB6;fontColor=#003D7A;fontStyle=1;spacing=5;autosizeText=0;fontSize=13;" value="路线三：冲突避免与场景适配&lt;br&gt;&lt;font style=&#39;font-size: 11px; font-weight: normal; color: #555;&#39;&gt;机制：RTS/CTS、CR-LBT、异构共存与能效优化&lt;br&gt;特点：拓展了协议适用范围，但增加了信令交互与复杂度&lt;/font&gt;" vertex="1">
+          <mxGeometry height="107.3913043478261" width="360.74999999999994" x="749.2499999999999" y="148.69565217391303" as="geometry" />
+        </mxCell>
+        <mxCell id="uEB2bZCqmNAqUQUNVUVe-18" parent="uEB2bZCqmNAqUQUNVUVe-37" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF7F5;strokeColor=#D6A39E;fontColor=#8A3129;fontStyle=1;fontFamily=Times New Roman;dashed=1;spacingLeft=10;autosizeText=0;fontSize=16;" value="现有局限性：多数研究仍围绕“侦听前后”展开，单纯依靠退避优化无法消除成功接入后的资源释放重竞开销。在高动态下难以兼顾高吞吐与实现复杂度。" vertex="1">
+          <mxGeometry height="66.08695652173913" width="1110" y="313.9130434782609" as="geometry" />
+        </mxCell>
+        <mxCell id="uEB2bZCqmNAqUQUNVUVe-19" edge="1" parent="uEB2bZCqmNAqUQUNVUVe-37" source="uEB2bZCqmNAqUQUNVUVe-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=1.5;strokeColor=#73889E;autosizeText=0;" target="uEB2bZCqmNAqUQUNVUVe-15">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="541.125" y="107.3913043478261" />
+              <mxPoint x="173.43749999999997" y="107.3913043478261" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uEB2bZCqmNAqUQUNVUVe-20" edge="1" parent="uEB2bZCqmNAqUQUNVUVe-37" source="uEB2bZCqmNAqUQUNVUVe-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=1.5;strokeColor=#73889E;autosizeText=0;" target="uEB2bZCqmNAqUQUNVUVe-16">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="541.125" y="107.3913043478261" />
+              <mxPoint x="548.0625" y="107.3913043478261" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uEB2bZCqmNAqUQUNVUVe-21" edge="1" parent="uEB2bZCqmNAqUQUNVUVe-37" source="uEB2bZCqmNAqUQUNVUVe-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=1.5;strokeColor=#73889E;autosizeText=0;" target="uEB2bZCqmNAqUQUNVUVe-17">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="541.125" y="107.3913043478261" />
+              <mxPoint x="929.625" y="107.3913043478261" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uEB2bZCqmNAqUQUNVUVe-22" edge="1" parent="uEB2bZCqmNAqUQUNVUVe-37" source="uEB2bZCqmNAqUQUNVUVe-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;exitX=0.5;exitY=1;entryX=0.15;entryY=0;strokeWidth=1.5;strokeColor=#D6A39E;dashed=1;autosizeText=0;" target="uEB2bZCqmNAqUQUNVUVe-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uEB2bZCqmNAqUQUNVUVe-23" edge="1" parent="uEB2bZCqmNAqUQUNVUVe-37" source="uEB2bZCqmNAqUQUNVUVe-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=1.5;strokeColor=#D6A39E;dashed=1;autosizeText=0;" target="uEB2bZCqmNAqUQUNVUVe-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uEB2bZCqmNAqUQUNVUVe-24" edge="1" parent="uEB2bZCqmNAqUQUNVUVe-37" source="uEB2bZCqmNAqUQUNVUVe-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;exitX=0.5;exitY=1;entryX=0.85;entryY=0;strokeWidth=1.5;strokeColor=#D6A39E;dashed=1;autosizeText=0;" target="uEB2bZCqmNAqUQUNVUVe-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="dyB4RfJLWr-YGgg5tAJ8" name="AI驱动接入控制决策研究技术脉络">
+    <mxGraphModel dx="1554" dy="922" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="sgzTx9yTV7A4TZJnq47W-2" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="329.99999999999994" width="1060" x="55" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CK86J5eqz18-W5eqHXiG-14" parent="sgzTx9yTV7A4TZJnq47W-2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#003D7A;strokeColor=#00264D;fontColor=#ffffff;fontStyle=1;fontFamily=Times New Roman;spacing=5;autosizeText=1;fontSize=18;container=0;convertToSvg=0;" value="引入数据驱动学习 (Machine Learning / Reinforcement Learning)&lt;br&gt;&lt;font style=&#39;font-size: 12px; font-weight: normal;&#39;&gt;解决固定规则难以适应动态业务特征的问题&lt;/font&gt;" vertex="1">
+          <mxGeometry height="71.74" width="518.5" x="250" as="geometry" />
+        </mxCell>
+        <mxCell id="CK86J5eqz18-W5eqHXiG-15" parent="sgzTx9yTV7A4TZJnq47W-2" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EBF3FA;strokeColor=#628CB6;fontColor=#003D7A;fontStyle=1;spacing=5;autosizeText=1;fontSize=13;container=0;convertToSvg=0;" value="路径一：接入架构完全重构&lt;br&gt;&lt;font style=&#39;font-size: 11px; font-weight: normal; color: #555;&#39;&gt;机制：多智能体端到端学习底层信令与规则&lt;br&gt;特点：颠覆传统协议，但缺乏解释性且训练极度困难&lt;/font&gt;" vertex="1">
+          <mxGeometry height="93.26086956521739" width="331.25" y="129.1304347826087" as="geometry" />
+        </mxCell>
+        <mxCell id="CK86J5eqz18-W5eqHXiG-16" parent="sgzTx9yTV7A4TZJnq47W-2" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EBF3FA;strokeColor=#628CB6;fontColor=#003D7A;fontStyle=1;spacing=5;autosizeText=1;fontSize=13;container=0;convertToSvg=0;" value="路径二：单协议参数动态优化&lt;br&gt;&lt;font style=&#39;font-size: 11px; font-weight: normal; color: #555;&#39;&gt;机制：DQN学习发送概率、竞争窗口等标量&lt;br&gt;特点：保留成熟框架，但性能上限受既有协议结构制约&lt;/font&gt;" vertex="1">
+          <mxGeometry height="93.26086956521739" width="331.25" x="357.75" y="129.1304347826087" as="geometry" />
+        </mxCell>
+        <mxCell id="CK86J5eqz18-W5eqHXiG-17" parent="sgzTx9yTV7A4TZJnq47W-2" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EBF3FA;strokeColor=#628CB6;fontColor=#003D7A;fontStyle=1;spacing=5;autosizeText=1;fontSize=13;container=0;convertToSvg=0;" value="路径三：协议选择与模块化组合&lt;br&gt;&lt;font style=&#39;font-size: 11px; font-weight: normal; color: #555;&#39;&gt;机制：基于场景特征利用代理模型切换协议实例&lt;br&gt;特点：兼顾传统稳定与AI灵活，但面临跨场景泛化难题&lt;/font&gt;" vertex="1">
+          <mxGeometry height="93.26086956521739" width="344.5" x="715.5" y="129.1304347826087" as="geometry" />
+        </mxCell>
+        <mxCell id="CK86J5eqz18-W5eqHXiG-18" parent="sgzTx9yTV7A4TZJnq47W-2" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF7F5;strokeColor=#D6A39E;fontColor=#8A3129;fontStyle=1;fontFamily=Times New Roman;dashed=1;spacingLeft=10;autosizeText=1;fontSize=15;container=0;convertToSvg=0;" value="现有局限性：普遍存在训练成本高、在线响应速度有限、工程可部署性不足的问题。缺乏在统一框架下实现低开销、秒级响应的系统级自适应决策方案。" vertex="1">
+          <mxGeometry height="57.391304347826086" width="1060" y="272.6086956521739" as="geometry" />
+        </mxCell>
+        <mxCell id="CK86J5eqz18-W5eqHXiG-19" edge="1" parent="sgzTx9yTV7A4TZJnq47W-2" source="CK86J5eqz18-W5eqHXiG-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=1.5;strokeColor=#73889E;autosizeText=1;convertToSvg=0;" target="CK86J5eqz18-W5eqHXiG-15">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="516.75" y="93.26086956521739" />
+              <mxPoint x="165.625" y="93.26086956521739" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CK86J5eqz18-W5eqHXiG-20" edge="1" parent="sgzTx9yTV7A4TZJnq47W-2" source="CK86J5eqz18-W5eqHXiG-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=1.5;strokeColor=#73889E;autosizeText=1;convertToSvg=0;" target="CK86J5eqz18-W5eqHXiG-16">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="516.75" y="93.26086956521739" />
+              <mxPoint x="523.375" y="93.26086956521739" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CK86J5eqz18-W5eqHXiG-21" edge="1" parent="sgzTx9yTV7A4TZJnq47W-2" source="CK86J5eqz18-W5eqHXiG-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=1.5;strokeColor=#73889E;autosizeText=1;convertToSvg=0;" target="CK86J5eqz18-W5eqHXiG-17">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="516.75" y="93.26086956521739" />
+              <mxPoint x="887.75" y="93.26086956521739" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CK86J5eqz18-W5eqHXiG-22" edge="1" parent="sgzTx9yTV7A4TZJnq47W-2" source="CK86J5eqz18-W5eqHXiG-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;exitX=0.5;exitY=1;entryX=0.15;entryY=0;strokeWidth=1.5;strokeColor=#D6A39E;dashed=1;autosizeText=1;convertToSvg=0;" target="CK86J5eqz18-W5eqHXiG-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CK86J5eqz18-W5eqHXiG-23" edge="1" parent="sgzTx9yTV7A4TZJnq47W-2" source="CK86J5eqz18-W5eqHXiG-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=1.5;strokeColor=#D6A39E;dashed=1;autosizeText=1;convertToSvg=0;" target="CK86J5eqz18-W5eqHXiG-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CK86J5eqz18-W5eqHXiG-24" edge="1" parent="sgzTx9yTV7A4TZJnq47W-2" source="CK86J5eqz18-W5eqHXiG-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;exitX=0.5;exitY=1;entryX=0.85;entryY=0;strokeWidth=1.5;strokeColor=#D6A39E;dashed=1;autosizeText=1;convertToSvg=0;" target="CK86J5eqz18-W5eqHXiG-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

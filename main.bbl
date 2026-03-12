@@ -47,14 +47,6 @@
   \bibvolume{5}\thinspace{}\textnormal{:
   }\bibpages{344\thinspace{}\textnormal{--}\thinspace{}383}\@.
 
-\bibitem{2026_unsourced}
-\bibauthor{OZATES M\@, AHMADI M~J\@, KAZEMI M, et~al}\@. \bibtitle{Unsourced
-  Random Access: A Comprehensive Survey}\bibmark{[J/OL]}\@. \bibjournal{IEEE
-  Communications Surveys \& Tutorials}\@, \bibyear{2026}\@,
-  \bibvolume{28}\thinspace{}\textnormal{:
-  }\bibpages{955\thinspace{}\textnormal{--}\thinspace{}984}\@.
-  \url{http://dx.doi.org/10.1109/COMST.2025.3637685}\@.
-
 \bibitem{2018_V2Xwireless}
 \bibauthor{POPOVSKI P\@, NIELSEN J~J\@, STEFANOVIC C, et~al}\@.
   \bibtitle{Wireless access for ultra-reliable low-latency communication:
@@ -62,7 +54,7 @@
   \bibyear{2018}\@, \bibvolume{32}\bibnumber{(2)}\thinspace{}\textnormal{:
   }\bibpages{16\thinspace{}\textnormal{--}\thinspace{}23}\@.
 
-\bibitem{20246_6GIndustrial}
+\bibitem{2024_6GIndustrial}
 \bibauthor{ZEYDAN E\@, ARSLAN S\@, TURK Y}\@. \bibtitle{6G wireless
   communications for industrial automation: Scenarios, requirements and
   challenges}\bibmark{[J]}\@. \bibjournal{Journal of Industrial Information
@@ -89,35 +81,6 @@
   }\bibinstitution{3rd Generation Partnership Project (3GPP)}\@,
   \bibyear{2015}\@.
 
-\bibitem{2013_LTE_mMTC}
-\bibauthor{LAYA A\@, ALONSO L\@, ALONSO-ZARATE J}\@. \bibtitle{Is the random
-  access channel of LTE and LTE-A suitable for M2M communications? A survey of
-  alternatives}\bibmark{[J]}\@. \bibjournal{IEEE Communications Surveys \&
-  Tutorials}\@, \bibyear{2013}\@,
-  \bibvolume{16}\bibnumber{(1)}\thinspace{}\textnormal{:
-  }\bibpages{4\thinspace{}\textnormal{--}\thinspace{}16}\@.
-
-\bibitem{2012_ACB1}
-\bibauthor{LIEN S-Y\@, LIAU T-H\@, KAO C-Y, et~al}\@. \bibtitle{Cooperative
-  Access Class Barring for Machine-to-Machine Communications}\bibmark{[J]}\@.
-  \bibjournal{IEEE Transactions on Wireless Communications}\@,
-  \bibyear{2012}\@, \bibvolume{11}\bibnumber{(1)}\thinspace{}\textnormal{:
-  }\bibpages{27\thinspace{}\textnormal{--}\thinspace{}32}\@.
-
-\bibitem{2016_UW}
-\bibauthor{LIN G-Y\@, CHANG S-R\@, WEI H-Y}\@. \bibtitle{Estimation and
-  Adaptation for Bursty LTE Random Access}\bibmark{[J]}\@. \bibjournal{IEEE
-  Transactions on Vehicular Technology}\@, \bibyear{2016}\@,
-  \bibvolume{65}\bibnumber{(4)}\thinspace{}\textnormal{:
-  }\bibpages{2560\thinspace{}\textnormal{--}\thinspace{}2577}\@.
-
-\bibitem{2016_multipreamble}
-\bibauthor{CHOI J}\@. \bibtitle{On the Adaptive Determination of the Number of
-  Preambles in RACH for MTC}\bibmark{[J]}\@. \bibjournal{IEEE Communications
-  Letters}\@, \bibyear{2016}\@,
-  \bibvolume{20}\bibnumber{(7)}\thinspace{}\textnormal{:
-  }\bibpages{1385\thinspace{}\textnormal{--}\thinspace{}1388}\@.
-
 \bibitem{2020_2stepRA}
 \bibauthor{KIM J\@, LEE G\@, KIM S, et~al}\@. \bibtitle{Two-step random access
   for 5G system: Latest trends and challenges}\bibmark{[J]}\@. \bibjournal{IEEE
@@ -131,13 +94,6 @@
   V17.0.0}\bibmark{[R]}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
   }\bibinstitution{3rd Generation Partnership Project (3GPP)}\@,
   \bibyear{2022}\@.
-
-\bibitem{2013_DaiCSMA}
-\bibauthor{DAI L}\@. \bibtitle{Toward a Coherent Theory of CSMA and
-  Aloha}\bibmark{[J]}\@. \bibjournal{IEEE Transactions on Wireless
-  Communications}\@, \bibyear{2013}\@,
-  \bibvolume{12}\bibnumber{(7)}\thinspace{}\textnormal{:
-  }\bibpages{3428\thinspace{}\textnormal{--}\thinspace{}3444}\@.
 
 \bibitem{2016_LAA}
 \bibauthor{MUKHERJEE A\@, CHENG J-F\@, FALAHATI S, et~al}\@.
@@ -174,10 +130,14 @@
   Partnership Project (3GPP)}\@, \bibyear{2023}\@.
 
 \bibitem{1970_Aloha}
-\bibauthor{ABRAMSON N}\@. \bibtitle{The {Aloha} System}\bibmark{[J]}\@.
-  \bibjournal{Computer-Communication Networks}\@,
-  \bibyear{1970}\thinspace{}\textnormal{:
-  }\bibpages{281\thinspace{}\textnormal{--}\thinspace{}305}\@.
+\bibauthor{ABRAMSON N}\@. \bibtitle{{{THE ALOHA SYSTEM}}: {{Another}}
+  Alternative for Computer Communications}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{{{AFIPS}} '70 ({{Fall}})\thinspace{}\textnormal{:
+  }Proceedings of the {{November}} 17-19, 1970, Fall Joint Computer
+  Conference}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
+  }\bibpublisher{Association for Computing Machinery}\@,
+  \thinspace{}\textnormal{:
+  }\bibpages{281\thinspace{}\textnormal{--}\thinspace{}285}\@.
 
 \bibitem{2012_DaiAloha}
 \bibauthor{DAI L}\@. \bibtitle{Stability and delay analysis of buffered Aloha
@@ -201,6 +161,13 @@
   \bibvolume{58}\bibnumber{(1)}\thinspace{}\textnormal{:
   }\bibpages{381\thinspace{}\textnormal{--}\thinspace{}397}\@.
 
+\bibitem{2015_HybridRA}
+\bibauthor{WIRIAATMADJA D~T\@, CHOI K~W}\@. \bibtitle{Hybrid {{Random Access}}
+  and {{Data Transmission Protocol}} for {{Machine-to-Machine Communications}}
+  in {{Cellular Networks}}}\bibmark{[J]}\@, \@,
+  \bibvolume{14}\bibnumber{(1)}\thinspace{}\textnormal{:
+  }\bibpages{33\thinspace{}\textnormal{--}\thinspace{}46}\@.
+
 \bibitem{2018_SA_EB}
 \bibauthor{BARLETTA L\@, BORGONOVO F\@, FILIPPINI I}\@. \bibtitle{The
   Throughput and Access Delay of Slotted-{ALOHA} with Exponential
@@ -221,6 +188,13 @@
   Communications}\@, \bibyear{2013}\@,
   \bibvolume{12}\bibnumber{(1)}\thinspace{}\textnormal{:
   }\bibpages{89\thinspace{}\textnormal{--}\thinspace{}99}\@.
+
+\bibitem{2015_OFDMA}
+\bibauthor{WEI C-H\@, BIANCHI G\@, CHENG R-G}\@. \bibtitle{Modeling and
+  {{Analysis}} of {{Random Access Channels With Bursty Arrivals}} in {{OFDMA
+  Wireless Networks}}}\bibmark{[J]}\@, \@,
+  \bibvolume{14}\bibnumber{(4)}\thinspace{}\textnormal{:
+  }\bibpages{1940\thinspace{}\textnormal{--}\thinspace{}1953}\@.
 
 \bibitem{2020_FastRetrial}
 \bibauthor{CHOI J}\@. \bibtitle{Fast Retrial for Low-Latency Connectivity in
@@ -251,6 +225,12 @@
   \bibvolume{33}\bibnumber{(7)}\thinspace{}\textnormal{:
   }\bibpages{640\thinspace{}\textnormal{--}\thinspace{}649}\@.
 
+\bibitem{2005_MPR}
+\bibauthor{NAWARE V\@, MERGEN G\@, TONG L}\@. \bibtitle{Stability and Delay of
+  Finite-User Slotted {{ALOHA}} with Multipacket Reception}\bibmark{[J]}\@, \@,
+  \bibvolume{51}\bibnumber{(7)}\thinspace{}\textnormal{:
+  }\bibpages{2636\thinspace{}\textnormal{--}\thinspace{}2656}\@.
+
 \bibitem{2022_MPR}
 \bibauthor{LIU J\@, SEO J-B\@, JIN H}\@. \bibtitle{Online Transmission Control
   for Random Access with Multipacket Reception and Reservation}\bibmark{[J]}\@.
@@ -273,12 +253,18 @@
   \bibvolume{59}\bibnumber{(2)}\thinspace{}\textnormal{:
   }\bibpages{477\thinspace{}\textnormal{--}\thinspace{}487}\@.
 
-\bibitem{2012_RCRDSA}
-\bibauthor{LEE M\@, LEE J-K\@, LEE J-J, et~al}\@. \bibtitle{{R-CRDSA}:
-  Reservation-Contention Resolution Diversity Slotted {Aloha} for Satellite
-  Networks}\bibmark{[J]}\@. \bibjournal{IEEE Communications Letters}\@,
-  \bibyear{2012}\@, \bibvolume{16}\bibnumber{(10)}\thinspace{}\textnormal{:
-  }\bibpages{1576\thinspace{}\textnormal{--}\thinspace{}1579}\@.
+\bibitem{2018_enhanced_CRDSA}
+\bibauthor{CLAZZER F\@, KISSLING C\@, MARCHESE M}\@. \bibtitle{Enhancing
+  {{Contention Resolution ALOHA Using Combining Techniques}}}\bibmark{[J]}\@,
+  \@, \bibvolume{66}\bibnumber{(6)}\thinspace{}\textnormal{:
+  }\bibpages{2576\thinspace{}\textnormal{--}\thinspace{}2587}\@.
+
+\bibitem{2024_CRDSA}
+\bibauthor{GU Y\@, XU Y\@, ZHANG B, et~al}\@. \bibtitle{Toward the {{Random
+  Multiaccess}} in {{SIoT}}: {{A Generalized-Deduplication-Based CRDSA
+  Mechanism}}}\bibmark{[J]}\@, \@,
+  \bibvolume{11}\bibnumber{(11)}\thinspace{}\textnormal{:
+  }\bibpages{20207\thinspace{}\textnormal{--}\thinspace{}20222}\@.
 
 \bibitem{2017_NOMA}
 \bibauthor{SHIRVANIMOGHADDAM M\@, CONDOLUCI M\@, DOHLER M, et~al}\@.
@@ -302,38 +288,150 @@
   \bibvolume{25}\bibnumber{(11)}\thinspace{}\textnormal{:
   }\bibpages{3654\thinspace{}\textnormal{--}\thinspace{}3658}\@.
 
-\bibitem{1975_CSMA}
+\bibitem{1975_KleinrockCSMA}
 \bibauthor{KLEINROCK L\@, TOBAGI F~A}\@. \bibtitle{Packet Switching in Radio
-  Channels: Part {I}—Carrier Sense Multiple-Access Modes and Their
+  Channels: Part I--Carrier Sense Multiple-Access Modes and Their
   Throughput-Delay Characteristics}\bibmark{[J]}\@. \bibjournal{IEEE
   Transactions on Communications}\@, \bibyear{1975}\@,
   \bibvolume{23}\bibnumber{(12)}\thinspace{}\textnormal{:
-  }\bibpages{1400\thinspace{}\textnormal{--}\thinspace{}1416}\@.
+  }\bibpages{1403\thinspace{}\textnormal{--}\thinspace{}1416}\@.
 
-\bibitem{2016_IEEE80211}
-\bibauthor{ANON}\@. \bibtitle{IEEE Standard for Information
-  technology—Telecommunications and information exchange between systems
-  Local and metropolitan area networks—Specific requirements - Part 11:
-  Wireless LAN Medium Access Control (MAC) and Physical Layer (PHY)
-  Specifications}\bibmark{[J]}\@. \bibjournal{IEEE Std 802.11-2016 (Revision of
-  IEEE Std 802.11-2012)}\@, \bibyear{2016}\thinspace{}\textnormal{:
-  }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}3534}\@.
+\bibitem{2000_BianchiDCF}
+\bibauthor{BIANCHI G}\@. \bibtitle{Performance analysis of the IEEE 802.11
+  distributed coordination function}\bibmark{[J]}\@. \bibjournal{IEEE Journal
+  on selected areas in communications}\@, \bibyear{2000}\@,
+  \bibvolume{18}\bibnumber{(3)}\thinspace{}\textnormal{:
+  }\bibpages{535\thinspace{}\textnormal{--}\thinspace{}547}\@.
 
-\bibitem{2021_AI_ACCESS}
-\bibauthor{\'{A}lvaro VALCARCE\@, HOYDIS J}\@. \bibtitle{Toward Joint Learning
-  of Optimal {MAC} Signaling and Wireless Channel Access}\bibmark{[J/OL]}\@.
-  \bibjournal{IEEE Transactions on Cognitive Communications and Networking}\@,
-  \bibyear{2021}\@, \bibvolume{7}\bibnumber{(4)}\thinspace{}\textnormal{:
+\bibitem{2014_JinCSMAStability}
+\bibauthor{JIN D\@, et AL.}\@. \bibtitle{Stability analysis of p-persistent
+  slotted CSMA systems with finite population}\bibmark{[J]}\@.
+  \bibjournal{IEEE/ACM Transactions on Networking}\@, \bibyear{2014}\@,
+  \bibvolume{22}\bibnumber{(6)}\thinspace{}\textnormal{:
+  }\bibpages{1881\thinspace{}\textnormal{--}\thinspace{}1894}\@.
+
+\bibitem{2023_KimCPB}
+\bibauthor{KIM Y\@, PARK S-L}\@. \bibtitle{Performance improvement of random
+  access by prioritizing collisions}\bibmark{[J]}\@. \bibjournal{IEEE
+  Transactions on Wireless Communications}\@, \bibyear{2023}\@,
+  \bibvolume{22}\bibnumber{(5)}\thinspace{}\textnormal{:
+  }\bibpages{3289\thinspace{}\textnormal{--}\thinspace{}3302}\@.
+
+\bibitem{2023_ZhouAdaptiveLBT}
+\bibauthor{ZHOU X\@, et AL.}\@. \bibtitle{Novel listen-before-talk access
+  scheme with adaptive backoff procedure for uplink centric
+  broadband}\bibmark{[J]}\@. \bibjournal{IEEE Transactions on Vehicular
+  Technology}\@, \bibyear{2023}\@,
+  \bibvolume{72}\bibnumber{(8)}\thinspace{}\textnormal{:
+  }\bibpages{10678\thinspace{}\textnormal{--}\thinspace{}10691}\@.
+
+\bibitem{2024_CordeschiOptBackoff}
+\bibauthor{CORDESCHI N\@, et AL.}\@. \bibtitle{Optimal back-off distribution
+  for maximum weighted throughput in CSMA}\bibmark{[J]}\@. \bibjournal{IEEE/ACM
+  Transactions on Networking}\@, \bibyear{2024}\@,
+  \bibvolume{32}\bibnumber{(1)}\thinspace{}\textnormal{:
+  }\bibpages{417\thinspace{}\textnormal{--}\thinspace{}430}\@.
+
+\bibitem{2022_LoginovCRLBT}
+\bibauthor{LOGINOV A\@, et AL.}\@. \bibtitle{CR-LBT: Listen-before-talk with
+  collision resolution for 5G NR-U networks}\bibmark{[J]}\@. \bibjournal{IEEE
+  Transactions on Wireless Communications}\@, \bibyear{2022}\@,
+  \bibvolume{21}\bibnumber{(11)}\thinspace{}\textnormal{:
+  }\bibpages{9502\thinspace{}\textnormal{--}\thinspace{}9515}\@.
+
+\bibitem{2026_YuanCSMAEnergy}
+\bibauthor{YUAN Y\@, et AL.}\@. \bibtitle{To sense or not to sense: A
+  comparative study of energy efficiency in energy-aware random access
+  networks}\bibmark{[J]}\@. \bibjournal{IEEE Internet of Things Journal}\@,
+  \bibyear{2026}\@.
+
+\bibitem{2025_ZhaoCSMADelay}
+\bibauthor{ZHAO Y\@, DAI L}\@. \bibtitle{To sense or not to sense: A delay
+  perspective}\bibmark{[J]}\@. \bibjournal{IEEE Transactions on
+  Communications}\@, \bibyear{2025}\@.
+
+\bibitem{2024_CordeschiMPRCSMA}
+\bibauthor{CORDESCHI N\@, et AL.}\@. \bibtitle{Optimal Random Access Strategies
+  for Trigger-Based Multiple-Packet Reception Channels}\bibmark{[J]}\@.
+  \bibjournal{IEEE Transactions on Mobile Computing}\@, \bibyear{2024}\@,
+  \bibvolume{23}\bibnumber{(7)}\thinspace{}\textnormal{:
+  }\bibpages{4891\thinspace{}\textnormal{--}\thinspace{}4905}\@.
+
+\bibitem{2019_JSAC_DLMA}
+\bibauthor{YU Y\@, WANG T\@, LIEW S~C}\@. \bibtitle{Deep-Reinforcement Learning
+  Multiple Access for Heterogeneous Wireless Networks}\bibmark{[J/OL]}\@.
+  \bibjournal{IEEE J. Sel. Areas Commun.}\@, \bibyear{2019}\@,
+  \bibvolume{37}\bibnumber{(6)}\thinspace{}\textnormal{:
+  }\bibpages{1277\thinspace{}\textnormal{--}\thinspace{}1290}\@.
+  \url{http://dx.doi.org/10.1109/JSAC.2019.2904329}\@.
+
+\bibitem{2021_TCCN_JointLearning}
+\bibauthor{VALCARCE A\@, HOYDIS J}\@. \bibtitle{Toward Joint Learning of
+  Optimal {MAC} Signaling and Wireless Channel Access}\bibmark{[J/OL]}\@.
+  \bibjournal{IEEE Trans. Cogn. Commun. Netw.}\@, \bibyear{2021}\@,
+  \bibvolume{7}\bibnumber{(4)}\thinspace{}\textnormal{:
   }\bibpages{1233\thinspace{}\textnormal{--}\thinspace{}1243}\@.
   \url{http://dx.doi.org/10.1109/TCCN.2021.3080677}\@.
 
-\bibitem{2024_AI_ACCESS2}
+\bibitem{2022_GLOBECOM_Abstraction}
+\bibauthor{MIUCCIO L\@, RIOLO S\@, SAMARAKOON S, et~al}\@. \bibtitle{Learning
+  Generalized Wireless {MAC} Communication Protocols via
+  Abstraction}\bibmark{[C/OL]} //\thinspace{}\bibbooktitle{Proc. IEEE Global
+  Commun. Conf. (GLOBECOM)}\@. \bibyear{2022}\thinspace{}\textnormal{:
+  }\bibpages{2322\thinspace{}\textnormal{--}\thinspace{}2327}\@.
+  \url{http://dx.doi.org/10.1109/GLOBECOM48099.2022.10001610}\@.
+
+\bibitem{2023_ICC_IntrinsicRewards}
+\bibauthor{MIUCCIO L\@, RIOLO S\@, BENNIS M, et~al}\@. \bibtitle{On Learning
+  Intrinsic Rewards for Faster Multi-Agent Reinforcement Learning based {MAC}
+  Protocol Design in 6G Wireless Networks}\bibmark{[C/OL]}
+  //\thinspace{}\bibbooktitle{Proc. IEEE Int. Conf. Commun. (ICC)}\@.
+  \bibyear{2023}\thinspace{}\textnormal{:
+  }\bibpages{466\thinspace{}\textnormal{--}\thinspace{}471}\@.
+  \url{http://dx.doi.org/10.1109/ICC45041.2023.10278726}\@.
+
+\bibitem{2024_TMLCN_Feasible}
 \bibauthor{MIUCCIO L\@, RIOLO S\@, SAMARAKOON S, et~al}\@. \bibtitle{On
   Learning Generalized Wireless {MAC} Communication Protocols via a Feasible
-  Multi-Agent Reinforcement Learning Framework}\bibmark{[J]}\@.
-  \bibjournal{IEEE Transactions on Machine Learning in Communications and
-  Networking}\@, \bibyear{2024}\@, \bibvolume{2}\thinspace{}\textnormal{:
+  Multi-Agent Reinforcement Learning Framework}\bibmark{[J/OL]}\@.
+  \bibjournal{IEEE Trans. Mach. Learn. Commun. Netw.}\@, \bibyear{2024}\@,
+  \bibvolume{2}\thinspace{}\textnormal{:
   }\bibpages{298\thinspace{}\textnormal{--}\thinspace{}317}\@.
+  \url{http://dx.doi.org/10.1109/TMLCN.2024.3368367}\@.
+
+\bibitem{2022_WCNC_DRL_RA}
+\bibauthor{JADOON M~A\@, PASTORE A\@, NAVARRO M, et~al}\@. \bibtitle{Deep
+  Reinforcement Learning for Random Access in Machine-Type
+  Communication}\bibmark{[C/OL]} //\thinspace{}\bibbooktitle{Proc. IEEE
+  Wireless Commun. Netw. Conf. (WCNC)}\@.
+  \bibyear{2022}\thinspace{}\textnormal{:
+  }\bibpages{2553\thinspace{}\textnormal{--}\thinspace{}2558}\@.
+  \url{http://dx.doi.org/10.1109/WCNC51071.2022.9771576}\@.
+
+\bibitem{2019_ICCT_Selection}
+\bibauthor{KOU K\@, LEI L\@, ZHANG L, et~al}\@. \bibtitle{Intelligent
+  Selection: A Neural Network-Based {MAC} Protocol-Selection Mechanism for
+  Wireless Ad Hoc Networks}\bibmark{[C/OL]} //\thinspace{}\bibbooktitle{Proc.
+  IEEE Int. Conf. Commun. Technol. (ICCT)}\@.
+  \bibyear{2019}\thinspace{}\textnormal{:
+  }\bibpages{424\thinspace{}\textnormal{--}\thinspace{}429}\@.
+  \url{http://dx.doi.org/10.1109/ICCT46805.2019.8947101}\@.
+
+\bibitem{2020_ICAIIC_MACDesign}
+\bibauthor{PASANDI H~B\@, NADEEM T}\@. \bibtitle{{MAC} Protocol Design
+  Optimization Using Deep Learning}\bibmark{[C/OL]}
+  //\thinspace{}\bibbooktitle{Proc. Int. Conf. Artif. Intell. Inf. Commun.
+  (ICAIIC)}\@. \bibyear{2020}\thinspace{}\textnormal{:
+  }\bibpages{709\thinspace{}\textnormal{--}\thinspace{}715}\@.
+  \url{http://dx.doi.org/10.1109/ICAIIC48513.2020.9065254}\@.
+
+\bibitem{2021_ACCESS_SelfDriving}
+\bibauthor{PASANDI H~B\@, NADEEM T}\@. \bibtitle{Towards a Learning-Based
+  Framework for Self-Driving Design of Networking Protocols}\bibmark{[J/OL]}\@.
+  \bibjournal{IEEE Access}\@, \bibyear{2021}\@,
+  \bibvolume{9}\thinspace{}\textnormal{:
+  }\bibpages{34829\thinspace{}\textnormal{--}\thinspace{}34844}\@.
+  \url{http://dx.doi.org/10.1109/ACCESS.2021.3061729}\@.
 
 \bibitem{3gpp38213}
 \bibauthor{3GPP}\@. \bibtitle{3GPP TS 38.213: NR; Physical layer procedures for

@@ -1,0 +1,278 @@
+
+% =======国内外研究现状参考文献========
+chap 1.2
+=======================================
+
+
+% 1970年关于Aloha系统的经典论文
+@inproceedings{1970_Aloha,
+  title = {{{THE ALOHA SYSTEM}}: {{Another}} Alternative for Computer Communications},
+  shorttitle = {{{THE ALOHA SYSTEM}}},
+  booktitle = {Proceedings of the {{November}} 17-19, 1970, Fall Joint Computer Conference},
+  author = {Abramson, Norman},
+  date = {1970-11-17},
+  series = {{{AFIPS}} '70 ({{Fall}})},
+  pages = {281--285},
+  publisher = {Association for Computing Machinery},
+  location = {New York, NY, USA}
+}
+
+% 2012年关于缓冲Aloha系统稳定性和时延分析的经典论文
+@article{2012_DaiAloha,
+  title     = {Stability and delay analysis of buffered Aloha networks},
+  author    = {Dai, LIN},
+  journal   = {IEEE transactions on wireless communications},
+  volume    = {11},
+  number    = {8},
+  pages     = {2707--2719},
+  year      = {2012},
+  publisher = {IEEE}
+}
+
+% 2016年关于5G海量机器类通信的经典综述
+@article{2016_massiveAloha,
+  title     = {Massive machine-type communications in 5G: Physical and MAC-layer solutions},
+  author    = {Bockelmann, Carsten and Pratas, Nuno and Nikopour, Hosein and Au, Kelvin and Svensson, Tommy and Stefanovic, Cedomir and Popovski, Petar and Dekorsy, Armin},
+  journal   = {IEEE communications magazine},
+  volume    = {54},
+  number    = {9},
+  pages     = {59--65},
+  year      = {2016},
+  publisher = {IEEE}
+}
+
+
+% 2009年关于SA Backoff的经典论文
+@article{2009_SA_Backoff,
+  author  = {Rivero-Angeles, Marco E. and Lara-Rodriguez, David and Cruz-Perez, Fernando A.},
+  title   = {Differentiated Backoff Strategies for Prioritized Random Access Delay in Multiservice Cellular Networks},
+  journal = {IEEE Transactions on Vehicular Technology},
+  volume  = {58},
+  number  = {1},
+  pages   = {381--397},
+  month   = jan,
+  year    = {2009}
+}
+
+% 2018年关于SAEB的经典论文
+@article{2018_SA_EB,
+  author  = {Barletta, Luca and Borgonovo, Flaminio and Filippini, Ilaria},
+  title   = {The Throughput and Access Delay of Slotted-{ALOHA} with Exponential Backoff},
+  journal = {IEEE/ACM Transactions on Networking},
+  volume  = {26},
+  number  = {1},
+  pages   = {451--464},
+  month   = feb,
+  year    = {2018}
+}
+
+% 2006年关于多信道随机接入的经典论文
+@article{2006_Multichannel,
+  author  = {Yong-June Choi and Sungrae Park and Saewoong Bahk},
+  title   = {Multichannel Random Access in {OFDMA} Wireless Networks},
+  journal = {IEEE Journal on Selected Areas in Communications},
+  volume  = {24},
+  number  = {3},
+  pages   = {603--613},
+  year    = {2006}
+}
+
+% 2013年关于OFDMA的经典论文
+@article{2013_OFDMA,
+  author  = {Abdulrahman Al-Mutairi and Shankar Roy and Gwang-Hee Hwang},
+  title   = {Delay Analysis of {OFDMA} {Aloha}},
+  journal = {IEEE Transactions on Wireless Communications},
+  volume  = {12},
+  number  = {1},
+  pages   = {89--99},
+  year    = {2013}
+}
+
+@article{2015_OFDMA,
+  title = {Modeling and {{Analysis}} of {{Random Access Channels With Bursty Arrivals}} in {{OFDMA Wireless Networks}}},
+  author = {Wei, Chia-Hung and Bianchi, Giuseppe and Cheng, Ray-Guang},
+  date = {2015-04},
+  journaltitle = {IEEE Transactions on Wireless Communications},
+  shortjournal = {IEEE Trans. Wirel. Commun.},
+  volume = {14},
+  number = {4},
+  pages = {1940--1953},
+  issn = {1558-2248}
+}
+
+
+% 2020年关于快速重传的经典论文
+@article{2020_FastRetrial,
+  author  = {Jinho Choi},
+  title   = {Fast Retrial for Low-Latency Connectivity in {MTC} with Two Different Types of Devices},
+  journal = {IEEE Wireless Communications Letters},
+  volume  = {9},
+  number  = {10},
+  pages   = {1786--1789},
+  year    = {2020}
+}
+
+
+% 1973年关于预留Aloha的经典论文
+@inproceedings{1973_RAloha,
+  author    = {W. Crowther and R. Rettberg and D. Walden and S. Ornstein and F. Heart},
+  title     = {A System for Broadcast Communication: Reservation-{Aloha}},
+  booktitle = {Proceedings of the 6th Hawaii International Conference on System Sciences},
+  pages     = {596--603},
+  year      = {1973}
+}
+
+% 2015年关于混合随机接入的经典论文
+@article{2015_HybridRA,
+  title = {Hybrid {{Random Access}} and {{Data Transmission Protocol}} for {{Machine-to-Machine Communications}} in {{Cellular Networks}}},
+  author = {Wiriaatmadja, Dimas Tribudi and Choi, Kae Won},
+  date = {2015-01},
+  journaltitle = {IEEE Transactions on Wireless Communications},
+  shortjournal = {IEEE Trans. Wirel. Commun.},
+  volume = {14},
+  number = {1},
+  pages = {33--46},
+  issn = {1558-2248}
+}
+
+% 2024年关于基于连接Aloha的最新论文
+@article{2024_zhao,
+  author  = {Zhao, Xinran and Dai, Lin},
+  journal = {IEEE Trans. Wireless Commun.},
+  title   = {Connection-Based Aloha: Modeling, Optimization, and Effects of Connection Establishment},
+  year    = {Feb. 2024},
+  volume  = {23},
+  number  = {2},
+  pages   = {1008-1023}
+}
+
+% 1988年关于多包接收能力的经典论文
+@article{1988_MPR,
+  author  = {S. Ghez and S. Verd{\'u} and S. C. Schwartz},
+  title   = {Stability Properties of Slotted {Aloha} with Multipacket Reception Capability},
+  journal = {IEEE Transactions on Automatic Control},
+  volume  = {33},
+  number  = {7},
+  pages   = {640--649},
+  year    = {1988}
+}
+
+% 2005年关于多包接收能力的经典论文
+@article{2005_MPR,
+  title = {Stability and Delay of Finite-User Slotted {{ALOHA}} with Multipacket Reception},
+  author = {Naware, V. and Mergen, G. and Tong, L.},
+  date = {2005-07},
+  journaltitle = {IEEE Transactions on Information Theory},
+  shortjournal = {IEEE Trans. Inf. Theory},
+  volume = {51},
+  number = {7},
+  pages = {2636--2656},
+  issn = {1557-9654}
+}
+
+
+% 2022年关于多包接收能力的经典论文
+@article{2022_MPR,
+  author  = {J. Liu and J.-B. Seo and H. Jin},
+  title   = {Online Transmission Control for Random Access with Multipacket Reception and Reservation},
+  journal = {IEEE Internet of Things Journal},
+  volume  = {9},
+  number  = {22},
+  pages   = {23160--23175},
+  year    = {2022}
+}
+
+
+% 2007年关于CRDSA的经典论文
+@article{2007_CRDSA,
+  author  = {E. Casini and R. De Gaudenzi and O. Herrero},
+  title   = {Contention Resolution Diversity Slotted {Aloha} ({CRDSA}): An Enhanced Random Access Scheme for Satellite Access Packet Networks},
+  journal = {IEEE Transactions on Wireless Communications},
+  volume  = {6},
+  number  = {4},
+  pages   = {1408--1419},
+  year    = {2007}
+}
+
+% 2011年关于CRDSA图模型分析的经典论文
+@article{2011_GraphCRDSA,
+  author  = {G. Liva},
+  title   = {Graph-Based Analysis and Optimization of Contention Resolution Diversity Slotted {Aloha}},
+  journal = {IEEE Transactions on Communications},
+  volume  = {59},
+  number  = {2},
+  pages   = {477--487},
+  year    = {2011}
+}
+
+% 2012年关于R-CRDSA的经典论文
+@article{2012_RCRDSA,
+  author  = {M. Lee and J.-K. Lee and J.-J. Lee and J. Lim},
+  title   = {{R-CRDSA}: Reservation-Contention Resolution Diversity Slotted {Aloha} for Satellite Networks},
+  journal = {IEEE Communications Letters},
+  volume  = {16},
+  number  = {10},
+  pages   = {1576--1579},
+  year    = {2012}
+}
+
+@article{2018_enhanced_CRDSA,
+  title = {Enhancing {{Contention Resolution ALOHA Using Combining Techniques}}},
+  author = {Clazzer, Federico and Kissling, Christian and Marchese, Mario},
+  date = {2018-06},
+  journaltitle = {IEEE Transactions on Communications},
+  shortjournal = {IEEE Trans. Commun.},
+  volume = {66},
+  number = {6},
+  pages = {2576--2587},
+  issn = {1558-0857}
+}
+
+@article{2024_CRDSA,
+  title = {Toward the {{Random Multiaccess}} in {{SIoT}}: {{A Generalized-Deduplication-Based CRDSA Mechanism}}},
+  shorttitle = {Toward the {{Random Multiaccess}} in {{SIoT}}},
+  author = {Gu, Yiyang and Xu, Yunlai and Zhang, Bo and Wang, Ye and Yang, Zhihua},
+  date = {2024-06},
+  journaltitle = {IEEE Internet of Things Journal},
+  shortjournal = {IEEE Internet Things J.},
+  volume = {11},
+  number = {11},
+  pages = {20207--20222},
+  issn = {2327-4662}
+}
+
+
+% 2017年关于NOMA多址接入的经典论文
+@article{2017_NOMA,
+  author  = {M. Shirvanimoghaddam and M. Condoluci and M. Dohler and S. J. Johnson},
+  title   = {On the Fundamental Limits of Random Non-Orthogonal Multiple Access in Cellular Massive {IoT}},
+  journal = {IEEE Journal on Selected Areas in Communications},
+  volume  = {35},
+  number  = {10},
+  pages   = {2238--2252},
+  year    = {2017}
+}
+
+% 2017年关于NOMA多信道Aloha的经典论文
+@article{2017_NOMA2,
+  author  = {J. Choi},
+  title   = {{NOMA}-Based Random Access with Multichannel {Aloha}},
+  journal = {IEEE Journal on Selected Areas in Communications},
+  volume  = {35},
+  number  = {12},
+  pages   = {2736--2743},
+  year    = {2017}
+}
+
+% 2021年关于NOMA随机接入系统吞吐量最大化的经典论文
+@article{2021_NOMA,
+  author  = {L. Mai and Q. Zhang and J. Qin},
+  title   = {System Throughput Maximization of Uplink {NOMA} Random Access Systems},
+  journal = {IEEE Communications Letters},
+  volume  = {25},
+  number  = {11},
+  pages   = {3654--3658},
+  year    = {2021}
+}
+
+

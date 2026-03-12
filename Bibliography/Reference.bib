@@ -8,6 +8,7 @@
 %不要大量引用博士硕士论文
 %%
 
+% 1.1
 % 2023年ITU关于6G框架的最新推荐书
 @techreport{2023_ITUFramework,
   author      = {{International Telecommunication Union}},
@@ -88,7 +89,7 @@
 }
 
 % 2024年关于6G工业自动化的最新综述
-@article{20246_6GIndustrial,
+@article{2024_6GIndustrial,
   title     = {6G wireless communications for industrial automation: Scenarios, requirements and challenges},
   author    = {Zeydan, Engin and Arslan, Suayb and Turk, Yekta},
   journal   = {Journal of Industrial Information Integration},
@@ -222,14 +223,21 @@
 }
 
 % =======国内外研究现状参考文献========
+chap 1.2
+=======================================
 
+% 1.2.1
 % 1970年关于Aloha系统的经典论文
-@article{1970_Aloha,
-  author  = {Norman Abramson},
-  title   = {The {Aloha} System},
-  journal = {Computer-Communication Networks},
-  pages   = {281--305},
-  year    = {1970}
+@inproceedings{1970_Aloha,
+  title = {{{THE ALOHA SYSTEM}}: {{Another}} Alternative for Computer Communications},
+  shorttitle = {{{THE ALOHA SYSTEM}}},
+  booktitle = {Proceedings of the {{November}} 17-19, 1970, Fall Joint Computer Conference},
+  author = {Abramson, Norman},
+  date = {1970-11-17},
+  series = {{{AFIPS}} '70 ({{Fall}})},
+  pages = {281--285},
+  publisher = {Association for Computing Machinery},
+  location = {New York, NY, USA}
 }
 
 % 2012年关于缓冲Aloha系统稳定性和时延分析的经典论文
@@ -303,6 +311,19 @@
   year    = {2013}
 }
 
+@article{2015_OFDMA,
+  title = {Modeling and {{Analysis}} of {{Random Access Channels With Bursty Arrivals}} in {{OFDMA Wireless Networks}}},
+  author = {Wei, Chia-Hung and Bianchi, Giuseppe and Cheng, Ray-Guang},
+  date = {2015-04},
+  journaltitle = {IEEE Transactions on Wireless Communications},
+  shortjournal = {IEEE Trans. Wirel. Commun.},
+  volume = {14},
+  number = {4},
+  pages = {1940--1953},
+  issn = {1558-2248}
+}
+
+
 % 2020年关于快速重传的经典论文
 @article{2020_FastRetrial,
   author  = {Jinho Choi},
@@ -323,6 +344,20 @@
   pages     = {596--603},
   year      = {1973}
 }
+
+% 2015年关于混合随机接入的经典论文
+@article{2015_HybridRA,
+  title = {Hybrid {{Random Access}} and {{Data Transmission Protocol}} for {{Machine-to-Machine Communications}} in {{Cellular Networks}}},
+  author = {Wiriaatmadja, Dimas Tribudi and Choi, Kae Won},
+  date = {2015-01},
+  journaltitle = {IEEE Transactions on Wireless Communications},
+  shortjournal = {IEEE Trans. Wirel. Commun.},
+  volume = {14},
+  number = {1},
+  pages = {33--46},
+  issn = {1558-2248}
+}
+
 % 2024年关于基于连接Aloha的最新论文
 @article{2024_zhao,
   author  = {Zhao, Xinran and Dai, Lin},
@@ -345,7 +380,21 @@
   year    = {1988}
 }
 
-% 2001年关于多包接收能力的经典论文
+% 2005年关于多包接收能力的经典论文
+@article{2005_MPR,
+  title = {Stability and Delay of Finite-User Slotted {{ALOHA}} with Multipacket Reception},
+  author = {Naware, V. and Mergen, G. and Tong, L.},
+  date = {2005-07},
+  journaltitle = {IEEE Transactions on Information Theory},
+  shortjournal = {IEEE Trans. Inf. Theory},
+  volume = {51},
+  number = {7},
+  pages = {2636--2656},
+  issn = {1557-9654}
+}
+
+
+% 2022年关于多包接收能力的经典论文
 @article{2022_MPR,
   author  = {J. Liu and J.-B. Seo and H. Jin},
   title   = {Online Transmission Control for Random Access with Multipacket Reception and Reservation},
@@ -390,6 +439,32 @@
   year    = {2012}
 }
 
+@article{2018_enhanced_CRDSA,
+  title = {Enhancing {{Contention Resolution ALOHA Using Combining Techniques}}},
+  author = {Clazzer, Federico and Kissling, Christian and Marchese, Mario},
+  date = {2018-06},
+  journaltitle = {IEEE Transactions on Communications},
+  shortjournal = {IEEE Trans. Commun.},
+  volume = {66},
+  number = {6},
+  pages = {2576--2587},
+  issn = {1558-0857}
+}
+
+@article{2024_CRDSA,
+  title = {Toward the {{Random Multiaccess}} in {{SIoT}}: {{A Generalized-Deduplication-Based CRDSA Mechanism}}},
+  shorttitle = {Toward the {{Random Multiaccess}} in {{SIoT}}},
+  author = {Gu, Yiyang and Xu, Yunlai and Zhang, Bo and Wang, Ye and Yang, Zhihua},
+  date = {2024-06},
+  journaltitle = {IEEE Internet of Things Journal},
+  shortjournal = {IEEE Internet Things J.},
+  volume = {11},
+  number = {11},
+  pages = {20207--20222},
+  issn = {2327-4662}
+}
+
+
 % 2017年关于NOMA多址接入的经典论文
 @article{2017_NOMA,
   author  = {M. Shirvanimoghaddam and M. Condoluci and M. Dohler and S. J. Johnson},
@@ -424,57 +499,257 @@
 }
 
 
-
-% =====CSMA相关论文=====
-
-@article{1975_CSMA,
-  author  = {Kleinrock, Leonard and Tobagi, Fouad A.},
-  title   = {Packet Switching in Radio Channels: Part {I}—Carrier Sense Multiple-Access Modes and Their Throughput-Delay Characteristics},
-  journal = {IEEE Transactions on Communications},
-  year    = {1975},
-  volume  = {23},
-  number  = {12},
-  pages   = {1400--1416}
+@article{2019_KimRAPID,
+  title={RAPID: Contention Resolution Based Random Access Using Context ID for IoT},
+  author={Kim, Junseok and Kim, Seongwon and Taleb, Tarik and Choi, Sunghyun},
+  journal={IEEE Transactions on Vehicular Technology},
+  volume={68},
+  number={9},
+  pages={8922--8936},
+  year={2019},
+  publisher={IEEE}
 }
 
+% 1.2.2 
+% =====CSMA相关论文=====
+% =====CSMA相关论文=====
+% CSMA/LBT核心参考文献（按引用顺序）
+@article{1975_KleinrockCSMA,
+  title={Packet Switching in Radio Channels: Part I--Carrier Sense Multiple-Access Modes and Their Throughput-Delay Characteristics},
+  author={Kleinrock, Leonard and Tobagi, Fouad A},
+  journal={IEEE Transactions on Communications},
+  volume={23},
+  number={12},
+  pages={1403--1416},
+  year={1975},
+  publisher={IEEE}
+}
 
-@article{2016_IEEE80211,
-  author  = {},
-  journal = {IEEE Std 802.11-2016 (Revision of IEEE Std 802.11-2012)},
-  title   = {IEEE Standard for Information technology—Telecommunications and information exchange between systems Local and metropolitan area networks—Specific requirements - Part 11: Wireless LAN Medium Access Control (MAC) and Physical Layer (PHY) Specifications},
-  year    = {2016},
-  volume  = {},
-  number  = {},
-  pages   = {1-3534}
+@article{2000_BianchiDCF,
+  title={Performance analysis of the IEEE 802.11 distributed coordination function},
+  author={Bianchi, Giuseppe},
+  journal={IEEE Journal on selected areas in communications},
+  volume={18},
+  number={3},
+  pages={535--547},
+  year={2000},
+  publisher={IEEE}
+}
+
+@article{2014_JinCSMAStability,
+  title={Stability analysis of p-persistent slotted CSMA systems with finite population},
+  author={Jin, Depeng and et al.},
+  journal={IEEE/ACM Transactions on Networking},
+  volume={22},
+  number={6},
+  pages={1881--1894},
+  year={2014},
+  publisher={IEEE}
+}
+
+@article{2023_KimCPB,
+  title={Performance improvement of random access by prioritizing collisions},
+  author={Kim, Youngtak and Park, Seong-Lyun},
+  journal={IEEE Transactions on Wireless Communications},
+  volume={22},
+  number={5},
+  pages={3289--3302},
+  year={2023},
+  publisher={IEEE}
+}
+
+@article{2023_ZhouAdaptiveLBT,
+  title={Novel listen-before-talk access scheme with adaptive backoff procedure for uplink centric broadband},
+  author={Zhou, X and et al.},
+  journal={IEEE Transactions on Vehicular Technology},
+  volume={72},
+  number={8},
+  pages={10678--10691},
+  year={2023},
+  publisher={IEEE}
+}
+
+@article{2024_CordeschiOptBackoff,
+  title={Optimal back-off distribution for maximum weighted throughput in CSMA},
+  author={Cordeschi, Nicola and et al.},
+  journal={IEEE/ACM Transactions on Networking},
+  volume={32},
+  number={1},
+  pages={417--430},
+  year={2024},
+  publisher={IEEE}
+}
+
+@article{2022_LoginovCRLBT,
+  title={CR-LBT: Listen-before-talk with collision resolution for 5G NR-U networks},
+  author={Loginov, Alexander and et al.},
+  journal={IEEE Transactions on Wireless Communications},
+  volume={21},
+  number={11},
+  pages={9502--9515},
+  year={2022},
+  publisher={IEEE}
+}
+
+@article{2026_YuanCSMAEnergy,
+  title={To sense or not to sense: A comparative study of energy efficiency in energy-aware random access networks},
+  author={Yuan, Y and et al.},
+  journal={IEEE Internet of Things Journal},
+  year={2026},
+  publisher={IEEE}
+}
+
+@article{2025_ZhaoCSMADelay,
+  title={To sense or not to sense: A delay perspective},
+  author={Zhao, Y and Dai, L},
+  journal={IEEE Transactions on Communications},
+  year={2025},
+  publisher={IEEE}
+}
+
+@article{2024_CordeschiMPRCSMA,
+  title={Optimal Random Access Strategies for Trigger-Based Multiple-Packet Reception Channels},
+  author={Cordeschi, Nicola and et al.},
+  journal={IEEE Transactions on Mobile Computing},
+  volume={23},
+  number={7},
+  pages={4891--4905},
+  year={2024},
+  publisher={IEEE}
 }
 
 
 
 %% ===AI+接入相关论文====
-
-% 2021年关于joint-AI接入的经典论文
-@article{2021_AI_ACCESS,
-  author  = {\'{A}lvaro Valcarce and Jakob Hoydis},
-  title   = {Toward Joint Learning of Optimal {MAC} Signaling and Wireless Channel Access},
-  journal = {IEEE Transactions on Cognitive Communications and Networking},
-  volume  = {7},
-  number  = {4},
-  pages   = {1233--1243},
-  year    = {2021},
-  month   = {Dec.},
-  doi     = {10.1109/TCCN.2021.3080677}
+% 新增论文条目
+@inproceedings{2022_WCNC_DRL_RA,
+  author={Jadoon, M. A. and Pastore, A. and Navarro, M. and Perez-Cruz, F.},
+  booktitle={Proc. IEEE Wireless Commun. Netw. Conf. (WCNC)},
+  title={Deep Reinforcement Learning for Random Access in Machine-Type Communication},
+  year={2022},
+  pages={2553--2558},
+  doi={10.1109/WCNC51071.2022.9771576}
 }
 
-% 2024年关于joint-AI接入的经典论文
-@article{2024_AI_ACCESS2,
-  author  = {Luciano Miuccio and Salvatore Riolo and Sumudu Samarakoon and Mehdi Bennis and Daniela Panno},
-  title   = {On Learning Generalized Wireless {MAC} Communication Protocols via a Feasible Multi-Agent Reinforcement Learning Framework},
-  journal = {IEEE Transactions on Machine Learning in Communications and Networking},
-  volume  = {2},
-  pages   = {298--317},
-  year    = {2024},
-  month   = {Feb.}
+% 原有论文条目
+@article{2024_TMLCN_Feasible,
+  author={Miuccio, Luciano and Riolo, Salvatore and Samarakoon, Sumudu and Panno, Daniela and Bennis, Mehdi},
+  journal={IEEE Trans. Mach. Learn. Commun. Netw.},
+  title={On Learning Generalized Wireless {MAC} Communication Protocols via a Feasible Multi-Agent Reinforcement Learning Framework},
+  year={2024},
+  volume={2},
+  pages={298--317},
+  doi={10.1109/TMLCN.2024.3368367}
 }
+
+@inproceedings{2023_ICC_IntrinsicRewards,
+  author={Miuccio, Luciano and Riolo, Salvatore and Bennis, Mehdi and Panno, Daniela},
+  booktitle={Proc. IEEE Int. Conf. Commun. (ICC)},
+  title={On Learning Intrinsic Rewards for Faster Multi-Agent Reinforcement Learning based {MAC} Protocol Design in 6G Wireless Networks},
+  year={2023},
+  pages={466--471},
+  doi={10.1109/ICC45041.2023.10278726}
+}
+
+@inproceedings{2022_GLOBECOM_Abstraction,
+  author={Miuccio, Luciano and Riolo, Salvatore and Samarakoon, Sumudu and Panno, Daniela and Bennis, Mehdi},
+  booktitle={Proc. IEEE Global Commun. Conf. (GLOBECOM)},
+  title={Learning Generalized Wireless {MAC} Communication Protocols via Abstraction},
+  year={2022},
+  pages={2322--2327},
+  doi={10.1109/GLOBECOM48099.2022.10001610}
+}
+
+@article{2021_TCCN_JointLearning,
+  author={Valcarce, Alvaro and Hoydis, Jakob},
+  journal={IEEE Trans. Cogn. Commun. Netw.},
+  title={Toward Joint Learning of Optimal {MAC} Signaling and Wireless Channel Access},
+  year={2021},
+  volume={7},
+  number={4},
+  pages={1233--1243},
+  doi={10.1109/TCCN.2021.3080677}
+}
+
+@article{2021_ACCESS_SelfDriving,
+  author={Pasandi, Hamidreza B. and Nadeem, Tamer},
+  journal={IEEE Access},
+  title={Towards a Learning-Based Framework for Self-Driving Design of Networking Protocols},
+  year={2021},
+  volume={9},
+  pages={34829--34844},
+  doi={10.1109/ACCESS.2021.3061729}
+}
+
+@inproceedings{2020_ICAIIC_MACDesign,
+  author={Pasandi, Hamidreza B. and Nadeem, Tamer},
+  booktitle={Proc. Int. Conf. Artif. Intell. Inf. Commun. (ICAIIC)},
+  title={{MAC} Protocol Design Optimization Using Deep Learning},
+  year={2020},
+  pages={709--715},
+  doi={10.1109/ICAIIC48513.2020.9065254}
+}
+
+@inproceedings{2019_ICCT_Selection,
+  author={Kou, Kaizhi and Lei, Lei and Zhang, Lei and Cai, Shaobin and Shen, Gang},
+  booktitle={Proc. IEEE Int. Conf. Commun. Technol. (ICCT)},
+  title={Intelligent Selection: A Neural Network-Based {MAC} Protocol-Selection Mechanism for Wireless Ad Hoc Networks},
+  year={2019},
+  pages={424--429},
+  doi={10.1109/ICCT46805.2019.8947101}
+}
+
+@article{2019_JSAC_DLMA,
+  author={Yu, Yue and Wang, Tianyu and Liew, Soung Chang},
+  journal={IEEE J. Sel. Areas Commun.},
+  title={Deep-Reinforcement Learning Multiple Access for Heterogeneous Wireless Networks},
+  year={2019},
+  volume={37},
+  number={6},
+  pages={1277--1290},
+  doi={10.1109/JSAC.2019.2904329}
+}
+
+@inproceedings{2022_WCNC_DRLRA,
+  author={Jadoon, Muhammad Asif and Pastore, Adriano and Navarro, Monica and Perez-Cruz, Fernando},
+  booktitle={Proc. IEEE Wireless Commun. Netw. Conf. (WCNC)},
+  title={Deep Reinforcement Learning for Random Access in Machine-Type Communication},
+  year={2022},
+  pages={2553--2558},
+  doi={10.1109/WCNC51071.2022.9771937}
+}
+
+@inproceedings{2020_IFIPNetw_ALOHAQT,
+  author={de Alfaro, Luca and Zhang, Molly and Garcia-Luna-Aceves, J. J.},
+  booktitle={Proc. IFIP Netw. Conf.},
+  title={Approaching Fair Collision-Free Channel Access with Slotted {ALOHA} Using Collaborative Policy-Based Reinforcement Learning},
+  year={2020},
+  pages={262--270},
+  doi={10.23919/IFIPNetworking49478.2020.9142699}
+}
+
+@article{2024_TMLCN_MARLM2M,
+  author={Jadoon, Muhammad Asif and Pastore, Adriano and Navarro, Monica and Valcarce, Alvaro},
+  journal={IEEE Trans. Mach. Learn. Commun. Netw.},
+  title={Learning Random Access Schemes for Massive Machine-Type Communication with {MARL}},
+  year={2024},
+  volume={2},
+  pages={95--109},
+  doi={10.1109/TMLCN.2023.3345273}
+}
+
+@article{2023_TCCN_GRU_DSA,
+  author={Kaur, Amandeep and Thakur, Jaismin and Thakur, Mukul and Kumar, Krishan and Prakash, Arun and Tripathi, Rajeev},
+  journal={IEEE Trans. Cogn. Commun. Netw.},
+  title={Deep Recurrent Reinforcement Learning-Based Distributed Dynamic Spectrum Access in Multichannel Wireless Networks with Imperfect Feedback},
+  year={2023},
+  volume={9},
+  number={2},
+  pages={281--292},
+  doi={10.1109/TCCN.2023.3234276}
+}
+
+========================
 
 
 % 2024年关于AI/ML for NR Air Interface的最新3GPP技术报告和工作项提案
@@ -523,3 +798,6 @@
   year = {Release 17},
   note = {Section on LBT for NR-U}
 }
+
+
+
