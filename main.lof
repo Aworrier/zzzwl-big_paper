@@ -1,36 +1,43 @@
 \addvspace {10.0pt}
 \addvspace {10.0pt}
-\contentsline {figure}{\numberline {1-1}{\ignorespaces 复杂物联网业务承载与 5G 接入面临的核心挑战\relax }}{2}{figure.caption.2}%
-\contentsline {figure}{\numberline {1-2}{\ignorespaces Aloha 类随机接入研究现状与主要技术路线\relax }}{5}{figure.caption.3}%
-\contentsline {figure}{\numberline {1-3}{\ignorespaces CSMA/LBT 类随机接入研究现状与主要技术路线\relax }}{6}{figure.caption.4}%
-\contentsline {figure}{\numberline {1-4}{\ignorespaces AI 驱动随机接入研究现状与主要技术路径\relax }}{8}{figure.caption.5}%
-\contentsline {figure}{\numberline {1-5}{\ignorespaces 论文章节安排\relax }}{13}{figure.caption.6}%
 \addvspace {10.0pt}
-\contentsline {figure}{\numberline {2-1}{\ignorespaces 5G NR 四步/两步标准随机接入流程示意图\relax }}{16}{figure.caption.7}%
-\contentsline {figure}{\numberline {2-2}{\ignorespaces 5G NR 四步/两步 SDT 标准随机接入流程示意图\relax }}{17}{figure.caption.8}%
-\contentsline {figure}{\numberline {2-3}{\ignorespaces NR-U中基于LBT的随机接入流程\relax }}{18}{figure.caption.9}%
-\contentsline {figure}{\numberline {2-4}{\ignorespaces 通用系统场景示意图\relax }}{20}{figure.caption.10}%
+\contentsline {figure}{\numberline {1-1}{\ignorespaces 复杂物联网业务承载与 5G 接入面临的核心挑战\relax }}{2}{figure.caption.3}%
+\contentsline {figure}{\numberline {1-2}{\ignorespaces Aloha 类随机接入研究现状与主要技术路线\relax }}{5}{figure.caption.4}%
+\contentsline {figure}{\numberline {1-3}{\ignorespaces CSMA/LBT 类随机接入研究现状与主要技术路线\relax }}{7}{figure.caption.5}%
+\contentsline {figure}{\numberline {1-4}{\ignorespaces AI 驱动随机接入研究现状与主要技术路径\relax }}{9}{figure.caption.6}%
+\contentsline {figure}{\numberline {1-5}{\ignorespaces 论文章节安排\relax }}{14}{figure.caption.7}%
 \addvspace {10.0pt}
-\contentsline {figure}{\numberline {3-1}{\ignorespaces 两节点SAST网络示意图，其中$B$、$V$和$C$分别表示节点的忙期、休假期和周期\relax }}{28}{figure.caption.11}%
-\contentsline {figure}{\numberline {3-2}{\ignorespaces 系统参数随传输概率$q$的变化情况（$n=100$，$\lambda = \hat {\lambda }/n \in \{0.002, 0.004\}$）\relax }}{37}{figure.caption.12}%
-\contentsline {figure}{\numberline {3-3}{\ignorespaces 饱和状态下的吞吐量性能随传输概率 $q$ 的变化 ($n \in \{30, 50, 100\}$)\relax }}{39}{figure.caption.13}%
-\contentsline {figure}{\numberline {3-4}{\ignorespaces 节点队列长度在时隙$t$的状态转移马尔可夫链$(L_t, K_t)$\relax }}{41}{figure.caption.14}%
-\contentsline {figure}{\numberline {3-5}{\ignorespaces 时延随传输概率$q$的变化情况（$n=100$，$\lambda = \hat {\lambda }/n \in \{0.002, 0.004\}$）\relax }}{42}{figure.caption.15}%
-\contentsline {figure}{\numberline {3-6}{\ignorespaces 用户与基站间的信令交互流程对比\relax }}{44}{figure.caption.16}%
-\contentsline {figure}{\numberline {3-7}{\ignorespaces SAST 与 2 步小数据传输方案的信令吞吐比性能对比（$n=100, s=1$）\relax }}{45}{figure.caption.17}%
+\contentsline {figure}{\numberline {2-1}{\ignorespaces 5G NR 两步/四步竞争式随机接入流程示意图\relax }}{16}{figure.caption.8}%
+\contentsline {figure}{\numberline {2-2}{\ignorespaces 5G NR 四步/两步 SDT 标准随机接入流程示意图\relax }}{17}{figure.caption.9}%
+\contentsline {figure}{\numberline {2-3}{\ignorespaces NR-U中基于LBT的信道接入流程\relax }}{18}{figure.caption.10}%
+\contentsline {figure}{\numberline {2-4}{\ignorespaces 通用系统场景示意图\relax }}{19}{figure.caption.11}%
 \addvspace {10.0pt}
-\contentsline {figure}{\numberline {4-1}{\ignorespaces CSMAST方案中的信道状态演变示意图。$B_c$、$V_c$和$C_c$分别表示信道的忙期、假期和周期时间。\relax }}{49}{figure.caption.18}%
-\contentsline {figure}{\numberline {4-2}{\ignorespaces 描述信道假期内状态转移过程的吸收马尔可夫链模型。其中状态 F 和 I 为瞬态，状态 S 为吸收态。\relax }}{51}{figure.caption.19}%
-\contentsline {figure}{\numberline {4-3}{\ignorespaces CSMAST 网络吞吐量 $\hat {\lambda }_{out}^{net}$ 与短期 Jain 公平性指数 $J_T$ 随传输概率 $q$ 的变化（$n=100, \tau _S=5, \tau _F=3, \tau _I=1$）\relax }}{58}{figure.caption.20}%
-\contentsline {figure}{\numberline {4-4}{\ignorespaces CSMAST 与经典 CSMA 方案的吞吐量-公平性性能轨迹对比\relax }}{59}{figure.caption.21}%
+\contentsline {figure}{\numberline {3-1}{\ignorespaces 两节点SAST网络示意图，其中$B$、$V$和$C$分别表示节点的忙期、休假期和周期\relax }}{24}{figure.caption.12}%
+\contentsline {figure}{\numberline {3-2}{\ignorespaces 系统参数随传输概率$q$的变化情况（$n=100$，$\lambda = \hat {\lambda }/n \in \{0.002, 0.004\}$）\relax }}{33}{figure.caption.13}%
+\contentsline {figure}{\numberline {3-3}{\ignorespaces 饱和状态下的吞吐量性能随传输概率 $q$ 的变化 ($n \in \{30, 50, 100\}$)\relax }}{35}{figure.caption.14}%
+\contentsline {figure}{\numberline {3-4}{\ignorespaces 节点队列长度在时隙$t$的状态转移马尔可夫链$(L_t, K_t)$\relax }}{37}{figure.caption.15}%
+\contentsline {figure}{\numberline {3-5}{\ignorespaces 时延随传输概率$q$的变化情况（$n=100$，$\lambda = \hat {\lambda }/n \in \{0.002, 0.004\}$）\relax }}{38}{figure.caption.16}%
+\contentsline {figure}{\numberline {3-6}{\ignorespaces 用户与基站间的信令交互流程对比\relax }}{40}{figure.caption.17}%
+\contentsline {figure}{\numberline {3-7}{\ignorespaces SAST 与 2 步小数据传输方案的信令吞吐比性能对比（$n=100, s=1$）\relax }}{41}{figure.caption.18}%
 \addvspace {10.0pt}
-\contentsline {figure}{\numberline {5-1}{\ignorespaces 统一接入框架与协议选择流程\relax }}{62}{figure.caption.23}%
-\contentsline {figure}{\numberline {5-2}{\ignorespaces 两阶段参数空间采样策略流程图\relax }}{67}{figure.caption.26}%
-\contentsline {figure}{\numberline {5-3}{\ignorespaces 多任务深度神经网络代理模型的训练流程示意图\relax }}{73}{figure.caption.32}%
-\contentsline {figure}{\numberline {5-4}{\ignorespaces 单节点到达率 $\lambda =0.003$、uniform 流量场景下，代理模型预测曲线（实线）与仿真结果（离散点）的性能对比。 (a) 吞吐量 $\lambda _{\mathrm {out}}$：展示不同协议参数下系统的吞吐能力，预测曲线与仿真点在主要拐点附近一致。 (b) 平均时延 $D$：反映数据包平均传输时延，预测曲线与仿真点在参数区间内对齐。 (c) 公平性 $J_T$：衡量节点资源分配均衡性，预测曲线能反映参数变化对公平性的影响。 (d) 信令开销 $S$：描述系统信令消耗，预测与仿真结果在整体趋势上吻合。\relax }}{75}{figure.caption.34}%
-\contentsline {figure}{\numberline {5-5}{\ignorespaces 均匀流量、$\lambda =0.003$ 场景下，不同权重偏好对应的综合效用 $U$ 曲线对比。\relax }}{76}{figure.caption.35}%
-\contentsline {figure}{\numberline {5-6}{\ignorespaces 动态业务场景下代理模型推荐策略与基线策略的效用对比。横坐标表示按时序排列的协议切换窗口编号，纵坐标表示对应的综合效用 $U(\tilde {\mathbf {y}})$。\relax }}{78}{figure.caption.36}%
+\contentsline {figure}{\numberline {4-1}{\ignorespaces CSMAST方案中的信道状态演变示意图。$B_c$、$V_c$和$C_c$分别表示信道的忙期、假期和周期时间。\relax }}{45}{figure.caption.19}%
+\contentsline {figure}{\numberline {4-2}{\ignorespaces 描述信道假期内状态转移过程的吸收马尔可夫链模型。其中状态 F 和 I 为可转移态，状态 S 为吸收态。\relax }}{47}{figure.caption.20}%
+\contentsline {figure}{\numberline {4-3}{\ignorespaces CSMAST 网络吞吐量 $\hat {\lambda }_{out}^{net}$ 与短期 Jain 公平性指数 $J_T$ 随传输概率 $q$ 的变化（$n=100, \tau _S=5, \tau _F=3, \tau _I=1$）\relax }}{54}{figure.caption.21}%
+\contentsline {figure}{\numberline {4-4}{\ignorespaces CSMAST 与经典 CSMA 方案的吞吐量-公平性性能轨迹对比\relax }}{55}{figure.caption.22}%
+\addvspace {10.0pt}
+\contentsline {figure}{\numberline {5-1}{\ignorespaces 统一接入框架与协议选择流程\relax }}{58}{figure.caption.24}%
+\contentsline {figure}{\numberline {5-2}{\ignorespaces 两阶段参数空间采样策略流程图\relax }}{63}{figure.caption.27}%
+\contentsline {figure}{\numberline {5-3}{\ignorespaces 统一仿真器设计与实现流程图\relax }}{65}{figure.caption.28}%
+\contentsline {figure}{\numberline {5-4}{\ignorespaces 多任务性能预测模型的训练流程示意图\relax }}{69}{figure.caption.32}%
+\contentsline {figure}{\numberline {5-5}{\ignorespaces 均匀流量、$\lambda =0.003$ 场景下的模型预测（理论值）与仿真结果（离散点）对比。\relax }}{71}{figure.caption.34}%
+\contentsline {figure}{\numberline {5-6}{\ignorespaces 均匀流量、$\lambda =0.003$ 场景下，不同权重偏好的综合效用 $U$ 对比。\relax }}{72}{figure.caption.35}%
+\contentsline {figure}{\numberline {5-7}{\ignorespaces 场景一下性能预测模型推荐策略与基线策略的效用对比。横坐标表示按时序排列的协议切换窗口编号，纵坐标表示对应的综合效用 $U(\tilde {\mathbf {y}})$。\relax }}{75}{figure.caption.38}%
+\contentsline {figure}{\numberline {5-8}{\ignorespaces 场景二下性能预测模型推荐策略与基线策略的效用对比。横坐标表示按时序排列的协议切换窗口编号，纵坐标表示对应的综合效用 $U(\tilde {\mathbf {y}})$。\relax }}{75}{figure.caption.39}%
 \addvspace {10.0pt}
 \addvspace {10.0pt}
-\contentsline {figure}{\numberline {A-1}{\ignorespaces 描述忙期内队列演化的吸收马尔可夫链状态转移图\relax }}{86}{figure.caption.38}%
+\addvspace {10.0pt}
+\contentsline {figure}{\numberline {A-1}{\ignorespaces 描述忙期内队列演化的吸收马尔可夫链状态转移图\relax }}{88}{figure.caption.41}%
+\addvspace {10.0pt}
+\addvspace {10.0pt}
+\addvspace {10.0pt}
 \addvspace {10.0pt}

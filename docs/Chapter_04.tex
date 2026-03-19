@@ -100,10 +100,10 @@
 更棘手地，空闲时长 $\tau_I$ 与碰撞时长 $\tau_F$ 往往并不相等（通常 $\tau_F > \tau_I$），假期的总长度不仅取决于尝试次数，还高度依赖于系统在两种瞬态之间的驻留比例，这使得简单的几何分布模型不再适用。为了精确刻画这一过程的统计特性（均值与方差），我们将信道在假期内的状态演变建模为一个具有吸收态的马尔可夫链。其状态转移关系如图 \ref{fig:csmast_markov_absorption} 所示。
 
 下面首先构建状态空间与转移矩阵。
-\begin{figure}[htbp]
+\begin{figure}[t]
 	\centering
-	\includegraphics[width=0.6\textwidth]{figure/chap4/csmast_markov_absorption.png}
-	\caption{描述信道假期内状态转移过程的吸收马尔可夫链模型。其中状态 F 和 I 为瞬态，状态 S 为吸收态。}
+	\includegraphics[width=0.95\textwidth]{figure/chap4/markov_model.pdf}
+	\caption{描述信道假期内状态转移过程的吸收马尔可夫链模型。其中状态 F 和 I 为可转移态，状态 S 为吸收态。}
 	\label{fig:csmast_markov_absorption}
 \end{figure}
 

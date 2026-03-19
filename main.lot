@@ -4,13 +4,19 @@
 \addvspace {10.0pt}
 \addvspace {10.0pt}
 \addvspace {10.0pt}
-\contentsline {table}{\numberline {5-1}{\ignorespaces 不同随机接入协议的定性性能对比\relax }}{61}{table.caption.22}%
-\contentsline {table}{\numberline {5-2}{\ignorespaces 业务流量特征参数定义与物理含义\relax }}{63}{table.caption.24}%
-\contentsline {table}{\numberline {5-3}{\ignorespaces 标准化输入与性能指标摘要\relax }}{64}{table.caption.25}%
-\contentsline {table}{\numberline {5-4}{\ignorespaces 统一仿真器关键参数汇总\relax }}{69}{table.caption.28}%
-\contentsline {table}{\numberline {5-5}{\ignorespaces 仿真数据集统计摘要\relax }}{70}{table.caption.29}%
-\contentsline {table}{\numberline {5-6}{\ignorespaces 多任务代理模型的神经网络架构\relax }}{72}{table.caption.31}%
-\contentsline {table}{\numberline {5-7}{\ignorespaces 代理模型在测试集上的预测误差与拟合优度\relax }}{74}{table.caption.33}%
+\addvspace {10.0pt}
+\contentsline {table}{\numberline {5-1}{\ignorespaces 不同随机接入协议的定性性能对比\relax }}{57}{table.caption.23}%
+\contentsline {table}{\numberline {5-2}{\ignorespaces 业务流量特征参数$\mathbf {x}_{\text {traffic}}$的定义与表征含义\relax }}{59}{table.caption.25}%
+\contentsline {table}{\numberline {5-3}{\ignorespaces 标准化输入与性能指标摘要\relax }}{60}{table.caption.26}%
+\contentsline {table}{\numberline {5-4}{\ignorespaces 仿真数据集关键配置与统计信息\relax }}{66}{table.caption.29}%
+\contentsline {table}{\numberline {5-5}{\ignorespaces 多任务性能预测模型的神经网络架构\relax }}{68}{table.caption.31}%
+\contentsline {table}{\numberline {5-6}{\ignorespaces 性能预测模型实验配置与预测性能结果\relax }}{70}{table.caption.33}%
+\contentsline {table}{\numberline {5-7}{\ignorespaces 场景一的窗口配置（均匀流量、强度递变）\relax }}{73}{table.caption.36}%
+\contentsline {table}{\numberline {5-8}{\ignorespaces 场景二的窗口配置（流量类型与强度联合变化）\relax }}{74}{table.caption.37}%
+\addvspace {10.0pt}
+\addvspace {10.0pt}
+\addvspace {10.0pt}
+\addvspace {10.0pt}
 \addvspace {10.0pt}
 \addvspace {10.0pt}
 \addvspace {10.0pt}

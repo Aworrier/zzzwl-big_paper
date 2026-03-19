@@ -47,26 +47,6 @@
   \bibvolume{5}\thinspace{}\textnormal{:
   }\bibpages{344\thinspace{}\textnormal{--}\thinspace{}383}\@.
 
-\bibitem{2018_V2Xwireless}
-\bibauthor{POPOVSKI P\@, NIELSEN J~J\@, STEFANOVIC C, et~al}\@.
-  \bibtitle{Wireless access for ultra-reliable low-latency communication:
-  Principles and building blocks}\bibmark{[J]}\@. \bibjournal{Ieee Network}\@,
-  \bibyear{2018}\@, \bibvolume{32}\bibnumber{(2)}\thinspace{}\textnormal{:
-  }\bibpages{16\thinspace{}\textnormal{--}\thinspace{}23}\@.
-
-\bibitem{2024_6GIndustrial}
-\bibauthor{ZEYDAN E\@, ARSLAN S\@, TURK Y}\@. \bibtitle{6G wireless
-  communications for industrial automation: Scenarios, requirements and
-  challenges}\bibmark{[J]}\@. \bibjournal{Journal of Industrial Information
-  Integration}\@, \bibyear{2024}\@, \bibvolume{42}\thinspace{}\textnormal{:
-  }\bibpages{100732}\@.
-
-\bibitem{2025_NDTnetwork}
-\bibauthor{TRAN D-H\@, WAHEED N\@, SAPUTRA Y~M, et~al}\@. \bibtitle{Network
-  digital twin for 6g and beyond: An end-to-end view across multi-domain
-  network ecosystems}\bibmark{[J]}\@. \bibjournal{IEEE Open Journal of the
-  Communications Society}\@, \bibyear{2025}\@.
-
 \bibitem{2013_4gLTERA}
 \bibauthor{DAHLMAN E\@, PARKVALL S\@, SKOLD J}\@. \bibbooktitle{4G:
   LTE/LTE-advanced for mobile broadband}\bibmark{[M]}\@.
@@ -210,6 +190,13 @@
   Conference on System Sciences}\@. \bibyear{1973}\thinspace{}\textnormal{:
   }\bibpages{596\thinspace{}\textnormal{--}\thinspace{}603}\@.
 
+\bibitem{2019_KimRAPID}
+\bibauthor{KIM J\@, KIM S\@, TALEB T, et~al}\@. \bibtitle{RAPID: Contention
+  Resolution Based Random Access Using Context ID for IoT}\bibmark{[J]}\@.
+  \bibjournal{IEEE Transactions on Vehicular Technology}\@, \bibyear{2019}\@,
+  \bibvolume{68}\bibnumber{(9)}\thinspace{}\textnormal{:
+  }\bibpages{8922\thinspace{}\textnormal{--}\thinspace{}8936}\@.
+
 \bibitem{2024_zhao}
 \bibauthor{ZHAO X\@, DAI L}\@. \bibtitle{Connection-Based Aloha: Modeling,
   Optimization, and Effects of Connection Establishment}\bibmark{[J]}\@.
@@ -303,12 +290,26 @@
   \bibvolume{18}\bibnumber{(3)}\thinspace{}\textnormal{:
   }\bibpages{535\thinspace{}\textnormal{--}\thinspace{}547}\@.
 
+\bibitem{2013_DaiSunDCF}
+\bibauthor{DAI L\@, SUN X}\@. \bibtitle{A {{Unified Analysis}} of {{IEEE}}
+  802.11 {{DCF Networks}}: {{Stability}}, {{Throughput}}, and
+  {{Delay}}}\bibmark{[J]}\@, \@,
+  \bibvolume{12}\bibnumber{(8)}\thinspace{}\textnormal{:
+  }\bibpages{1558\thinspace{}\textnormal{--}\thinspace{}1572}\@.
+
 \bibitem{2014_JinCSMAStability}
 \bibauthor{JIN D\@, et AL.}\@. \bibtitle{Stability analysis of p-persistent
   slotted CSMA systems with finite population}\bibmark{[J]}\@.
   \bibjournal{IEEE/ACM Transactions on Networking}\@, \bibyear{2014}\@,
   \bibvolume{22}\bibnumber{(6)}\thinspace{}\textnormal{:
   }\bibpages{1881\thinspace{}\textnormal{--}\thinspace{}1894}\@.
+
+\bibitem{2014_GaoEDCA}
+\bibauthor{GAO Y\@, SUN X\@, DAI L}\@. \bibtitle{{{IEEE}} 802.11e {{EDCA
+  Networks}}: {{Modeling}}, {{Differentiation}} and
+  {{Optimization}}}\bibmark{[J]}\@, \@,
+  \bibvolume{13}\bibnumber{(7)}\thinspace{}\textnormal{:
+  }\bibpages{3863\thinspace{}\textnormal{--}\thinspace{}3879}\@.
 
 \bibitem{2023_KimCPB}
 \bibauthor{KIM Y\@, PARK S-L}\@. \bibtitle{Performance improvement of random
@@ -399,14 +400,40 @@
   }\bibpages{298\thinspace{}\textnormal{--}\thinspace{}317}\@.
   \url{http://dx.doi.org/10.1109/TMLCN.2024.3368367}\@.
 
-\bibitem{2022_WCNC_DRL_RA}
+\bibitem{2020_IFIPNetw_ALOHAQT}
+\bibauthor{de ALFARO L\@, ZHANG M\@, GARCIA-LUNA-ACEVES J~J}\@.
+  \bibtitle{Approaching Fair Collision-Free Channel Access with Slotted {ALOHA}
+  Using Collaborative Policy-Based Reinforcement Learning}\bibmark{[C/OL]}
+  //\thinspace{}\bibbooktitle{Proc. IFIP Netw. Conf.}\@.
+  \bibyear{2020}\thinspace{}\textnormal{:
+  }\bibpages{262\thinspace{}\textnormal{--}\thinspace{}270}\@.
+  \url{http://dx.doi.org/10.23919/IFIPNetworking49478.2020.9142699}\@.
+
+\bibitem{2022_WCNC_DRLRA}
 \bibauthor{JADOON M~A\@, PASTORE A\@, NAVARRO M, et~al}\@. \bibtitle{Deep
   Reinforcement Learning for Random Access in Machine-Type
   Communication}\bibmark{[C/OL]} //\thinspace{}\bibbooktitle{Proc. IEEE
   Wireless Commun. Netw. Conf. (WCNC)}\@.
   \bibyear{2022}\thinspace{}\textnormal{:
   }\bibpages{2553\thinspace{}\textnormal{--}\thinspace{}2558}\@.
-  \url{http://dx.doi.org/10.1109/WCNC51071.2022.9771576}\@.
+  \url{http://dx.doi.org/10.1109/WCNC51071.2022.9771937}\@.
+
+\bibitem{2023_TCCN_GRU_DSA}
+\bibauthor{KAUR A\@, THAKUR J\@, THAKUR M, et~al}\@. \bibtitle{Deep Recurrent
+  Reinforcement Learning-Based Distributed Dynamic Spectrum Access in
+  Multichannel Wireless Networks with Imperfect Feedback}\bibmark{[J/OL]}\@.
+  \bibjournal{IEEE Trans. Cogn. Commun. Netw.}\@, \bibyear{2023}\@,
+  \bibvolume{9}\bibnumber{(2)}\thinspace{}\textnormal{:
+  }\bibpages{281\thinspace{}\textnormal{--}\thinspace{}292}\@.
+  \url{http://dx.doi.org/10.1109/TCCN.2023.3234276}\@.
+
+\bibitem{2024_TMLCN_MARLM2M}
+\bibauthor{JADOON M~A\@, PASTORE A\@, NAVARRO M, et~al}\@. \bibtitle{Learning
+  Random Access Schemes for Massive Machine-Type Communication with
+  {MARL}}\bibmark{[J/OL]}\@. \bibjournal{IEEE Trans. Mach. Learn. Commun.
+  Netw.}\@, \bibyear{2024}\@, \bibvolume{2}\thinspace{}\textnormal{:
+  }\bibpages{95\thinspace{}\textnormal{--}\thinspace{}109}\@.
+  \url{http://dx.doi.org/10.1109/TMLCN.2023.3345273}\@.
 
 \bibitem{2019_ICCT_Selection}
 \bibauthor{KOU K\@, LEI L\@, ZHANG L, et~al}\@. \bibtitle{Intelligent

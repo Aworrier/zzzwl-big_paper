@@ -610,9 +610,10 @@
 }
 \newcommand\makelistoffiguretable{
     \listoffigures
-    \listoftables
-    \thispagestyle{listoffiguretable}
     \newclearpage
+    \listoftables
+    \newclearpage
+    \thispagestyle{listoffiguretable}
 }
 
 \renewcommand\mainmatter{
