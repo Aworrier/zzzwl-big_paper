@@ -1,0 +1,76 @@
+\chapter{队列几何分布性质与尝试速率定点方程推导}
+\label{app:proof_theorem_fixed_point}
+
+本附录给出定理\texorpdfstring{~\ref{thm:geometric_Q}}{}的详细推导。
+目标有两点。
+第一，证明在大系统极限下 $Q$ 近似服从几何分布。
+第二，推导尝试速率 $\theta$ 的定点方程。
+
+\section{队列分布的几何近似证明}
+
+我们采用猜想与验证方法。
+先假设忙期开始时队列长度 $Q$ 服从参数为 $\alpha$ 的几何分布。
+当 $Q\ge1$ 时，有 $\Pr\{Q=k\}=\alpha(1-\alpha)^{k-1},\ k\ge1$。
+其 PGF 为
+\begin{equation}
+	\label{eq:GQ_ansatz}
+	G_Q(z) = \frac{\alpha z}{1 - (1 - \alpha) z}.
+\end{equation}
+
+首先，利用附录 B 的耦合关系
+$$
+G_P(z)\approx\frac{1-e^{-\theta}}{e^{-\theta}-z}[G_Q(e^{-\theta})-G_Q(z)]
+$$
+在大 $n$ 极限下可忽略常数项偏差。
+将式~(\ref{eq:GQ_ansatz}) 代入并令 $z=0$，得到缓存清空概率 $p_0$
+\begin{equation}
+	\label{eq:p0_alpha}
+	p_0 = G_P(0) = \frac{\alpha}{1 - (1 - \alpha) e^{-\theta}}.
+\end{equation}
+
+其次，节点视角下有队列迭代关系 $Q=P+A_V$。
+其 PGF 满足
+\begin{equation}
+	\label{eq:GQ_recursion_app}
+	G_Q(z) = p_0 G_{A_{V_0}}(z) + [G_P(z) - p_0] G_{A_{V_1}}(z).
+\end{equation}
+利用正文中的近似关系
+$
+G_{A_{V_0}}(z)\approx 1,\quad G_{A_{V_1}}(z)\approx 1-\lambda\overline{V}_1+\lambda\overline{V}_1 z,
+$
+其中仅保留 $\lambda\to0$ 时的一阶项。
+将其代入式~(\ref{eq:GQ_recursion_app}) 并整理。
+可得到右侧仍可化为 $G_Q(z)$ 的同型表达。
+这验证了几何分布假设的自洽性。
+
+通过系数匹配，可得参数 $\alpha$ 与系统参数的关系
+\begin{equation}
+	\alpha = 1 - \frac{\theta}{n q}.
+\end{equation}
+将该式代回式~(\ref{eq:p0_alpha})，即可得到正文式~(\ref{eq:p0_closed_form}) 的 $p_0$ 闭式解
+\begin{equation}
+	p_0 = \frac{1 - \frac{\theta}{n q}}{1 - \frac{\theta e^{-\theta}}{n q}}.
+\end{equation}
+
+\section{定点方程的推导}
+
+由流量守恒，在非饱和稳态下尝试速率 $\theta$ 满足
+\begin{equation}
+	\theta = n q \left( 1 - \frac{p_0}{\overline{B}} \right).
+\end{equation}
+利用信道忙期与信道假期的关系 $\overline{B} = \frac{\hat{\lambda}}{1 - \hat{\lambda}} \overline{V}_c$，以及信道假期公式 $\overline{V}_c = \frac{e^{\theta}}{\theta} - p_0$，我们可以将 $\overline{B}$ 表示为：
+\begin{equation}
+	\overline{B} = \frac{\hat{\lambda}}{1 - \hat{\lambda}} \left( \frac{e^{\theta}}{\theta} - p_0 \right).
+\end{equation}
+
+将上述 $\overline{B}$ 和 $p_0$ 的表达式代入 $\theta$ 的定义式中：
+\begin{equation}
+	\frac{\theta}{n q} = 1 - \frac{p_0 (1 - \hat{\lambda})}{\hat{\lambda} (\frac{e^{\theta}}{\theta} - p_0)}.
+\end{equation}
+经移项、通分和化简，消去 $p_0$ 的分母项。
+最终得到关于 $\theta$ 的隐函数方程
+\begin{equation}
+	\frac{e^{\theta}}{\theta} + \frac{\theta}{n q} - \frac{1}{n q} = \frac{1}{\hat{\lambda}}.
+\end{equation}
+这就是定理\texorpdfstring{~\ref{thm:fixed_point_theta}}{}中的定点方程。
+该方程表明，尝试速率 $\theta$ 由 $n$、$q$ 与总业务负载 $\hat{\lambda}$ 唯一决定。

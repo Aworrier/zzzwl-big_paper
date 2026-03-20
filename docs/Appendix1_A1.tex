@@ -1,0 +1,23 @@
+\section{$ A_{V_0}$的PGF推导 }
+\label{app:proof_lemma1}
+
+在类型1休假期的第一个时隙可能发生三种情况：
+
+\begin{itemize}
+	\item \textbf{C1}：以概率$qe^{-\theta}$，标记节点向接收机传输数据包，其他$n-1$个节点不请求传输。此时，节点休假期仅持续一个时隙。由于一个时隙内到达的数据包数量服从参数为$\lambda$的伯努利分布，其概率生成函数为$I(z) = 1 - \lambda + \lambda z$，情况1下$A_{V1}$的概率生成函数为：
+	\begin{equation}
+		G_{A_{V1}}(z)|\text{C1} = 1 - \lambda + \lambda z
+	\end{equation}
+	
+	\item \textbf{C2}：以概率$(1-q)\theta e^{-\theta}$，标记节点以概率$1-q$不传输，其他$n-1$个节点中仅有一个成功传输。标记节点保持在休假期。此时，标记节点将竞争信道直至成功进入下一个忙期。在此之前，它将依次经历三个阶段：(1) 一个时隙不竞争；(2) 另一个节点的忙期；(3) 一个新的类型1休假期。因此，情况2下$A_{V1}$的概率生成函数为：
+	\begin{equation}
+		G_{A_{V1}}(z)|\text{C2} = (1 - \lambda + \lambda z) \times G_{A_{B}}(z) \times G_{A_{V1}}(z)
+	\end{equation}
+	
+	\item \textbf{C3}：以概率$1 - (1-q)\theta e^{-\theta} - qe^{-\theta}$，第一个时隙中无人成功，标记节点必须在下一个时隙竞争信道。将经历两个阶段：(1) 一个空闲时隙；(2) 一个类型1休假期。因此，情况3下$A_{V1}$的概率生成函数为：
+	\begin{equation}
+		G_{A_{V1}}(z)|\text{C3} = (1 - \lambda + \lambda z) \times G_{A_{V1}}(z)
+	\end{equation}
+\end{itemize}
+
+根据全概率定律，结合上述三种情况即可得到。

@@ -2,14 +2,14 @@
 \contentsline {chapter}{\heiti {数学符号}}{XII}{chapter*.2}%
 \contentsline {chapter}{\numberline {第1章\hspace {.3em}}绪论}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}研究背景与问题提出}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}国内外研究现状}{5}{section.1.2}%
+\contentsline {section}{\numberline {1.2}国内外研究现状}{4}{section.1.2}%
 \contentsline {subsection}{\numberline {1.2.1}Aloha 类随机接入协议研究现状}{5}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}CSMA/LBT 类随机接入协议研究现状}{7}{subsection.1.2.2}%
-\contentsline {subsection}{\numberline {1.2.3}AI 驱动的接入决策研究现状}{9}{subsection.1.2.3}%
-\contentsline {subsection}{\numberline {1.2.4}研究现状总结}{11}{subsection.1.2.4}%
+\contentsline {subsection}{\numberline {1.2.2}CSMA/LBT 类随机接入协议研究现状}{6}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}AI 驱动的接入决策研究现状}{8}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}研究现状总结}{10}{subsection.1.2.4}%
 \contentsline {section}{\numberline {1.3}本文研究目标与内容}{11}{section.1.3}%
 \contentsline {section}{\numberline {1.4}本文创新点}{12}{section.1.4}%
-\contentsline {section}{\numberline {1.5}本文章节安排}{13}{section.1.5}%
+\contentsline {section}{\numberline {1.5}本文章节安排}{12}{section.1.5}%
 \contentsline {chapter}{\numberline {第2章\hspace {.3em}}随机接入网络及其建模}{15}{chapter.2}%
 \contentsline {section}{\numberline {2.1}随机接入标准方案}{15}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}5G NR 竞争式随机接入流程}{15}{subsection.2.1.1}%
@@ -68,17 +68,18 @@
 \contentsline {section}{\numberline {6.1}工作总结}{77}{section.6.1}%
 \contentsline {section}{\numberline {6.2}研究展望}{78}{section.6.2}%
 \contentsline {chapter}{参考文献}{81}{chapter*.40}%
-\contentsline {chapter}{\numberline {附录 A\hspace {.3em}}第三章相关内容证明}{87}{appendix.A}%
-\contentsline {section}{\numberline {附A.1}$ A_{V_0}$的PGF推导 }{87}{section.A.1}%
-\contentsline {section}{\numberline {附A.2}忙期服务过程 ($Q \to P$) 的详细推导}{87}{section.A.2}%
-\contentsline {subsection}{\numberline {附A.2.1} 吸收马尔可夫链模型的构建}{88}{subsection.A.2.1}%
-\contentsline {subsection}{\numberline {附A.2.2}状态转移概率分析}{88}{subsection.A.2.2}%
-\contentsline {subsection}{\numberline {附A.2.3}转移矩阵与基本解}{89}{subsection.A.2.3}%
-\contentsline {subsection}{\numberline {附A.2.4}PGF 关系的建立}{90}{subsection.A.2.4}%
-\contentsline {section}{\numberline {附A.3}定理 \ref {thm:geometric_Q} 与定点方程的详细推导}{90}{section.A.3}%
-\contentsline {subsection}{\numberline {附A.3.1}队列分布的几何近似证明}{90}{subsection.A.3.1}%
-\contentsline {subsection}{\numberline {附A.3.2}定点方程的推导}{91}{subsection.A.3.2}%
-\contentsline {chapter}{\numberline {附录 B\hspace {.3em}}第四章相关内容证明}{93}{appendix.B}%
-\contentsline {chapter}{攻读硕士学位期间相关的科研成果目录}{95}{appendix*.42}%
-\contentsline {chapter}{致谢}{97}{appendix*.43}%
-\contentsline {chapter}{中山大学学位论文版权使用授权书}{99}{appendix*.44}%
+\contentsline {chapter}{\numberline {附录 A\hspace {.3em}}类型1休假到达过程的概率生成函数PGF推导}{87}{appendix.A}%
+\contentsline {chapter}{\numberline {附录 B\hspace {.3em}}节点在忙期时队列状态$Q \to P$的马尔可夫链建模与概率生成函数推导}{89}{appendix.B}%
+\contentsline {section}{\numberline {附B.1}吸收马尔可夫链模型的构建}{89}{section.B.1}%
+\contentsline {section}{\numberline {附B.2}状态转移概率分析}{90}{section.B.2}%
+\contentsline {section}{\numberline {附B.3}转移矩阵与基本解}{90}{section.B.3}%
+\contentsline {section}{\numberline {附B.4}PGF关系的建立}{91}{section.B.4}%
+\contentsline {chapter}{\numberline {附录 C\hspace {.3em}}队列几何分布性质与尝试速率定点方程推导}{93}{appendix.C}%
+\contentsline {section}{\numberline {附C.1}队列分布的几何近似证明}{93}{section.C.1}%
+\contentsline {section}{\numberline {附C.2}定点方程的推导}{94}{section.C.2}%
+\contentsline {chapter}{\numberline {附录 D\hspace {.3em}}经典CSMA饱和吞吐量的统一参数推导}{95}{appendix.D}%
+\contentsline {section}{\numberline {附D.1}统一参数表示与模型设定}{95}{section.D.1}%
+\contentsline {section}{\numberline {附D.2}吞吐量表达式与最优传输概率}{96}{section.D.2}%
+\contentsline {chapter}{攻读硕士学位期间相关的科研成果目录}{97}{appendix*.42}%
+\contentsline {chapter}{致谢}{99}{appendix*.43}%
+\contentsline {chapter}{中山大学学位论文版权使用授权书}{101}{appendix*.44}%
