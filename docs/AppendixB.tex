@@ -1,17 +1,16 @@
 \chapter{节点在忙期时队列状态$Q \to P$的马尔可夫链建模与概率生成函数推导}
-\label{app:proof_lemma2}
+\label{app:proof_appdix2}
 %\addcontentsline{toc}{chapter}{忙期服务过程 ($Q \to P$) 的详细推导}
 
-本附录研究节点忙期内的队列状态演化过程。为此，我们构建一个马尔可夫吸收链模型。模型描述从忙期开始队列长度 $Q$ 到忙期结束队列长度 $P$ 的随机变化。
-在此基础上，推导 $G_P(z)$ 与 $G_Q(z)$ 的解析关系。
+本附录分析节点忙期内的缓存队列状态的演化过程。为此，我们构建一个马尔可夫吸收链模型。模型描述从忙期开始队列长度 $Q$ 到忙期结束队列长度 $P$ 的随机变化。
+在此基础上，推导两者的PGF，即 $G_P(z)$ 与 $G_Q(z)$ 的解析关系。
 
-\section{吸收马尔可夫链模型的构建}
+\section{构建马尔可夫吸收链模型}
 
 为刻画忙期内队列变化与终止机制，我们定义二维随机过程 $\{(L_t,K_t),t=0,1,\dots\}$。
-其中
 \begin{itemize}
-	\item $L_t \in \{0,1,\dots\}$ 表示节点第 $t$ 次传输尝试开始时的剩余队列长度，但不包含正在发送的数据包。若忙期开始时总队列长度为 $Q$，则有 $L_0=Q-1$。这是因为 HoL~数据包已占用信道。
-	\item $K_t \in \{0,1\}$ 表示信道状态。$K_t=1$ 表示忙期保持，即本次传输成功并继续发送，节点保持在忙期。$K_t=0$ 表示节点忙期终止，即发生碰撞或发送结束。
+	\item $L_t \in \{0,1,\dots\}$ 表示在忙期内，节点第 $t$ 次发送数据包开始时刻的剩余队列长度，但不包含正在发送的数据包。若忙期最开始时总队列长度为 $Q$，则有 $L_0=Q-1$。这是因为 HoL~数据包已占用信道。
+	\item $K_t \in \{0,1\}$ 表示节点节点第 $t$ 次发送数据包时候的信道状态。$K_t=1$ 表示忙期保持，即本次传输成功并继续发送，节点保持在忙期。$K_t=0$ 表示节点忙期终止，即发生碰撞或发送结束。
 \end{itemize}
 
 如图 \ref{fig:absorbing_markov} 所示，该过程可表示为马尔可夫吸收链。
@@ -24,11 +23,11 @@
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figure/appdix/P2Q_Absorbing_Markov_chain.pdf}
-	\caption{描述忙期内队列演化的吸收马尔可夫链状态转移图}
+	\caption{描述忙期内节点缓存队列演化的吸收马尔可夫吸收链状态转移图}
 	\label{fig:absorbing_markov}
 \end{figure}
 
-\section{状态转移概率分析}
+\section{分析马尔可夫吸收链的状态转移概率}
 
 考虑系统处于瞬态 $(j,1)$。
 此时节点正在发送一个数据包，缓存中还有 $j$ 个包。
@@ -46,12 +45,9 @@
 	\item \textbf{失败且有新到达}：概率为 $\lambda(1-e^{-\theta})$。碰撞使忙期立即结束，新包已进入缓存。状态由 $(j,1)$ 转移到吸收态 $(j+1,0)$。
 	\item \textbf{失败且无新到达}：概率为 $(1-\lambda)(1-e^{-\theta})$。碰撞结束忙期且无新包。状态由 $(j,1)$ 转移到吸收态 $(j,0)$。
 \end{enumerate}
+为做铺垫，我们记$b_{ij}$ 为从任意瞬态 $s_{t,i}$ 出发最终被吸收态 $s_{a,j}$ 吸收的概率。 下一章节将求解$b_{ij}$的闭式表达式。
+\section{求解吸收概率$b_{ij}$的闭式表达式}
 
-\section{转移矩阵与基本解}
-
-设忙期开始时队列长度为 $Q$。
-当 $Q=1$ 时，系统直接进入吸收态 $(0,0)$，即 $P=0$。
-当 $Q\ge 2$ 时，系统从瞬态 $( Q-1,1)$ 出发。
 为求吸收概率，我们将状态空间截断为有限维。先设最大队列长度为 $J$，再令 $J\to\infty$。转移矩阵 $\mathbf{M}$ 的标准分块形式为
 \begin{equation}
 	\mathbf{M} =
@@ -66,41 +62,63 @@
 	\item $\mathbf{R}$ 是描述从瞬态进入吸收态的子矩阵，元素 $r_{j, j+1} = \lambda(1-e^{-\theta})$，$r_{j, j} = (1-\lambda)(1-e^{-\theta})$。
 \end{itemize}
 
-根据吸收马尔可夫链理论，从任意瞬态 $s_i$ 出发最终被吸收态 $s_j$ 吸收的概率 $b_{ij}$ 构成的吸收概率矩阵为
+根据吸收马尔可夫链理论\cite{bertsekas2008_introduction}，由概率 $b_{ij}$ 构成的吸收概率矩阵可被推导为
 $$
 \mathbf{B}=(\mathbf{I}-\mathbf{T})^{-1}\mathbf{R}.
 $$
-利用 $\mathbf{T}$ 的下三角结构，可递归求解该矩阵方程。
-于是可得从 $( Q-1,1) $ 出发被吸收到 $\langle k,0\rangle$ 的概率，即条件概率 $\Pr\{P=k\mid Q\}$。
-
-经过代数运算，我们得到如下解析解：
-
-\begin{enumerate}
-	\item 当 $Q=1$ 时：
-	\begin{equation}
-		\Pr\{P=0 \mid Q=1\} = 1.
-	\end{equation}
-	
-	\item 当 $Q \ge 2$ 时，对于 $0 \le k \le Q$：
-	\begin{equation}
-		\Pr\{P=k \mid Q\} = 
-		\begin{cases}
-			\left[ \frac{(1-\lambda)e^{-\theta}}{1-\lambda e^{-\theta}} \right]^{Q-1}, & k=0 \\
-			\frac{(1-\lambda)(1-e^{-\theta})}{1-\lambda e^{-\theta}} \left[ \frac{(1-\lambda)e^{-\theta}}{1-\lambda e^{-\theta}} \right]^{Q-2}, & k=1 \\
-			\dots & \vdots \\
-			\frac{\lambda(1-e^{-\theta})}{1-\lambda e^{-\theta}}, & k=Q
-		\end{cases}
-	\end{equation}
-\end{enumerate}
-
-\section{PGF关系的建立}
-
-上述条件分布形式较复杂。
-在大系统极限下，即 $n\to\infty$ 且 $\lambda\to0$，可利用 PGF 性质得到更简洁表达。
-$P$ 表示队列在多次成功发送与新包到达后，被碰撞事件截断时的状态。
-据此可证明 $G_P(z)$ 与 $G_Q(z)$ 满足
+利用 $\mathbf{T}$ 的下三角结构，可递归求解该矩阵方程。将参数直接代入，可得吸收概率 $b_{ij}$ 的闭式表达为：
+\begin{itemize}
+\item 当 $i=1$ 时，
 \begin{equation}
-	\label{eq:pgf_P_appendix}
-	G_P(z) = G_Q(e^{-\theta}) + \frac{1 - e^{-\theta}}{e^{-\theta} - z} \left[ G_Q(e^{-\theta}) - G_Q(z) \right].
+b_{ij}=\left\{
+\begin{array}{ll}
+\dfrac{(1-\lambda)e^{-\theta}}{1-\lambda e^{-\theta}}, & j=0,\\
+\dfrac{(1-\lambda)(1-e^{-\theta})}{1-\lambda e^{-\theta}}, & j=1,\\
+\dfrac{\lambda(1-e^{-\theta})}{1-\lambda e^{-\theta}}, & j=2.
+\end{array}
+\right.
 \end{equation}
-该式直观地反映了忙期过程对队列分布的过滤作用：$e^{-\theta}$ 项对应于传输成功的概率流，而分母中的 $e^{-\theta}-z$ 项则体现了队列长度随时间步的演化特征。这一结论直接支持了正文中关于 $p_0 = G_P(0)$ 的闭式求解。
+
+\item 当 $i\ge 2$ 时，
+\begin{equation}
+b_{ij}=\left\{
+\begin{array}{ll}
+\left(\dfrac{(1-\lambda)e^{-\theta}}{1-\lambda e^{-\theta}}\right)^i, & j=0,\\[6pt]
+\dfrac{(1-\lambda)(1-e^{-\theta})}{1-\lambda e^{-\theta}}\left(\dfrac{(1-\lambda)e^{-\theta}}{1-\lambda e^{-\theta}}\right)^{i-1}, & j=1,\\[6pt]
+\dfrac{(1-\lambda)(1-e^{-\theta})}{(1-\lambda e^{-\theta})^2}\left(\dfrac{(1-\lambda)e^{-\theta}}{1-\lambda e^{-\theta}}\right)^{i-j}, & 2\le j\le i,\\[6pt]
+\dfrac{\lambda(1-e^{-\theta})}{1-\lambda e^{-\theta}}, & j=i+1.
+\end{array}
+\right.
+\end{equation}
+\end{itemize}
+
+\section{推导$P$对$Q$的条件概率分布以及条件PGF}
+现在结合$b_{ij}$来分析$Q$的演变。当 $Q=1$ 时，系统直接进入吸收态 $(0,0)$，即 $P=0$。当 $Q\ge 2$ 时，缓存队列的演化相当于从瞬态 $( Q-1,1)$ 出发。修改以上以上特殊条件之后，我们可以得到 $P$ 关于 $Q$ 的条件概率分布,具体为：当 $Q=1$ 时，$\Pr\{P=0 \mid Q=1\}=1$；当 $Q=2$ 时，
+\begin{equation}
+\Pr\{P=i \mid Q=2\}=\begin{cases}
+\dfrac{(1-\lambda)e^{-\theta}}{1-\lambda e^{-\theta}}, & i=0,\\
+\dfrac{(1-\lambda)(1-e^{-\theta})}{1-\lambda e^{-\theta}}, & i=1,\\
+\dfrac{\lambda(1-e^{-\theta})}{1-\lambda e^{-\theta}}, & i=2.
+\end{cases}
+\label{eq:Pr_P_Q2_general}
+\end{equation}
+当 $Q=j\ge 3$ 时，
+\begin{equation}
+\Pr\{P=i \mid Q=j\}=\begin{cases}
+\left[\dfrac{(1-\lambda)e^{-\theta}}{1-\lambda e^{-\theta}}\right]^{j-1}, & i=0,\\
+\dfrac{(1-\lambda)(1-e^{-\theta})}{1-\lambda e^{-\theta}}\left[\dfrac{(1-\lambda)e^{-\theta}}{1-\lambda e^{-\theta}}\right]^{j-2}, & i=1,\\
+\dfrac{(1-\lambda)(1-e^{-\theta})}{(1-\lambda e^{-\theta})^2}\left[\dfrac{(1-\lambda)e^{-\theta}}{1-\lambda e^{-\theta}}\right]^{j-i-1}, & 2\le i\le j-1,\\
+\dfrac{\lambda(1-e^{-\theta})}{1-\lambda e^{-\theta}}, & i=j.
+\end{cases}
+\label{eq:Pr_P_Q3plus_general}
+\end{equation}
+当节点数量 $n$ 很大时，单个节点的输入率 $\lambda = \hat{\lambda}/n$ 趋近于零。此时，变量 $P$ 的概率分布可以进一步近似为如下形式：
+\begin{equation}
+\operatorname{Pr}\{P=i\}=
+\begin{cases}
+\left(1-e^{-\theta}\right) e^{-\theta(Q-i-1)}, & i=1,\ldots, Q-1 \\
+e^{-\theta(Q-1)}, & i=0.
+\end{cases}
+\end{equation}
+
+进一步地，结合PGF的公式定义，我们可以给出 $P$ 关于 $Q$ 的条件PGF为\eqref{eq:GQ_GP_relation}。

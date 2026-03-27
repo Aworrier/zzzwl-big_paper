@@ -161,7 +161,7 @@ SAST 协议的核心策略可以概括为一次接入、连续占用，其目的
 
 再分析假期内到达过程 $A_V$。当忙期结束时，节点切换至假期 $V$。根据假期开始时刻节点缓存状态的不同，节点的行为模式可分为两类。我们分别定义 $A_{V_1}$ 和 $A_{V_0}$ 为这两类假期内的数据包到达数量：
 \begin{itemize}
-	\item 类型 1 假期对应非空启动。这种情况通常发生在上一忙期因碰撞而被迫中断时，假期开始时刻节点缓存非空。此时，节点无需等待，立即参与信道竞争。其持续时间等同于从发起请求到成功接入的等待时间。基于节点在每一时隙的竞争成功率 $q e^{-\theta}$，可以推导出 $A_{V_1}$ 的 PGF 为：
+	\item 类型 1 假期对应非空启动。这种情况发生在上一忙期因碰撞而被迫中断时，假期开始时刻节点缓存非空。此时，节点无需等待，立即参与信道竞争。其持续时间等同于从发起请求到成功接入的等待时间。基于节点在每一时隙的竞争成功概率 $q e^{-\theta}$，我们可以推导出 $A_{V_1}$ 的 PGF 为：
 	\begin{equation}
 		\label{eq:G_AV1}
 		G_{A_{V_1}}(z) = \frac{q e^{-\theta} (1 - \lambda + \lambda z)}{1 - [1 - q e^{-\theta} + (G_{A_B}(z) - 1)(1 - q) \theta e^{-\theta}](1 - \lambda + \lambda z)}.
@@ -169,14 +169,29 @@ SAST 协议的核心策略可以概括为一次接入、连续占用，其目的
 	证明见附录\ref{app:proof_lemma1}。
 	\item 类型 0 假期对应空启动。这种情况发生在上一忙期节点成功清空缓存时，假期开始时刻节点缓存为空。此时，节点必须处于静默状态等待新数据包到达。该过程由两部分组成：一是等待新数据包到达的时间，其服从几何分布；二是数据包到达后节点转入竞争状态，即经历一个类型 1 假期。因此，类型 0 假期的到达数恒等于类型 1 假期的到达数加 1，即触发该假期的那个新到达包，$A_{V_0} = 1 + A_{V_1}$。相应地，其 PGF 满足 $G_{A_{V_0}}(z) = z G_{A_{V_1}}(z)$。
 \end{itemize}
-综合上述分析，节点在一个节点假期 $V$ 内的到达数 $A_V$ 取决于节点是否清空了缓存。结合缓存清空概率 $p_0$，整体到达数 $A_V$ 的 PGF 可表示为两者的加权和：
-\begin{equation}
-	\label{eq:G_AV_combined}
-	G_{A_V}(z) = (1 - p_0) G_{A_{V_1}}(z) + p_0 G_{A_{V_0}}(z) = [ (1 - p_0) + p_0 z ] G_{A_{V_1}}(z).
-\end{equation}
-至此，我们建立了节点到达过程与系统参数之间的解析关系，为后续利用马尔可夫链求解稳态队长分布及未知参数 $p_0$ 奠定了基础。
+综合上述分析，节点在一个节点假期 $V$ 内的到达数 $A_V$ 取决于节点是否清空了缓存。
+% 结合缓存清空概率 $p_0$，整体到达数 $A_V$ 的 PGF 可表示为两者的加权和。
+当节点数量 $n$ 很大时，$ G_{A_{V}}(z) $ 可表示为：
+% \begin{equation}
+% 	\label{eq:G_AV_combined}
+% 	G_{A_V}(z) = (1 - p_0) G_{A_{V_1}}(z) + p_0 G_{A_{V_0}}(z) = [ (1 - p_0) + p_0 z ] G_{A_{V_1}}(z).
+% \end{equation}
 
-\subsection{尝试速率与关键参数分析}
+\begin{equation}
+\label{eq:G_AV_combined}
+G_{A_{V}}(z) =
+\begin{cases}
+	\dfrac{\beta}{1-(1-\beta) z}(1-\lambda+\lambda z)+o\left(\dfrac{1}{n}\right), & 1-p_{0} \\[10pt]
+	\dfrac{\beta}{1-(1-\beta) z}(1-\lambda+\lambda z)z+o\left(\dfrac{1}{n}\right), & p_{0}
+\end{cases}
+\end{equation}
+其中，$ p_{0} $ 表示在一个忙周期内，传输节点能够清空其缓存的概率，且
+\begin{equation}
+\beta = \frac{q e^{-\theta}}{q e^{-\theta}+\lambda\left[1-q e^{-\theta}+\bar{B}(1-q)\theta e^{-\theta}\right]}.
+\end{equation}
+至此，我们建立了节点新包到达过程与系统参数之间的解析关系，为后续求解尝试率 $\theta$ 及缓存队列被清空概率 $p_0$ 做好铺垫。
+
+\subsection{尝试速率与概率$p_0$分析}
 \label{subsec:attempt_rate_analysis}
 
 在前两小节中，我们分别建立了信道和节点的休假排队模型，其性能指标的闭式解均依赖于系统的尝试速率 $\theta$ 以及节点在忙期结束时清空缓存的概率 $p_0$。本节将结合稳态排队分析，推导这两个关键参数的解析表达式，从而闭合整个分析框架。
@@ -192,7 +207,7 @@ SAST 协议的核心策略可以概括为一次接入、连续占用，其目的
 
 再讨论 $p_0$ 的求解与节点缓存队列的稳态分布。为得到概率 $p_0$，需要分析节点队列长度的稳态分布。令 $Q_t$ 和 $P_t$ 分别表示节点在第 $t$ 个忙期开始时刻和结束时刻的队列长度。当系统趋于稳态时，$t \to \infty$，设 $Q$ 和 $P$ 分别为对应的稳态随机变量，其概率生成函数记为 $G_Q(z)$ 和 $G_P(z)$。
 
-一方面，根据 SAST 机制，忙期开始时的队列长度 $Q$ 由上一忙期结束时的剩余队列 $P$ 加上随后假期内新到达的数据包 $A_V$ 叠加构成。即满足线性关系 $Q = P + A_V$。为了推导 $Q$ 的概率生成函数 $G_Q(z)$，我们根据 $P$ 的状态（是否为空）对 $A_V$ 的分布进行条件展开：
+一方面，根据 SAST 机制，忙期开始时的队列长度 $Q$ 由上一忙期结束时的剩余队列 $P$ 加上随后假期内新到达的数据包 $A_V$ 叠加构成。即满足线性关系 $Q = P + A_V$。为了推导 $Q$ 的概率生成函数 $G_Q(z)$，我们根据 $P$ 的状态对 $A_V$ 的分布进行条件展开：
 \begin{equation}
 	\begin{aligned}
 		G_Q(z) &= \mathbb{E}\left[ z^{P + A_V} \right] \\
@@ -207,21 +222,19 @@ SAST 协议的核心策略可以概括为一次接入、连续占用，其目的
 	\end{aligned}
 	\label{eq:GQ_GP_relation}
 \end{equation}
-其中，缓存清空概率$ p_0 $可以写成另一个形式 $p_0 = \Pr\{P=0\} = G_P(0)$。同时，上式建立了忙期首尾队列分布之间的第一个耦合关系。
+其中队列缓存清空概率$ p_0 $可以写成另一个形式 $p_0 = \Pr\{P=0\} = G_P(0)$。同时，上式建立了忙期首尾队列分布之间的第一个耦合关系。
 
 
 
-另一方面，忙期过程本质上是对缓存队列的服务与截断过程。从忙期开始时刻的队列 $Q$ 演变为结束时刻的队列 $P$，取决于节点的数据传输成功率以及碰撞发生的时机。
-在 SAST 机制下，一旦节点成功接入进入忙期，它将以概率 1 连续发送数据包。对于忙期内的每一个时隙，若网络中其他 $n-1$ 个节点均保持静默（概率为 $e^{-\theta}$），则当前节点的传输成功，队列长度减 1（同时需考虑忙期内新数据包的到达）；反之，若有任意其他节点发起接入导致碰撞（概率为 $1-e^{-\theta}$），则忙期立即强制终止，此时节点剩余的缓存队列长度即为 $P$。
+另一方面，忙期过程本质上是对缓存队列的服务与截断过程。从忙期开始时刻的队列 $Q$ 演变为结束时刻的队列 $P$，取决于节点的数据传输成功概率以及碰撞发生的时机。
+在 SAST 机制下，一旦节点成功接入进入忙期，它将以概率 1 连续发送数据包。对于忙期内的每一个时隙，若系统中其他 $n-1$ 个节点以总体概率 $e^{-\theta}$ 保持静默，则其队列会发生变化，并且当前节点会保持在忙期；反之，若有任意其他节点发起接入导致碰撞，对应概率为 $1-e^{-\theta}$，则忙期立即强制终止，此时节点剩余的缓存队列长度即为 $P$。除此之外，我们还得考虑节点的新包到达过程，以分析节点的在忙期缓存队列长度的演变。
 为了精确刻画这一动态随机过程，我们构建了一个具有吸收态的马尔可夫链，如图\ref{fig:absorbing_markov}所示。在该模型中，忙期内持续的数据传输状态被建模为瞬态，而碰撞导致的忙期结束事件被建模为进入吸收态。通过求解该马尔可夫链的转移概率矩阵及吸收概率，可以建立 $Q$ 与 $P$ 的概率生成函数之间的映射关系。
-具体的数学推导过程详见附录\ref{app:proof_lemma2}。在此，我们直接给出这一耦合关系的最终解析表达式：
+具体的数学推导过程详见附录\ref{app:proof_appdix2}。在此，我们直接给出这一耦合关系的最终解析表达式：
 \begin{equation}
 	\label{eq:GP_derived}
 	G_P(z) = G_Q(e^{-\theta}) + \frac{1 - e^{-\theta}}{e^{-\theta} - z} \left[ G_Q(e^{-\theta}) - G_Q(z) \right].
 \end{equation}
 式中，$e^{-\theta}$ 项反映了忙期在每个时隙得以延续的概率。该式与前述的式 (\ref{eq:GQ_GP_relation}) 共同构成了描述节点队列稳态分布的方程组。理论上，联立这两个方程即可通过迭代法求解出 $G_Q(z)$ 和 $G_P(z)$ 的精确解，进而确定 $p_0 = G_P(0)$。
-
-最后讨论定点方程求解。
 尽管前文建立的 PGF 耦合方程组（式 \ref{eq:GQ_GP_relation} 和 式 \ref{eq:GP_derived}）在理论上不仅完备且精确，但在实际的大规模网络中，直接进行数值迭代求解计算量巨大且难以直观揭示参数间的物理联系。
 幸运的是，当网络节点数量 $n$ 较大时，单节点的输入速率 $\lambda = \hat{\lambda}/n$ 趋近于零。在这种大系统极限下，节点队列的稳态分布呈现出显著的几何分布特征。我们将这一关键结论总结为如下定理。
 
@@ -239,7 +252,7 @@ SAST 协议的核心策略可以概括为一次接入、连续占用，其目的
 \end{theorem}
 
 \begin{proof}
-	该定理的详细证明过程及参数 $\alpha$ 的推导详见\ref{app:proof_theorem_fixed_point}。
+	该定理的详细证明过程及参数 $\alpha$ 的推导详见附录\ref{app:proof_theorem_fixed_point}。
 \end{proof}
 
 定理 \ref{thm:geometric_Q} 的核心价值在于，它消除了对概率生成函数PGF进行复杂迭代求解的需求。将式 (\ref{eq:p0_closed_form_1}) 中的 $p_0$ 代入前文推导的信道忙期 $\overline{B}$ 和信道休假期 $\overline{V}_c$ 的表达式中，并结合非饱和状态下的流量守恒关系 $\theta = n q (1 - p_0/\overline{B})$，经过代数化简，我们可以得到描述系统稳态工作点的核心方程。
@@ -253,7 +266,24 @@ SAST 协议的核心策略可以概括为一次接入、连续占用，其目的
 	\end{equation}
 	其中 $\hat{\lambda} = n\lambda$ 为网络的聚合输入速率，$n$ 为节点总数，$q$ 为传输概率。
 \end{theorem}
-式 (\ref{eq:theta_fixed_point}) 揭示了 SAST 机制下系统负载 $\hat{\lambda}$ 与尝试速率 $\theta$ 之间的一一映射关系。方程左侧是关于 $\theta$ 的单调函数，右侧为常数。因此，对于给定的网络配置，可以通过二分法或牛顿迭代法快速求得唯一的解 $\theta$。一旦 $\theta$ 确定，系统的所有宏观性能指标（如吞吐量、时延）即可通过前述公式直接计算得出。
+
+\begin{proof}
+% 	由流量守恒，在非饱和稳态下尝试速率 $\theta$ 满足
+% \begin{equation}
+% 	\theta = n q \left( 1 - \frac{p_0}{\overline{B}} \right).
+% \end{equation}
+利用信道忙期与信道假期的关系 $\overline{B} = \frac{\hat{\lambda}}{1 - \hat{\lambda}} \overline{V}_c$，以及信道假期公式 $\overline{V}_c = \frac{e^{\theta}}{\theta} - p_0$，我们可以将 $\overline{B}$ 表示为：
+\begin{equation}
+	\overline{B} = \frac{\hat{\lambda}}{1 - \hat{\lambda}} \left( \frac{e^{\theta}}{\theta} - p_0 \right).
+\end{equation}
+
+将上述 $\overline{B}$ 和 $p_0$ 的表达式代入 $\theta$ 的定义式中：
+\begin{equation}
+	\frac{\theta}{n q} = 1 - \frac{p_0 (1 - \hat{\lambda})}{\hat{\lambda} (\frac{e^{\theta}}{\theta} - p_0)}.
+\end{equation}
+经移项、通分和化简，消去 $p_0$ 的分母项。最终得到关于 $\theta$ 的隐函数方程。
+\end{proof}
+式 (\ref{eq:theta_fixed_point}) 揭示了 SAST 机制下系统负载 $\hat{\lambda}$ 与尝试速率 $\theta$ 之间的一一映射关系。方程左侧是关于 $\theta$ 的单调函数，右侧为常数。因此，对于给定的网络配置，可以通过二分法或牛顿迭代法快速求得唯一的解 $\theta$。一旦 $\theta$ 确定，系统的所有宏观性能指标以及中间变量都可通过前述公式直接计算得出。
 
 \begin{figure}[t]
 	\centering
@@ -380,7 +410,7 @@ SAST 协议的核心策略可以概括为一次接入、连续占用，其目的
 \label{sec:delay_analysis}
 除了吞吐量之外，时延是衡量随机接入机制性能的另一项关键指标。本节将分别对接入时延 $D_A$ 和数据包时延 $D_P$ 进行推导。
 
-\subsection{接入时延分析}
+\subsection{接入时延$D_A$分析}
 
 接入时延 $D_A$ 定义为节点生成的队首数据包从进入队首开始，到成功被基站接收并收到确认反馈为止所经历的平均时长。
 从前文节点休假模型可知，接入过程本质上对应于类型 1 假期，即节点在缓存非空的情况下不断竞争信道直至成功的时段。因此，接入时延在数值上等同于类型 1 假期的平均长度：
@@ -388,31 +418,27 @@ SAST 协议的核心策略可以概括为一次接入、连续占用，其目的
 	D_A = \overline{V}_1.
 \end{equation}
 
-结合前文关于假期到达过程 $A_{V_1}$ 的推导以及节点输入的伯努利特性（平均到达率为 $\lambda$），根据排队论中的 Little 定律应用于假期过程，可得：
-\begin{equation}
-	D_A = \overline{V}_1 = \frac{\overline{A}_{V_1}}{\lambda}.
-\end{equation}
-将前文推导的 $\overline{A}_{V_1}$ 闭式解（或利用尝试速率 $\theta$ 的关系）代入，可得接入时延的通用表达式：
+结合前文关于类型1假期的新包到达过程 $A_{V_1}$ 的推导以及节点输入的伯努利特性，根据排队论中的 Little 定律应用于假期过程，可得	$D_A = \overline{V}_1 = \frac{\overline{A}_{V_1}}{\lambda}$。
+将前文推导的 $\overline{A}_{V_1}$ 闭式解代入，可得非饱和情况下，接入时延的通用表达式：
 \begin{equation}
 	\label{eq:access_delay_general}
 	D_A = \frac{\theta}{n q \lambda \left(1 - \frac{\theta}{n q} e^{-\theta}\right)}.
 \end{equation}
 
-特别地，当网络处于饱和状态时，可以利用接入吞吐量与接入时延之间的倒数关系，或者直接利用式 (\ref{eq:access_delay_general}) 取饱和极限。根据 TCOM 文献中的推导，饱和状态下的平均接入时延为：
+特别地，当网络处于饱和状态时，我们从单节点的接入吞吐量与其平均接入时延之间的关系出发。注意，此时节点的所有假期都为类型1假期。
+单节点的接入吞吐量可以表示为 $\lambda_{out}^a / n = \frac{1}{\overline{ B }+ \overline{V_{1,sa}}}= \frac{q(1 - e^{-nq})}{nq+e^{nq}-1}$。 转换该公式，我们得到饱和状态下的平均接入时延为
 \begin{equation}
 	\label{eq:access_delay_sa}
-	D_{A,sa} = \frac{e^{nq} + nq - 1 - q}{q(1 - e^{-nq})}.
+	D_{A,sa} = \overline{V}_{1,sa} = \frac{e^{nq} + nq - 1 - q}{q(1 - e^{-nq})}.
 \end{equation}
 该式表明，在饱和状态下，接入时延主要受总负载 $nq$ 的指数增长项主导。
 
 
-
 \subsection{数据包时延$D_P$分析}
-
 数据包时延 $D_P$ 定义为数据包从生成时刻起到成功传输完毕离开系统所需的平均时长，该指标由排队等待时间和传输服务时间两部分组成。
-需要说明的是，数据包时延的稳态分析仅在网络处于非饱和状态，即数据吞吐量等于输入速率 $\lambda_{out}^d = n\lambda$ 时有效。若网络处于饱和状态，节点缓存队列长度将发散，导致理论上的平均包时延趋于无穷大。
+需要说明的是，数据包时延的稳态分析仅在网络处于非饱和状态，即数据吞吐量等于输入速率 $\lambda_{out}^d = n\lambda$ 时有效。若网络处于饱和状态，节点缓存队列长度发散，导致理论上的平均包时延趋于无穷大。
 
-为了求解 $D_P$，我们应用排队论中的 Little 定律$ 	D_P = \frac{\overline{L}}{\lambda}$，其中 $\overline{L}$ 为节点缓存队列的平均长度。因此，问题的核心转化为求解稳态下的平均队长 $\overline{L}$。
+为了求解 $D_P$，我们借助排队论中的 Little 定律$ 	D_P = \frac{\overline{L}}{\lambda}$，其中 $\overline{L}$ 为节点缓存队列的平均长度。因此，问题的核心转化为求解稳态下的平均队长 $\overline{L}$。
 为此，我们引入一个二维马尔可夫链 $(L_t, K_t)$ 来刻画节点队列的动态行为，如图 \ref{fig:markov_chain} 所示。其中，$L_t \in \{0, 1, \dots\}$ 表示时隙 $t$ 开始时的队列长度，$K_t \in \{0, 1\}$ 为状态指示变量（$K_t=1$ 表示节点处于忙期，$K_t=0$ 表示节点处于假期）。
 
 \begin{figure}[t]
@@ -449,7 +475,8 @@ $ 	\gamma = \frac{\lambda[\lambda(1-e^{-\theta}) + (1-\lambda)(1-p_A)]}{(1-\lamb
 最终，将式 \eqref{eq:mean_queue_length} 除以输入速率 $\lambda$，即可得到非饱和状态下的平均数据包时延 $D_P$：
 \begin{equation}
 	\label{eq:mean_packet_delay}
-	D_P = \frac{1}{\lambda} \cdot \overline{L}.
+	D_P = \frac{ \frac{1}{1-\lambda} + \frac{\gamma(2-\gamma)}{(1-\gamma)^2} + \frac{\frac{\lambda\gamma}{1-\lambda} \left(2 - \frac{\lambda\gamma}{1-\lambda}\right)}{\left(1 - \frac{\lambda\gamma}{1-\lambda}\right)^2} }
+	{ \lambda ( \frac{1}{1 - \frac{\lambda\gamma}{1-\lambda}} + \frac{\lambda}{1-\lambda} - 1 + \frac{1}{1-\lambda} + \frac{(1-\lambda)p_A + \lambda e^{-\theta}}{\lambda(1-p_A)} )} .
 \end{equation}
 尽管式 \eqref{eq:mean_packet_delay} 形式较为复杂，但它建立了时延与系统参数（$n, q, \lambda$）之间的精确解析关系，为后续的时延性能优化提供了理论依据。
 \begin{figure}[t]
@@ -494,44 +521,27 @@ $ 	\gamma = \frac{\lambda[\lambda(1-e^{-\theta}) + (1-\lambda)(1-p_A)]}{(1-\lamb
 
 \begin{figure}[t]
 	\centering
-	% --- 子图 (a): 2-step SDT ---
-	\begin{subfigure}[b]{0.45\textwidth}
-		\centering
-		
-		\includegraphics[width=\textwidth]{figure/chap3/2step_sdt.pdf}
-		\caption{2 步小数据传输方案}
-		\label{fig:flow_2step}
-	\end{subfigure}
-	\hfill % 弹性间距
-	% --- 子图 (b): SAST ---
-	\begin{subfigure}[b]{0.45\textwidth}
-		\centering
-		
-		\includegraphics[width=\textwidth]{figure/chap3/sast_scheme.pdf}
-		\caption{SAST 方案}
-		\label{fig:flow_sast}
-	\end{subfigure}
-	
-	\caption{用户与基站间的信令交互流程对比}
+	\includegraphics[width=0.75\textwidth]{figure/chap3/sast_scheme.pdf}
+	\caption{SAST 方案下，用户与基站间的信令交互流程}
 	\label{fig:signaling_process}
 \end{figure}
 
-为了验证 SAST 机制在实际通信系统中的应用潜力，本节将其应用于 5G 新空口系统，并以 3GPP Release 17 标准中定义的 2 步小数据传输方案作为基准进行对比。为量化两者在控制信令开销方面的差异，本文引入信令吞吐比 $\mathrm{STR}$ 作为核心评估指标。
+为了验证 SAST 机制在实际通信系统中的应用潜力，本节将其与 3GPP Release 17 标准中定义的 2 步SDT方案作为基准进行对比。为量化两者在控制信令开销方面的差异，本文引入信令吞吐比 $\mathrm{STR}$ 作为核心评估指标。
 
 \subsection{2步小数据传输方案}
 
-为克服传统蜂窝网络中 RRC 连接建立过程对小数据包传输造成的效率瓶颈，3GPP R17 标准引入了 2 步小数据传输方案。如图 \ref{fig:signaling_process}(a) 所示，该方案的核心机制是将物理随机接入信道前导码与上行共享信道的数据载荷合并封装于 MsgA 中发送。基站接收后回复包含竞争解决标识的 MsgB，以确认传输成功；若发生碰撞或解码失败，终端则需退避并重新发起 MsgA 传输。
+为克服传统蜂窝网络中 RRC 连接建立过程对小数据包传输造成的效率瓶颈，3GPP R17 标准引入了 2 步小数据传输方案。如图 \ref{fig:sdt_access} 中的两步SDT过程所示，该方案的核心机制是将物理随机接入信道前导码与上行共享信道的数据载荷合并封装于 MsgA 中发送。基站接收后回复包含竞争解决标识的 MsgB，以确认传输成功；若发生碰撞或解码失败，终端则需退避并重新发起 MsgA 传输。
 
 从信令开销角度看，无论单次接入尝试是否成功，系统物理层都需要承担 MsgA 与 MsgB 两次信令交互的开销。设每次信令交互的平均大小为 $s$ 比特，若系统平均接入成功概率为 $p_A$，则成功传输一个数据包在统计上平均需要 $1/p_A$ 次尝试。据此，2 步小数据传输方案的信令吞吐比可表示为：
 \begin{equation}
 	\text{STR}_{\text{SDT}} = \frac{2s}{p_A}.
 \end{equation}
-这一指标直观地反映了在低接入成功率场景下，标准方案面临的信令效率急剧下降问题。
+其中概率$p_A$可以参考文献\cite{2012_DaiAloha}。这一指标直观地反映了在低接入成功率场景下，标准方案面临的信令效率急剧下降问题。
 
 \subsection{SAST机制在5G中的实现与信令分析}
 
 SAST 机制在 5G 系统中的部署具有较强兼容性，可以复用 3GPP R17 的 2 步小数据传输流程完成初始接入，并在此基础上扩展连续传输能力以提升信令效率。
-如图 \ref{fig:signaling_process}(b) 所示，具体流程如下：节点首先将队首数据包封装在包含前导码的 MsgA 中发送，这与标准 2 步小数据传输过程一致。一旦收到基站反馈的 MsgB 并确认接入成功，节点随即进入连续传输阶段。与标准方案不同的是，后续数据包可直接在 PUSCH 信道发送，而无需再次携带前导码。基站对每个后续数据包逐一反馈确认消息；若缓存清空，则本轮传输自然结束；若发生碰撞并收到否定确认消息，节点退回竞争状态。
+如图 \ref{fig:signaling_process}所示，具体流程如下：节点首先将队首数据包封装在包含前导码的 MsgA 中发送，这与标准 2 步小数据传输过程一致。一旦收到基站反馈的 MsgB 并确认接入成功，节点随即进入连续传输阶段。与标准方案不同的是，后续数据包可直接在 PUSCH 信道发送，而无需再次携带前导码。基站对每个后续数据包逐一反馈确认消息；若成功传输一个报文，基站会回馈一个确认ACK消息；若发生碰撞并收到否定确认NACK消息，节点退回竞争状态。若节点的缓存队列情况，则双方会互相协商，一种方式是节点在最后一个数据报文中告知基站传输即将结束，至此本轮传输自然结束。
 
 
 

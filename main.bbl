@@ -31,6 +31,21 @@
   \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibinstitution{ITU-R}\@,
   \bibyear{2023}\@.
 
+\bibitem{3GPP_TR38843_R19}
+\bibauthor{{3GPP}}\@. \bibtitle{{Study on Artificial Intelligence (AI)/Machine
+  Learning (ML) for NR Air Interface (Release 19)}}\thinspace{}\textnormal{:
+  }\bibnumber{TR 38.843 V19.0.0}\bibmark{[R/OL]}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibinstitution{{3rd Generation
+  Partnership Project (3GPP), Technical Specification Group Radio Access
+  Network}}\@, \bibyear{2025}\@. \url{https://www.3gpp.org}\@.
+
+\bibitem{2021_6Gsurvey}
+\bibauthor{YOU X\@, WANG C-X\@, HUANG J, et~al}\@. \bibtitle{Towards 6G
+  wireless communication networks: Vision, enabling technologies, and new
+  paradigm shifts}\bibmark{[J]}\@. \bibjournal{Science China information
+  sciences}\@, \bibyear{2021}\@,
+  \bibvolume{64}\bibnumber{(1)}\thinspace{}\textnormal{: }\bibpages{110301}\@.
+
 \bibitem{2023_6Groad}
 \bibauthor{WANG C-X\@, YOU X\@, GAO X, et~al}\@. \bibtitle{On the Road to {6G}:
   Visions, Requirements, Key Technologies, and Testbeds}\bibmark{[J/OL]}\@.
@@ -46,6 +61,41 @@
   Vehicular Technology}\@, \bibyear{2024}\@,
   \bibvolume{5}\thinspace{}\textnormal{:
   }\bibpages{344\thinspace{}\textnormal{--}\thinspace{}383}\@.
+
+\bibitem{2010_IoTsurvey}
+\bibauthor{ATZORI L\@, IERA A\@, MORABITO G}\@. \bibtitle{The internet of
+  things: A survey}\bibmark{[J]}\@. \bibjournal{Computer networks}\@,
+  \bibyear{2010}\@, \bibvolume{54}\bibnumber{(15)}\thinspace{}\textnormal{:
+  }\bibpages{2787\thinspace{}\textnormal{--}\thinspace{}2805}\@.
+
+\bibitem{2015_IoTsurvey2}
+\bibauthor{AL-FUQAHA A\@, GUIZANI M\@, MOHAMMADI M, et~al}\@.
+  \bibtitle{Internet of things: A survey on enabling technologies, protocols,
+  and applications}\bibmark{[J]}\@. \bibjournal{IEEE communications surveys \&
+  tutorials}\@, \bibyear{2015}\@,
+  \bibvolume{17}\bibnumber{(4)}\thinspace{}\textnormal{:
+  }\bibpages{2347\thinspace{}\textnormal{--}\thinspace{}2376}\@.
+
+\bibitem{2022_IoTsurvey3}
+\bibauthor{CHI H~R\@, WU C~K\@, HUANG N-F, et~al}\@. \bibtitle{A survey of
+  network automation for industrial internet-of-things toward industry
+  5.0}\bibmark{[J]}\@. \bibjournal{IEEE Transactions on Industrial
+  Informatics}\@, \bibyear{2022}\@,
+  \bibvolume{19}\bibnumber{(2)}\thinspace{}\textnormal{:
+  }\bibpages{2065\thinspace{}\textnormal{--}\thinspace{}2077}\@.
+
+\bibitem{2023_IoTsurvey3}
+\bibauthor{MOWLA M~N\@, MOWLA N\@, SHAH A~S, et~al}\@. \bibtitle{Internet of
+  Things and wireless sensor networks for smart agriculture applications: A
+  survey}\bibmark{[J]}\@. \bibjournal{IEEe Access}\@, \bibyear{2023}\@,
+  \bibvolume{11}\thinspace{}\textnormal{:
+  }\bibpages{145813\thinspace{}\textnormal{--}\thinspace{}145852}\@.
+
+\bibitem{2018_5GIoTsurvey}
+\bibauthor{LI S\@, DA~XU L\@, ZHAO S}\@. \bibtitle{5G Internet of Things: A
+  survey}\bibmark{[J]}\@. \bibjournal{Journal of Industrial Information
+  Integration}\@, \bibyear{2018}\@, \bibvolume{10}\thinspace{}\textnormal{:
+  }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}9}\@.
 
 \bibitem{2013_4gLTERA}
 \bibauthor{DAHLMAN E\@, PARKVALL S\@, SKOLD J}\@. \bibbooktitle{4G:
@@ -103,12 +153,6 @@
   \bibaddress{Edinburgh, UK}\thinspace{}\textnormal{: }\bibinstitution{3rd
   Generation Partnership Project (3GPP)}\@, \bibyear{2023}\@.
 
-\bibitem{3GPP_R2-2313456}
-\bibauthor{{3GPP}}\@. \bibtitle{{AI/ML based random access control and load
-  balancing}}\thinspace{}\textnormal{: }\bibnumber{R2-2313456}\bibmark{[R]}\@.
-  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibinstitution{3rd Generation
-  Partnership Project (3GPP)}\@, \bibyear{2023}\@.
-
 \bibitem{1970_Aloha}
 \bibauthor{ABRAMSON N}\@. \bibtitle{{{THE ALOHA SYSTEM}}: {{Another}}
   Alternative for Computer Communications}\bibmark{[C]}
@@ -133,6 +177,13 @@
   \bibyear{2016}\@, \bibvolume{54}\bibnumber{(9)}\thinspace{}\textnormal{:
   }\bibpages{59\thinspace{}\textnormal{--}\thinspace{}65}\@.
 
+\bibitem{2015_HybridRA}
+\bibauthor{WIRIAATMADJA D~T\@, CHOI K~W}\@. \bibtitle{Hybrid {{Random Access}}
+  and {{Data Transmission Protocol}} for {{Machine-to-Machine Communications}}
+  in {{Cellular Networks}}}\bibmark{[J]}\@, \@,
+  \bibvolume{14}\bibnumber{(1)}\thinspace{}\textnormal{:
+  }\bibpages{33\thinspace{}\textnormal{--}\thinspace{}46}\@.
+
 \bibitem{2009_SA_Backoff}
 \bibauthor{RIVERO-ANGELES M~E\@, LARA-RODRIGUEZ D\@, CRUZ-PEREZ F~A}\@.
   \bibtitle{Differentiated Backoff Strategies for Prioritized Random Access
@@ -140,13 +191,6 @@
   Transactions on Vehicular Technology}\@, \bibyear{2009}\@,
   \bibvolume{58}\bibnumber{(1)}\thinspace{}\textnormal{:
   }\bibpages{381\thinspace{}\textnormal{--}\thinspace{}397}\@.
-
-\bibitem{2015_HybridRA}
-\bibauthor{WIRIAATMADJA D~T\@, CHOI K~W}\@. \bibtitle{Hybrid {{Random Access}}
-  and {{Data Transmission Protocol}} for {{Machine-to-Machine Communications}}
-  in {{Cellular Networks}}}\bibmark{[J]}\@, \@,
-  \bibvolume{14}\bibnumber{(1)}\thinspace{}\textnormal{:
-  }\bibpages{33\thinspace{}\textnormal{--}\thinspace{}46}\@.
 
 \bibitem{2018_SA_EB}
 \bibauthor{BARLETTA L\@, BORGONOVO F\@, FILIPPINI I}\@. \bibtitle{The
@@ -463,5 +507,15 @@
 \bibitem{3gpp38213}
 \bibauthor{3GPP}\@. \bibtitle{3GPP TS 38.213: NR; Physical layer procedures for
   control}\bibmark{[R]}\@. \bibyear{Release 17}\@.
+
+\bibitem{1996_Gausian}
+\bibauthor{GALLAGER R~G}\@. \bibbooktitle{Discrete Stochastic
+  Processes}\bibmark{[M]}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
+  }\bibpublisher{Kluwer Academic Publishers}\@, \bibyear{1996}\@.
+
+\bibitem{bertsekas2008_introduction}
+\bibauthor{BERTSEKAS D\@, TSITSIKLIS J~N}\@. \bibbooktitle{Introduction to
+  probability}\bibmark{[M]}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
+  }\bibpublisher{Athena Scientific}\@, \bibyear{2008}\@.
 
 \end{thebibliography}

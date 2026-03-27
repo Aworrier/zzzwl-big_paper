@@ -1,36 +1,33 @@
 This is BibTeX, Version 0.99d (TeX Live 2022)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
-A level-1 auxiliary file: docs/Acronym.aux
-A level-1 auxiliary file: docs/Symbol.aux
 A level-1 auxiliary file: docs/Chapter_01.aux
 A level-1 auxiliary file: docs/Chapter_02.aux
 A level-1 auxiliary file: docs/Chapter_03.aux
 A level-1 auxiliary file: docs/Chapter_04.aux
 A level-1 auxiliary file: docs/Chapter_05.aux
 A level-1 auxiliary file: docs/Chapter_06.aux
-A level-1 auxiliary file: docs/Chapter_07.aux
 The style file: Bibliography/bibtex-style/gbt7714-2005.bst
-A level-1 auxiliary file: docs/Appendix1.aux
-A level-1 auxiliary file: docs/Appendix2.aux
-A level-1 auxiliary file: docs/Achievement.aux
-A level-1 auxiliary file: docs/Acknowledgements.aux
-A level-1 auxiliary file: docs/Postscript.aux
+A level-1 auxiliary file: docs/AppendixA.aux
+A level-1 auxiliary file: docs/AppendixB.aux
+A level-1 auxiliary file: docs/AppendixC.aux
+A level-1 auxiliary file: docs/AppendixD.aux
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: Bibliography/Reference.bib
 Warning--string name "apr" is undefined
---line 231 of file Bibliography/Reference.bib
+--line 391 of file Bibliography/Reference.bib
 Warning--string name "mar" is undefined
---line 373 of file Bibliography/Reference.bib
+--line 533 of file Bibliography/Reference.bib
 Warning--string name "jan" is undefined
---line 551 of file Bibliography/Reference.bib
+--line 711 of file Bibliography/Reference.bib
 Warning--string name "feb" is undefined
---line 575 of file Bibliography/Reference.bib
-Warning--I didn't find a database entry for "bibid"
+--line 735 of file Bibliography/Reference.bib
 Warning--I didn't find a database entry for "Lin2013Toward"
 Warning--Require address: 2023_ITUFramework
+Warning--Require address: 3GPP_TR38843_R19
+Warning--Require citedate: 3GPP_TR38843_R19
 Warning--Require citedate: 2023_6Groad
 Warning--Require address: 2013_4gLTERA
 Warning--Require author: 3GPP_TS36321
@@ -39,7 +36,6 @@ Warning--Require author: 3GPP_TS38321_R17
 Warning--Require address: 3GPP_TS38321_R17
 Warning--Require address: 3GPP_TR38.843
 Warning--Require citedate: 3GPP_TR38.843
-Warning--Require address: 3GPP_R2-2313456
 Warning--Require address: 1970_Aloha
 Warning--Require year: 1970_Aloha
 Warning--Require journal: 2015_HybridRA
@@ -68,45 +64,47 @@ Warning--Require citedate: 2024_TMLCN_MARLM2M
 Warning--Require citedate: 2019_ICCT_Selection
 Warning--Require citedate: 2020_ICAIIC_MACDesign
 Warning--Require citedate: 2021_ACCESS_SelfDriving
-You've used 60 entries,
+Warning--Require address: 1996_Gausian
+Warning--Require address: bertsekas2008_introduction
+You've used 68 entries,
             3107 wiz_defined-function locations,
-            1137 strings with 18255 characters,
-and the built_in function-call counts, 102688 in all, are:
-= -- 11110
-> -- 196
-< -- 452
-+ -- 8509
-- -- 691
-* -- 3010
-:= -- 10946
+            1186 strings with 19935 characters,
+and the built_in function-call counts, 117946 in all, are:
+= -- 12810
+> -- 225
+< -- 518
++ -- 9836
+- -- 790
+* -- 3436
+:= -- 12632
 add.period$ -- 0
-call.type$ -- 60
-change.case$ -- 272
+call.type$ -- 68
+change.case$ -- 314
 chr.to.int$ -- 0
-cite$ -- 98
-duplicate$ -- 14775
-empty$ -- 4318
-format.name$ -- 544
-if$ -- 27161
+cite$ -- 109
+duplicate$ -- 16974
+empty$ -- 4899
+format.name$ -- 628
+if$ -- 31208
 int.to.chr$ -- 0
-int.to.str$ -- 60
+int.to.str$ -- 68
 missing$ -- 0
-newline$ -- 207
-num.names$ -- 60
-pop$ -- 1575
+newline$ -- 231
+num.names$ -- 68
+pop$ -- 1781
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 859
+skip$ -- 980
 stack$ -- 0
-substring$ -- 12341
-swap$ -- 3045
+substring$ -- 14200
+swap$ -- 3457
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 38
-while$ -- 1414
-width$ -- 62
-write$ -- 884
-(There were 44 warnings)
+warning$ -- 41
+while$ -- 1604
+width$ -- 70
+write$ -- 998
+(There were 46 warnings)

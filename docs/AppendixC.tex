@@ -1,76 +1,148 @@
-\chapter{队列几何分布性质与尝试速率定点方程推导}
+% \chapter{忙期开始时缓存队列$Q$的几何分布性质证明}
+% \label{app:proof_theorem_GQ_geometric}
+
+% 本附录给出定理\texorpdfstring{~\ref{thm:geometric_Q}}的详细推导。
+% \section{队列分布的几何近似证明}
+
+% 我们采用猜想与验证方法。先假设忙期起始队列长度 $Q$ 服从参数为 $\alpha\in(0,1)$ 的几何分布：
+% \begin{equation}
+% \Pr\{Q=j\}=\alpha(1-\alpha)^{j-1},\quad j=1,2,\ldots
+% \end{equation}
+% 其概率生成函数 PGF 为
+% \begin{equation}
+% \label{eq:GQ_ansatz}
+% G_Q(z)=\frac{\alpha z}{1-(1-\alpha)z}+o\!\left(\frac{1}{n}\right).
+% \end{equation}
+
+% 首先，利用公式\eqref{eq:GP_derived}的耦合关系,我们推导得到
+% \begin{equation}
+% 	\label{eq:GP_alpha}
+%     G_{P}(z) = \frac{\alpha \left[ 1 - (1 - \alpha) e^{-\theta} z \right]}{[1 - (1 - \alpha) z] \left[ 1 - (1 - \alpha) e^{-\theta} \right]}
+% \end{equation}
+% 令 $z=0$，得到缓存清空概率为
+% \begin{equation}
+% 	\label{eq:p0_alpha}
+% 	p_0 = G_P(0) = \frac{\alpha}{1 - (1 - \alpha) e^{-\theta}}.
+% \end{equation}
+
+% 其次，在公式\eqref{eq:GQ_GP_relation}的右侧$ p_0 G_{A_{V_0}}(z) + [G_P(z) - p_0] G_{A_{V_1}}(z)$可以代入公式\eqref{eq:GP_alpha}、\eqref{eq:p0_alpha}、公式\eqref{eq:G_AV1}以及公式$G_{A_{V_0}}(z) = z G_{A_{V_1}}(z)$，我们得到
+% % \begin{equation}
+% % & p_{0} A_{V0}(z) + \left[ G_{P}(z) - p_{0} \right] A_{V1}(z) \\
+% % & = \left\{ \frac{\alpha z \left[ 1 - (1 - \alpha) \left( e^{-\theta} + 1 - 1 \right) \right] }{ \left[ 1 - (1 - \alpha) z \right] \left[ 1 - (1 - \alpha) e^{-\theta} \right] } \right\} \\
+% % & \quad \times \frac{ \frac{1}{ 1 + \frac{1 - \alpha}{ 1 - (1 - \alpha) e^{-\theta} } } }{ 1 - \left( 1 - \frac{1}{ 1 + \frac{1 - \alpha}{ 1 - (1 - \alpha) e^{-\theta} } } \right) z } \\
+% % & = \frac{\alpha z}{ 1 - (1 - \alpha) z } \\
+% % & = Q(z).
+% % \end{equation}
+
+% \begin{equation}\label{C5}
+% \begin{split}
+% &\qquad p_0 A_{V0}(z) + \left[ G_{P}(z) - p_0 \right] A_{V1}(z) = \left[ G_{P}(z) - p_0 + p_0 z \right] A_{V1}(z) + o\left( \frac{1}{n} \right) \\
+% &= \left\{ \frac{\alpha \left( 1 - (1-\alpha) e^{-\theta} z \right)}{\left[ 1 - (1-\alpha) z \right] \left[ 1 - (1-\alpha) e^{-\theta} \right]} \right.  \left. + \frac{\alpha}{\left[ 1 - (1-\alpha) e^{-\theta} \right]} (z - 1) \right\} \\
+% &\quad \times \frac{\beta}{1 - (1-\beta) z} (1 - \lambda + \lambda z) + o\left( \frac{1}{n} \right).
+% \end{split}
+% \end{equation}
+
+% 下面，我们将说明 $\beta$ 可以表示为 $\alpha$ 的函数。回顾队列迭代关系 $Q=P+A_V$，因此$Q$的期望值 $\overline{Q}$ 满足：
+% \begin{equation}
+% 	\label{C6}
+% \overline{Q} = \overline{P} + \overline{A_{V}} = \overline{P} + p_0 \overline{A_{V0}} + (1 - p_0) \overline{A_{V1}},
+% \end{equation}
+% 其中 $\overline{P} = G_{P}'(1) = G_{Q}'(1) - \dfrac{G_{Q}(e^{-\theta}) - G_{Q}(1)}{e^{-\theta} - 1}$，$\overline{A_{V1}} = G_{AV1}'(1) = \dfrac{1}{\beta} + \lambda - 1$，且 $\overline{A_{V0}} = 1 + \overline{A_{V1}} = \dfrac{1}{\beta} + \lambda$。根据\eqref{eq:GQ_ansatz}，忙期开始时的平均长度 $\overline{Q}$ 也可表示为 $\overline{Q} = \dfrac{1}{\alpha}$。
+% 结合上述推导，\eqref{C6}可以转化为，参数 $\beta$ 关于 $\alpha$ 的函数如下：
+% \begin{equation}\label{C7}
+% \beta = \frac{1}{1 - \lambda + \dfrac{1 - \alpha}{1 - (1-\alpha) e^{-\theta}}}.
+% \end{equation}
+% 进一步地，将节点的输入率 $\lambda = \hat{\lambda}/n \rightarrow 0$ 代入，我们可以再次简化\eqref{C5}得到：
+% \begin{equation}\label{C8}
+% \begin{split}
+% &\qquad p_0 A_{V0}(z) + \left[ G_{P}(z) - p_0 \right] A_{V1}(z) = \left\{ \frac{\alpha z \left[ 1 - (1-\alpha) (e^{-\theta} + 1 - 1) \right]}{\left[ 1 - (1-\alpha) z \right] \left[ 1 - (1-\alpha) e^{-\theta} \right]} \right\} \\
+% &\quad \times \frac{\dfrac{1}{1 + \dfrac{1 - \alpha}{1 - (1-\alpha) e^{-\theta}}}}{1 - \left( 1 - \dfrac{1}{1 + \dfrac{1 - \alpha}{1 - (1-\alpha) e^{-\theta}}} \right) z} \\
+% &= \frac{\alpha z}{1 - (1-\alpha) z} \\
+% &= Q(z).
+% \end{split}
+% \end{equation}
+% 至此，右侧可化为 $G_Q(z)$ 的同型表达，验证了几何分布假设的自洽性。
+
+
+% 接下来，我们推导参数 $\alpha$ 的值。回顾可知，一个忙期内传输的数据包数量等于该忙期的长度。从期望的角度来看，在一个忙期长度内，节点队列中的数据包应满足数量关系：$\overline{P} = \overline{Q} - \overline{B} + \overline{A_B} = \overline{Q} - \overline{B} + \lambda \overline{B} \approx \overline{Q} - \overline{B}$。通过公式\eqref{C6}，我们有：
+% \begin{equation}\label{C9}
+% \overline{B} = \overline{Q} - \overline{P} = \frac{1}{1 - (1-\alpha) e^{-\theta}}.
+% \end{equation}
+
+% 将 公式\eqref{C6} 和 公式\eqref{C9} 代入 公式\eqref{eq:theta_relation}，可得：
+% \begin{equation}\label{A14}
+% \theta = n q (1-\alpha).
+% \end{equation}
+% 从而完成推导。
+
+
+
+
+\chapter{忙期开始时缓存队列$Q$的几何分布性质证明}
 \label{app:proof_theorem_fixed_point}
 
-本附录给出定理\texorpdfstring{~\ref{thm:geometric_Q}}{}的详细推导。
-目标有两点。
-第一，证明在大系统极限下 $Q$ 近似服从几何分布。
-第二，推导尝试速率 $\theta$ 的定点方程。
-
-\section{队列分布的几何近似证明}
-
-我们采用猜想与验证方法。
-先假设忙期开始时队列长度 $Q$ 服从参数为 $\alpha$ 的几何分布。
-当 $Q\ge1$ 时，有 $\Pr\{Q=k\}=\alpha(1-\alpha)^{k-1},\ k\ge1$。
-其 PGF 为
+本附录给出定理\texorpdfstring{~\ref{thm:geometric_Q}}的详细推导。
+我们采用猜想与验证方法。先假设忙期起始队列长度 $Q$ 服从参数为 $\alpha\in(0,1)$ 的几何分布：
 \begin{equation}
-	\label{eq:GQ_ansatz}
-	G_Q(z) = \frac{\alpha z}{1 - (1 - \alpha) z}.
+\Pr\{Q=j\}=\alpha(1-\alpha)^{j-1},\quad j=1,2,\ldots
+\end{equation}
+其概率生成函数 PGF 为
+\begin{equation}
+\label{eq:GQ_ansatz}
+G_Q(z)=\frac{\alpha z}{1-(1-\alpha)z}+o\!\left(\frac{1}{n}\right).
 \end{equation}
 
-首先，利用附录 B 的耦合关系
-$$
-G_P(z)\approx\frac{1-e^{-\theta}}{e^{-\theta}-z}[G_Q(e^{-\theta})-G_Q(z)]
-$$
-在大 $n$ 极限下可忽略常数项偏差。
-将式~(\ref{eq:GQ_ansatz}) 代入并令 $z=0$，得到缓存清空概率 $p_0$
+首先，利用公式\eqref{eq:GP_derived}的耦合关系,我们推导得到
 \begin{equation}
-	\label{eq:p0_alpha}
-	p_0 = G_P(0) = \frac{\alpha}{1 - (1 - \alpha) e^{-\theta}}.
+\label{eq:GP_alpha}
+G_{P}(z) = \frac{\alpha \left[ 1 - (1 - \alpha) e^{-\theta} z \right]}{[1 - (1 - \alpha) z] \left[ 1 - (1 - \alpha) e^{-\theta} \right]}
+\end{equation}
+令 $z=0$，得到缓存清空概率为
+\begin{equation}
+\label{eq:p0_alpha}
+p_0 = G_P(0) = \frac{\alpha}{1 - (1 - \alpha) e^{-\theta}}.
 \end{equation}
 
-其次，节点视角下有队列迭代关系 $Q=P+A_V$。
-其 PGF 满足
-\begin{equation}
-	\label{eq:GQ_recursion_app}
-	G_Q(z) = p_0 G_{A_{V_0}}(z) + [G_P(z) - p_0] G_{A_{V_1}}(z).
-\end{equation}
-利用正文中的近似关系
-$
-G_{A_{V_0}}(z)\approx 1,\quad G_{A_{V_1}}(z)\approx 1-\lambda\overline{V}_1+\lambda\overline{V}_1 z,
-$
-其中仅保留 $\lambda\to0$ 时的一阶项。
-将其代入式~(\ref{eq:GQ_recursion_app}) 并整理。
-可得到右侧仍可化为 $G_Q(z)$ 的同型表达。
-这验证了几何分布假设的自洽性。
-
-通过系数匹配，可得参数 $\alpha$ 与系统参数的关系
-\begin{equation}
-	\alpha = 1 - \frac{\theta}{n q}.
-\end{equation}
-将该式代回式~(\ref{eq:p0_alpha})，即可得到正文式~(\ref{eq:p0_closed_form}) 的 $p_0$ 闭式解
-\begin{equation}
-	p_0 = \frac{1 - \frac{\theta}{n q}}{1 - \frac{\theta e^{-\theta}}{n q}}.
+其次，在公式\eqref{eq:GQ_GP_relation}的右侧$ p_0 G_{A_{V_0}}(z) + [G_P(z) - p_0] G_{A_{V_1}}(z)$可以代入公式\eqref{eq:GP_alpha}、\eqref{eq:p0_alpha}、公式\eqref{eq:G_AV1}以及公式$G_{A_{V_0}}(z) = z G_{A_{V_1}}(z)$，我们得到
+\begin{equation}\label{C5}
+\begin{split}
+&\qquad p_0 A_{V0}(z) + \left[ G_{P}(z) - p_0 \right] A_{V1}(z) \\
+&= \left[ G_{P}(z) - p_0 + p_0 z \right] A_{V1}(z) + o\left( \frac{1}{n} \right) \\
+&= \left\{ \frac{\alpha \left( 1 - (1-\alpha) e^{-\theta} z \right)}{\left[ 1 - (1-\alpha) z \right] \left[ 1 - (1-\alpha) e^{-\theta} \right]} \right. \\
+&\quad \left. + \frac{\alpha}{\left[ 1 - (1-\alpha) e^{-\theta} \right]} (z - 1) \right\} \\
+&\quad \times \frac{\beta}{1 - (1-\beta) z} (1 - \lambda + \lambda z) + o\left( \frac{1}{n} \right).
+\end{split}
 \end{equation}
 
-\section{定点方程的推导}
+下面，我们将说明 $\beta$ 可以表示为 $\alpha$ 的函数。回顾队列迭代关系 $Q=P+A_V$，因此$Q$的期望值 $\overline{Q}$ 满足：
+\begin{equation}
+\label{C6}
+\overline{Q} = \overline{P} + \overline{A_{V}} = \overline{P} + p_0 \overline{A_{V0}} + (1 - p_0) \overline{A_{V1}},
+\end{equation}
+其中 $\overline{P} = G_{P}'(1) = G_{Q}'(1) - \dfrac{G_{Q}(e^{-\theta}) - G_{Q}(1)}{e^{-\theta} - 1}$，$\overline{A_{V1}} = G_{AV1}'(1) = \dfrac{1}{\beta} + \lambda - 1$，且 $\overline{A_{V0}} = 1 + \overline{A_{V1}} = \dfrac{1}{\beta} + \lambda$。根据\eqref{eq:GQ_ansatz}，忙期开始时的平均长度 $\overline{Q}$ 也可表示为 $\overline{Q} = \dfrac{1}{\alpha}$。
+结合上述推导，\eqref{C6}可以转化为，参数 $\beta$ 关于 $\alpha$ 的函数如下：
+\begin{equation}\label{C7}
+\beta = \frac{1}{1 - \lambda + \dfrac{1 - \alpha}{1 - (1-\alpha) e^{-\theta}}}.
+\end{equation}
+进一步地，将节点的输入率 $\lambda = \hat{\lambda}/n \rightarrow 0$ 代入，我们可以再次简化\eqref{C5}得到：
+\begin{equation}\label{C8}
+\begin{split}
+&\qquad p_0 A_{V0}(z) + \left[ G_{P}(z) - p_0 \right] A_{V1}(z) \\
+&= \left\{ \frac{\alpha z \left[ 1 - (1-\alpha) (e^{-\theta} + 1 - 1) \right]}{\left[ 1 - (1-\alpha) z \right] \left[ 1 - (1-\alpha) e^{-\theta} \right]} \right\} \\
+&\quad \times \frac{\dfrac{1}{1 + \dfrac{1 - \alpha}{1 - (1-\alpha) e^{-\theta}}}}{1 - \left( 1 - \dfrac{1}{1 + \dfrac{1 - \alpha}{1 - (1-\alpha) e^{-\theta}}} \right) z} \\
+&= \frac{\alpha z}{1 - (1-\alpha) z} \\
+&= Q(z).
+\end{split}
+\end{equation}
+至此，右侧可化为 $G_Q(z)$ 的同型表达，验证了几何分布假设的自洽性。
 
-由流量守恒，在非饱和稳态下尝试速率 $\theta$ 满足
-\begin{equation}
-	\theta = n q \left( 1 - \frac{p_0}{\overline{B}} \right).
-\end{equation}
-利用信道忙期与信道假期的关系 $\overline{B} = \frac{\hat{\lambda}}{1 - \hat{\lambda}} \overline{V}_c$，以及信道假期公式 $\overline{V}_c = \frac{e^{\theta}}{\theta} - p_0$，我们可以将 $\overline{B}$ 表示为：
-\begin{equation}
-	\overline{B} = \frac{\hat{\lambda}}{1 - \hat{\lambda}} \left( \frac{e^{\theta}}{\theta} - p_0 \right).
+接下来，我们推导参数 $\alpha$ 的数值。回顾可知，一个忙期内传输的数据包数量等于该忙期的长度。从期望的角度来看，在一个忙期长度内，节点队列中的数据包应满足数量关系：$\overline{P} = \overline{Q} - \overline{B} + \overline{A_B} = \overline{Q} - \overline{B} + \lambda \overline{B} \approx \overline{Q} - \overline{B}$。通过公式\eqref{C6}，我们有：
+\begin{equation}\label{C9}
+\overline{B} = \overline{Q} - \overline{P} = \frac{1}{1 - (1-\alpha) e^{-\theta}}.
 \end{equation}
 
-将上述 $\overline{B}$ 和 $p_0$ 的表达式代入 $\theta$ 的定义式中：
-\begin{equation}
-	\frac{\theta}{n q} = 1 - \frac{p_0 (1 - \hat{\lambda})}{\hat{\lambda} (\frac{e^{\theta}}{\theta} - p_0)}.
+将公式\eqref{C6}和公式\eqref{C9}代入公式\eqref{eq:theta_relation}，可得：
+\begin{equation}\label{A14}
+\theta = n q (1-\alpha).
 \end{equation}
-经移项、通分和化简，消去 $p_0$ 的分母项。
-最终得到关于 $\theta$ 的隐函数方程
-\begin{equation}
-	\frac{e^{\theta}}{\theta} + \frac{\theta}{n q} - \frac{1}{n q} = \frac{1}{\hat{\lambda}}.
-\end{equation}
-这就是定理\texorpdfstring{~\ref{thm:fixed_point_theta}}{}中的定点方程。
-该方程表明，尝试速率 $\theta$ 由 $n$、$q$ 与总业务负载 $\hat{\lambda}$ 唯一决定。
+从而完成推导。

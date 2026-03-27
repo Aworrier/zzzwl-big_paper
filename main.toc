@@ -1,85 +1,81 @@
-\contentsline {chapter}{\heiti {缩略语}}{IX}{chapter*.1}%
-\contentsline {chapter}{\heiti {数学符号}}{XII}{chapter*.2}%
+\contentsline {paragraph}{\zihao {-4}\heiti [关键词]}{II}{paragraph*.1}%
+\contentsline {chapter}{摘要}{II}{paragraph*.1}%
+\contentsline {paragraph}{\textbf {[Keywords]}}{IV}{paragraph*.2}%
+\contentsline {chapter}{ABSTRACT}{IV}{paragraph*.2}%
 \contentsline {chapter}{\numberline {第1章\hspace {.3em}}绪论}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}研究背景与问题提出}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}国内外研究现状}{4}{section.1.2}%
+\contentsline {section}{\numberline {1.2}国内外研究现状}{5}{section.1.2}%
 \contentsline {subsection}{\numberline {1.2.1}Aloha 类随机接入协议研究现状}{5}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}CSMA/LBT 类随机接入协议研究现状}{6}{subsection.1.2.2}%
-\contentsline {subsection}{\numberline {1.2.3}AI 驱动的接入决策研究现状}{8}{subsection.1.2.3}%
-\contentsline {subsection}{\numberline {1.2.4}研究现状总结}{10}{subsection.1.2.4}%
+\contentsline {subsection}{\numberline {1.2.2}CSMA/LBT 类随机接入协议研究现状}{7}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}AI 驱动的随机接入决策研究现状}{9}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}研究现状总结}{11}{subsection.1.2.4}%
 \contentsline {section}{\numberline {1.3}本文研究目标与内容}{11}{section.1.3}%
 \contentsline {section}{\numberline {1.4}本文创新点}{12}{section.1.4}%
-\contentsline {section}{\numberline {1.5}本文章节安排}{12}{section.1.5}%
-\contentsline {chapter}{\numberline {第2章\hspace {.3em}}随机接入网络及其建模}{15}{chapter.2}%
-\contentsline {section}{\numberline {2.1}随机接入标准方案}{15}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}5G NR 竞争式随机接入流程}{15}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}5G NR 小数据传输（SDT）随机接入机制}{16}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}NR-U 中基于 LBT 的信道接入机制}{17}{subsection.2.1.3}%
-\contentsline {section}{\numberline {2.2}系统场景与模型假设}{18}{section.2.2}%
-\contentsline {section}{\numberline {2.3}关键性能指标}{21}{section.2.3}%
-\contentsline {chapter}{\numberline {第3章\hspace {.3em}}面向Aloha网络的连续传输机制设计与分析优化}{23}{chapter.3}%
-\contentsline {section}{\numberline {3.1}SAST系统模型与机制描述}{23}{section.3.1}%
-\contentsline {section}{\numberline {3.2}基于休假排队模型的SAST机制分析}{24}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}信道休假队列分析}{25}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}节点休假队列分析}{28}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}尝试速率与关键参数分析}{30}{subsection.3.2.3}%
-\contentsline {section}{\numberline {3.3}吞吐量性能分析与优化}{33}{section.3.3}%
-\contentsline {section}{\numberline {3.4}时延性能分析与优化}{35}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}接入时延分析}{35}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}数据包时延$D_P$分析}{36}{subsection.3.4.2}%
-\contentsline {section}{\numberline {3.5}SAST在5G网络中的应用与性能对比}{39}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}2步小数据传输方案}{39}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}SAST机制在5G中的实现与信令分析}{39}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}信令开销性能对比}{41}{subsection.3.5.3}%
-\contentsline {section}{\numberline {3.6}本章小结}{41}{section.3.6}%
-\contentsline {chapter}{\numberline {第4章\hspace {.3em}}面向CSMA网络的连续传输机制设计与分析优化}{43}{chapter.4}%
-\contentsline {section}{\numberline {4.1}CSMAST 系统模型与机制描述}{43}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}异构时隙结构与信道状态定义}{43}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}基于连续传输的 CSMA 协议设计}{44}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}面向CSMAST的休假排队建模}{45}{subsection.4.1.3}%
-\contentsline {section}{\numberline {4.2}基于休假排队的性能指标分析}{46}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}信道忙期分布分析}{46}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}信道假期分布分析}{47}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}信道周期与节点周期的统计特性}{49}{subsection.4.2.3}%
-\contentsline {section}{\numberline {4.3}吞吐量与公平性的性能推导与分析}{50}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}网络吞吐量分析}{51}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}公平性性能分析}{52}{subsection.4.3.2}%
-\contentsline {section}{\numberline {4.4}仿真结果与分析}{53}{section.4.4}%
-\contentsline {section}{\numberline {4.5}本章小结}{55}{section.4.5}%
-\contentsline {chapter}{\numberline {第5章\hspace {.3em}}基于监督学习的智能协议与参数联合选择方法}{57}{chapter.5}%
-\contentsline {section}{\numberline {5.1}问题建模与统一接入框架设计}{57}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}问题建模}{57}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}输入特征标准化与统一接口}{58}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}统一仿真映射与效用构造}{60}{subsection.5.1.3}%
-\contentsline {subsection}{\numberline {5.1.4}等价资源约束下的联合优化问题}{61}{subsection.5.1.4}%
-\contentsline {section}{\numberline {5.2}基于离散事件仿真的接入协议数据集构建与仿真结果分析}{62}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}两阶段参数空间采样策略}{62}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}统一仿真器的设计与实现}{63}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}数据集构建与预处理}{64}{subsection.5.2.3}%
-\contentsline {section}{\numberline {5.3}基于多任务深度学习的性能预测模型}{67}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}基于硬参数共享的多任务网络架构}{67}{subsection.5.3.1}%
-\contentsline {paragraph}{架构设计原理}{67}{paragraph*.30}%
-\contentsline {subsection}{\numberline {5.3.2}多目标协同优化与训练策略}{68}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}性能预测模型的可视化结果}{70}{subsection.5.3.3}%
-\contentsline {subsection}{\numberline {5.3.4}性能预测模型曲线一致性与效用曲线对比说明}{71}{subsection.5.3.4}%
-\contentsline {section}{\numberline {5.4}基于性能预测模型的快速搜索与预测}{73}{section.5.4}%
-\contentsline {section}{\numberline {5.5}本章小结}{76}{section.5.5}%
-\contentsline {chapter}{\numberline {第6章\hspace {.3em}}总结与展望}{77}{chapter.6}%
-\contentsline {section}{\numberline {6.1}工作总结}{77}{section.6.1}%
-\contentsline {section}{\numberline {6.2}研究展望}{78}{section.6.2}%
-\contentsline {chapter}{参考文献}{81}{chapter*.40}%
-\contentsline {chapter}{\numberline {附录 A\hspace {.3em}}类型1休假到达过程的概率生成函数PGF推导}{87}{appendix.A}%
-\contentsline {chapter}{\numberline {附录 B\hspace {.3em}}节点在忙期时队列状态$Q \to P$的马尔可夫链建模与概率生成函数推导}{89}{appendix.B}%
-\contentsline {section}{\numberline {附B.1}吸收马尔可夫链模型的构建}{89}{section.B.1}%
-\contentsline {section}{\numberline {附B.2}状态转移概率分析}{90}{section.B.2}%
-\contentsline {section}{\numberline {附B.3}转移矩阵与基本解}{90}{section.B.3}%
-\contentsline {section}{\numberline {附B.4}PGF关系的建立}{91}{section.B.4}%
-\contentsline {chapter}{\numberline {附录 C\hspace {.3em}}队列几何分布性质与尝试速率定点方程推导}{93}{appendix.C}%
-\contentsline {section}{\numberline {附C.1}队列分布的几何近似证明}{93}{section.C.1}%
-\contentsline {section}{\numberline {附C.2}定点方程的推导}{94}{section.C.2}%
-\contentsline {chapter}{\numberline {附录 D\hspace {.3em}}经典CSMA饱和吞吐量的统一参数推导}{95}{appendix.D}%
-\contentsline {section}{\numberline {附D.1}统一参数表示与模型设定}{95}{section.D.1}%
-\contentsline {section}{\numberline {附D.2}吞吐量表达式与最优传输概率}{96}{section.D.2}%
-\contentsline {chapter}{攻读硕士学位期间相关的科研成果目录}{97}{appendix*.42}%
-\contentsline {chapter}{致谢}{99}{appendix*.43}%
-\contentsline {chapter}{中山大学学位论文版权使用授权书}{101}{appendix*.44}%
+\contentsline {section}{\numberline {1.5}本文章节安排}{13}{section.1.5}%
+\contentsline {chapter}{\numberline {第2章\hspace {.3em}}随机接入网络及其建模}{17}{chapter.2}%
+\contentsline {section}{\numberline {2.1}随机接入标准方案}{17}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}5G NR 竞争式随机接入流程}{17}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}5G NR 小数据传输（SDT）随机接入机制}{18}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}NR-U 中基于 LBT 的信道接入机制}{19}{subsection.2.1.3}%
+\contentsline {section}{\numberline {2.2}系统场景与模型假设}{20}{section.2.2}%
+\contentsline {section}{\numberline {2.3}关键性能指标}{23}{section.2.3}%
+\contentsline {chapter}{\numberline {第3章\hspace {.3em}}面向Aloha网络的连续传输机制设计与分析优化}{25}{chapter.3}%
+\contentsline {section}{\numberline {3.1}SAST系统模型与机制描述}{25}{section.3.1}%
+\contentsline {section}{\numberline {3.2}基于休假排队模型的SAST机制分析}{26}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}信道休假队列分析}{27}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}节点休假队列分析}{30}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}尝试速率与概率$p_0$分析}{32}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}吞吐量性能分析与优化}{36}{section.3.3}%
+\contentsline {section}{\numberline {3.4}时延性能分析与优化}{38}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}接入时延$D_A$分析}{38}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}数据包时延$D_P$分析}{39}{subsection.3.4.2}%
+\contentsline {section}{\numberline {3.5}SAST在5G网络中的应用与性能对比}{41}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}2步小数据传输方案}{41}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}SAST机制在5G中的实现与信令分析}{42}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}信令开销性能对比}{43}{subsection.3.5.3}%
+\contentsline {section}{\numberline {3.6}本章小结}{44}{section.3.6}%
+\contentsline {chapter}{\numberline {第4章\hspace {.3em}}面向CSMA网络的连续传输机制设计与分析优化}{45}{chapter.4}%
+\contentsline {section}{\numberline {4.1}CSMAST 系统模型与机制描述}{45}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}异构时隙结构与信道状态定义}{45}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}基于连续传输的 CSMA 协议设计}{46}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}面向CSMAST的休假排队建模}{47}{subsection.4.1.3}%
+\contentsline {section}{\numberline {4.2}基于休假排队的性能指标分析}{47}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}信道忙期$\overline {B}$分析}{48}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}信道假期$V_c$分析}{49}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}信道周期与节点周期分析}{51}{subsection.4.2.3}%
+\contentsline {section}{\numberline {4.3}吞吐量与公平性的性能推导与分析}{52}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}网络吞吐量分析}{53}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}公平性性能分析}{54}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.4}仿真结果与分析}{55}{section.4.4}%
+\contentsline {section}{\numberline {4.5}本章小结}{57}{section.4.5}%
+\contentsline {chapter}{\numberline {第5章\hspace {.3em}}基于监督学习的智能协议与参数联合选择方法}{59}{chapter.5}%
+\contentsline {section}{\numberline {5.1}问题建模与统一接入框架设计}{59}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}问题建模}{59}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}输入特征标准化与统一接口}{60}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}统一仿真映射与效用构造}{62}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}等价资源约束下的联合优化问题}{64}{subsection.5.1.4}%
+\contentsline {section}{\numberline {5.2}基于离散事件的接入协议数据集构建}{64}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}两阶段参数空间采样策略}{64}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}统一仿真器的设计与实现}{66}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}数据集构建与预处理}{67}{subsection.5.2.3}%
+\contentsline {section}{\numberline {5.3}基于多任务深度学习的性能预测模型}{69}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}基于硬参数共享的多任务网络架构}{70}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}多目标协同优化与训练策略}{72}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}性能预测模型的可视化结果}{72}{subsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.3.4}性能预测模型曲线一致性与效用曲线对比说明}{74}{subsection.5.3.4}%
+\contentsline {section}{\numberline {5.4}基于性能预测模型的快速搜索与预测}{76}{section.5.4}%
+\contentsline {section}{\numberline {5.5}本章小结}{80}{section.5.5}%
+\contentsline {chapter}{\numberline {第6章\hspace {.3em}}总结与展望}{81}{chapter.6}%
+\contentsline {section}{\numberline {6.1}工作总结}{81}{section.6.1}%
+\contentsline {section}{\numberline {6.2}研究展望}{82}{section.6.2}%
+\contentsline {chapter}{参考文献}{85}{chapter*.39}%
+\contentsline {chapter}{\numberline {附录 A\hspace {.3em}}类型1休假期内新包到达过程的PGF推导}{91}{appendix.A}%
+\contentsline {chapter}{\numberline {附录 B\hspace {.3em}}节点在忙期时队列状态$Q \to P$的马尔可夫链建模与概率生成函数推导}{93}{appendix.B}%
+\contentsline {section}{\numberline {附B.1}构建马尔可夫吸收链模型}{93}{section.B.1}%
+\contentsline {section}{\numberline {附B.2}分析马尔可夫吸收链的状态转移概率}{94}{section.B.2}%
+\contentsline {section}{\numberline {附B.3}求解吸收概率$b_{ij}$的闭式表达式}{94}{section.B.3}%
+\contentsline {section}{\numberline {附B.4}推导$P$对$Q$的条件概率分布以及条件PGF}{95}{section.B.4}%
+\contentsline {chapter}{\numberline {附录 C\hspace {.3em}}忙期开始时缓存队列$Q$的几何分布性质证明}{97}{appendix.C}%
+\contentsline {chapter}{\numberline {附录 D\hspace {.3em}}经典CSMA饱和吞吐量的统一参数推导}{101}{appendix.D}%
+\contentsline {section}{\numberline {附D.1}统一参数表示与模型设定}{101}{section.D.1}%
+\contentsline {section}{\numberline {附D.2}吞吐量表达式与最优传输概率}{102}{section.D.2}%
