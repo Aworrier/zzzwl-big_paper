@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.28)  27 MAR 2026 11:14
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.28)  27 MAR 2026 16:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1022,7 +1022,7 @@ File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \tikz@expandcount=\count415
  (d:/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-))) (./docs/Information.tex) (./docs/Abstract.tex) (./main.aux (./docs/Chapter_01.aux) (./docs/Chapter_02.aux) (./docs/Chapter_03.aux) (./docs/Chapter_04.aux) (./docs/Chapter_05.aux) (./docs/Chapter_06.aux) (./docs/AppendixA.aux) (./docs/AppendixB.aux) (./docs/AppendixC.aux) (./docs/AppendixD.aux))
+))) (./docs/Information.tex) (./docs/Abstract.tex) (./main.aux (./docs/Acronym.aux) (./docs/Symbol.aux) (./docs/Chapter_01.aux) (./docs/Chapter_02.aux) (./docs/Chapter_03.aux) (./docs/Chapter_04.aux) (./docs/Chapter_05.aux) (./docs/Chapter_06.aux) (./docs/AppendixA.aux) (./docs/AppendixB.aux) (./docs/AppendixC.aux) (./docs/AppendixD.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
@@ -1249,18 +1249,62 @@ Underfull \vbox (badness 2261) has occurred while \output is active []
 
 
 ]
+\openout2 = `docs/Acronym.aux'.
+
+ (./docs/Acronym.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\heiti' on input line 3.
+
+
+Underfull \hbox (badness 1661) in paragraph at lines 18--18
+[]|\TU/TimesNewRoman(0)/m/n/12.045 Carrier Sense Multiple Access with Listen-
+ []
+
+
+Overfull \hbox (24.0498pt too wide) in alignment at lines 4--70
+ [] [] [] 
+ []
+
+[11
+
+
+] [12]) [13]
+\openout2 = `docs/Symbol.aux'.
+
+ (./docs/Symbol.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\heiti' on input line 3.
+
+[14
+
+
+
+
+]) [15] [16
+
+
+
+
+]
 \openout2 = `docs/Chapter_01.aux'.
 
  (./docs/Chapter_01.tex
 第1章
 File: figure/chap1/iot_challenges_black.pdf Graphic file (type pdf)
 <use figure/chap1/iot_challenges_black.pdf>
+
+Package natbib Warning: Citation `2020_SmartFactory' on page 1 undefined on input line 20.
+
 [1
 
 
-
-
 ]
+
+Package natbib Warning: Citation `2018_5GIoTsurvey，2019_5GIoTsurvey' on page 2 undefined on input line 27.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
@@ -1638,22 +1682,22 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
  [85
 
 ] [86]
-Underfull \hbox (badness 1412) in paragraph at lines 294--299
+Underfull \hbox (badness 1412) in paragraph at lines 308--313
 []\TU/TimesNewRoman(0)/m/n/10.53937 GU Y, XU Y, ZHANG B, et al. Toward the Random Multiaccess in SIoT: A Generalized-
  []
 
 [87] [88]
-Underfull \hbox (badness 5036) in paragraph at lines 448--455
+Underfull \hbox (badness 5036) in paragraph at lines 462--469
 []\TU/TimesNewRoman(0)/m/n/10.53937 de ALFARO L, ZHANG M, GARCIA-LUNA-ACEVES J J. Approaching Fair Collision-
  []
 
 
-Underfull \hbox (badness 2600) in paragraph at lines 448--455
+Underfull \hbox (badness 2600) in paragraph at lines 462--469
 \TU/TimesNewRoman(0)/m/n/10.53937 Free Channel Access with Slotted ALOHA Using Collaborative Policy-Based Reinforcement
  []
 
 
-Underfull \hbox (badness 1092) in paragraph at lines 448--455
+Underfull \hbox (badness 1092) in paragraph at lines 462--469
 \TU/TimesNewRoman(0)/m/n/10.53937 Learning[C/OL] //Proc. IFIP Netw. Conf.. 2020: 262–270. []$[][][][] [] [] [] [][] [] [][][] [] [][][] [] [][] [] [][][][][] []
  []
 
@@ -1773,7 +1817,7 @@ Underfull \vbox (badness 4739) has occurred while \output is active []
 
 Package natbib Warning: There were undefined citations.
 
-(./main.aux (./docs/Chapter_01.aux) (./docs/Chapter_02.aux) (./docs/Chapter_03.aux) (./docs/Chapter_04.aux) (./docs/Chapter_05.aux) (./docs/Chapter_06.aux) (./docs/AppendixA.aux) (./docs/AppendixB.aux) (./docs/AppendixC.aux) (./docs/AppendixD.aux))
+(./main.aux (./docs/Acronym.aux) (./docs/Symbol.aux) (./docs/Chapter_01.aux) (./docs/Chapter_02.aux) (./docs/Chapter_03.aux) (./docs/Chapter_04.aux) (./docs/Chapter_05.aux) (./docs/Chapter_06.aux) (./docs/AppendixA.aux) (./docs/AppendixB.aux) (./docs/AppendixC.aux) (./docs/AppendixD.aux))
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1781,15 +1825,15 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 81002D36B4B7966842661C47C092DEB0;6373.
+(rerunfilecheck)             Checksum: F583291DEF99BDE88FBD4C3C0DEB0BA4;6519.
  ) 
 Here is how much of TeX's memory you used:
- 36050 strings out of 476179
- 766808 string characters out of 5813072
- 1092284 words of memory out of 5000000
- 55981 multiletter control sequences out of 15000+600000
- 497174 words of font info for 195 fonts, out of 8000000 for 9000
+ 36130 strings out of 476179
+ 769488 string characters out of 5813072
+ 1105170 words of memory out of 5000000
+ 56044 multiletter control sequences out of 15000+600000
+ 497198 words of font info for 198 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 103i,21n,111p,1228b,925s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 103i,21n,111p,1228b,927s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (112 pages).
+Output written on main.pdf (118 pages).

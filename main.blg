@@ -17,13 +17,13 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: Bibliography/Reference.bib
 Warning--string name "apr" is undefined
---line 391 of file Bibliography/Reference.bib
+--line 435 of file Bibliography/Reference.bib
 Warning--string name "mar" is undefined
---line 533 of file Bibliography/Reference.bib
+--line 577 of file Bibliography/Reference.bib
 Warning--string name "jan" is undefined
---line 711 of file Bibliography/Reference.bib
+--line 755 of file Bibliography/Reference.bib
 Warning--string name "feb" is undefined
---line 735 of file Bibliography/Reference.bib
+--line 779 of file Bibliography/Reference.bib
 Warning--I didn't find a database entry for "Lin2013Toward"
 Warning--Require address: 2023_ITUFramework
 Warning--Require address: 3GPP_TR38843_R19
@@ -66,45 +66,45 @@ Warning--Require citedate: 2020_ICAIIC_MACDesign
 Warning--Require citedate: 2021_ACCESS_SelfDriving
 Warning--Require address: 1996_Gausian
 Warning--Require address: bertsekas2008_introduction
-You've used 68 entries,
+You've used 70 entries,
             3107 wiz_defined-function locations,
-            1186 strings with 19935 characters,
-and the built_in function-call counts, 117946 in all, are:
-= -- 12810
-> -- 225
-< -- 518
-+ -- 9836
-- -- 790
-* -- 3436
-:= -- 12632
+            1198 strings with 20404 characters,
+and the built_in function-call counts, 121097 in all, are:
+= -- 13148
+> -- 232
+< -- 534
++ -- 10097
+- -- 813
+* -- 3531
+:= -- 12975
 add.period$ -- 0
-call.type$ -- 68
-change.case$ -- 314
+call.type$ -- 70
+change.case$ -- 324
 chr.to.int$ -- 0
-cite$ -- 109
-duplicate$ -- 16974
-empty$ -- 4899
-format.name$ -- 628
-if$ -- 31208
+cite$ -- 111
+duplicate$ -- 17417
+empty$ -- 5031
+format.name$ -- 648
+if$ -- 32044
 int.to.chr$ -- 0
-int.to.str$ -- 68
+int.to.str$ -- 70
 missing$ -- 0
-newline$ -- 231
-num.names$ -- 68
-pop$ -- 1781
+newline$ -- 237
+num.names$ -- 70
+pop$ -- 1825
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 980
+skip$ -- 1011
 stack$ -- 0
-substring$ -- 14200
-swap$ -- 3457
+substring$ -- 14571
+swap$ -- 3550
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 41
-while$ -- 1604
-width$ -- 70
-write$ -- 998
+while$ -- 1648
+width$ -- 72
+write$ -- 1026
 (There were 46 warnings)
