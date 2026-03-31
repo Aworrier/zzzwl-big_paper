@@ -202,16 +202,16 @@
 
 \subsection{网络吞吐量分析}
 
-网络吞吐量 $\hat{\lambda}_{out}^{net}$ 定义为单位时间内信道成功传输的有效数据载荷量，以包/时隙为单位。
+网络吞吐量 $\lambda^{net}_{out}$ 定义为单位时间内信道成功传输的有效数据数量，以包/时隙为单位。
 在计算该指标时，必须考虑成功状态 S 的特殊性。虽然成功状态持续 $\tau_S$ 个时隙，但其中仅有 $y$ 个时隙用于实际数据包传输，剩余的 1 个时隙被用于必要的信道侦听。因此，信道忙期 $\overline{B}$ 并不能完全代表有效吞吐时间，需引入修正因子 $\frac{\tau_S - \tau_I}{\tau_S} = \frac{y}{y+1}$。
 结合前文推导的 $\overline{B}$ 和 $\overline{V}_c$ 表达式，饱和状态下的网络吞吐量可表示为：
 \begin{equation}
-	\hat{\lambda}_{out}^{net} = \frac{\tau_S - \tau_I}{\tau_S} \cdot \frac{\overline{B}}{\overline{B} + \overline{V}_c}.
+	\lambda^{net}_{out} = \frac{\tau_S - \tau_I}{\tau_S} \cdot \frac{\overline{B}}{\overline{B} + \overline{V}_c}.
 \end{equation}
 将 $p_0 = e^{-nq}$ 及 $\overline{B}, \overline{V}_c$ 的闭式解代入上式，经过代数化简，可得关于总负载 $nq$ 的显式函数：
 \begin{equation}
 	\label{eq:throughput_csmast}
-	\hat{\lambda}_{out}^{net} = \frac{nq(\tau_S - \tau_I)}{nq\tau_S + e^{nq}(1 - e^{-nq})^2 \tau_F + (1 - e^{-nq})\tau_I}.
+	\lambda^{net}_{out} = \frac{nq(\tau_S - \tau_I)}{nq\tau_S + e^{nq}(1 - e^{-nq})^2 \tau_F + (1 - e^{-nq})\tau_I}.
 \end{equation}
 
 基于上述闭式解，我们给出关于 CSMAST 吞吐量极限的定理：
@@ -220,7 +220,7 @@
 	\label{thm:csmast_max_throughput}
 	在饱和状态下，CSMAST 的网络吞吐量是关于总负载 $nq$ 的单调递减函数。其理论最大吞吐量在接入概率 $q \to 0$ 时取得，值为：
 	\begin{equation}
-		\lambda_{max}^{net} = \lim_{nq \to 0} \hat{\lambda}_{out}^{net} = \frac{\tau_S - \tau_I}{\tau_S + \tau_I}.
+		\lambda_{max}^{net} = \lim_{nq \to 0} \lambda^{net}_{out} = \frac{\tau_S - \tau_I}{\tau_S + \tau_I}.
 	\end{equation}
 \end{theorem}
 
@@ -280,16 +280,13 @@
 \end{equation}
 计算，其中 $N_{succ}$ 表示观测窗口内成功接入次数，$T$ 为总仿真时长。除非另有说明，本节采用基准参数 $n=100$、$T=10^6$、$x=2$、$y=4$，即 $\tau_I=1,\tau_F=3,\tau_S=5$。短期公平性采用第 4.3 节定义的 $J_T$，并在图注中明确对应的观测窗口。
 
-图 \ref{fig:csmast_perf_q} 给出了 CSMAST 在不同 $q$ 下的吞吐量与公平性变化。可以观察到，仿真点与理论曲线保持一致，说明基于休假排队与吸收马尔可夫链得到的闭式表达式能够准确描述系统趋势。具体而言，$\hat{\lambda}_{out}^{net}$ 随 $q$ 增大而下降，并在 $q\to 0$ 时逼近理论上限
-\begin{equation}
-\lambda_{max}^{net}=\frac{\tau_S-\tau_I}{\tau_S+\tau_I}=\frac{4}{6}\approx 0.667.
-\end{equation}
-与此同时，$q$ 过小时公平性下降，反映出连续传输带来的短时信道占用集中；随着 $q$ 适度增大，碰撞打断长忙期，$J_T$ 回升并趋近于 1，体现出吞吐量与公平性之间可调的折中关系。
+图 \ref{fig:csmast_perf_q} 展示了在 CSMAST 方案下，网络吞吐量 $\lambda^{net}_{out}$ 与短期 Jain 公平性指数 $J_T$ 随传输概率 $q$ 的变化情况。从图中可以清晰看出，仿真结果与基于休假排队模型推导出的理论曲线高度吻合，从而验证了第 4.3 节理论分析的准确性。具体而言，网络吞吐量 $\lambda^{net}_{out}$ 随接入概率 $q$ 单调递减，并在 $q$ 趋近于 0 时达到理论峰值。根据设定参数，该峰值逼近 $\frac{\tau_S-\tau_I}{\tau_S+\tau_I} = \frac{4}{6} \approx 0.667$。然而，在获得高吞吐量的同时，系统在极小接入概率 $q \to 0^+$ 下的公平性表现较差。这是因为在极稀疏的接入条件下，一旦少数节点成功抢占信道，便会利用连续传输机制长期维持较高传输速率，而其余大多数节点只能处于空闲侦听状态，极少获得发送机会，从而导致明显的服务饥饿与公平性退化。随着 $q$ 适度增加，碰撞概率的上升打破了这种信道垄断，Jain 公平性指数 $J_T$ 迅速回升并接近 1，而此时网络吞吐量虽然有所下降但仍保持在较高水平。这表明 CSMAST 机制能够通过参数调整，在牺牲少量吞吐量的前提下实现较好的吞吐量与公平性权衡。
 
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figure/chap4/throughput_fairness_vs_q.pdf}
 	\caption{CSMAST 网络吞吐量 $\hat{\lambda}_{out}^{net}$ 与短期 Jain 公平性指数 $J_T$ 随传输概率 $q$ 的变化（$n=100,\tau_S=5,\tau_F=3,\tau_I=1,T=10^6$）}
+	\caption{CSMAST 网络吞吐量 $\lambda^{net}_{out}$ 与短期 Jain 公平性指数 $J_T$ 随传输概率 $q$ 的变化（$n=100, \tau_S=5, \tau_F=3, \tau_I=1$）}
 	\label{fig:csmast_perf_q}
 \end{figure}
 
@@ -302,7 +299,7 @@
 	\label{fig:comparison_classic}
 \end{figure}
 
-深入分析图 \ref{fig:comparison_classic} 可以发现，当网络处于相对低吞吐量区域，即 $\hat{\lambda}_{out}^{net} < 0.518$，通常对应较高的 $q$ 值时，两条性能曲线几乎完全重合。这种相似性源于两种方案在信道假期 $V_c$ 结构上的同质性，即在竞争激烈时，信道均频繁经历空闲与碰撞状态，导致两者的平均假期长度 $\overline{V}_c$ 相近。此时，决定系统吞吐量的主要因素变为信道忙期 $\overline{B}$ 的长度。在低竞争区域，也就是较小 $q$ 条件下，CSMAST 能够利用连续传输显著拉长 $\overline{B}$，从而获得吞吐量优势；而在高竞争区域，频繁碰撞导致 CSMAST 的忙期被强制截断，其平均长度回落到接近单次传输时长，使得该机制逐步退化为经典 CSMA 的行为。另一方面，由于系统公平性主要受假期波动特性控制，而两者在假期统计特征上高度相似，因此在相同 $q$ 值下表现出近乎一致的公平性水平，最终体现为图中近乎重叠的轨迹曲线。这一对比分析表明，CSMAST 机制在保持与现有协议兼容及同等公平性的基础上，能够有效突破传统 CSMA 的速率瓶颈。
+进一步分析图 \ref{fig:comparison_classic} 可见，当网络处于较低吞吐量区间（即 $\lambda^{net}_{out} < 0.518$，通常对应较大的 $q$）时，两种方案的性能轨迹几乎重合。其根本原因在于，二者在信道假期 $V_c$ 的统计结构上具有高度同质性：在高竞争强度下，信道都会频繁经历空闲与碰撞状态，使得平均假期长度 $\overline{V}_c$ 接近。在这一工作区间内，系统吞吐量的主要差异来源于信道忙期 $\overline{B}$。当竞争较弱（较小 $q$）时，CSMAST 可借助连续传输显著延长 $\overline{B}$，从而形成吞吐量优势；当竞争增强时，频繁碰撞会持续截断其忙期，导致平均忙期逐步回落至接近单包传输时长，机制行为也随之逼近经典 CSMA。与此同时，系统公平性主要由假期波动主导，而两者在假期统计特征上近似一致，因此在相同 $q$ 下呈现出接近的公平性水平，最终表现为图中几乎重叠的轨迹。上述结果说明，CSMAST 在保持协议兼容性与可比公平性的前提下，能够有效突破传统 CSMA 的吞吐量上限。
 
 \section{本章小结}
 
