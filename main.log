@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.28)  31 MAR 2026 22:21
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.28)  31 MAR 2026 23:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1510,19 +1510,25 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [54]
 File: figure/chap4/throughput_fairness_vs_q.pdf Graphic file (type pdf)
 <use figure/chap4/throughput_fairness_vs_q.pdf>
+
+
+LaTeX Warning: Reference `fig:csmast_throughput_vs_n' on page 55 undefined on input line 296.
+
+[55]
+File: figure/chap4/thu_vs_n_CSMAST.pdf Graphic file (type pdf)
+<use figure/chap4/thu_vs_n_CSMAST.pdf>
 File: figure/chap4/throughput_fairness_tradeoff.pdf Graphic file (type pdf)
 <use figure/chap4/throughput_fairness_tradeoff.pdf>
- [55] [56]) [57] [58
-
-
-
-
-]
+ [56] [57]) [58]
 \openout2 = `docs/Chapter_05.aux'.
 
  (./docs/Chapter_05.tex
 第5章
 [59
+
+
+
+
 
 
 ]
@@ -1804,14 +1810,26 @@ Package natbib Warning: There were undefined citations.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: F583291DEF99BDE88FBD4C3C0DEB0BA4;6519.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: F583291DEF99BDE88FBD4C3C0DEB0BA4;6519
+(rerunfilecheck)             After:  45CBD1ED1C110001D9A968A7A7549BF7;6519.
  ) 
 Here is how much of TeX's memory you used:
- 36126 strings out of 476179
- 768973 string characters out of 5813072
+ 36135 strings out of 476179
+ 769295 string characters out of 5813072
  1104874 words of memory out of 5000000
- 56040 multiletter control sequences out of 15000+600000
+ 56048 multiletter control sequences out of 15000+600000
  497198 words of font info for 198 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  103i,21n,111p,1195b,931s stack positions out of 10000i,1000n,20000p,200000b,200000s

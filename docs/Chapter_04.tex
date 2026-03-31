@@ -290,8 +290,16 @@ $\lambda_{out,i}^{T}=\frac{N_{succ,i}(\tau_S-\tau_I)}{T}$
 	\centering
 	\includegraphics[width=0.8\textwidth]{figure/chap4/throughput_fairness_vs_q.pdf}
 	\caption{CSMAST 网络吞吐量 $\hat{\lambda}_{out}^{net}$ 与短期 Jain 公平性指数 $J_T$ 随传输概率 $q$ 的变化（$n=100,\tau_S=5,\tau_F=3,\tau_I=1,T=10^6$）}
-	\caption{CSMAST 网络吞吐量 $\lambda^{net}_{out}$ 与短期 Jain 公平性指数 $J_T$ 随传输概率 $q$ 的变化（$n=100, \tau_S=5, \tau_F=3, \tau_I=1$）}
 	\label{fig:csmast_perf_q}
+\end{figure}
+
+为考察网络规模对性能的影响，图 \ref{fig:csmast_throughput_vs_n} 进一步给出了网络吞吐量随节点数量 $n$ 的变化趋势。在固定接入概率与时隙参数下，随着 $n$ 增大，系统总竞争强度上升，碰撞与空闲侦听开销占比提高，导致有效吞吐量整体下降。图中仿真点与理论曲线保持良好一致，说明本文模型不仅能够刻画 $q$ 维度上的变化规律，也能准确预测节点规模扩展下的吞吐量演化趋势。
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=0.75\textwidth]{figure/chap4/thu_vs_n_CSMAST.pdf}
+	\caption{CSMAST 网络吞吐量 $\lambda_{out}^{net}$ 随节点数量 $n$ 的变化。（$q=0.001,\tau_S=5,\tau_F=3,\tau_I=1,T=10^6$）}
+	\label{fig:csmast_throughput_vs_n}
 \end{figure}
 
 图 \ref{fig:comparison_classic} 进一步展示了 CSMAST 与经典 CSMA 方案在吞吐量与公平性二维平面上的性能轨迹对比。经典 CSMA 的性能曲线基于附录\ref{app:classic_csma} 中推导的理论公式，即式 \ref{eq:classic_csma_throughput} 和式 \ref{eq:optimal_q_classic} 绘制，从而保证两者是在完全相同的时隙结构参数 $x, y$ 以及统一分析框架下进行比较。通过遍历传输概率 $q$，可以得到两种方案在不同工作点下的性能包络。对比结果表明，在同等公平性水平下，CSMAST 的吞吐量上限显著高于经典 CSMA。具体而言，经典 CSMA 的最大理论吞吐量约为 0.518，而 CSMAST 可将这一上限提升至 0.667，实现约 28.8\% 的性能增益，并在图中形成明显更高的性能边界。

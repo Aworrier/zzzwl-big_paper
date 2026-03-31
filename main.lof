@@ -23,20 +23,21 @@
 \contentsline {figure}{\numberline {4-1}{\ignorespaces CSMAST方案中的信道状态演变示意图。$B_c$、$V_c$和$C_c$分别表示信道的忙期、假期和周期时间。\relax }}{47}{figure.caption.21}%
 \contentsline {figure}{\numberline {4-2}{\ignorespaces 描述信道假期内状态转移过程的吸收马尔可夫链模型。其中状态 F 和 I 为可转移态，状态 S 为吸收态。\relax }}{49}{figure.caption.22}%
 \contentsline {figure}{\numberline {4-3}{\ignorespaces CSMAST 网络吞吐量 $\hat {\lambda }_{out}^{net}$ 与短期 Jain 公平性指数 $J_T$ 随传输概率 $q$ 的变化（$n=100,\tau _S=5,\tau _F=3,\tau _I=1,T=10^6$）\relax }}{56}{figure.caption.23}%
-\contentsline {figure}{\numberline {4-4}{\ignorespaces CSMAST 与经典 CSMA 方案的吞吐量-公平性性能轨迹对比\relax }}{57}{figure.caption.24}%
+\contentsline {figure}{\numberline {4-4}{\ignorespaces CSMAST 网络吞吐量 $\lambda _{out}^{net}$ 随节点数量 $n$ 的变化（理论值与仿真值对比）\relax }}{57}{figure.caption.24}%
+\contentsline {figure}{\numberline {4-5}{\ignorespaces CSMAST 与经典 CSMA 方案的吞吐量-公平性性能轨迹对比\relax }}{58}{figure.caption.25}%
 \addvspace {10.0pt}
-\contentsline {figure}{\numberline {5-1}{\ignorespaces 统一接入框架与协议选择流程\relax }}{60}{figure.caption.26}%
-\contentsline {figure}{\numberline {5-2}{\ignorespaces 两阶段参数空间采样策略流程图\relax }}{65}{figure.caption.29}%
-\contentsline {figure}{\numberline {5-3}{\ignorespaces 统一仿真器设计与实现流程图\relax }}{67}{figure.caption.30}%
-\contentsline {figure}{\numberline {5-4}{\ignorespaces 多任务性能预测模型的训练流程示意图\relax }}{69}{figure.caption.32}%
-\contentsline {figure}{\numberline {5-5}{\ignorespaces 均匀流量、归一化总到达率 $\hat {\lambda }=0.3$ 场景下的模型预测数值与仿真结果对比。节点数量为 $n=100$。时隙总长度为 $t=10^6$。\relax }}{74}{figure.caption.35}%
-\contentsline {figure}{\numberline {5-6}{\ignorespaces 均匀流量、$\hat {\lambda }=0.003$ 场景下，不同权重偏好的综合效用 $U$ 对比。\relax }}{75}{figure.caption.36}%
-\contentsline {figure}{\numberline {5-7}{\ignorespaces 场景一下性能预测模型推荐策略与基线策略的效用对比。横坐标表示按时序排列的协议切换窗口编号，纵坐标表示对应的综合效用 $U(\tilde {\mathbf {y}})$。\relax }}{78}{figure.caption.39}%
-\contentsline {figure}{\numberline {5-8}{\ignorespaces 场景二下性能预测模型推荐策略与基线策略的效用对比。横坐标表示按时序排列的协议切换窗口编号，纵坐标表示对应的综合效用 $U(\tilde {\mathbf {y}})$。\relax }}{79}{figure.caption.40}%
+\contentsline {figure}{\numberline {5-1}{\ignorespaces 统一接入框架与协议选择流程\relax }}{60}{figure.caption.27}%
+\contentsline {figure}{\numberline {5-2}{\ignorespaces 两阶段参数空间采样策略流程图\relax }}{65}{figure.caption.30}%
+\contentsline {figure}{\numberline {5-3}{\ignorespaces 统一仿真器设计与实现流程图\relax }}{67}{figure.caption.31}%
+\contentsline {figure}{\numberline {5-4}{\ignorespaces 多任务性能预测模型的训练流程示意图\relax }}{69}{figure.caption.33}%
+\contentsline {figure}{\numberline {5-5}{\ignorespaces 均匀流量、归一化总到达率 $\hat {\lambda }=0.3$ 场景下的模型预测数值与仿真结果对比。节点数量为 $n=100$。时隙总长度为 $t=10^6$。\relax }}{74}{figure.caption.36}%
+\contentsline {figure}{\numberline {5-6}{\ignorespaces 均匀流量、$\hat {\lambda }=0.003$ 场景下，不同权重偏好的综合效用 $U$ 对比。\relax }}{75}{figure.caption.37}%
+\contentsline {figure}{\numberline {5-7}{\ignorespaces 场景一下性能预测模型推荐策略与基线策略的效用对比。横坐标表示按时序排列的协议切换窗口编号，纵坐标表示对应的综合效用 $U(\tilde {\mathbf {y}})$。\relax }}{78}{figure.caption.40}%
+\contentsline {figure}{\numberline {5-8}{\ignorespaces 场景二下性能预测模型推荐策略与基线策略的效用对比。横坐标表示按时序排列的协议切换窗口编号，纵坐标表示对应的综合效用 $U(\tilde {\mathbf {y}})$。\relax }}{79}{figure.caption.41}%
 \addvspace {10.0pt}
 \addvspace {10.0pt}
 \addvspace {10.0pt}
 \addvspace {10.0pt}
-\contentsline {figure}{\numberline {B-1}{\ignorespaces 描述忙期内节点缓存队列演化的吸收马尔可夫吸收链状态转移图\relax }}{93}{figure.caption.42}%
+\contentsline {figure}{\numberline {B-1}{\ignorespaces 描述忙期内节点缓存队列演化的吸收马尔可夫吸收链状态转移图\relax }}{93}{figure.caption.43}%
 \addvspace {10.0pt}
 \addvspace {10.0pt}
