@@ -22,7 +22,7 @@
 \addvspace {10.0pt}
 \contentsline {figure}{\numberline {4-1}{\ignorespaces CSMAST方案中的信道状态演变示意图。$B_c$、$V_c$和$C_c$分别表示信道的忙期、假期和周期时间。\relax }}{47}{figure.caption.21}%
 \contentsline {figure}{\numberline {4-2}{\ignorespaces 描述信道假期内状态转移过程的吸收马尔可夫链模型。其中状态 F 和 I 为可转移态，状态 S 为吸收态。\relax }}{49}{figure.caption.22}%
-\contentsline {figure}{\numberline {4-3}{\ignorespaces CSMAST 网络吞吐量 $\hat {\lambda }_{out}^{net}$ 与短期 Jain 公平性指数 $J_T$ 随传输概率 $q$ 的变化（$n=100, \tau _S=5, \tau _F=3, \tau _I=1$）\relax }}{56}{figure.caption.23}%
+\contentsline {figure}{\numberline {4-3}{\ignorespaces CSMAST 网络吞吐量 $\hat {\lambda }_{out}^{net}$ 与短期 Jain 公平性指数 $J_T$ 随传输概率 $q$ 的变化（$n=100,\tau _S=5,\tau _F=3,\tau _I=1,T=10^6$）\relax }}{56}{figure.caption.23}%
 \contentsline {figure}{\numberline {4-4}{\ignorespaces CSMAST 与经典 CSMA 方案的吞吐量-公平性性能轨迹对比\relax }}{57}{figure.caption.24}%
 \addvspace {10.0pt}
 \contentsline {figure}{\numberline {5-1}{\ignorespaces 统一接入框架与协议选择流程\relax }}{60}{figure.caption.26}%
