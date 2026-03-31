@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.28)  31 MAR 2026 18:31
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.28)  31 MAR 2026 21:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1294,17 +1294,10 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 第1章
 File: figure/chap1/iot_challenges.pdf Graphic file (type pdf)
 <use figure/chap1/iot_challenges.pdf>
-
-Package natbib Warning: Citation `2020_SmartFactory' on page 1 undefined on input line 20.
-
 [1
 
 
 ]
-
-Package natbib Warning: Citation `2018_5GIoTsurvey，2019_5GIoTsurvey' on page 2 undefined on input line 27.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
@@ -1365,12 +1358,9 @@ File: figure/chap2/5G NR标准LBT过程.pdf Graphic file (type pdf)
 File: figure/chap2/通用系统场景.pdf Graphic file (type pdf)
 <use figure/chap2/通用系统场景.pdf>
 
-Underfull \vbox (badness 2035) has occurred while \output is active []
+Underfull \vbox (badness 1281) has occurred while \output is active []
 
- [20]
-Underfull \vbox (badness 1603) has occurred while \output is active []
-
- [21]
+ [20] [21]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [22] [23]) [24]
@@ -1543,48 +1533,45 @@ File: figure/chap5/model1.pdf Graphic file (type pdf)
 Underfull \vbox (badness 2452) has occurred while \output is active []
 
  [60]
-Underfull \hbox (badness 1348) in paragraph at lines 81--82
+Underfull \hbox (badness 1348) in paragraph at lines 82--83
 []|\TU/SimSun(0)/m/n/10.53937 表 征 系 统 整 体 流 量 强 度，|
  []
 
 
-Underfull \hbox (badness 5696) in paragraph at lines 105--111
+Underfull \hbox (badness 5696) in paragraph at lines 106--112
 []|$\OT1/cmr/m/n/10.53937 ^^I[] = [][] []\OML/cmm/m/it/10.53937 ; R\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 ^^\\OT1/cmr/m/n/10.53937 ) =
  []
 
 
-Overfull \hbox (5.95157pt too wide) in paragraph at lines 73--125
+Overfull \hbox (5.95157pt too wide) in paragraph at lines 74--126
  [][] 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [61]
+[61]
 Underfull \vbox (badness 6332) has occurred while \output is active []
 
  [62]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [63] [64]
+ [63]
 File: figure/chap5/数据集采样策略.pdf Graphic file (type pdf)
 <use figure/chap5/数据集采样策略.pdf>
-
+ [64]
 Underfull \vbox (badness 3354) has occurred while \output is active []
 
  [65]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [66]
 File: figure/chap5/仿真器实现流程框图.pdf Graphic file (type pdf)
 <use figure/chap5/仿真器实现流程框图.pdf>
 
-Overfull \hbox (1.51387pt too wide) in paragraph at lines 370--472
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [66]
+Overfull \hbox (1.51387pt too wide) in paragraph at lines 368--470
  [][] 
  []
 
 
-Underfull \vbox (badness 3977) has occurred while \output is active []
+Underfull \vbox (badness 6876) has occurred while \output is active []
 
  [67]
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1596,12 +1583,9 @@ File: figure/chap5/神经网络训练流程.pdf Graphic file (type pdf)
 Underfull \vbox (badness 2050) has occurred while \output is active []
 
  [69]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 3735) has occurred while \output is active []
 
- [70]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [71] [72]
+ [70] [71] [72]
 File: figure/chap5/shared_legend.pdf Graphic file (type pdf)
 <use figure/chap5/shared_legend.pdf>
 File: figure/chap5/5_3_metric_throughput.pdf Graphic file (type pdf)
@@ -1609,7 +1593,7 @@ File: figure/chap5/5_3_metric_throughput.pdf Graphic file (type pdf)
 File: figure/chap5/5_3_metric_delay.pdf Graphic file (type pdf)
 <use figure/chap5/5_3_metric_delay.pdf>
 
-Overfull \hbox (2.9906pt too wide) in paragraph at lines 817--821
+Overfull \hbox (2.9906pt too wide) in paragraph at lines 815--819
  [][][] 
  []
 
@@ -1623,11 +1607,14 @@ File: figure/chap5/5_3_utility_delay_prio.pdf Graphic file (type pdf)
 <use figure/chap5/5_3_utility_delay_prio.pdf>
 File: figure/chap5/5_3_utility_signaling_prio.pdf Graphic file (type pdf)
 <use figure/chap5/5_3_utility_signaling_prio.pdf>
-[73]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [73]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [74]
-Underfull \vbox (badness 4036) has occurred while \output is active []
+Underfull \vbox (badness 2735) has occurred while \output is active []
 
  [75] [76] [77]
 File: figure/chap5/utility_dynamic_uniform_0315.pdf Graphic file (type pdf)
@@ -1680,23 +1667,23 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 
  [85
 
-] [86]
-Underfull \hbox (badness 1412) in paragraph at lines 308--313
+] [86] [87]
+Underfull \hbox (badness 1412) in paragraph at lines 322--327
 []\TU/TimesNewRoman(0)/m/n/10.53937 GU Y, XU Y, ZHANG B, et al. Toward the Random Multiaccess in SIoT: A Generalized-
  []
 
-[87] [88]
-Underfull \hbox (badness 5036) in paragraph at lines 462--469
+[88]
+Underfull \hbox (badness 5036) in paragraph at lines 476--483
 []\TU/TimesNewRoman(0)/m/n/10.53937 de ALFARO L, ZHANG M, GARCIA-LUNA-ACEVES J J. Approaching Fair Collision-
  []
 
 
-Underfull \hbox (badness 2600) in paragraph at lines 462--469
+Underfull \hbox (badness 2600) in paragraph at lines 476--483
 \TU/TimesNewRoman(0)/m/n/10.53937 Free Channel Access with Slotted ALOHA Using Collaborative Policy-Based Reinforcement
  []
 
 
-Underfull \hbox (badness 1092) in paragraph at lines 462--469
+Underfull \hbox (badness 1092) in paragraph at lines 476--483
 \TU/TimesNewRoman(0)/m/n/10.53937 Learning[C/OL] //Proc. IFIP Netw. Conf.. 2020: 262–270. []$[][][][] [] [] [] [][] [] [][][] [] [][][] [] [][] [] [][][][][] []
  []
 
@@ -1824,12 +1811,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: F583291DEF99BDE88FBD4C3C0DEB0BA4;6519.
  ) 
 Here is how much of TeX's memory you used:
- 36129 strings out of 476179
- 769425 string characters out of 5813072
- 1104745 words of memory out of 5000000
- 56043 multiletter control sequences out of 15000+600000
+ 36126 strings out of 476179
+ 768973 string characters out of 5813072
+ 1104870 words of memory out of 5000000
+ 56040 multiletter control sequences out of 15000+600000
  497198 words of font info for 198 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 103i,21n,111p,1195b,927s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 103i,21n,111p,1195b,931s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on main.pdf (118 pages).

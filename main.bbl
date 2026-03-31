@@ -105,11 +105,25 @@
   \bibvolume{14}\thinspace{}\textnormal{:
   }\bibpages{8471\thinspace{}\textnormal{--}\thinspace{}8483}\@.
 
+\bibitem{2020_SmartFactory}
+\bibauthor{CASTAGNO P\@, MANCUSO V\@, SERENO M, et~al}\@. \bibtitle{A simple
+  model of MTC flows applied to smart factories}\bibmark{[J]}\@.
+  \bibjournal{IEEE Transactions on Mobile Computing}\@, \bibyear{2020}\@,
+  \bibvolume{20}\bibnumber{(10)}\thinspace{}\textnormal{:
+  }\bibpages{2906\thinspace{}\textnormal{--}\thinspace{}2923}\@.
+
 \bibitem{2018_5GIoTsurvey}
 \bibauthor{LI S\@, DA~XU L\@, ZHAO S}\@. \bibtitle{5G Internet of Things: A
   survey}\bibmark{[J]}\@. \bibjournal{Journal of Industrial Information
   Integration}\@, \bibyear{2018}\@, \bibvolume{10}\thinspace{}\textnormal{:
   }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}9}\@.
+
+\bibitem{2019_5GIoTsurvey}
+\bibauthor{CHETTRI L\@, BERA R}\@. \bibtitle{A comprehensive survey on Internet
+  of Things (IoT) toward 5G wireless systems}\bibmark{[J]}\@. \bibjournal{IEEE
+  Internet of Things journal}\@, \bibyear{2019}\@,
+  \bibvolume{7}\bibnumber{(1)}\thinspace{}\textnormal{:
+  }\bibpages{16\thinspace{}\textnormal{--}\thinspace{}32}\@.
 
 \bibitem{2013_4gLTERA}
 \bibauthor{DAHLMAN E\@, PARKVALL S\@, SKOLD J}\@. \bibbooktitle{4G:

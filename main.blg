@@ -1,6 +1,8 @@
 This is BibTeX, Version 0.99d (TeX Live 2022)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
+A level-1 auxiliary file: docs/Acronym.aux
+A level-1 auxiliary file: docs/Symbol.aux
 A level-1 auxiliary file: docs/Chapter_01.aux
 A level-1 auxiliary file: docs/Chapter_02.aux
 A level-1 auxiliary file: docs/Chapter_03.aux
@@ -17,13 +19,13 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: Bibliography/Reference.bib
 Warning--string name "apr" is undefined
---line 435 of file Bibliography/Reference.bib
+--line 485 of file Bibliography/Reference.bib
 Warning--string name "mar" is undefined
---line 577 of file Bibliography/Reference.bib
+--line 627 of file Bibliography/Reference.bib
 Warning--string name "jan" is undefined
---line 755 of file Bibliography/Reference.bib
+--line 805 of file Bibliography/Reference.bib
 Warning--string name "feb" is undefined
---line 779 of file Bibliography/Reference.bib
+--line 829 of file Bibliography/Reference.bib
 Warning--I didn't find a database entry for "Lin2013Toward"
 Warning--Require address: 2023_ITUFramework
 Warning--Require address: 3GPP_TR38843_R19
@@ -66,45 +68,45 @@ Warning--Require citedate: 2020_ICAIIC_MACDesign
 Warning--Require citedate: 2021_ACCESS_SelfDriving
 Warning--Require address: 1996_Gausian
 Warning--Require address: bertsekas2008_introduction
-You've used 70 entries,
+You've used 72 entries,
             3107 wiz_defined-function locations,
-            1198 strings with 20404 characters,
-and the built_in function-call counts, 121097 in all, are:
-= -- 13148
-> -- 232
-< -- 534
-+ -- 10097
-- -- 813
-* -- 3531
-:= -- 12975
+            1212 strings with 20799 characters,
+and the built_in function-call counts, 124951 in all, are:
+= -- 13571
+> -- 239
+< -- 550
++ -- 10428
+- -- 839
+* -- 3640
+:= -- 13390
 add.period$ -- 0
-call.type$ -- 70
-change.case$ -- 324
+call.type$ -- 72
+change.case$ -- 334
 chr.to.int$ -- 0
-cite$ -- 111
-duplicate$ -- 17417
-empty$ -- 5031
-format.name$ -- 648
-if$ -- 32044
+cite$ -- 113
+duplicate$ -- 17974
+empty$ -- 5184
+format.name$ -- 668
+if$ -- 33063
 int.to.chr$ -- 0
-int.to.str$ -- 70
+int.to.str$ -- 72
 missing$ -- 0
-newline$ -- 237
-num.names$ -- 70
-pop$ -- 1825
+newline$ -- 243
+num.names$ -- 72
+pop$ -- 1885
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1011
+skip$ -- 1040
 stack$ -- 0
-substring$ -- 14571
-swap$ -- 3550
+substring$ -- 15036
+swap$ -- 3664
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 41
-while$ -- 1648
-width$ -- 72
-write$ -- 1026
+while$ -- 1702
+width$ -- 74
+write$ -- 1056
 (There were 46 warnings)
