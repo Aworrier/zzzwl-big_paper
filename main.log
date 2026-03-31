@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.28)  30 MAR 2026 19:34
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.28)  31 MAR 2026 16:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1292,8 +1292,8 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
  (./docs/Chapter_01.tex
 第1章
-File: figure/chap1/iot_challenges_black.pdf Graphic file (type pdf)
-<use figure/chap1/iot_challenges_black.pdf>
+File: figure/chap1/iot_challenges.pdf Graphic file (type pdf)
+<use figure/chap1/iot_challenges.pdf>
 
 Package natbib Warning: Citation `2020_SmartFactory' on page 1 undefined on input line 20.
 
@@ -1316,18 +1316,21 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [4]
 File: figure/chap1/aloha_related_work.pdf Graphic file (type pdf)
 <use figure/chap1/aloha_related_work.pdf>
-
-Underfull \vbox (badness 1521) has occurred while \output is active []
-
  [5]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1147) has occurred while \output is active []
 
  [6]
 File: figure/chap1/csma_related_work.pdf Graphic file (type pdf)
 <use figure/chap1/csma_related_work.pdf>
- [7] [8]
+ [7]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8]
 File: figure/chap1/ai_related_work.pdf Graphic file (type pdf)
 <use figure/chap1/ai_related_work.pdf>
+
+Underfull \vbox (badness 3449) has occurred while \output is active []
+
  [9]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1822,11 +1825,11 @@ Package rerunfilecheck Info: File `main.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  36129 strings out of 476179
- 769473 string characters out of 5813072
- 1105170 words of memory out of 5000000
+ 769425 string characters out of 5813072
+ 1104793 words of memory out of 5000000
  56043 multiletter control sequences out of 15000+600000
  497198 words of font info for 198 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 103i,21n,111p,1228b,927s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 103i,21n,111p,1239b,927s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on main.pdf (118 pages).
