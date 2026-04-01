@@ -275,7 +275,7 @@
 本节通过蒙特卡洛仿真从三个层面验证前文结论：理论一致性、与经典 CSMA 的对比增益、以及机制层面的性能权衡。仿真平台基于 MATLAB 构建，严格遵循第 4.1 节定义的异构时隙结构与碰撞信道模型。在所有仿真中，网络处于饱和状态，节点仅在侦听到信道可用时才以概率 $q$ 在下一时隙发起接入。
 
 在仿真中，网络吞吐量按
-$\hat{\lambda}_{out}^{net}=\frac{N_{succ}(\tau_S-\tau_I)}{T}$
+$\lambda_{out}^{net}=\frac{N_{succ}(\tau_S-\tau_I)}{T}$
 计算，其中 $N_{succ}$ 表示观测窗口内总体成功接入次数，$T$ 为总仿真时长。
 短期公平性由各节点短期吞吐量按 Jain 指数标准定义计算，即
 $J_T=\frac{\left(\sum_{i=1}^{n}\lambda_{out,i}^{T}\right)^2}{n\sum_{i=1}^{n}(\lambda_{out,i}^{T})^2}$。
@@ -284,21 +284,30 @@ $\lambda_{out,i}^{T}=\frac{N_{succ,i}(\tau_S-\tau_I)}{T}$
 计算，$N_{succ,i}$ 表示该节点在观测窗口内的成功数据包次数。
 除非另有说明，本节采用基准参数 $n=100$、$T=10^6$、$x=2$、$y=4$，即 $\tau_I=1,\tau_F=3,\tau_S=5$，并在图注中明确对应的观测窗口。
 
-图 \ref{fig:csmast_perf_q} 展示了在 CSMAST 方案下，网络吞吐量 $\lambda^{net}_{out}$ 与短期 Jain 公平性指数 $J_T$ 随传输概率 $q$ 的变化情况。从图中可以清晰看出，仿真结果与基于休假排队模型推导出的理论曲线高度吻合，从而验证了第 4.3 节理论分析的准确性。具体而言，网络吞吐量 $\lambda^{net}_{out}$ 随接入概率 $q$ 单调递减，并在 $q$ 趋近于 0 时达到理论峰值。根据设定参数，该峰值逼近 $\frac{\tau_S-\tau_I}{\tau_S+\tau_I} = \frac{4}{6} \approx 0.667$。然而，在获得高吞吐量的同时，系统在极小接入概率 $q \to 0^+$ 下的公平性表现较差。这是因为在极稀疏的接入条件下，一旦少数节点成功抢占信道，便会利用连续传输机制长期维持较高传输速率，而其余大多数节点只能处于空闲侦听状态，极少获得发送机会，从而导致明显的服务饥饿与公平性退化。随着 $q$ 适度增加，碰撞概率的上升打破了这种信道垄断，Jain 公平性指数 $J_T$ 迅速回升并接近 1，而此时网络吞吐量虽然有所下降但仍保持在较高水平。这表明 CSMAST 机制能够通过参数调整，在牺牲少量吞吐量的前提下实现较好的吞吐量与公平性权衡。
+图 \ref{fig:csmast_perf_q} 给出了 CSMAST 中网络吞吐量 $\lambda_{out}^{net}$ 与短期 Jain 公平性指数 $J_T$ 随接入概率 $q$ 的变化关系。仿真结果与理论曲线整体吻合，验证了第 4.3 节模型推导的有效性。随着 $q$ 增大，$\lambda_{out}^{net}$ 单调下降，并在 $q\to 0$ 时逼近理论上限 $\frac{\tau_S-\tau_I}{\tau_S+\tau_I}=\frac{4}{6}\approx 0.667$。公平性方面，在极小 $q$ 区域，由于少数节点更易形成连续占用，$J_T$ 偏低；当 $q$ 适度增大后，碰撞对长忙期的打断作用增强，$J_T$ 快速回升并接近 1。该结果表明，CSMAST 可通过调节 $q$ 在吞吐量与公平性之间实现可控折中。
 
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figure/chap4/throughput_fairness_vs_q.pdf}
-	\caption{CSMAST 网络吞吐量 $\hat{\lambda}_{out}^{net}$ 与短期 Jain 公平性指数 $J_T$ 随传输概率 $q$ 的变化（$n=100,\tau_S=5,\tau_F=3,\tau_I=1,T=10^6$）}
+	\caption{CSMAST 网络中 $\lambda_{out}^{net}$ 与 $J_T$ 随接入概率 $q$ 的变化（$n=100,\tau_S=5,\tau_F=3,\tau_I=1,T=10^6$）}
 	\label{fig:csmast_perf_q}
 \end{figure}
 
-为考察网络规模对性能的影响，图 \ref{fig:csmast_throughput_vs_n} 进一步给出了网络吞吐量随节点数量 $n$ 的变化趋势。在固定接入概率与时隙参数下，随着 $n$ 增大，系统总竞争强度上升，碰撞与空闲侦听开销占比提高，导致有效吞吐量整体下降。图中仿真点与理论曲线保持良好一致，说明本文模型不仅能够刻画 $q$ 维度上的变化规律，也能准确预测节点规模扩展下的吞吐量演化趋势。
+为进一步验证关键参数对吞吐量曲线形态的影响，图 \ref{fig:csmast_throughput_vs_q_taus} 给出了不同成功状态时长 $\tau_S$ 下 $\lambda_{out}^{net}$ 随接入概率 $q$ 的变化。可以观察到，当 $\tau_S$ 从 5 增加到 10 和 30 时，曲线整体上移，说明在相同竞争强度下，较长的有效传输阶段能够更充分地摊销侦听与碰撞开销，从而提升单位时间有效吞吐。同时，各组曲线均随 $q$ 增大而快速下降，且仿真点与理论线在全区间内保持一致，进一步支持第 4.3 节关于吞吐量单调性的理论结论。
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=0.75\textwidth]{figure/chap4/thu_vs_n_CSMAST.pdf}
-	\caption{CSMAST 网络吞吐量 $\lambda_{out}^{net}$ 随节点数量 $n$ 的变化。（$q=0.001,\tau_S=5,\tau_F=3,\tau_I=1,T=10^6$）}
+	\includegraphics[width=0.88\textwidth]{figure/chap4/thu_vs_q_CSMAST_multi_taus.png}
+	\caption{CSMAST 网络中不同 $\tau_S$ 下 $\lambda_{out}^{net}$ 随接入概率 $q$ 的变化（$n=100,\tau_F=3,\tau_I=1,T=10^6$）}
+	\label{fig:csmast_throughput_vs_q_taus}
+\end{figure}
+
+为考察网络规模影响，图 \ref{fig:csmast_throughput_vs_n} 给出了不同 $q$ 条件下 $\lambda_{out}^{net}$ 随节点数量 $n$ 的叠加曲线。结果显示：在任一固定 $q$ 下，$n$ 增大将提高总体竞争强度并增加碰撞与侦听开销，使吞吐量整体下降；在任一固定 $n$ 下，较小 $q$ 往往对应更高吞吐量，但伴随更强的短时占用集中风险。理论与仿真曲线的总体一致性说明该模型在不同负载区间均具有较好解释力。
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=0.75\textwidth]{figure/chap4/thu_vs_n_CSMAST_multi_q.pdf}
+	\caption{CSMAST 网络中 $\lambda_{out}^{net}$ 随节点数量 $n$ 的变化（多组 $q$ 叠加，$\tau_S=5,\tau_F=3,\tau_I=1,T=10^6$）}
 	\label{fig:csmast_throughput_vs_n}
 \end{figure}
 
@@ -307,7 +316,7 @@ $\lambda_{out,i}^{T}=\frac{N_{succ,i}(\tau_S-\tau_I)}{T}$
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figure/chap4/throughput_fairness_tradeoff.pdf}
-	\caption{CSMAST 与经典 CSMA 方案的吞吐量-公平性性能轨迹对比}
+	\caption{CSMAST 与经典 CSMA 的吞吐量-公平性轨迹对比（参数同图 \ref{fig:csmast_perf_q}）}
 	\label{fig:comparison_classic}
 \end{figure}
 
