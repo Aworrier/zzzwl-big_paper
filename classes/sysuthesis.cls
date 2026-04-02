@@ -150,6 +150,8 @@
 % 目录设定，使用tocloft宏包
 \setcounter{secnumdepth}{3} % depth of toc, 2
 \setcounter{tocdepth}{1}
+\renewcommand{\listfigurename}{图片目录}
+\renewcommand{\listtablename}{表格目录}
 % 如果要在目录中显示子章节请换用下面这行(目录中显示到x.y.z章)，如果不用这行默认显示到x.y章。
 % \setcounter{tocdepth}{2}
 
@@ -173,6 +175,16 @@
 \renewcommand{\cftafterlottitle}{\hfill}
 \renewcommand{\cftafterloftitle}{\hfill}
 \renewcommand{\cftnodots}{\cftdotsep}     % 使用点指示页数
+
+% 图目录条目前缀：图1-1
+\renewcommand{\cftfigpresnum}{图}
+\renewcommand{\cftfigaftersnum}{\hspace{0.5em}}
+\addtolength{\cftfignumwidth}{2\ccwd}
+
+% 表目录条目前缀：表1-1
+\renewcommand{\cfttabpresnum}{表}
+\renewcommand{\cfttabaftersnum}{\hspace{0.5em}}
+\addtolength{\cfttabnumwidth}{2\ccwd}
 
 \addtolength{\cftchapnumwidth}{3\ccwd}
 \newcommand\mybold[1]{\textit{\textbf{#1}}}
