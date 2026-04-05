@@ -111,6 +111,21 @@
   \bibvolume{20}\bibnumber{(10)}\thinspace{}\textnormal{:
   }\bibpages{2906\thinspace{}\textnormal{--}\thinspace{}2923}\@.
 
+\bibitem{2026_MACsurvey}
+\bibauthor{ALAHMADI H\@, BOUABDALLAH F\@, AL-DUBAI A, et~al}\@. \bibtitle{A
+  Survey on LoRaWAN MAC Schemes: From Conventional Solutions to AI-Driven
+  Protocols}\bibmark{[J]}\@. \bibjournal{IEEE Communications Surveys \&
+  Tutorials}\@, \bibyear{2026}\@, \bibvolume{28}\thinspace{}\textnormal{:
+  }\bibpages{2650\thinspace{}\textnormal{--}\thinspace{}2690}\@.
+
+\bibitem{2025_RAleo}
+\bibauthor{LE T~T~T\@, HASSAN N~U\@, CHEN X, et~al}\@. \bibtitle{A Survey on
+  Random Access Protocols in Direct-Access LEO Satellite-Based IoT
+  Communication}\bibmark{[J]}\@. \bibjournal{IEEE Communications Surveys \&
+  Tutorials}\@, \bibyear{2025}\@,
+  \bibvolume{27}\bibnumber{(1)}\thinspace{}\textnormal{:
+  }\bibpages{426\thinspace{}\textnormal{--}\thinspace{}462}\@.
+
 \bibitem{2018_5GIoTsurvey}
 \bibauthor{LI S\@, DA~XU L\@, ZHAO S}\@. \bibtitle{5G Internet of Things: A
   survey}\bibmark{[J]}\@. \bibjournal{Journal of Industrial Information
@@ -180,6 +195,14 @@
   \bibaddress{Edinburgh, UK}\thinspace{}\textnormal{: }\bibinstitution{3rd
   Generation Partnership Project (3GPP)}\@, \bibyear{2023}\@.
 
+\bibitem{2025_AI_IIoT}
+\bibauthor{AOUEDI O\@, VU T-H\@, SACCO A, et~al}\@. \bibtitle{A Survey on
+  Intelligent Internet of Things: Applications, Security, Privacy, and Future
+  Directions}\bibmark{[J]}\@. \bibjournal{IEEE Communications Surveys \&
+  Tutorials}\@, \bibyear{2025}\@,
+  \bibvolume{27}\bibnumber{(2)}\thinspace{}\textnormal{:
+  }\bibpages{1238\thinspace{}\textnormal{--}\thinspace{}1292}\@.
+
 \bibitem{1970_Aloha}
 \bibauthor{ABRAMSON N}\@. \bibtitle{{{THE ALOHA SYSTEM}}: {{Another}}
   Alternative for Computer Communications}\bibmark{[C]}
@@ -204,6 +227,27 @@
   \bibyear{2016}\@, \bibvolume{54}\bibnumber{(9)}\thinspace{}\textnormal{:
   }\bibpages{59\thinspace{}\textnormal{--}\thinspace{}65}\@.
 
+\bibitem{2003_SA_backoff}
+\bibauthor{{Yang Yang}\@, {Tak-Shing Peter Yum}}\@. \bibtitle{Delay
+  distributions of slotted {Aloha} and {CSMA}}\bibmark{[J]}\@. \bibjournal{IEEE
+  Trans. Commun.}\@, \bibyear{2003}\@,
+  \bibvolume{51}\bibnumber{(11)}\thinspace{}\textnormal{:
+  }\bibpages{1846\thinspace{}\textnormal{--}\thinspace{}1857}\@.
+
+\bibitem{2011_SA_backoff}
+\bibauthor{SEO J-B\@, LEUNG V~C~M}\@. \bibtitle{Design and analysis of backoff
+  algorithms for random access channels in {UMTS-LTE} and {IEEE 802.16
+  systems}}\bibmark{[J]}\@. \bibjournal{IEEE Trans. Veh. Technol.}\@,
+  \bibyear{2011}\@, \bibvolume{60}\bibnumber{(8)}\thinspace{}\textnormal{:
+  }\bibpages{3975\thinspace{}\textnormal{--}\thinspace{}3989}\@.
+
+\bibitem{2013_SA_backoff}
+\bibauthor{WU H\@, ZHU C\@, LA R~J, et~al}\@. \bibtitle{{FASA}: accelerated
+  {S-{Aloha}} using access history for event-driven {M2M}
+  communications}\bibmark{[J]}\@. \bibjournal{IEEE/ACM Trans. Networking}\@,
+  \bibyear{2013}\@, \bibvolume{21}\bibnumber{(6)}\thinspace{}\textnormal{:
+  }\bibpages{1904\thinspace{}\textnormal{--}\thinspace{}1917}\@.
+
 \bibitem{2015_HybridRA}
 \bibauthor{WIRIAATMADJA D~T\@, CHOI K~W}\@. \bibtitle{Hybrid {{Random Access}}
   and {{Data Transmission Protocol}} for {{Machine-to-Machine Communications}}
@@ -211,6 +255,13 @@
   Wireless Communications}\@, \bibyear{2015}\@,
   \bibvolume{14}\bibnumber{(1)}\thinspace{}\textnormal{:
   }\bibpages{33\thinspace{}\textnormal{--}\thinspace{}46}\@.
+
+\bibitem{2018_SA_EB}
+\bibauthor{BARLETTA L\@, BORGONOVO F\@, FILIPPINI I}\@. \bibtitle{The
+  Throughput and Access Delay of Slotted-{ALOHA} with Exponential
+  Backoff}\bibmark{[J]}\@. \bibjournal{IEEE/ACM Transactions on Networking}\@,
+  \bibyear{2018}\@, \bibvolume{26}\bibnumber{(1)}\thinspace{}\textnormal{:
+  }\bibpages{451\thinspace{}\textnormal{--}\thinspace{}464}\@.
 
 \bibitem{2009_SA_Backoff}
 \bibauthor{RIVERO-ANGELES M~E\@, LARA-RODRIGUEZ D\@, CRUZ-PEREZ F~A}\@.
@@ -220,12 +271,26 @@
   \bibvolume{58}\bibnumber{(1)}\thinspace{}\textnormal{:
   }\bibpages{381\thinspace{}\textnormal{--}\thinspace{}397}\@.
 
-\bibitem{2018_SA_EB}
-\bibauthor{BARLETTA L\@, BORGONOVO F\@, FILIPPINI I}\@. \bibtitle{The
-  Throughput and Access Delay of Slotted-{ALOHA} with Exponential
-  Backoff}\bibmark{[J]}\@. \bibjournal{IEEE/ACM Transactions on Networking}\@,
-  \bibyear{2018}\@, \bibvolume{26}\bibnumber{(1)}\thinspace{}\textnormal{:
-  }\bibpages{451\thinspace{}\textnormal{--}\thinspace{}464}\@.
+\bibitem{2015_SA_bursty}
+\bibauthor{WEI C-H\@, BIANCHI G\@, CHENG R-G}\@. \bibtitle{Modeling and
+  Analysis of Random Access Channels with Bursty Arrivals in OFDMA Wireless
+  Networks}\bibmark{[J]}\@. \bibjournal{IEEE Transactions on Wireless
+  Communications}\@, \bibyear{2015}\@,
+  \bibvolume{14}\bibnumber{(4)}\thinspace{}\textnormal{:
+  }\bibpages{1940\thinspace{}\textnormal{--}\thinspace{}1953}\@.
+
+\bibitem{2011_3GPPR11}
+\bibauthor{{3rd Generation Partnership Project}}\@. \bibtitle{RAN Improvements
+  for Machine-Type Communications}\bibmark{[R]}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibinstitution{3GPP}\@,
+  \bibyear{2011}\@.
+
+\bibitem{2016_SA_bursty}
+\bibauthor{AROUK O\@, KSENTINI A}\@. \bibtitle{General Model for RACH Procedure
+  Performance Analysis}\bibmark{[J]}\@. \bibjournal{IEEE Communications
+  Letters}\@, \bibyear{2016}\@,
+  \bibvolume{20}\bibnumber{(2)}\thinspace{}\textnormal{:
+  }\bibpages{372\thinspace{}\textnormal{--}\thinspace{}375}\@.
 
 \bibitem{2006_Multichannel}
 \bibauthor{CHOI Y-J\@, PARK S\@, BAHK S}\@. \bibtitle{Multichannel Random
@@ -537,5 +602,11 @@
 \bibauthor{BERTSEKAS D\@, TSITSIKLIS J~N}\@. \bibbooktitle{Introduction to
   probability}\bibmark{[M]}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
   }\bibpublisher{Athena Scientific}\@, \bibyear{2008}\@.
+
+\bibitem{2022_LambertW}
+\bibauthor{MEZ{\H{O}} I}\@. \bibbooktitle{The Lambert W Function: Its
+  Generalizations and Applications}\bibmark{[M]}\@. \bibaddress{Boca Raton,
+  FL}\thinspace{}\textnormal{: }\bibpublisher{Chapman and Hall/CRC}\@,
+  \bibyear{2022}\@.
 
 \end{thebibliography}
