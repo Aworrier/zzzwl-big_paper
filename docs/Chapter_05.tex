@@ -1,31 +1,33 @@
 \chapter{基于监督学习的智能协议与参数联合选择方法}
 
 \label{chapter5: ai_selector}
-现代无线网络，尤其是物联网场景，业务需求呈现出显著的多样性与动态性。不同业务在接入密度、数据包长度及时延敏感度等方面差异明显，使得单一随机接入协议难以在复杂多变的网络条件下始终保持最优性能。传统基于固定协议与静态参数配置的设计，难以同时兼顾吞吐量、时延、公平性、信令开销多维性能指标，存在明显局限。
-不同随机接入协议在吞吐性能、时延特性、信令开销方面表现各异。表~\ref{tab:protocol_comparison} 对 SA、SAST、CBA三种协议进行定性对比，可以看出，协议机制的增强虽可显著提升系统吞吐，但同时也可能带来更高的信令开销，进一步表明难以依靠单一协议适应所有场景。
+现代无线网络，特别是物联网场景，正面临着海量设备接入与复杂多变的应用环境，其业务需求呈现出显著的多样性与动态性。
+一方面，不同物联网应用在终端接入密度、数据包数量以及时延要求等维度上存在着巨大差异，展现出业务需求的多样性；另一方面，网络中的活跃节点数与流量模式也在随时间发生着快速演变，体现出业务需求的强动态性。
+这种复杂多变的业务特征，使得传统基于单一随机接入机制与静态参数配置的设计，难以在各种网络状态下始终保持最优性能，更难以同时兼顾吞吐量、时延、公平性和信令开销等多维性能指标，具有明显的局限性。
+不同随机接入协议在吞吐性能、时延特性、信令开销方面表现各异。表~\ref{tab:protocol_comparison} 对 SA、SAST、CBA三种基于时隙 Aloha 的协议进行定性对比，可以看出，协议机制的增强虽可显著提升系统吞吐，但同时也可能带来更高的信令开销，表明难以依靠单一协议适应所有场景。
 
 \begin{table}[htbp]
 \centering
 \caption{不同随机接入协议的定性性能对比}
 \label{tab:protocol_comparison}
-% \renewcommand{\arraystretch}{1.2}
-\begin{tabular}{c|c|c|c}
-\hline
-\textbf{协议} & \textbf{吞吐性能} & \textbf{时延特性} & \textbf{信令开销} \\
-\hline
-SA & 低 & 低 & 中 \\
-\hline
-SAST & 中 & 中 & 低 \\
-\hline
-CBA & 高 & 中-高 & 高 \\
-\hline
+\begin{tabular}{ccccc}
+\toprule
+\textbf{协议} & \textbf{吞吐性能} & \textbf{时延特性} & \textbf{信令开销} & \textbf{公平性} \\
+\midrule
+SA & 低 & 低 & 中 & 高 \\
+SAST & 中 & 中 & 低 & 中 \\
+CBA & 高 & 中-高 & 高 & 低 \\
+\bottomrule
 \end{tabular}
 \end{table}
-因此，依据场景特征动态选择接入协议并联合优化其关键参数，是提升系统整体性能的有效途径。围绕这一需求，本章研究如何在多协议共存的统一框架下，根据业务流量状态智能决策最优协议及其参数配置。
-针对此问题，本文提出一种面向动态业务场景的、基于监督学习的协议与参数联合选择方法，实现接入策略由静态向与数据驱动转变，从而在吞吐量、时延与公平性等多维性能之间取得更优平衡。
+
+依据场景特征动态选择接入协议并联合优化其参数，是提升系统整体性能的有效途径。围绕这一需求，本章研究如何在多协议共存的统一接入框架下，根据业务流量、网络状态等信息，智能选择最优协议及相应的参数配置。
+针对此问题，本章提出了一种面向动态业务场景的、基于监督学习的协议与参数联合选择方法，实现接入策略由静态分析向数据驱动的转变，从而在吞吐量、时延与公平性等多维性能指标之间取得更好的平衡。
 
 \section{问题建模与统一接入框架设计}
-本节给出统一问题建模与接入框架。核心目标是在动态流量下实现协议与参数的联合自适应选择，以提升系统整体性能。
+\label{sec: chap5_question_modeling}
+
+本节给出本章的问题建模以及统一接入框架的设计思路。核心目标是在动态流量下实现协议与参数的联合自适应选择，以提升系统整体性能。
 具体地，\ref{subsec:problem_formulation}~小节给出联合优化问题建模，\ref{subsec:unified_input}~小节构造统一输入特征，\ref{subsec:sim_mapping_utility}~小节定义仿真映射与效用函数，\ref{subsec:equiv_constrained_opt}~小节给出等价约束优化形式。
 
 
@@ -34,36 +36,35 @@ CBA & 高 & 中-高 & 高 \\
 \subsection{问题建模}
 \label{subsec:problem_formulation}
 
-为便于后续章节统一叙述，这里首先对问题进行简要建模。对于任意网络场景，我们用统一输入向量 $\mathbf{X}_{\mathrm{in}}$ 表征其关键配置与状态特征，包括业务流量特征、网络规模以及可选接入协议的候选范围及协议参数等。
-在给定 $\mathbf{X}_{\mathrm{in}}$ 后，我们通过统一仿真器或由监督学习方法构建的性能预测模型评估该配置下的系统性能。记该评估过程为一个映射 $S(\cdot)$，其输出为多维性能指标向量 $\mathbf{y}=S\big(\mathbf{X}_{\mathrm{in}}\big)$。为便于跨场景与跨协议比较性能，引入归一化算子 $\mathrm{norm}(\cdot)$，得到归一化后的指标向量 $\tilde{\mathbf{y}}=\mathrm{norm}(\mathbf{y})$。在此基础上，用综合效用函数 $U(\cdot)$ 将 $\tilde{\mathbf{y}}$ 映射为单一的效用得分。
+为统一后续章节的叙述口径，这里首先对该问题进行数学化建模。对于任意网络场景，本文采用统一的标准化输入向量 $\mathbf{X}_{\mathrm{in}}$ 表征其规模与状态特征，包括业务流量特征、网络节点规模以及可选接入协议的配置参数等。
 
-在上述定义下，我们希望从若干候选接入协议及其允许的参数配置中，选出使综合效用最大的那一组。该联合选择问题可形式化表述为：
+在给定 $\mathbf{X}_{\mathrm{in}}$ 的前提下，本文通过统一仿真器或基于监督学习构建的性能预测模型来评估当前配置下的系统性能，两者分别记为映射 $S(\cdot)$或者映射 $f_{\Phi}(\cdot)$，其输出结果为多维性能指标向量 $\mathbf{y}$。为便于在不同场景与协议之间进行性能比对，引入归一化算子 $\mathrm{norm}(\cdot)$，得到归一化指标向量 $\tilde{\mathbf{y}}=\mathrm{norm}(\mathbf{y})$。在此基础上，进一步通过综合效用函数 $U(\cdot)$ 将 $\tilde{\mathbf{y}}$ 映射为单一的系统效用得分。
+% 取消了 S\big(\mathbf{X}_{\mathrm{in}}\big)
+在上述定义下，核心问题即从若干候选接入协议及其可用的参数配置集合中，决策出使综合效用最大化的最优组合。该协议与参数的联合选择问题可形式化表述为：
 \begin{equation}
 \label{eq:chap5_overview}
 \mathbf{x}_{\mathrm{proto}}^*
 =\arg\max_{\mathbf{x}_{\mathrm{proto}}}
-U\!\left(\mathrm{norm}\!\left(S\big(\mathbf{X}_{\mathrm{in}}\big)\right)\right),
+U\!\left( \tilde{\mathbf{y}} \right),
 \end{equation}
-其中决策变量为统一参数向量 $\mathbf{x}_{\mathrm{proto}}$，其首个分量为协议类型标识符，其余分量为对应协议参数。记 $\mathbf{x}_{\mathrm{proto}} = [a, \mathbf{x}_p]$，其中 $a \in \mathcal{P}$ 表示从候选集合中选取的协议类型，$\mathbf{x}_p \in \mathcal{X}_p$ 为该协议的参数向量，$\mathcal{X}_a$ 为协议 $a$ 的合法参数空间。图~\ref{fig:chap5_framework} 给出了统一接入框架及协议选择流程的示意，后续内容将围绕式~\eqref{eq:chap5_overview} 分别展开统一输入构造、性能指标与效用定义以及数据驱动决策方法的设计。
+其中决策变量为 $[a, \mathbf{x}_a]$。定义$a \in \mathcal{P}$ 表示从候选协议集合中选取的协议类型，$\mathbf{x}_a \in \mathcal{X}_a$ 为该协议的参数向量，$\mathcal{X}_a$ 为协议 $a$ 的合法参数空间。图~\ref{fig:chap5_framework} 给出了统一接入框架及协议选择流程的示意图，后续内容将围绕式~\eqref{eq:chap5_overview} 分别展开标准化输入构造、性能指标与效用定义以及数据驱动决策方法的设计。
+
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.95\textwidth]{figure/chap5/model1.pdf}
+\includegraphics[width=0.95\textwidth]{figure/chap5/fig_5_1_model1.pdf}
 \caption{统一接入框架与协议选择流程}
 \label{fig:chap5_framework}
 \end{figure}
 
 
-\subsection{输入特征标准化与统一接口}
+\subsection{标准化输入向量$\mathbf{X}_{\mathrm{in}}$的构造}
 \label{subsec:unified_input}
-为实现式~\eqref{eq:chap5_overview} 所需的输入表达，本小节给出统一输入 $\mathbf{X}_{\mathrm{in}}$ 的可实现构造方法。本文将特征划分为三类：通用网络参数 $\mathbf{x}_{\mathrm{common}}$，业务流量特征参数 $\mathbf{x}_{\text{traffic}}$，以及协议专属参数 $\mathbf{x}_{\mathrm{proto}}$ 及其有效性掩码 $\mathbf{m}$。
+为满足式~\eqref{eq:chap5_overview} 所需的标准化输入要求，本小节给出统一的标准化输入向量 $\mathbf{X}_{\mathrm{in}}$ 的具体构造方法。本文将输入的特征明确划分为三类集合：通用网络参数 $\mathbf{x}_{\mathrm{common}}$、业务流量特征参数 $\mathbf{x}_{\text{traffic}}$，以及协议专属参数 $\mathbf{x}_{\mathrm{proto}}$ 及对应的有效性掩码 $\mathbf{m}$。
 
-针对通用网络参数 $\mathbf{x}_{\mathrm{common}}$，将其定义为包含网络规模与仿真配置的向量：
-$\mathbf{x}_{\mathrm{common}} = [n,\ T]$,
-其中 $n \in \mathbb{N}^+$ 表示网络节点总数，$T \in \mathbb{N}^+$ 表示仿真或观测的时隙总数。上述参数既用于构建仿真场景，也作为后续学习模型的输入特征，共同刻画系统的整体运行条件。
+针对通用网络参数 $\mathbf{x}_{\mathrm{common}}$，将其定义为包含网络节点规模与观测时长的向量$\mathbf{x}_{\mathrm{common}} = [n,\ T]$。其中，$n \in \mathbb{N}^+$ 表示系统的设备节点总数，$T \in \mathbb{N}^+$ 表示单次仿真或观测过程的时隙总数。上述参数不仅用于构建底层仿真场景，同时也作为后续智能学习模型的直接输入特征，共同刻画系统的基础运行环境。
 
-针对业务流量特征 $\mathbf{x}_{\text{traffic}}$，为准确刻画业务到达的多尺度时空统计特性，本文从网络层与节点层两个层级，分别提取负载强度、突发性与周期性三类特征。具体地，定义五维流量特征向量 $\mathbf{x}_{\text{traffic}} = [\hat{\lambda},\ \mathrm{BI}_{\mathrm{net}},\ \mathrm{BI}_{\mathrm{node}},\ \Psi_{\mathrm{net}},\ \Psi_{\mathrm{node}}]$。
-若需表示节点平均归一化到达率，本文直接使用 $\hat{\lambda}/n$，不再单独引入新符号。
-为定义 $\mathbf{x}_{\text{traffic}}$，设到达矩阵 $\mathbf{A} \in \{0,1\}^{n \times T}$，其中 $A_{i,t}$ 表示节点 $i$ 在时隙 $t$ 是否有包到达。记网络聚合到达序列为 $X(t) = \sum_{i=1}^{n} A_{i,t}$，节点 $i$ 的到达时刻集合为 $\mathcal{T}_i = \{t : A_{i,t} = 1\}$，到达间隔序列为 $\{\Delta t_i^{(k)}\}$，其中 $\Delta t_i^{(k)}$ 为节点 $i$ 第 $k$ 次与第 $k+1$ 次到达的时间间隔。基于此，五维特征定义如下：
+针对业务流量特征 $\mathbf{x}_{\text{traffic}}$，为准确描述业务到达过程的时空统计特性，本文从网络整体与单一节点两个层级，分别提取了负载强度、突发性与周期性这三类核心维度特征。具体而言，构造了五维的流量特征向量 $\mathbf{x}_{\text{traffic}} = [\hat{\lambda},\ \mathrm{BI}_{\mathrm{net}},\ \mathrm{BI}_{\mathrm{node}},\ \Psi_{\mathrm{net}},\ \Psi_{\mathrm{node}}]$。在此基础上，若后续需表征单节点的平均归一化业务到达率，本文将直接通过 $\hat{\lambda}/n$ 进行代入计算，不再额外定义独立的数学符号。
+为定义 $\mathbf{x}_{\text{traffic}}$，设到达矩阵 $\mathbf{A} \in \{0,1\}^{n \times T}$，其中 $A_{i,t}$ 表示节点 $i$ 在时隙 $t$ 是否有包到达。记网络聚合到达序列为 $X(t) = \sum_{i=1}^{n} A_{i,t}$，节点 $i$ 的到达时刻集合为 $\mathcal{T}_i = \{t : A_{i,t} = 1\}$，到达间隔序列为 $\{\Delta t_i^{(k)}\}$，其中 $\Delta t_i^{(k)}$ 为节点 $i$ 第 $k$ 次与第 $k+1$ 次到达的时间间隔。基于此，五维特征定义如下表~\ref{tab:traffic_feature_def} 所述。
 
 \begin{table}[t]
 \centering
@@ -71,16 +72,16 @@ $\mathbf{x}_{\mathrm{common}} = [n,\ T]$,
 \label{tab:traffic_feature_def}
 \renewcommand{\arraystretch}{1.25}
 \small
-\begin{tabular}{p{2.6cm}|p{1.4cm}|p{6.2cm}|p{4.2cm}}
+\begin{tabular}{p{2.6cm} p{1.6cm} p{6.2cm} p{4.2cm}}
 \toprule
-\textbf{名称} & \textbf{变量} & \textbf{计算公式} & \textbf{表征含义} \\
+\textbf{名称} & \textbf{符号变量} & \textbf{计算公式} & \textbf{表征含义} \\
 \midrule
 
 归一化网络平均到达率 
 & $\hat{\lambda}$ 
 & $\hat{\lambda}=\frac{1}{nT}\!\sum_{t=1}^{T}\sum_{i=1}^{n}A_{i,t}$ 
 & 表征系统整体流量强度，反映平均活跃节点占比 \\
-\hline
+\midrule
 
 网络突发度指标 
 & $\mathrm{BI}_{\mathrm{net}}$ 
@@ -88,8 +89,8 @@ $\mathbf{x}_{\mathrm{common}} = [n,\ T]$,
 =\frac{\mathrm{ID}_{\mathrm{net}}-1}{\mathrm{ID}_{\mathrm{net}}+1},\;
 \mathrm{ID}_{\mathrm{net}}
 =\frac{\mathrm{Var}(X(t))}{\mathbb{E}[X(t)]}$ 
-& 刻画网络聚合流量的突发性 \\
-\hline
+& 刻画网络聚合流量的突发性程度 \\
+\midrule
 
 节点突发度指标 
 & $\mathrm{BI}_{\mathrm{node}}$ 
@@ -98,8 +99,8 @@ $\mathbf{x}_{\mathrm{common}} = [n,\ T]$,
 \overline{\mathrm{CV}}
 =\frac{1}{n}\sum_{i=1}^{n}
 \frac{\sqrt{\mathrm{Var}(\Delta t_i)}}{\mathbb{E}[\Delta t_i]}$ 
-& 刻画单节点到达间隔的突发性 \\
-\hline
+& 刻画单节点数据包到达时间间隔的突发性 \\
+\midrule
 
 网络周期性强度 
 & $\Psi_{\mathrm{net}}$ 
@@ -109,8 +110,8 @@ $\mathbf{x}_{\mathrm{common}} = [n,\ T]$,
 R(\tau)
 =\frac{1}{T}\sum_{t=1}^{T-\tau}
 X(t)X(t+\tau)$ 
-& 网络聚合到达序列的周期性强度 \\
-\hline
+& 表征网络聚合流量序列的周期性特征 \\
+\midrule
 
 节点周期性强度 
 & $\Psi_{\mathrm{node}}$ 
@@ -119,21 +120,21 @@ X(t)X(t+\tau)$
 \max\!\left(0,1-
 \frac{\mathrm{Var}(\Delta t_i)}
 {(\mathbb{E}[\Delta t_i])^{2}}\right)$ 
-& 单节点到达间隔的周期性强度 \\
+& 表征单节点数据到达时间间隔的周期性特征 \\
 \bottomrule
 
 \end{tabular}
 \end{table}
 
 
-针对协议专属参数 $\mathbf{x}_{\mathrm{proto}}$，本文提出一种基于统一参数超集与掩码机制的表示策略，以实现多协议共存场景下输入接口的标准化与统一化。
-定义候选接入协议集合为 $\mathcal{P} = \{a_1, a_2, a_3\}$，该集合具体包含 SA、SAST、CBA 三种典型接入协议。每一种协议 $a \in \mathcal{P}$ 对应一组独立可配置的参数集合 $\mathcal{X}_p$。
-为消除因协议参数维度异构而产生的维度非对齐问题，本文将候选协议集合中所有协议的参数进行合并，取各协议参数集合的并集，统一构建为高维参数向量 $\mathbf{x}_{\mathrm{proto}} \in \mathbb{R}^{d_{\max}}$。该向量的第一维分量用于标识协议类型 $a \in \mathcal{P}$，其余分量则覆盖接入概率 $q$、连续传输长度 $M$ 等所有可能的协议可调整参数。对于多个协议共有的参数，仅在统一向量中占据一个维度，避免参数冗余。其中，统一参数向量的维度 $d_{\max}$ 满足 $d_{\max} = 1 + |\bigcup_{a \in \mathcal{P}} \mathcal{X}_p|$，其中首维为协议类型标识维度，后续维度对应所有协议参数并集的维度。对于特定协议未涉及的参数维度，采用占位符保留该维度的方式，确保统一参数向量的结构一致性与维度稳定性。统一参数向量的完整形式为：
+针对协议专属参数 $\mathbf{x}_{\mathrm{proto}}$，本文提出一种基于统一参数并集与有效性掩码机制的表示策略，以实现多协议共存场景下输入接口的标准化。
+定义候选接入协议集合为 $\mathcal{P} = \{a_1, a_2, a_3\}$，当前具体包含 SA、SAST 与 CBA 三种典型协议。每种协议 $a \in \mathcal{P}$ 对应一组独立可配置的参数集合 $\mathcal{X}_a$。
+为消除因各协议参数异构产生的维度不对齐问题，本文将候选协议集合内所有协议的参数进行合并操作，取其并集，统一构建为高维参数向量 $\mathbf{x}_{\mathrm{proto}} \in \mathbb{R}^{d_{\max}}$。该向量的第一维分量专门用于标识协议类型 $a \in \mathcal{P}$，其余分量则统一写成 $\bigcup_{a \in \mathcal{P}} \mathcal{X}_a$，涵盖接入概率 $q$、连续传输长度 $M$ 等所有可能的联合可调参数。对于不同协议之间共有的参数，在统一向量中仅保留单一维度以避免冗余。统一参数向量的总维度 $d_{\max}$ 满足 $d_{\max} = 1 + \big|\bigcup_{a \in \mathcal{P}} \mathcal{X}_a\big|$。对于当前特定协议未涉及的参数维度，本文采用占位符予以保留，以确保向量结构的一致性与维度的稳定性。统一参数向量的完整形式可表示为：
 $\mathbf{x}_{\mathrm{proto}} = [a, q,\ M, \ldots]$，
-其中省略号对应除列示参数外的其余占位分量。
+式中省略号对应其余的占位参数分量。
 
-为严格刻画占位参数在当前协议下的有效性，我们引入与 $\mathbf{x}_{\mathrm{proto}}$ 同维的二值掩码向量 $\mathbf{m} \in \{0,1\}^{d_{\max}}$。在预处理与模型输入阶段，对应掩码为零的参数分量通过元素级乘积 $\mathbf{x}_{\mathrm{proto}} \odot \mathbf{m}$ 被统一置零或屏蔽，从而在保留统一维度表示的同时，防止无效参数对后续学习与优化过程造成干扰。标准化输入与性能指标的摘要见表~\ref{tab:input_features}。
-至此，完整标准化输入向量表示为
+为严格刻画各个占位参数在确切协议下的有效性，本文引入了与 $\mathbf{x}_{\mathrm{proto}}$ 同维度的二值掩码向量 $\mathbf{m} \in \{0,1\}^{d_{\max}}$。在数据预处理与模型输入阶段，对应掩码值为零的参数分量将通过元素级乘积 $\mathbf{x}_{\mathrm{proto}} \odot \mathbf{m}$ 被统一置零，从而在维持维度表示等长的同时，有效防止无效参数对后续智能学习与优化过程造成干扰。标准化输入向量与各项性能指标的详细汇总见表~\ref{tab:input_features}。
+至此，完整的标准化输入向量被统一封装为：
 \begin{equation}
 \mathbf{X}_{\mathrm{in}} = \big[\mathbf{x}_{\text{traffic}},\ \mathbf{x}_{\mathrm{common}},\ \mathbf{x}_{\mathrm{proto}},\ \mathbf{m}\big].
 \end{equation}
@@ -144,43 +145,45 @@ $\mathbf{x}_{\mathrm{proto}} = [a, q,\ M, \ldots]$，
 	\caption{标准化输入与性能指标摘要}
 	\label{tab:input_features}
 	\renewcommand{\arraystretch}{1.2}
-	\begin{tabular}{@{}l | l | p{9cm}@{}}
+	\begin{tabular}{llp{9cm}}
 	\toprule
-		特征组 & 符号 & 含义 / 备注 \\
+		\textbf{特征组} & \textbf{数学符号} & \textbf{含义 / 备注} \\
 		\midrule
-		$\mathbf{x}_{\text{traffic}}$ & $\hat{\lambda}$ & 归一化网络平均到达率，范围 $[0, 1]$。\\
-		& $\mathrm{BI}_{\mathrm{net}}$ & 网络突发度指标，范围 $(-1,1)$。\\
-		& $\mathrm{BI}_{\mathrm{node}}$ & 节点突发度指标，范围 $(-1,1)$。\\
-		& $\Psi_{\mathrm{net}}$ & 网络周期性强度，范围 $[0,1]$。\\
-		& $\Psi_{\mathrm{node}}$ & 节点周期性强度，范围 $[0,1]$。\\
+		$\mathbf{x}_{\text{traffic}}$ & $\hat{\lambda}$ & 归一化网络平均到达率，取值范围 $[0, 1]$ \\
+		& $\mathrm{BI}_{\mathrm{net}}$ & 网络流量突发度指标，取值范围 $(-1,1)$ \\
+		& $\mathrm{BI}_{\mathrm{node}}$ & 节点到达突发度指标，取值范围 $(-1,1)$ \\
+		& $\Psi_{\mathrm{net}}$ & 网络流量周期性强度，取值范围 $[0,1]$ \\
+		& $\Psi_{\mathrm{node}}$ & 节点到达周期性强度，取值范围 $[0,1]$ \\
 		\midrule
-		$\mathbf{x}_{\mathrm{common}}$ & $n$ & 节点数量。\\
-		& $T$ & 时隙数量。\\
+		$\mathbf{x}_{\mathrm{common}}$ & $n$ & 网络节点总数 \\
+		& $T$ & 仿真或观测的总时隙数量 \\
 		\midrule
-		$\mathbf{x}_{\mathrm{proto}}$ & $a$ & 协议类型标识，$a\in\mathcal{P}$（向量第一个分量）。\\
-		& $q$ & 接入概率。\\
-		& $M$ & 连续传输长度。\\
+		$\mathbf{x}_{\mathrm{proto}}$ & $a$ & 协议类型标识，$a\in\mathcal{P}$（向量首个分量） \\
+		& $q$ & 节点接入概率 \\
+		& $M$ & CBA协议中连续占用的数据包数量 \\
 		\midrule
-		$\mathbf{m}$ & $m_k$ & 有效性掩码：$m_k=1$ 若第 $k$ 个协议参数在当前协议下有效，否则为 $0$。\\
+		$\mathbf{m}$ & $m_k$ & 有效性掩码：若第 $k$ 个协议参数在当前协议下有效，则 $m_k=1$，否则为 $0$ \\
 		\midrule
-		$\mathbf{y}$ & $\lambda_{\mathrm{out}}$ & 吞吐量。\\
-		& $D$ & 平均时延。\\
-		& $J_T$ & 公平性。采用 Jain 指数并做归一化。\\
-		& $S$ & 信令开销 \\
+		$\mathbf{y}$ & $\lambda_{\mathrm{out}}$ & 系统吞吐量 \\
+		& $D$ & 平均数据包时延 \\
+		& $J_T$ & 系统公平性，采用规范化后的 Jain 指数进行刻画 \\
+		& $S$ & 系统信令开销 \\
 		\bottomrule
 	\end{tabular}
 \end{table}
 
-\subsection{统一仿真映射与效用构造}
+\subsection{性能指标向量与效用函数的构造}
 \label{subsec:sim_mapping_utility}
 
-在统一标准化输入向量 $\mathbf{X}_{\mathrm{in}}$ 确定后，为实现从输入参数到系统性能度量的映射，本文构建了统一的离散事件仿真映射模型 $S(\cdot)$。该映射模型以统一输入向量 $\mathbf{X}_{\mathrm{in}}$ 为输入，并且据此生成对应的网络场景，严格复现随机接入的完整流程，最终仿真器模型会输出能够全面反映系统状态的性能指标向量
+在统一的标准化输入向量 $\mathbf{X}_{\mathrm{in}}$ 确定后，下一步需要确定章节考虑的性能指标向量的构造。在本文中，设计一个全面反映系统状态的性能指标向量为
 \begin{equation}
-	\mathbf{y}=S\!\left(\mathbf{X}_{\mathrm{in}}\right)
-	=\big[\lambda_{\mathrm{out}},\ D,\ J_T,\ S,\big],
+	\mathbf{y}=\big[\lambda_{\mathrm{out}},\ D,\ J_T,\ S\big],
 \end{equation}
-其中 $\lambda_{\mathrm{out}}$ 表示系统吞吐量，$D$ 表示平均数据包时延，$J_T$ 表示公平性（采用 Jain 指数刻画），$S$ 表示信令开销。所有指标均在本文第~\ref{sec:performance_metrics}~节中给出标准定义。上述指标集合兼顾业务性能与代价，便于在多协议、多参数配置下进行统一评估与对比。
-上述各个性能指标的量纲存在显著差异，吞吐量单位为数据包/时隙，时延单位为时隙，公平性指标无量纲。此外，数值尺度差异也较大，例如，时延数值通常为数百上千个时隙，而吞吐量范围仅在 0 到 1 之间。若直接用于性能对比与决策分析，数值尺度较大的指标会掩盖数值尺度较小指标的影响，严重降低评估结果的客观性与准确性。为解决该问题，本文在同一对比组内对各项性能指标采用时延对数化 + 最小最大归一化处理，并将所有指标统一转换为效用型指标，即数值越大，对应系统性能越优，从而消除量纲与数值尺度差异带来的负面影响。具体而言，先对时延指标 $D$ 采用 $\log(1+D)$ 进行对数化预处理，压缩其数值尺度，再将对数化后的时延与其他指标（$\lambda_{\mathrm{out}}, J_T, S$）一同实施最小最大归一化。
+其中，$\lambda_{\mathrm{out}}$ 表示系统吞吐量，$D$ 表示平均数据包时延，$J_T$ 表示系统公平性（采用规范化后的 Jain 指数刻画），$S$ 表示信令开销。上述四项指标的具体定义已在本文第~\ref{sec:performance_metrics}~节中详细说明。该性能指标向量体系兼顾了网络的传输收益与资源代价，便于在多协议、多参数配置下进行统一性能对比。
+
+上述各个性能指标的量纲存在显著差异，吞吐量单位为数据包/时隙，时延单位为时隙，公平性指标无量纲。此外，数值尺度差异也较大，例如，时延数值通常为数百上千个时隙，而吞吐量范围仅在 0 到 1 之间。若直接用于性能对比与决策分析，数值尺度较大的指标会掩盖数值尺度较小指标的影响，严重降低评估结果的客观性与准确性。为解决该问题，本文在同一对比组内对各项性能指标采用时延对数化 + 最小最大归一化处理，并将所有指标统一转换为效用型指标，即数值越大，对应系统性能越优，从而消除量纲与数值尺度差异带来的负面影响。
+
+具体而言，先对时延指标 $D$ 采用 $\log(1+D)$ 进行对数化预处理，压缩其数值尺度，再将对数化后的时延与其他指标（$\lambda_{\mathrm{out}}, J_T, S$）一同实施最小最大归一化。
 记第 $k$ 个指标 $y_k$ 在对比组内的所有样本取值范围为 $[y_k^{\min}, y_k^{\max}]$，其中 $y_k^{\min}$ 为该指标在对比组内的最小值，$y_k^{\max}$ 为该指标在对比组内的最大值，则归一化后的指标 $\tilde{y}_k$ 定义为
 \begin{equation}
 	\tilde{y}_k =
@@ -195,7 +198,9 @@ $\mathbf{x}_{\mathrm{proto}} = [a, q,\ M, \ldots]$，
 	=\big[\tilde{\lambda}_{\mathrm{out}},\ \tilde{D},\ \tilde{J}_T,\ \tilde{S}\big].
 \end{equation}
 式中 $\tilde{\lambda}_{\mathrm{out}}$、$\tilde{D}$、$\tilde{J}_T$、$\tilde{S}$ 分别对应吞吐量、时延、公平性、信令开销的归一化结果，均处于 $[0,1]$ 区间。
-在此基础上，为后续参数优化、协议选型与性能决策，本文采用加权线性效用函数构建综合评价目标，将各维度指标的影响纳入统一评价体系，其表达式如下：
+
+在得到归一化性能指标向量 $\tilde{\mathbf{y}}$ 后，需要进一步解决如何在多个性能目标之间进行统一比较与优化的问题。协议与参数的联合选择本质上属于多目标优化，即吞吐量、时延、公平性与信令开销之间通常存在权衡关系，难以通过单一指标刻画整体性能。
+因此，本文引入效用函数作为综合评价准则，将多维性能指标转化为可直接比较与求解的单一目标值。具体而言，采用加权线性形式构建综合效用，以同时体现计算效率与业务偏好可调性。其数学表达式如下：
 \begin{equation}
 	U\big(\tilde{\mathbf{y}}\big)= \mathbf{w}^\top  \tilde{\mathbf{y}}  = 
 	w_{\lambda}\tilde{\lambda}_{\mathrm{out}}
@@ -203,10 +208,8 @@ $\mathbf{x}_{\mathrm{proto}} = [a, q,\ M, \ldots]$，
 	+w_{J}\tilde{J}_T
 	+w_{S}\tilde{S},
 \end{equation}
-其中 $w_i\ge 0$ 且 $\sum_i w_i=1$，$i$ 分别对应 $\lambda$、$D$、$J$、$S$。权重向量 $\mathbf{w}=[w_{\lambda}, w_D, w_J, w_S]$ 用于表征具体业务对不同性能指标的偏好需求。数据传输需求突出的业务可提高吞吐量指标权重 $w_{\lambda}$，实时性要求较高的业务可增大时延指标权重 $w_D$，强调低复杂度和低信令需求的场景可提升公平性指标权重 $w_J$。
-为验证所提综合评价方法的有效性与适用性，后文实验部分定义三种典型业务场景，分别为吞吐量优先、时延优先、信令开销优先，各场景权重向量设置为 $\mathbf{w}_{\mathrm{lambda}}=[0.6, 0.2, 0.1, 0.1]$、$\mathbf{w}_{\mathrm{D}}=[0.2, 0.6, 0.1, 0.1]$、$\mathbf{w}_{\mathrm{S}}=[0.2, 0.2, 0.1, 0.5]$。
-
-
+其中 $w_i\ge 0$ 且 $\sum_i w_i=1$，$i$ 分别对应 $\lambda$、$D$、$J$、$S$。权重向量 $\mathbf{w}=[w_{\lambda}, w_D, w_J, w_S]$ 用于表征具体业务对不同性能指标的偏好需求。数据传输需求突出的业务可提高吞吐量指标权重 $w_{\lambda}$，实时性要求较高的业务可增大时延指标权重 $w_D$，强调公平性的业务可提升公平性指标权重 $w_J$，强调低复杂度和低信令需求的场景可提高信令开销指标对应权重 $w_S$。
+为验证所提综合评价方法的有效性与适用性，后文实验部分定义三种典型业务场景，分别为吞吐量优先、时延优先、信令开销优先，各场景权重向量设置为 $\mathbf{w}_{\lambda}=[0.6, 0.2, 0.1, 0.1]$、$\mathbf{w}_{D}=[0.2, 0.6, 0.1, 0.1]$、$\mathbf{w}_{S}=[0.2, 0.2, 0.1, 0.5]$。
 
 
 \subsection{等价资源约束下的联合优化问题}
@@ -219,23 +222,29 @@ $\mathbf{x}_{\mathrm{proto}} = [a, q,\ M, \ldots]$，
 		\max_{\,\mathbf{x}_{\mathrm{proto}}\in\mathcal{X}} \quad 
 		& U\big( \tilde{\mathbf{y}} \big) \\[6pt]
 		\text{s.t.}\quad
+		% 第一行
 		& \mathbf{X}_{\mathrm{in}}=\big[\mathbf{x}_{\text{traffic}},\ \mathbf{x}_{\mathrm{common}},\ \mathbf{x}_{\mathrm{proto}},\ \mathbf{m}\big],\\[3pt]
-		& \tilde{\mathbf{y}} = \mathrm{norm}\!\left(\mathbf{y}\right),\ \mathbf{y} = S\!\left( \mathbf{X}_{\mathrm{in}} \right), \\[4pt]
-		& S\big(\mathbf{x}_{\mathrm{proto}}\big) \le S_{\max}.
+		%第二行
+		& \mathbf{y} = S\!\left( \mathbf{X}_{\mathrm{in}}\right)\,\text{or}\,\mathbf{y} = f_{\Phi}\!\left( \mathbf{X}_{\mathrm{in}} \right), \\
+		% 第三行
+		& \tilde{\mathbf{y}} = \mathrm{norm}\!\left(\mathbf{y}\right).
 	\end{aligned}
 \end{equation}
-式~\eqref{eq:chap5_constrained} 的决策变量为统一参数向量 $\mathbf{x}_{\mathrm{proto}}$，其第一个分量 $\mathbf{x}_{\mathrm{proto}}[1]$ 为协议标识符，其余分量为各协议参数。决策变量需满足所选协议的合法参数空间约束，通过掩码 $\mathbf{m}$ 界定有效参数维度。第一行约束显式构建统一输入向量，第二行约束定义从输入到归一化性能指标的映射关系。第三行约束限定信令开销不超过系统资源阈值 $S_{\max}$。
-可以看到，该优化问题的解为满足全部约束的最优统一参数向量 $\mathbf{x}_{\mathrm{proto}}^*$，其中包含了最优协议类型及其对应参数。
+式~\eqref{eq:chap5_constrained} 的决策变量为统一参数向量 $\mathbf{x}_{\mathrm{proto}}$。其中，第一个分量 $\mathbf{x}_{\mathrm{proto}}[1]$ 表示协议标识符，其余分量表示对应协议参数。该决策变量需满足所选协议的合法参数空间约束，并通过掩码 $\mathbf{m}$ 界定有效参数维度。
+第一行约束用于构建统一的标准化输入向量。
+第二行约束给出输入到性能指标的映射关系，即由仿真器映射 $S(\cdot)$ 或基于监督学习的性能预测模型映射 $f_{\Phi}(\cdot)$ 生成的预测输出。
+第三行约束表示将性能指标向量归一化为 $\tilde{\mathbf{y}}$ 的过程。
+因此，该优化问题的解为满足全部约束条件的最优统一参数向量 $\mathbf{x}_{\mathrm{proto}}^*$，其中同时包含最优协议类型及其对应参数。
 
 
 % =========================================================
 % 第 5.2 节：仿真数据生成与性能分析
 % =========================================================
 
-\section{基于离散事件的接入协议数据集构建}
+\section{基于仿真器的协议数据集构建方法}
 \label{sec:simulation_data}
 
-为训练能够准确预测不同协议配置下网络性能的模型，需要构建高质量的训练数据集。本节首先阐述参数空间的采样策略，随后在 \ref{subsec:unified_simulator}~小节介绍统一仿真器 $S(\cdot)$ 的设计与实现，接着详细说明基于仿真器的数据集生成流程，最后通过可视化分析展示不同协议在典型场景下的性能差异，为后续性能预测模型的构建提供数据基础与性能基准。
+为训练能够准确预测不同协议配置下网络性能的模型，需要构建高质量的训练数据集。本节各小节的作用如下：\ref{subsec:grid_sampling}~小节给出两阶段参数空间采样策略，用于在控制样本规模的同时保证全局覆盖与关键区域分辨率；\ref{subsec:unified_simulator}~小节介绍统一仿真器 $S(\cdot)$ 的设计与实现，用于将输入配置稳定映射为可复现的性能标签；\ref{subsec:dataset_construction}~小节说明数据集构建与预处理流程，用于形成可直接用于训练、验证与测试的标准化样本集；在此基础上，节内结果分析用于展示不同协议在典型场景下的性能差异，为后续性能预测模型构建提供数据基础与性能基准。
 
 \subsection{两阶段参数空间采样策略}
 \label{subsec:grid_sampling}
