@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.28)  14 APR 2026 19:04
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.28)  14 APR 2026 22:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1309,13 +1309,6 @@ File: figure/chap1/iot_challenges.pdf Graphic file (type pdf)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
-
-Package natbib Warning: Citation `2020_He' on page 3 undefined on input line 36.
-
-
-Package natbib Warning: Citation `2023_Jin' on page 3 undefined on input line 42.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3]
@@ -1331,13 +1324,13 @@ Underfull \vbox (badness 1521) has occurred while \output is active []
 File: figure/chap1/csma_related_work.pdf Graphic file (type pdf)
 <use figure/chap1/csma_related_work.pdf>
  [7]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 8056) has occurred while \output is active []
 
  [8]
 File: figure/chap1/ai_related_work.pdf Graphic file (type pdf)
 <use figure/chap1/ai_related_work.pdf>
 
-Underfull \vbox (badness 1990) has occurred while \output is active []
+Underfull \vbox (badness 4168) has occurred while \output is active []
 
  [9]
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1394,30 +1387,16 @@ File: figure/chap3/two_node_sast.pdf Graphic file (type pdf)
 
 
 
-]
-
-Package natbib Warning: Citation `2021_Huang' on page 26 undefined on input line 35.
-
-[26] [27]
+] [26] [27]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [28] [29]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [30]
-Underfull \vbox (badness 4752) has occurred while \output is active []
-
- [31]
+ [30] [31]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [32]
-
-Package natbib Warning: Citation `2008_markov_absorb' on page 33 undefined on input line 232.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [33]
 
 Package fontspec Info: Could not resolve font "KaiTi/BI" (it probably doesn't
 (fontspec)             exist).
@@ -1442,11 +1421,13 @@ Package fontspec Info: Font family 'KaiTi(0)' created for font 'KaiTi' with
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [33]
 
 LaTeX Font Warning: Font shape `TU/SimHei(0)/m/it' undefined
-(Font)              using `TU/SimHei(0)/m/n' instead on input line 256.
+(Font)              using `TU/SimHei(0)/m/n' instead on input line 255.
 
-[34]
 File: figure/chap3/p_ne_vs_q.pdf Graphic file (type pdf)
 <use figure/chap3/p_ne_vs_q.pdf>
 File: figure/chap3/theta_vs_q.pdf Graphic file (type pdf)
@@ -1455,20 +1436,23 @@ File: figure/chap3/mean_B_vs_q.pdf Graphic file (type pdf)
 <use figure/chap3/mean_B_vs_q.pdf>
 File: figure/chap3/mean_Vc_vs_q.pdf Graphic file (type pdf)
 <use figure/chap3/mean_Vc_vs_q.pdf>
+[34]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Underfull \vbox (badness 2302) has occurred while \output is active []
+ [35]
+Underfull \vbox (badness 1325) has occurred while \output is active []
 
- [35] [36]
+ [36]
 File: figure/chap3/access_throughput_vs_q.pdf Graphic file (type pdf)
 <use figure/chap3/access_throughput_vs_q.pdf>
 File: figure/chap3/data_throughput_vs_q.pdf Graphic file (type pdf)
 <use figure/chap3/data_throughput_vs_q.pdf>
- [37]
-Underfull \vbox (badness 6173) has occurred while \output is active []
-
- [38]
+ [37] [38]
 File: figure/chap3/2Dmarkov_chain.pdf Graphic file (type pdf)
 <use figure/chap3/2Dmarkov_chain.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [39]
 File: figure/chap3/access_delay_unsaturated.pdf Graphic file (type pdf)
 <use figure/chap3/access_delay_unsaturated.pdf>
@@ -1488,17 +1472,9 @@ File: figure/chap3/str_vs_q_saturated.pdf Graphic file (type pdf)
 File: figure/chap3/str_vs_lambda_unsaturated.pdf Graphic file (type pdf)
 <use figure/chap3/str_vs_lambda_unsaturated.pdf>
 
-Underfull \vbox (badness 2080) has occurred while \output is active []
+Underfull \vbox (badness 1210) has occurred while \output is active []
 
- [43]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [44]) [45] [46
-
-
-
-
-]
+ [43]) [44]
 \openout2 = `docs/Chapter_04.aux'.
 
  (./docs/Chapter_04.tex
@@ -1511,35 +1487,35 @@ Overfull \hbox (0.51999pt too wide) in paragraph at lines 12--14
 
 Underfull \vbox (badness 1533) has occurred while \output is active []
 
- [47
+ [45
 
 
-] [48]
+
+
+
+
+] [46]
 File: figure/chap4/csmast_channel.png Graphic file (type bmp)
 <figure/chap4/csmast_channel.png>
- [49] [50]
+ [47] [48]
 File: figure/chap4/markov_model.pdf Graphic file (type pdf)
 <use figure/chap4/markov_model.pdf>
- [51]
-
-Package natbib Warning: Citation `2008_markov_absorb' on page 52 undefined on input line 139.
-
-
+ [49]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [52]
+ [50]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [53] [54]
+ [51] [52]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [53]
+Underfull \vbox (badness 7613) has occurred while \output is active []
+
+ [54]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [55]
-Underfull \vbox (badness 7613) has occurred while \output is active []
-
- [56]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [57]
 File: figure/chap4/thu_vs_q_CSMAST_multi_taus.pdf Graphic file (type pdf)
 <use figure/chap4/thu_vs_q_CSMAST_multi_taus.pdf>
 File: figure/chap4/thu_vs_n_CSMAST_multi_q.pdf Graphic file (type pdf)
@@ -1551,21 +1527,10 @@ File: figure/chap4/jt_vs_t_CSMAST_multi_q.pdf Graphic file (type pdf)
 
 Underfull \vbox (badness 1436) has occurred while \output is active []
 
- [58]
+ [56]
 File: figure/chap4/throughput_fairness_tradeoff.pdf Graphic file (type pdf)
 <use figure/chap4/throughput_fairness_tradeoff.pdf>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [59]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [60]) [61] [62
-
-
-
-
-]
+ [57]) [58]
 \openout2 = `docs/Chapter_05.aux'.
 
  (./docs/Chapter_05.tex
@@ -1573,7 +1538,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [63
+ [59
+
+
+
+
 
 
 ]
@@ -1582,7 +1551,7 @@ File: figure/chap5/fig_5_1_model1.pdf Graphic file (type pdf)
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [64]
+ [60]
 Overfull \hbox (10.79729pt too wide) in paragraph at lines 65--66
 []\TU/SimSun(0)/m/n/12.045 针 对 通 用 网 络 参 数 $[][]$，|  将 其 定 义 为 包 含 网 络 节 点 规 模 与 观 测 时 长 的 向 量 $[][] \OT1/cmr/m/n/12.045 =
  []
@@ -1605,22 +1574,22 @@ Overfull \hbox (10.44249pt too wide) in paragraph at lines 76--128
 
 Underfull \vbox (badness 1852) has occurred while \output is active []
 
- [65]
+ [61]
 Underfull \vbox (badness 5970) has occurred while \output is active []
 
+ [62]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [63] [64]
+File: figure/chap5/数据集采样策略.pdf Graphic file (type pdf)
+<use figure/chap5/数据集采样策略.pdf>
+ [65]
+File: figure/chap5/仿真器实现流程框图.pdf Graphic file (type pdf)
+<use figure/chap5/仿真器实现流程框图.pdf>
  [66]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [67] [68]
-File: figure/chap5/数据集采样策略.pdf Graphic file (type pdf)
-<use figure/chap5/数据集采样策略.pdf>
- [69]
-File: figure/chap5/仿真器实现流程框图.pdf Graphic file (type pdf)
-<use figure/chap5/仿真器实现流程框图.pdf>
- [70]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [71]
+ [67]
 Overfull \hbox (1.51387pt too wide) in paragraph at lines 347--449
  [][] 
  []
@@ -1628,18 +1597,18 @@ Overfull \hbox (1.51387pt too wide) in paragraph at lines 347--449
 
 Underfull \vbox (badness 7740) has occurred while \output is active []
 
- [72] [73] [74]
+ [68] [69] [70]
 File: figure/chap5/神经网络训练流程.pdf Graphic file (type pdf)
 <use figure/chap5/神经网络训练流程.pdf>
- [75]
+ [71]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [76]
+ [72]
 Overfull \hbox (13.09618pt too wide) in alignment at lines 616--641
 [] [] [] [] 
  []
 
-[77]
+[73]
 File: figure/chap5/shared_legend.pdf Graphic file (type pdf)
 <use figure/chap5/shared_legend.pdf>
 File: figure/chap5/5_3_metric_throughput.pdf Graphic file (type pdf)
@@ -1661,39 +1630,39 @@ File: figure/chap5/5_3_utility_delay_prio.pdf Graphic file (type pdf)
 <use figure/chap5/5_3_utility_delay_prio.pdf>
 File: figure/chap5/5_3_utility_signaling_prio.pdf Graphic file (type pdf)
 <use figure/chap5/5_3_utility_signaling_prio.pdf>
-[78] [79]
+[74] [75]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [80] [81]
+ [76] [77]
 File: figure/chap5/utility_dynamic_uniform_0315.pdf Graphic file (type pdf)
 <use figure/chap5/utility_dynamic_uniform_0315.pdf>
 File: figure/chap5/utility_dynamic_combined_0315.pdf Graphic file (type pdf)
 <use figure/chap5/utility_dynamic_combined_0315.pdf>
- [82] [83]) [84]
+ [78] [79]) [80]
 \openout2 = `docs/Chapter_06.aux'.
 
  (./docs/Chapter_06.tex
 第6章
-[85
+[81
 
 
 
 
 
 
-] [86]) [87] [88
+] [82]) [83] [84
 
 
 
 
-] (./main.bbl [89
+] (./main.bbl [85
 
 ]
-Underfull \hbox (badness 1205) in paragraph at lines 205--212
+Underfull \hbox (badness 1205) in paragraph at lines 217--224
 []\TU/TimesNewRoman(0)/m/n/10.53937 Abramson N. THE ALOHA SYSTEM: Another Alternative for Computer Communications[C]
  []
 
-[90] [91] [92] [93] [94]) [95] [96
+[86] [87] [88] [89] [90]) [91] [92
 
 
 ]
@@ -1701,10 +1670,10 @@ Underfull \hbox (badness 1205) in paragraph at lines 205--212
 
  (./docs/AppendixA.tex
 附录 A
-) [97
+) [93
 
 
-] [98
+] [94
 
 
 
@@ -1726,15 +1695,13 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
 
-
-Package natbib Warning: Citation `2008_markov_absorb' on page 99 undefined on input line 5.
-
-File: figure/appdix/P2Q_Absorbing_Markov_chain.pdf Graphic file (type pdf)
-<use figure/appdix/P2Q_Absorbing_Markov_chain.pdf>
-[99
+[95
 
 
 ]
+File: figure/appdix/P2Q_Absorbing_Markov_chain.pdf Graphic file (type pdf)
+<use figure/appdix/P2Q_Absorbing_Markov_chain.pdf>
+
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 50.
@@ -1748,9 +1715,9 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 50.
 
 
-Package natbib Warning: Citation `2008_markov_absorb' on page 100 undefined on input line 66.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[100]
+ [96]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 96.
@@ -1770,7 +1737,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [101]) [102]
+ [97]) [98]
 \openout2 = `docs/AppendixC.aux'.
 
  (./docs/AppendixC.tex
@@ -1786,50 +1753,45 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [103
+ [99
 
 
 
 
 
 
-]) [104] [105] [106
-
-
-
-
-]
+]) [100]
 \openout2 = `docs/AppendixD.aux'.
 
  (./docs/AppendixD.tex
 附录 D
 
-Package natbib Warning: Citation `Lin2013Toward' on page 107 undefined on input line 10.
-
-
 Underfull \vbox (badness 4739) has occurred while \output is active []
 
- [107
+ [101
 
 
-]) [108]
 
-Package natbib Warning: There were undefined citations.
 
-(./main.aux (./docs/Acronym.aux) (./docs/Symbol.aux) (./docs/Chapter_01.aux) (./docs/Chapter_02.aux) (./docs/Chapter_03.aux) (./docs/Chapter_04.aux) (./docs/Chapter_05.aux) (./docs/Chapter_06.aux) (./docs/AppendixA.aux) (./docs/AppendixB.aux) (./docs/AppendixC.aux) (./docs/AppendixD.aux))
+
+
+]) [102] (./main.aux (./docs/Acronym.aux) (./docs/Symbol.aux) (./docs/Chapter_01.aux) (./docs/Chapter_02.aux) (./docs/Chapter_03.aux) (./docs/Chapter_04.aux) (./docs/Chapter_05.aux) (./docs/Chapter_06.aux) (./docs/AppendixA.aux) (./docs/AppendixB.aux) (./docs/AppendixC.aux) (./docs/AppendixD.aux))
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 3082DB0A42FB43B44327EE54F86E2A82;6638.
+(rerunfilecheck)             Checksum: AA6FC06A057C8CE6C73B70D17B555125;6630.
  ) 
 Here is how much of TeX's memory you used:
- 36196 strings out of 476179
- 771800 string characters out of 5813072
- 1107656 words of memory out of 5000000
- 56114 multiletter control sequences out of 15000+600000
+ 36211 strings out of 476179
+ 772085 string characters out of 5813072
+ 1107715 words of memory out of 5000000
+ 56129 multiletter control sequences out of 15000+600000
  497190 words of font info for 197 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 103i,21n,111p,1195b,984s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 103i,21n,111p,1195b,992s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (126 pages).
+Output written on main.pdf (120 pages).

@@ -7,7 +7,7 @@
 
 \section{统一参数表示与模型设定}
 
-在已有文献中，例如 \cite{Lin2013Toward}，经典CSMA的最大吞吐量常以传播时延参数 $a$ 表示。
+在已有文献中，例如 \cite{2013_DaiCSMA}，经典CSMA的最大吞吐量常以传播时延参数 $a$ 表示。
 该文献采用状态时长设定
 $$
 \tau_S=1+a,\quad \tau_F=(x+1)a,\quad \tau_I=a.
@@ -17,7 +17,7 @@ $$
 	\hat{\lambda}_{\text{max}} = \frac{-W_{0}\left(-\frac{1}{x(1+1/x)}\right)}{xa-(1-xa)\,W_{0}\left(-\frac{1}{x(1+1/x)}\right)}.
 \end{equation}
 为统一比较维度，本文不固定参数 $a$。
-我们直接使用通用状态时长参数 $\tau_S$、$\tau_F$ 与 $\tau_I$ 进行推导。
+我们直接使用状态时长参数 $\tau_S$、$\tau_F$ 与 $\tau_I$ 进行推导。
 
 在本章模型下，经典CSMA可视为CSMAST的特例。
 两者关键差异在于忙期构造方式。
@@ -30,7 +30,7 @@ $$
 发送结束后节点立即释放信道并重新竞争。
 因此其忙期 $B_{cl}$ 为确定值，满足 $\overline{B}_{cl}=\tau_S$。
 两种机制在竞争接入阶段采用相同的 LBT~与退避规则。
-所以信道休假期均值 $\overline{V}_c$ 可沿用前文结论
+所以信道假期均值 $\overline{V}_c$ 可沿用前文结论
 \begin{equation}
 	\overline{V}_c = \frac{p_{2}\tau_{F}+p_{0}\tau_{I}}{p_{1}},
 \end{equation}

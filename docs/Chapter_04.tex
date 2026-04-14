@@ -136,7 +136,7 @@
 	\end{pmatrix},
 \end{equation}
 其中，$\mathbf{T} = \begin{pmatrix} p_2 & p_0 \\ p_2 & p_0 \end{pmatrix}$ 描述了瞬态之间的转移概率，$\mathbf{R} = \begin{pmatrix} p_1 \\ p_1 \end{pmatrix}$ 描述了进入吸收态的概率。
-根据马尔可夫吸收理论\cite{2008_markov_absorb}，相关性能指标的计算依赖于基本矩阵 $\mathbf{N} = (\mathbf{I} - \mathbf{T})^{-1}$。其中，矩阵 $\mathbf{N}$ 中的元素 $N_{ij}$ 表示过程从瞬时状态 $i$ 开始，在被吸收之前访问到顺势状态 $j$ 的期望次数。本章节中，矩阵 $\mathbf{N}$ 的行、列索引按顺序分别对应状态 F 和状态 I。
+根据马尔可夫吸收理论\cite{2008_Markov_absorb}，相关性能指标的计算依赖于基本矩阵 $\mathbf{N} = (\mathbf{I} - \mathbf{T})^{-1}$。其中，矩阵 $\mathbf{N}$ 中的元素 $N_{ij}$ 表示过程从瞬时状态 $i$ 开始，在被吸收之前访问到顺势状态 $j$ 的期望次数。本章节中，矩阵 $\mathbf{N}$ 的行、列索引按顺序分别对应状态 F 和状态 I。
 首先计算矩阵 $(\mathbf{I} - \mathbf{T})$：
 \begin{equation}
 	\mathbf{I} - \mathbf{T} = 
@@ -164,7 +164,7 @@
 提取向量 $\mathbf{G}$ 的第一个分量，可以得到从状态 F 出发至吸收态的假期长度的二阶原点矩 $\mathbb{E}[V_c^2] = \mathbf{G}_1 $。因此，信道假期的方差 $\sigma^2_{V_c}$ 由公式 $\sigma^2_{V_c} = \mathbf{G}_1 - (\overline{V}_c)^2$ 给出：
 \begin{equation}
 	\sigma^2_{V_c} =
-	\frac{\left[(1 - p_0)\tau_F + p_0\tau_I\right]^2}{p_1^2} - \frac{(1 - p_0)\tau_F^2 + p_0\tau_I^2}{p_1}
+	\frac{\left[(1 - p_0)\tau_F + p_0\tau_I\right]^2}{p_1^2} - \frac{(1 - p_0)\tau_F^2 + p_0\tau_I^2}{p_1}.
 \end{equation}
 
 
@@ -232,7 +232,7 @@
 \end{theorem}
 
 \begin{proof}
-	对于单调性，令 $x = nq$。饱和网络吞吐量可表示为 $g(x) = \frac{C x}{x \tau_S + F(x)}$，其中 $C = \tau_S - \tau_I > 0$，分母中的休假期相关项为 $F(x) = \tau_F e^x (1 - e^{-x})^2 + \tau_I (1 - e^{-x})$。
+	对于单调性，令 $x = nq$。饱和网络吞吐量可表示为 $g(x) = \frac{C x}{x \tau_S + F(x)}$，其中 $C = \tau_S - \tau_I > 0$，分母中的信道假期相关项为 $F(x) = \tau_F e^x (1 - e^{-x})^2 + \tau_I (1 - e^{-x})$。
 	对 $g(x)$ 求导，其导数的符号完全取决于分子部分的判别式 $T(x) \triangleq F(x) - x F'(x)$。将 $F(x)$ 及其导数代入，并利用基本不等式 $1 - e^{-x} \le x$ 和 $e^{-x} \le 1$（对于 $x > 0$），可以证明在通常的系统参数设定下（即 $\tau_F \ge \tau_I$），判别式满足：$ T(x) \le 0 $
 	由于 $g'(x)$ 与 $T(x)$ 同号，因此 $g'(x) \le 0$ 在定义域内恒成立。这证明了 CSMAST 的网络吞吐量是关于$nq$ 的单调递减函数。
 	
@@ -269,7 +269,7 @@
 \end{equation}
 基于此，短期吞吐量的统计特征总结为：
 \begin{equation}
-	\mathbb{E}[\lambda_{out, i}^T] = \frac{\overline{B}}{\overline{C}}, \quad \text{Var}(\lambda_{out, i}^T) = \left( \frac{\overline{B}}{T} \right)^2 \cdot \text{Var}(N_i(T)) = \frac{\overline{B}^2 \sigma^2_C}{\overline{C}^3 T}.
+	\mathbb{E}[\lambda_{out, i}^T] = \frac{\overline{B}}{\overline{C}}, \quad \text{Var}(\lambda_{out, i}^T) = \left( \frac{\overline{B}}{T} \right)^2 \times \text{Var}(N_i(T)) = \frac{\overline{B}^2 \sigma^2_C}{\overline{C}^3 T}.
 \end{equation}
 将上述均值和方差代入式 (\ref{eq:jain_moment_form})，化简并展开可得到 Jain 公平性指数的闭式表达式：
 \begin{equation}
@@ -333,12 +333,14 @@ $\lambda_{out,i}^{T}=\frac{N_{succ,i}(\tau_S-\tau_I)}{T}$
 	\label{fig:csmast_fairness_group}
 \end{figure}
 
-为考察网络规模影响，图~\ref{fig:csmast_throughput_vs_n} 给出了不同接入概率 $q$ 条件下网络吞吐量 $\lambda_{out}^{net}$ 随节点数量 $n$ 变化的趋势。实验参数设置为成功传输时长 $\tau_S=5$、碰撞时长 $\tau_F=3$、空闲时长 $\tau_I=1$、观测时长 $T=10^6$。结果显示，在任一固定 $q$ 下，$n$ 增大将提高总体竞争强度，并增加碰撞与侦听带来的时间开销，使吞吐量整体下降；在任一固定 $n$ 下，较小 $q$ 往往对应更高吞吐量，后续仿真结果分析提到，会伴随有公平性的问题。理论与仿真曲线的总体一致性说明该模型在不同负载区间均具有较好解释力。
+为考察网络规模影响，图~\ref{fig:csmast_throughput_vs_n} 给出了不同接入概率 $q$ 条件下网络吞吐量 $\lambda_{out}^{net}$ 随节点数量 $n$ 变化的趋势。实验参数设置为成功传输时长 $\tau_S=5$、碰撞时长 $\tau_F=3$、空闲时长 $\tau_I=1$、观测时长 $T=10^6$。结果显示，在任一固定 $q$ 下，$n$ 增大将提高总体竞争强度，并增加碰撞与侦听带来的时间开销，使吞吐量整体下降；在任一固定 $n$ 下，较小 $q$ 往往对应更高吞吐量，后续仿真结果分析提到，会伴随有公平性的问题。
+% 理论与仿真曲线的总体一致性说明该模型在不同负载区间均具有较好解释力。
 
 \subsection{公平性$J_T$的仿真结果与分析}
 
 
-图 ~\ref{fig:csmast_jain_vs_q_taus} 进一步给出了不同 $\tau_S$ 下短期公平性 $J_T$ 随接入概率 $q$ 的变化趋势。实验参数设置为节点数 $n=100$、碰撞时长 $\tau_F=3$、空闲时长 $\tau_I=1$，观测时长 $T=10^6$，并取 $\tau_S\in\{5,10,30\}$。该图表明，在低接入概率区间，$\tau_S$ 越大，$J_T$ 越低，说明连续忙期越长，节点间短时服务差异越显著。随着 $q$ 增大，碰撞对信道连续占用的中断效应增强，增加了信道占用权在节点之间的轮转，$J_T$ 因而逐步上升。进入高接入概率区间后，$J_T$ 逐渐下降并且不同 $\tau_S$ 下的公平性曲线逐渐收敛，说明公平性主要由竞争过程主导，而忙期长度差异的影响相对减弱。理论曲线与仿真点在全区间保持一致，进一步验证了第 4.3 节公平性模型的有效性。
+图 ~\ref{fig:csmast_jain_vs_q_taus} 进一步给出了不同 $\tau_S$ 下短期公平性 $J_T$ 随接入概率 $q$ 的变化趋势。实验参数设置为节点数 $n=100$、碰撞时长 $\tau_F=3$、空闲时长 $\tau_I=1$，观测时长 $T=10^6$，并取 $\tau_S\in\{5,10,30\}$。该图表明，在低接入概率区间，$\tau_S$ 越大，$J_T$ 越低，说明连续忙期越长，节点间短时服务差异越显著。随着 $q$ 增大，碰撞对信道连续占用的中断效应增强，增加了信道占用权在节点之间的轮转，$J_T$ 因而逐步上升。进入高接入概率区间后，$J_T$ 逐渐下降并且不同 $\tau_S$ 下的公平性曲线逐渐收敛，说明公平性主要由竞争过程主导，而忙期长度差异的影响相对减弱。
+% 理论曲线与仿真点在全区间保持一致，进一步验证了第 4.3 节公平性模型的有效性。
 
 \begin{figure}[t]
 	\centering
@@ -347,7 +349,7 @@ $\lambda_{out,i}^{T}=\frac{N_{succ,i}(\tau_S-\tau_I)}{T}$
 	\label{fig:comparison_classic}
 \end{figure}
 
-图 ~\ref{fig:csmast_jain_vs_t_multi_q} ~进一步展示了不同接入概率 $q$ 下短期公平性 $J_T$ 随观测时间窗口 $T$ 的变化。实验参数设置为节点数 $n=100$、成功传输时长 $\tau_S=5$、碰撞时长 $\tau_F=3$、空闲时长 $\tau_I=1$。结果表明，随着观测窗口增大，$J_T$ 整体上升并逐步趋于稳定，这与式 \ref{eq:jain_explicit} 中公平性随 $T$ 增大而改善的理论趋势一致。从机制上看，较短观测窗口内统计量更易受到连续忙期波动影响，节点间服务差异更显著；当观测窗口扩展后，碰撞重分配与多轮接入过程得到充分平均，短时不公平被逐步平滑。不同 $q$ 条件下理论曲线与仿真结果保持一致，进一步验证了模型在时间尺度维度上的解释能力。
+图 ~\ref{fig:csmast_jain_vs_t_multi_q} ~进一步展示了不同接入概率 $q$ 下短期公平性 $J_T$ 随观测时间窗口 $T$ 的变化。实验参数设置为节点数 $n=100$、成功传输时长 $\tau_S=5$、碰撞时长 $\tau_F=3$、空闲时长 $\tau_I=1$。不同 $q$ 条件下理论曲线与仿真结果保持一致。结果表明，随着观测窗口增大，$J_T$ 整体上升并逐步趋于稳定，这与式 \ref{eq:jain_explicit} 中公平性随 $T$ 增大而改善的理论相符。可见，较短观测窗口内统计量更易受到连续忙期波动影响，节点间服务差异更显著；当观测窗口扩展后，碰撞重分配与多轮接入过程得到充分平均，短时不公平被逐步平滑。
 
 \subsection{CSMAST 与 CSMA 机制的性能对比与分析}
 
@@ -357,6 +359,6 @@ $\lambda_{out,i}^{T}=\frac{N_{succ,i}(\tau_S-\tau_I)}{T}$
 
 \section{本章小结}
 
-
-本章针对载波侦听接入网络的性能瓶颈，提出了基于连续传输的 CSMAST 机制。考虑到 CSMA 协议的状态时长异构性，本章引入吸收马尔可夫链理论，构建休假排队分析框架，成功推导了饱和状态下网络吞吐量与 Jain 公平性指数的闭式解。理论与仿真分析表明，CSMAST 通过单次竞争、连续传输的策略有效降低了碰撞开销，在一组相同配置条件下相比传统 CSMA 实现了约 28.8\% 的吞吐量增益；同时，研究还揭示了该机制中特有的吞吐量与公平性权衡规律，验证了其在提升非授权频段频谱利用率方面的优势与灵活性。
+本章针对载波侦听接入网络的性能瓶颈，提出了基于连续传输的 CSMAST 机制。考虑到 CSMA 协议的状态时长异构性，本章引入吸收马尔可夫链理论，构建休假排队分析框架，成功推导了饱和状态下网络吞吐量与 Jain 公平性指数的闭式解。
+理论与仿真分析表明，在一组相同配置条件下，CSMAST 相比传统 CSMA 实现了约 28.8\% 的吞吐量增益，同时还能保持较好的公平性。
 

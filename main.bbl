@@ -174,6 +174,12 @@
   \bibvolume{54}\bibnumber{(6)}\thinspace{}\textnormal{:
   }\bibpages{50\thinspace{}\textnormal{--}\thinspace{}57}\@.
 
+\bibitem{2020_He}
+\bibauthor{何泓利}\@.
+  \bibtitle{免许可频段LTE系统的频谱共享机制和QoS保障技术}\bibmark{[D]}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibschool{浙江大学}\@,
+  \bibyear{2020}\@.
+
 \bibitem{2024_NRU}
 \bibauthor{{RAN} T}\@. \bibtitle{Physical Layer Procedures for Shared Spectrum
   Channel Access}\bibmark{[J]}\@. \bibjournal{Release}\@, \bibyear{2024}\@,
@@ -192,6 +198,12 @@
   3}}\thinspace{}\textnormal{: }\bibnumber{RP-234039}\bibmark{[R]}\@.
   \bibaddress{Edinburgh, UK}\thinspace{}\textnormal{: }\bibinstitution{3rd
   Generation Partnership Project (3GPP)}\@, \bibyear{2023}\@.
+
+\bibitem{2023_Jin}
+\bibauthor{金仙美}\@.
+  \bibtitle{面向5G核心网内生智能的业务识别算法研究}\bibmark{[D]}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{:
+  }\bibschool{西安电子科技大学}\@, \bibyear{2023}\@.
 
 \bibitem{2025_AI_IIoT}
 \bibauthor{{Aouedi} O\@, {Vu} T-H\@, {Sacco} A, et~al}\@. \bibtitle{A Survey on
@@ -598,10 +610,28 @@
 \bibauthor{{3GPP}}\@. \bibtitle{3GPP TS 38.213: NR; Physical layer procedures
   for control}\bibmark{[R]}\@. \bibyear{Release 17}\@.
 
+\bibitem{2021_Huang}
+\bibauthor{黄欢欢}\@.
+  \bibtitle{批量服务随机访问协议的延迟性能研究}\bibmark{[D]}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{:
+  }\bibschool{上海交通大学}\@, \bibyear{2021}\@.
+
+\bibitem{2008_Markov_absorb}
+\bibauthor{{Bertsekas} D\@, {Tsitsiklis} J~N}\@. \bibbooktitle{Introduction to
+  probability}\bibmark{[M]}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
+  }\bibpublisher{Athena Scientific}\@, \bibyear{2008}\@.
+
 \bibitem{1996_Gausian}
 \bibauthor{{Gallager} R~G}\@. \bibbooktitle{Discrete Stochastic
   Processes}\bibmark{[M]}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
   }\bibpublisher{Kluwer Academic Publishers}\@, \bibyear{1996}\@.
+
+\bibitem{2013_DaiCSMA}
+\bibauthor{{Dai} L}\@. \bibtitle{Toward a Coherent Theory of CSMA and
+  Aloha}\bibmark{[J]}\@. \bibjournal{IEEE Transactions on Wireless
+  Communications}\@, \bibyear{2013}\@,
+  \bibvolume{12}\bibnumber{(7)}\thinspace{}\textnormal{:
+  }\bibpages{3428\thinspace{}\textnormal{--}\thinspace{}3444}\@.
 
 \bibitem{2022_LambertW}
 \bibauthor{{Mez{\H{o}}} I}\@. \bibbooktitle{The Lambert W Function: Its
