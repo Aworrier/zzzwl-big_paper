@@ -82,7 +82,7 @@
 \label{app:proof_theorem_fixed_point}
 
 本附录给出定理\texorpdfstring{~\ref{thm:geometric_Q}}的详细推导。
-我们采用猜想与验证方法。先假设忙期起始队列长度 $Q$ 服从参数为 $\alpha\in(0,1)$ 的几何分布：
+我们采用基于离散时间更新过程的猜想-验证方法\cite{1996_Gausian}。先假设忙期起始队列长度 $Q$ 服从参数为 $\alpha\in(0,1)$ 的几何分布：
 \begin{equation}
 \Pr\{Q=j\}=\alpha(1-\alpha)^{j-1},\quad j=1,2,\ldots
 \end{equation}
@@ -92,7 +92,7 @@
 G_Q(z)=\frac{\alpha z}{1-(1-\alpha)z}+o\!\left(\frac{1}{n}\right).
 \end{equation}
 
-首先，利用公式\eqref{eq:GP_derived}的耦合关系,我们推导得到
+首先，利用公式\eqref{eq:GP_derived}的耦合关系，我们推导得到
 \begin{equation}
 \label{eq:GP_alpha}
 G_{P}(z) = \frac{\alpha \left[ 1 - (1 - \alpha) e^{-\theta} z \right]}{[1 - (1 - \alpha) z] \left[ 1 - (1 - \alpha) e^{-\theta} \right]}

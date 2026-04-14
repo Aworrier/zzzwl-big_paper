@@ -5,29 +5,44 @@
 
 
 \cabstract{
-随着B5G/6G网络向海量终端连接与多样化业务需求持续演进，复杂物联网场景下随机接入过程的性能瓶颈日益突出。当前5G蜂窝系统中的随机接入机制已沿授权频谱小数据传输（Small Data Transmission, SDT）与非授权频谱侦听后发送（Listen-Before-Talk, LBT）两条路径持续演进。然而，在高负载和多业务并存条件下，现有标准方案仍面临接入开销较高、信道利用效率受限以及对动态业务变化适配能力不足等问题，严重制约系统整体性能。这些问题不仅限制了随机接入容量与资源利用效率，也直接影响海量终端业务承载能力与服务质量保障，已成为B5G/6G物联网接入系统亟待解决的关键挑战。
+随着B5G/6G网络向海量终端连接与多样化业务需求持续演进，随机接入过程的性能瓶颈已成为制约工业物联网、车联网等复杂场景规模化部署的关键因素。当前 5G 蜂窝系统的随机接入机制已沿授权频谱的小数据传输（Small Data Transmission, SDT）与非授权频谱的先听后说（Listen-Before-Talk, LBT）两条路径演进，但在高负载、多业务并存场景下，现有标准方案仍存在接入开销高、资源利用效率低、动态业务适配能力不足等问题，严重限制系统综合性能。本文从竞争成功后连续传输的统一视角出发，对两类随机接入机制进行扩展设计与性能分析。
 
-面向授权频谱短报文接入场景，当前3GPP标准中的相关接入过程主要基于时隙Aloha思想设计，在高负载条件下存在重复竞争开销大、接入效率受限等问题。为此，本文提出一种与3GPP标准兼容的连续传输增强Aloha接入机制。该机制在保持现有分布式接入框架不变的前提下，引入竞争成功后的连续传输策略，有效降低单位数据传输的平均开销，实现性能提升与标准兼容性的协同优化。基于休假排队理论，本文构建了系统性能分析模型，对吞吐量、时延和信令开销等关键指标进行刻画与量化分析，并通过仿真验证了机制的有效性。结果表明，所提机制可将系统数据吞吐量极限提升至0.5，突破传统Aloha机制的性能上限，同时在5G小报文传输场景中显著降低信令开销。
+面向授权频谱短报文接入场景，3GPP标准随机接入过程主要基于时隙Aloha思想设计，在高负载条件下存在重复竞争开销大、接入效率受限等问题。为此，本文提出一种与3GPP标准兼容的连续传输增强Aloha接入机制。该机制在保留现有分布式接入框架的基础上，引入竞争成功后连续传输数据的策略，有效提高吞吐性能和降低单位数据传输的平均开销，实现性能提升与标准兼容性的协同优化。为量化评估所提机制的性能，本文基于休假排队理论构建了系统性能分析模型，对吞吐量、时延和信令开销等关键指标进行刻画与分析。
+理论分析与仿真结果表明，在不引入额外复杂控制逻辑、且不改变基本接入流程框架的前提下，所提机制通过引入竞争成功后的连续传输策略，有效减少重复竞争开销，可将系统数据吞吐量提升至约0.5；相较于传统逐包独立竞争的时隙 Aloha 机制，系统信道利用效率得到明显提升。同时，在5G小数据传输场景中，该机制还能够有效降低信令开销。
 
-面向非授权频谱LBT接入场景，当前3GPP标准主要基于载波侦听多址（Carrier Sense Multiple Access, CSMA）机制进行设计，但频繁侦听与退避操作导致系统开销较高、资源利用效率偏低。针对这一问题，本文提出一种连续传输增强的CSMA接入机制。该机制在保留载波侦听与退避核心流程的基础上，引入连续传输策略，有效降低重复竞争带来的资源消耗与效率损失。针对信道侦听与传输时长异构这一关键问题，本文构建了基于吸收马尔可夫链和休假排队理论的分析模型，对系统吞吐量与接入公平性进行刻画和优化分析。理论分析与仿真结果表明，该机制在无需额外复杂控制逻辑的情况下，相比同等条件下的CSMA协议可实现约28.8\%的吞吐量提升，并保持良好的系统公平性。
+面向非授权频谱LBT接入场景，3GPP标准随机接入过程主要基于载波侦听多址（Carrier Sense Multiple Access, CSMA）思想进行设计，存在频繁侦听与退避操作导致系统开销偏高、资源利用效率不足等局限。针对该问题，本文提出一种连续传输增强的 CSMA 接入机制。该机制在保留载波侦听与退避的基础上，引入连续传输策略，有效降低重复竞争带来的资源消耗与效率损失。针对信道侦听与传输时长异构这一关键问题，本文构建了基于吸收马尔可夫链和休假排队理论的分析模型，对系统吞吐量与接入公平性进行刻画和优化分析。
+理论分析与仿真结果表明，该机制在无需额外复杂控制逻辑的情况下，相比同等条件下的传统 CSMA 协议可实现约28.8\%的吞吐量提升。尽管所提机制在短时间尺度上存在轻微信道占用不均的问题，但从长期统计平均角度，系统公平性与传统CSMA机制基本持平。
 
-针对动态业务环境中单一接入机制难以持续适配场景变化、无法兼顾多维性能需求的问题，本文进一步构建了统一的接入性能评估与自适应决策框架。通过离散事件仿真生成覆盖多协议和多参数配置的大规模性能数据集，并基于多任务学习模型实现对吞吐量、时延、公平性及信令开销等指标的高效预测。在此基础上，设计多目标效用函数，实现接入协议选择与参数配置的协同优化，并提出相应的自适应决策方法。实验结果表明，该方法能够以较低计算开销实现动态场景中的快速决策与稳定性能增益，显著提升系统对复杂业务环境的适配能力。
+上述两种增强型接入机制分别针对授权、非授权单一频谱场景优化，但在动态业务环境中，单一接入机制难以持续适配场景变化、无法兼顾多维性能需求，因此，本文进一步构建统一的接入性能评估与自适应决策框架。
+通过离散事件仿真生成覆盖多协议、多参数配置的大规模数据集，以网络规模、业务流量以及协议配置参数等作为主要输入，采用多任务学习模型实现对吞吐量、时延、公平性及信令开销等指标的高效预测。在此基础上，设计多目标效用函数，提出接入协议选择与参数配置的协同优化方法，实现动态场景下的快速决策。实验结果表明，该方法能够在动态场景中以较低计算开销实现快速决策，并获得稳定的综合性能提升。
 
-综上，本文从接入机制设计与系统自适应决策两个层面出发，构建了一套面向复杂物联网场景的低开销、高效率且具备自适应能力的随机接入解决方案，系统提升了B5G/6G网络中随机接入的综合性能，为接入机制优化与工程实现提供了重要的理论依据与技术支撑。
+综上，本文从接入机制增强与多协议智能优化两个视角出发，构建了低开销、高效率、自适应的 B5G/6G 随机接入方案，可有效提升系统吞吐量、降低信令开销、增强动态业务适配能力，为接入机制优化与工程实现提供了理论依据与技术支撑。
+% 针对动态业务环境中单一接入机制难以持续适配场景变化、无法兼顾多维性能需求的问题，本文进一步构建统一的接入性能评估与自适应决策框架。
 }
 % 中文关键词(每个关键词之间用;分开,最后一个关键词不打标点符号。)
 \ckeywords{5G；随机接入；Aloha；CSMA/LBT；连续传输；休假排队；多任务学习；自适应决策}
 
 \eabstract{
-With the evolution of B5G/6G networks toward massive connectivity and diverse service requirements, performance bottlenecks in random access (RA) procedures have become increasingly pronounced in complex Internet of Things (IoT) scenarios. In current 5G cellular systems, RA mechanisms have evolved along two standardized paths, namely Small Data Transmission (SDT) in licensed spectrum and Listen-Before-Talk (LBT) in unlicensed spectrum. However, under high-load and heterogeneous traffic conditions, existing solutions still suffer from excessive access overhead, limited channel utilization, and insufficient adaptability to dynamic traffic variations, which significantly constrain overall system performance. These issues not only limit RA capacity and resource utilization but also directly affect service capability and quality-of-service (QoS) provisioning for massive devices, making them critical challenges in B5G/6G IoT access systems.
+As B5G/6G networks evolve toward massive connectivity and heterogeneous services, random access protocols in complex Internet of Things (IoT)  scenarios face a fundamental tradeoff among access overhead, spectrum efficiency, and adaptability. Existing 5G solutions, including small data transmission (SDT) in licensed spectrum and listen-before-talk (LBT) in unlicensed spectrum, suffer from excessive contention overhead and limited efficiency under high-load conditions. This work is based on a unified design principle that enables successive transmission after successful contention.
 
-For small-packet access in licensed spectrum, current 3GPP standardized procedures are mainly designed based on slotted Aloha principles and thus suffer from high repeated contention overhead and limited access efficiency under heavy traffic. To address this issue, this paper proposes a 3GPP-compatible successive transmission enhanced Aloha access mechanism. Without altering the existing distributed access framework, the proposed scheme introduces a successive transmission strategy after successful contention, thereby effectively reducing the average overhead per data transmission and achieving a favorable balance between performance enhancement and standard compatibility. Based on vacation queueing theory, a system-level analytical model is developed to characterize key performance metrics, including throughput, delay, and signaling overhead, and its validity is further confirmed by simulations. The results show that the proposed scheme improves the maximum system throughput to 0.5, surpassing the performance limit of conventional Aloha schemes, while significantly reducing signaling overhead in 5G SDT scenarios.
+To reduce repeated contention overhead in slotted Aloha-based SDT, successive transmission-enhanced Aloha mechanism is proposed, while preserving the basic access procedure of existing systems. 
+By enabling successive transmission after a successful contention, the proposed scheme significantly reduces per-packet overhead while retaining the distributed access architecture.
+Based on vacation queueing theory, an analytical model is established  to characterize the system performance including throughput, delay and signaling overhead. 
+Simulation results show that the proposed mechanism increases the data throughput to 0.5, achieving significantly higher throughput than the conventional per-packet contention-based slotted Aloha scheme, while significantly reducing signaling overhead in 5G SDT scenarios.
 
-For LBT-based access in unlicensed spectrum, current 3GPP mechanisms are mainly built upon Carrier Sense Multiple Access (CSMA), where frequent channel sensing and backoff operations result in high system overhead and low resource utilization efficiency. To overcome this limitation, a successive transmission enhanced CSMA access mechanism is proposed. By preserving the core procedures of carrier sensing and backoff, the proposed scheme incorporates a successive transmission strategy to reduce redundant contention overhead and resource consumption. To address the key issue of heterogeneous sensing and transmission durations, an analytical framework based on absorbing Markov chains and vacation queueing theory is developed to characterize and optimize system throughput and access fairness. Both theoretical analysis and simulation results demonstrate that the proposed mechanism achieves approximately 28.8\% throughput improvement without introducing additional control complexity, while maintaining good fairness performance.
 
-To further address the difficulty that a single access mechanism cannot continuously adapt to dynamic traffic conditions or simultaneously satisfy multidimensional performance requirements, a unified performance evaluation and adaptive decision-making framework is developed. A large-scale dataset covering multiple protocols and parameter configurations is generated through discrete-event simulations, and a multi-task learning model is employed to efficiently predict key performance metrics, including throughput, delay, fairness, and signaling overhead. On this basis, a multi-objective utility function is designed to jointly optimize protocol selection and parameter configuration, leading to an adaptive decision-making method. Experimental results show that the proposed method enables rapid decision-making with low computational overhead and achieves stable performance gains in dynamic scenarios, significantly enhancing system adaptability to complex traffic environments.
+To improve the efficiency of LBT-based access in unlicensed spectrum, a successive-transmission enhanced CSMA mechanism is further proposed. By incorporating successive transmission after successful channel access into the CSMA framework, the scheme reduces frequent sensing and backoff operations.
+To capture the heterogeneity of channel sensing and transmission durations, a joint analytical model based on an absorbing Markov chain and vacation queueing theory is developed. 
+Analysis and simulations demonstrate a 28.8\% throughput improvement over classical CSMA with comparable fairness comparable fairness in the long-term statistical sense and no additional control overhead.
 
-In summary, this work develops a low-overhead, high-efficiency, and adaptive random access solution for complex IoT scenarios from both access mechanism design and system-level adaptive decision-making. The proposed framework significantly improves random access performance in B5G/6G networks and offers theoretical insights and practical guidance for access mechanism optimization and deployment.
+
+To address the poor adaptability of single mechanisms in dynamic traffic  environments, 
+a unified framework for access performance evaluation and adaptive decision-making is proposed.
+A multi-protocol dataset is constructed via discrete-event simulation. Taking network scale, traffic load, and protocol configurations as inputs, a multi-task learning method is employed to efficiently predict multiple performance metrics.
+Based on a multi-objective utility function, joint optimization of  protocol selection and parameter configuration is achieved, enabling efficient adaptation to dynamic traffic scenarios with low computational complexity.
+
+In summary, this work develops a low-overhead, high-efficiency, and adaptive random access framework for B5G/6G IoT systems. It offers both mechanism-level enhancements and system-level optimization strategies.
+
 
 }
 % 英文关键词（关键词之间用逗号隔开，最后一个关键词不打标点符号。）
