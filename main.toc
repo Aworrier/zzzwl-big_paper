@@ -17,41 +17,41 @@
 \contentsline {chapter}{\numberline {第2章\hspace {.3em}}随机接入网络及其建模}{17}{chapter.2}%
 \contentsline {section}{\numberline {2.1}随机接入标准方案}{17}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}5G NR 竞争式随机接入流程}{17}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}5G NR SDT的标准随机接入机制}{18}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.2}5G NR SDT 的标准随机接入机制}{18}{subsection.2.1.2}%
 \contentsline {subsection}{\numberline {2.1.3}NR-U 中基于 LBT 的信道接入机制}{19}{subsection.2.1.3}%
 \contentsline {section}{\numberline {2.2}系统场景与模型假设}{20}{section.2.2}%
 \contentsline {section}{\numberline {2.3}关键性能指标}{23}{section.2.3}%
 \contentsline {section}{\numberline {2.4}本章小结}{24}{section.2.4}%
 \contentsline {chapter}{\numberline {第3章\hspace {.3em}}面向Aloha网络的连续传输机制设计与分析优化}{25}{chapter.3}%
-\contentsline {section}{\numberline {3.1}SAST系统模型与机制描述}{25}{section.3.1}%
-\contentsline {section}{\numberline {3.2}基于休假排队模型的SAST机制分析}{26}{section.3.2}%
+\contentsline {section}{\numberline {3.1}SAST 系统模型与机制描述}{25}{section.3.1}%
+\contentsline {section}{\numberline {3.2}基于休假排队模型的 SAST 机制分析}{26}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}信道休假队列分析}{27}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}节点休假队列分析}{30}{subsection.3.2.2}%
 \contentsline {subsection}{\numberline {3.2.3}尝试速率与概率$p_0$分析}{32}{subsection.3.2.3}%
 \contentsline {section}{\numberline {3.3}吞吐量性能分析与优化}{36}{section.3.3}%
 \contentsline {section}{\numberline {3.4}时延性能分析与优化}{38}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}接入时延$D_A$分析}{38}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}数据包时延$D_P$分析}{39}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.1}接入时延 $D_A$ 分析}{38}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}数据包时延 $D_P$ 分析}{39}{subsection.3.4.2}%
 \contentsline {section}{\numberline {3.5}SAST在5G网络中的应用与性能对比}{41}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}2步小数据传输方案}{42}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}SAST机制在5G中的实现与信令分析}{43}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.1}2 步小数据传输方案}{42}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}SAST 机制在 5G 中的实现与信令分析}{43}{subsection.3.5.2}%
 \contentsline {subsection}{\numberline {3.5.3}信令开销性能对比}{43}{subsection.3.5.3}%
 \contentsline {section}{\numberline {3.6}本章小结}{44}{section.3.6}%
-\contentsline {chapter}{\numberline {第4章\hspace {.3em}}面向CSMA网络的连续传输机制设计与分析优化}{45}{chapter.4}%
+\contentsline {chapter}{\numberline {第4章\hspace {.3em}}面向 CSMA 网络的连续传输机制设计与分析优化}{45}{chapter.4}%
 \contentsline {section}{\numberline {4.1}CSMAST 系统模型与机制描述}{45}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}信道状态与非对称时长特性}{45}{subsection.4.1.1}%
 \contentsline {subsection}{\numberline {4.1.2}CSMAST 协议机制描述}{46}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}基于休假排队模型的 CSMAST 机制分析 }{47}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.3}基于休假排队模型的 CSMAST 机制分析}{47}{subsection.4.1.3}%
 \contentsline {section}{\numberline {4.2}基于休假排队模型的性能指标分析与优化}{48}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}信道忙期$B$分布的推导分析}{48}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}信道假期$V_c$分布的推导与分析}{49}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}信道周期$C_c$与节点周期$C$的推导与分析}{52}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.1}信道忙期 $B$ 分布的推导分析}{48}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}信道假期 $V_c$ 分布的推导与分析}{49}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}信道周期 $C_c$ 与节点周期 $C$ 的推导与分析}{52}{subsection.4.2.3}%
 \contentsline {section}{\numberline {4.3}吞吐量与公平性指标的推导与分析}{53}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}网络吞吐量指标的推导与分析}{53}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}公平性指标的推导与分析}{55}{subsection.4.3.2}%
 \contentsline {section}{\numberline {4.4}仿真结果与分析}{56}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}网络吞吐量$\lambda _{out}^{net}$的仿真结果与分析}{56}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}公平性$J_T$的仿真结果与分析}{57}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.1}网络吞吐量 $\lambda ^{net}_{out}$ 的仿真结果与分析}{56}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}公平性 $J_T$ 的仿真结果与分析}{57}{subsection.4.4.2}%
 \contentsline {subsection}{\numberline {4.4.3}CSMAST 与 CSMA 机制的性能对比与分析}{57}{subsection.4.4.3}%
 \contentsline {section}{\numberline {4.5}本章小结}{58}{section.4.5}%
 \contentsline {chapter}{\numberline {第5章\hspace {.3em}}基于监督学习的智能协议与参数联合选择方法}{59}{chapter.5}%

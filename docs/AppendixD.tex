@@ -19,18 +19,17 @@ $$
 为统一比较维度，本文不固定参数 $a$。
 我们直接使用状态时长参数 $\tau_S$、$\tau_F$ 与 $\tau_I$ 进行推导。
 
-在本章模型下，经典CSMA可视为CSMAST的特例。
+在本章模型下，经典 CSMA 可视为 CSMAST 的特例。
 两者关键差异在于忙期构造方式。
-在CSMAST中，节点若未碰撞可连续发送。
-因此其忙期内成功发送次数服从参数为 $1-p_0$ 的几何分布，均值为
+在 CSMAST 中，节点若未发生碰撞即可连续发送，因此忙期内成功发送次数服从参数为 $1-p_0$ 的几何分布，其均值为
 $$
 \overline{B}_{st}=\frac{\tau_S}{1-e^{-\theta}}.
 $$
-在经典CSMA中，每次竞争后只发送一个数据包。
+在经典 CSMA 中，每次竞争后只发送一个数据包。
 发送结束后节点立即释放信道并重新竞争。
-因此其忙期 $B_{cl}$ 为确定值，满足 $\overline{B}_{cl}=\tau_S$。
+因此其忙期 $B_{cl}$ 为常数，满足 $\overline{B}_{cl}=\tau_S$。
 两种机制在竞争接入阶段采用相同的 LBT~与退避规则。
-所以信道假期均值 $\overline{V}_c$ 可沿用前文结论
+因此信道假期均值 $\overline{V}_c$ 可沿用前文结论：
 \begin{equation}
 	\overline{V}_c = \frac{p_{2}\tau_{F}+p_{0}\tau_{I}}{p_{1}},
 \end{equation}
@@ -38,16 +37,14 @@ $$
 
 \section{吞吐量表达式与最优传输概率}
 
-将 $\overline{B}_{cl}$ 与 $\overline{V}_c$ 代入吞吐量定义式。
-再引入有效传输修正因子 $\eta=(\tau_S-\tau_I)/\tau_S$。
-可得经典CSMA在饱和状态下的通用吞吐量表达式
+将 $\overline{B}_{cl}$ 与 $\overline{V}_c$ 代入吞吐量定义式，并引入有效传输修正因子 $\eta=(\tau_S-\tau_I)/\tau_S$，可得经典CSMA在饱和状态下的通用吞吐量表达式
 \begin{equation}
 	\label{eq:classic_csma_throughput}
 	\hat{\lambda}_{\text{out}}^{\text{cl}} = \frac{\tau_{S}-\tau_{I}}{\tau_{S}} \cdot \frac{\overline{B}_{cl}}{\overline{B}_{cl}+\overline{V}_{c}} = \frac{\tau_{S}-\tau_{I}}{\tau_{S}+\frac{p_{2}\tau_{F}+p_{0}\tau_{I}}{p_{1}}}.
 \end{equation}
 
 为求理论容量上界，将 $\hat{\lambda}_{\text{out}}^{\text{cl}}$ 视为 $q$ 的函数。
-求解最优化条件 $\frac{d\hat{\lambda}}{dq}=0$ 后，得到最优传输概率
+求解最优化条件 $\frac{d\hat{\lambda}_{\text{out}}^{\text{cl}}}{dq}=0$ 后，得到最优传输概率
 \begin{equation}
 	\label{eq:optimal_q_classic}
 	q^{*} = \frac{1 + W_{0}\left(\frac{\tau_{I}-\tau_{F}}{\tau_{F} e}\right)}{n},
