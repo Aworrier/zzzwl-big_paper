@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.28)  15 APR 2026 16:01
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.28)  15 APR 2026 16:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1173,6 +1173,28 @@ LaTeX Info: Redefining \nameref on input line 17.
 \openout4 = `main.out'.
 
 
+
+Package xeCJK Warning: Unknown CJK family `zhsongbold' is being ignored.
+(xeCJK)                
+(xeCJK)                Try to use `\setCJKfamilyfont{zhsongbold}[...]{...}' to
+(xeCJK)                define it.
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 23.
+(d:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 23.
+ (d:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+
+
+] [2
+
+
+]
+
 Package fontspec Info: Could not resolve font "SimHei/BI" (it probably doesn't
 (fontspec)             exist).
 
@@ -1200,10 +1222,7 @@ Package fontspec Info: Font family 'SimHei(0)' created for font 'SimHei' with
 LaTeX Font Warning: Font shape `TU/SimHei(0)/b/n' undefined
 (Font)              using `TU/SimHei(0)/m/n' instead on input line 23.
 
-[1
-
-
-] [2]
+[1] [2]
 Overfull \hbox (21.93137pt too wide) in paragraph at lines 23--23
 []\TU/TimesNewRoman(0)/m/n/12.045 To reduce repeated contention overhead in slotted Aloha-based SDT, a successive transmission-
  []
@@ -1211,22 +1230,7 @@ Overfull \hbox (21.93137pt too wide) in paragraph at lines 23--23
 [3
 
 
-] [4] (./main.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
- (d:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
- (d:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-
-Package xeCJK Warning: Unknown CJK family `zhsongbold' is being ignored.
-(xeCJK)                
-(xeCJK)                Try to use `\setCJKfamilyfont{zhsongbold}[...]{...}' to
-(xeCJK)                define it.
-
-[5
+] [4] (./main.toc [5
 
 
 ])
@@ -1734,19 +1738,19 @@ Underfull \vbox (badness 4739) has occurred while \output is active []
 ]) [102]
 \openout2 = `docs/Achievement.aux'.
 
- (./docs/Achievement.tex
-Overfull \hbox (0.78572pt too wide) in paragraph at lines 14--15
-[]\TU/TimesNewRoman(0)/b/n/12.045 XXX\TU/TimesNewRoman(0)/m/n/12.045 , XXX, XXX, XXX, and XXX. Boosting Slotted Aloha with Successive Trans-
- []
-
-[103
+ (./docs/Achievement.tex) [103
 
 
 
 
 
 
-]) [104] (./main.aux (./docs/Acronym.aux) (./docs/Symbol.aux) (./docs/Chapter_01.aux) (./docs/Chapter_02.aux) (./docs/Chapter_03.aux) (./docs/Chapter_04.aux) (./docs/Chapter_05.aux) (./docs/Chapter_06.aux) (./docs/AppendixA.aux) (./docs/AppendixB.aux) (./docs/AppendixC.aux) (./docs/AppendixD.aux) (./docs/Achievement.aux))
+] [104
+
+
+
+
+] (./main.aux (./docs/Acronym.aux) (./docs/Symbol.aux) (./docs/Chapter_01.aux) (./docs/Chapter_02.aux) (./docs/Chapter_03.aux) (./docs/Chapter_04.aux) (./docs/Chapter_05.aux) (./docs/Chapter_06.aux) (./docs/AppendixA.aux) (./docs/AppendixB.aux) (./docs/AppendixC.aux) (./docs/AppendixD.aux) (./docs/Achievement.aux))
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1754,12 +1758,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 5C6FF8D736590038C2DD819D02BDF1B8;6853.
  ) 
 Here is how much of TeX's memory you used:
- 36192 strings out of 476179
- 770380 string characters out of 5813072
- 1108745 words of memory out of 5000000
- 56108 multiletter control sequences out of 15000+600000
- 497150 words of font info for 192 fonts, out of 8000000 for 9000
+ 36239 strings out of 476179
+ 772972 string characters out of 5813072
+ 1108754 words of memory out of 5000000
+ 56150 multiletter control sequences out of 15000+600000
+ 497190 words of font info for 197 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  103i,21n,111p,1195b,992s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (120 pages).
+Output written on main.pdf (122 pages).
