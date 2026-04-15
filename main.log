@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.28)  15 APR 2026 16:22
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.28)  15 APR 2026 16:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1266,7 +1266,27 @@ Underfull \vbox (badness 2573) has occurred while \output is active []
 \openout2 = `docs/Acronym.aux'.
 
  (./docs/Acronym.tex
-Overfull \hbox (24.0498pt too wide) in alignment at lines 4--75
+Overfull \hbox (24.0498pt too wide) in alignment at lines 4--8
+ [] [] [] 
+ []
+
+
+Overfull \hbox (24.0498pt too wide) in alignment at lines 8--13
+ [] [] [] 
+ []
+
+
+Overfull \hbox (24.0498pt too wide) in alignment at lines 13--17
+ [] [] [] 
+ []
+
+
+Overfull \hbox (24.0498pt too wide) in alignment at lines 17--20
+ [] [] [] 
+ []
+
+
+Overfull \hbox (24.0498pt too wide) in alignment at lines 20--90
  [] [] [] 
  []
 
