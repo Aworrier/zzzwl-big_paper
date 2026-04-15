@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.28)  15 APR 2026 16:38
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.28)  15 APR 2026 20:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1190,9 +1190,6 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 
-] [2
-
-
 ]
 
 Package fontspec Info: Could not resolve font "SimHei/BI" (it probably doesn't
@@ -1222,16 +1219,16 @@ Package fontspec Info: Font family 'SimHei(0)' created for font 'SimHei' with
 LaTeX Font Warning: Font shape `TU/SimHei(0)/b/n' undefined
 (Font)              using `TU/SimHei(0)/m/n' instead on input line 23.
 
-[1] [2]
+[1
+
+] [2]
 Overfull \hbox (21.93137pt too wide) in paragraph at lines 23--23
 []\TU/TimesNewRoman(0)/m/n/12.045 To reduce repeated contention overhead in slotted Aloha-based SDT, a successive transmission-
  []
 
 [3
 
-
 ] [4] (./main.toc [5
-
 
 ])
 \tf@toc=\write5
@@ -1247,7 +1244,6 @@ Underfull \vbox (badness 2573) has occurred while \output is active []
 
  [7
 
-
 ])
 \tf@lof=\write6
 \openout6 = `main.lof'.
@@ -1257,10 +1253,6 @@ Underfull \vbox (badness 2573) has occurred while \output is active []
 \openout7 = `main.lot'.
 
  [9
-
-
-] [10
-
 
 ]
 \openout2 = `docs/Acronym.aux'.
@@ -1290,18 +1282,19 @@ Overfull \hbox (24.0498pt too wide) in alignment at lines 20--90
  [] [] [] 
  []
 
-[11
+[10
 
 
-] [12]) [13]
+
+] [11]) [12]
 \openout2 = `docs/Symbol.aux'.
 
- (./docs/Symbol.tex [14
+ (./docs/Symbol.tex [13
 
 
 
 
-] [15]) [16]
+] [14]) [15]
 \openout2 = `docs/Chapter_01.aux'.
 
  (./docs/Chapter_01.tex
@@ -1309,7 +1302,6 @@ Overfull \hbox (24.0498pt too wide) in alignment at lines 20--90
 File: figure/chap1/iot_challenges.pdf Graphic file (type pdf)
 <use figure/chap1/iot_challenges.pdf>
 [1
-
 
 
 
@@ -1371,7 +1363,6 @@ Underfull \vbox (badness 1533) has occurred while \output is active []
 
 
 
-
 ]
 File: figure/chap2/5G NR SDT标准随机接入过程.pdf Graphic file (type pdf)
 <use figure/chap2/5G NR SDT标准随机接入过程.pdf>
@@ -1395,7 +1386,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: figure/chap3/two_node_sast.pdf Graphic file (type pdf)
 <use figure/chap3/two_node_sast.pdf>
 [25
-
 
 
 
@@ -1507,7 +1497,6 @@ Underfull \vbox (badness 1533) has occurred while \output is active []
 
 
 
-
 ] [46]
 File: figure/chap4/csmast_channel.png Graphic file (type bmp)
 <figure/chap4/csmast_channel.png>
@@ -1553,7 +1542,6 @@ File: figure/chap4/throughput_fairness_tradeoff.pdf Graphic file (type pdf)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [59
-
 
 
 
@@ -1666,32 +1654,22 @@ File: figure/chap5/utility_dynamic_combined_0315.pdf Graphic file (type pdf)
 
 
 
-
-] [82]) [83] [84
-
+] [82]) [83] (./main.bbl [84
 
 
 
-] (./main.bbl [85
 
 ]
 Underfull \hbox (badness 1205) in paragraph at lines 217--224
 []\TU/TimesNewRoman(0)/m/n/10.53937 Abramson N. THE ALOHA SYSTEM: Another Alternative for Computer Communications[C]
  []
 
-[86] [87] [88] [89] [90]) [91] [92
-
-
-]
+[85] [86] [87] [88] [89]) [90]
 \openout2 = `docs/AppendixA.aux'.
 
  (./docs/AppendixA.tex
 附录 A
-) [93
-
-
-] [94
-
+) [91
 
 
 
@@ -1700,7 +1678,10 @@ Underfull \hbox (badness 1205) in paragraph at lines 217--224
 
  (./docs/AppendixB.tex
 附录 B
-[95
+[92
+
+
+
 
 
 ]
@@ -1722,10 +1703,10 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [96]
+ [93]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [97]) [98]
+ [94]) [95]
 \openout2 = `docs/AppendixC.aux'.
 
  (./docs/AppendixC.tex
@@ -1733,14 +1714,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [99
+ [96
 
 
 
 
 
-
-]) [100]
+]) [97]
 \openout2 = `docs/AppendixD.aux'.
 
  (./docs/AppendixD.tex
@@ -1748,24 +1728,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Underfull \vbox (badness 4739) has occurred while \output is active []
 
- [101
+ [98
 
 
 
 
 
-
-]) [102]
+]) [99]
 \openout2 = `docs/Achievement.aux'.
 
- (./docs/Achievement.tex) [103
+ (./docs/Achievement.tex) [100
 
-
-
-
-
-
-] [104
 
 
 
@@ -1773,6 +1746,9 @@ Underfull \vbox (badness 4739) has occurred while \output is active []
 ] (./main.aux (./docs/Acronym.aux) (./docs/Symbol.aux) (./docs/Chapter_01.aux) (./docs/Chapter_02.aux) (./docs/Chapter_03.aux) (./docs/Chapter_04.aux) (./docs/Chapter_05.aux) (./docs/Chapter_06.aux) (./docs/AppendixA.aux) (./docs/AppendixB.aux) (./docs/AppendixC.aux) (./docs/AppendixD.aux) (./docs/Achievement.aux))
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 5C6FF8D736590038C2DD819D02BDF1B8;6853.
@@ -1786,4 +1762,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  103i,21n,111p,1195b,992s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (122 pages).
+Output written on main.pdf (116 pages).

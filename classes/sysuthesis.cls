@@ -18,8 +18,8 @@
     zihao=-4
 ]{ctexbook}
 
-%\def\@printtwoside{0} % 设置文章为电子版格式（不添加多余空白页）
-\def\@printtwoside{1} % 设置文章为双面打印格式（添加多余空白页保证每个表格、章节开头为奇数页面）
+\def\@printtwoside{0} % 设置文章为电子版格式（不添加多余空白页）
+% \def\@printtwoside{1} % 设置文章为双面打印格式（添加多余空白页保证每个表格、章节开头为奇数页面）
 
 % 配置英文字体
 \RequirePackage{fontspec}
