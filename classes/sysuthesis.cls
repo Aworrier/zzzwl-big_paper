@@ -114,7 +114,7 @@
 %    \fancyhead[L]{\zihao{-5}\@ctitle}
 %    \fancyhead[R]{\zihao{-5}\leftmark}
     % 居中式页眉
-    % \fancyhead[CO]{\zihao{-5}{中山大学\@degree 学位论文}}
+	% \fancyhead[CO]{\zihao{-5}{中山大学\@degree 学位论文}}
     \fancyhead[CO]{\zihao{-5}{XX大学\@degree 学位论文}}
     \fancyhead[CE]{\zihao{-5}\@ctitle}
     %\fancyhead[C]{\zihao{-5}\leftmark}
@@ -128,7 +128,7 @@
    \fancyhead[CE]{\zihao{-5}\@ctitle}
 }
 \fancypagestyle{eAbstract}{
-    % \fancyhead[CO]{\zihao{-5}{中山大学\@degree 学位论文}}
+	% \fancyhead[CO]{\zihao{-5}{中山大学\@degree 学位论文}}
     \fancyhead[CO]{\zihao{-5}{XX大学\@degree 学位论文}}
     \fancyhead[CE]{\zihao{-5}\@ctitle}
 }
@@ -241,7 +241,7 @@
         	\leavevmode\renewcommand{\baselinestretch}{1.5}
         	
             \vspace{2\baselineskip}
-            % {\songti \zihao{1}\textbf{中山大学\@degree 学位论文}} \\
+			% {\songti \zihao{1}\textbf{中山大学\@degree 学位论文}} \\
             {\songti \zihao{1}\textbf{XX大学\@degree 学位论文}} \\
 
             \vspace{3.5\baselineskip}
