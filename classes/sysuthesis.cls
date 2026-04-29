@@ -18,8 +18,8 @@
     zihao=-4
 ]{ctexbook}
 
-\def\@printtwoside{0} % 设置文章为电子版格式（不添加多余空白页）
-% \def\@printtwoside{1} % 设置文章为双面打印格式（添加多余空白页保证每个表格、章节开头为奇数页面）
+%\def\@printtwoside{0} % 设置文章为电子版格式（不添加多余空白页）
+ \def\@printtwoside{1} % 设置文章为双面打印格式（添加多余空白页保证每个表格、章节开头为奇数页面）
 
 % 配置英文字体
 \RequirePackage{fontspec}
@@ -42,7 +42,7 @@
 \RequirePackage{enumitem}
 \RequirePackage{bbm}
 \RequirePackage{bm}
-\RequirePackage[notlof,notlot,nottoc,numbib]{tocbibind} %table of content
+\RequirePackage[nottoc,numbib]{tocbibind} %table of content
 \RequirePackage{tocloft}
 \RequirePackage{wrapfig}
 \RequirePackage{colortbl}
@@ -114,8 +114,8 @@
 %    \fancyhead[L]{\zihao{-5}\@ctitle}
 %    \fancyhead[R]{\zihao{-5}\leftmark}
     % 居中式页眉
-	% \fancyhead[CO]{\zihao{-5}{中山大学\@degree 学位论文}}
-    \fancyhead[CO]{\zihao{-5}{XX大学\@degree 学位论文}}
+	 \fancyhead[CO]{\zihao{-5}{中山大学\@degree 学位论文}}
+%    \fancyhead[CO]{\zihao{-5}{XX大学\@degree 学位论文}}
     \fancyhead[CE]{\zihao{-5}\@ctitle}
     %\fancyhead[C]{\zihao{-5}\leftmark}
 }
@@ -123,13 +123,13 @@
 
 % 中英文摘要页面样式
 \fancypagestyle{cAbstract}{
-%    \fancyhead[CO]{\zihao{-5}{中山大学\@degree 学位论文}}
-   \fancyhead[CO]{\zihao{-5}{XX大学\@degree 学位论文}}
+    \fancyhead[CO]{\zihao{-5}{中山大学\@degree 学位论文}}
+%   \fancyhead[CO]{\zihao{-5}{XX大学\@degree 学位论文}}
    \fancyhead[CE]{\zihao{-5}\@ctitle}
 }
 \fancypagestyle{eAbstract}{
-	% \fancyhead[CO]{\zihao{-5}{中山大学\@degree 学位论文}}
-    \fancyhead[CO]{\zihao{-5}{XX大学\@degree 学位论文}}
+	 \fancyhead[CO]{\zihao{-5}{中山大学\@degree 学位论文}}
+%    \fancyhead[CO]{\zihao{-5}{XX大学\@degree 学位论文}}
     \fancyhead[CE]{\zihao{-5}\@ctitle}
 }
 
@@ -138,8 +138,8 @@
 \fancypagestyle{listoffiguretable}{
 	\fancyhf{}
 	\fancyfoot[C]{\zihao{-5}\thepage}
-	% \fancyhead[CO]{\zihao{-5}{中山大学\@degree 学位论文}}
-	\fancyhead[CO]{\zihao{-5}{XX大学\@degree 学位论文}}
+	 \fancyhead[CO]{\zihao{-5}{中山大学\@degree 学位论文}}
+%	\fancyhead[CO]{\zihao{-5}{XX大学\@degree 学位论文}}
 	\fancyhead[CE]{\zihao{-5}\@ctitle}
 }
 
@@ -154,7 +154,7 @@
 % 目录设定，使用tocloft宏包
 \setcounter{secnumdepth}{3} % depth of toc, 2
 \setcounter{tocdepth}{1}
-\renewcommand{\listfigurename}{图片目录}
+\renewcommand{\listfigurename}{图目录}
 \renewcommand{\listtablename}{表格目录}
 % 如果要在目录中显示子章节请换用下面这行(目录中显示到x.y.z章)，如果不用这行默认显示到x.y章。
 % \setcounter{tocdepth}{2}
@@ -241,8 +241,8 @@
         	\leavevmode\renewcommand{\baselinestretch}{1.5}
         	
             \vspace{2\baselineskip}
-			% {\songti \zihao{1}\textbf{中山大学\@degree 学位论文}} \\
-            {\songti \zihao{1}\textbf{XX大学\@degree 学位论文}} \\
+			 {\songti \zihao{1}\textbf{中山大学\@degree 学位论文}} \\
+%            {\songti \zihao{1}\textbf{XX大学\@degree 学位论文}} \\
 
             \vspace{3.5\baselineskip}
            { \zihao{4}\begin{tabular}{ll}

@@ -2,8 +2,10 @@
 \contentsline {chapter}{摘要}{II}{paragraph*.1}%
 \contentsline {paragraph}{\textbf {[Keywords]}}{IV}{paragraph*.2}%
 \contentsline {chapter}{ABSTRACT}{IV}{paragraph*.2}%
-\contentsline {chapter}{缩略语}{X}{chapter*.3}%
-\contentsline {chapter}{数学符号}{XIII}{chapter*.4}%
+\contentsline {chapter}{图目录}{VII}{section*.3}%
+\contentsline {chapter}{表格目录}{IX}{section*.4}%
+\contentsline {chapter}{缩略语}{XI}{chapter*.5}%
+\contentsline {chapter}{数学符号}{XIV}{chapter*.6}%
 \contentsline {chapter}{\numberline {第1章\hspace {.3em}}绪论}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}研究背景与问题提出}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}国内外研究现状}{5}{section.1.2}%
@@ -69,20 +71,20 @@
 \contentsline {subsection}{\numberline {5.3.2}多目标协同优化与训练策略}{72}{subsection.5.3.2}%
 \contentsline {subsection}{\numberline {5.3.3}性能预测模型的可视化结果}{73}{subsection.5.3.3}%
 \contentsline {subsection}{\numberline {5.3.4}性能预测模型曲线一致性与效用曲线对比说明}{74}{subsection.5.3.4}%
-\contentsline {section}{\numberline {5.4}基于性能预测模型的快速搜索与预测}{77}{section.5.4}%
+\contentsline {section}{\numberline {5.4}基于性能预测模型的参数搜索与协议自切换}{77}{section.5.4}%
 \contentsline {section}{\numberline {5.5}本章小结}{80}{section.5.5}%
 \contentsline {chapter}{\numberline {第6章\hspace {.3em}}总结与展望}{81}{chapter.6}%
 \contentsline {section}{\numberline {6.1}工作总结}{81}{section.6.1}%
 \contentsline {section}{\numberline {6.2}研究展望}{82}{section.6.2}%
-\contentsline {chapter}{参考文献}{84}{chapter*.42}%
-\contentsline {chapter}{\numberline {附录 A\hspace {.3em}}类型1假期内新包到达过程的PGF推导}{91}{appendix.A}%
-\contentsline {chapter}{\numberline {附录 B\hspace {.3em}}节点在忙期时队列状态Q到P的马尔可夫链建模与概率生成函数推导}{92}{appendix.B}%
-\contentsline {section}{\numberline {附B.1}构建马尔可夫吸收链模型}{92}{section.B.1}%
-\contentsline {section}{\numberline {附B.2}分析马尔可夫吸收链的状态转移概率}{92}{section.B.2}%
-\contentsline {section}{\numberline {附B.3}求解吸收概率$b_{ij}$的闭式表达式}{93}{section.B.3}%
-\contentsline {section}{\numberline {附B.4}推导P对Q的条件概率分布以及条件PGF}{94}{section.B.4}%
-\contentsline {chapter}{\numberline {附录 C\hspace {.3em}}忙期开始时缓存队列Q的几何分布性质证明}{96}{appendix.C}%
-\contentsline {chapter}{\numberline {附录 D\hspace {.3em}}经典CSMA饱和吞吐量的统一参数推导}{98}{appendix.D}%
-\contentsline {section}{\numberline {附D.1}统一参数表示与模型设定}{98}{section.D.1}%
-\contentsline {section}{\numberline {附D.2}吞吐量表达式与最优传输概率}{99}{section.D.2}%
-\contentsline {chapter}{攻读硕士学位期间相关的科研成果目录}{100}{appendix*.44}%
+\contentsline {chapter}{参考文献}{85}{chapter*.44}%
+\contentsline {chapter}{\numberline {附录 A\hspace {.3em}}类型1假期内新包到达过程的PGF推导}{93}{appendix.A}%
+\contentsline {chapter}{\numberline {附录 B\hspace {.3em}}节点在忙期时队列状态Q到P的马尔可夫链建模与概率生成函数推导}{95}{appendix.B}%
+\contentsline {section}{\numberline {附B.1}构建马尔可夫吸收链模型}{95}{section.B.1}%
+\contentsline {section}{\numberline {附B.2}分析马尔可夫吸收链的状态转移概率}{95}{section.B.2}%
+\contentsline {section}{\numberline {附B.3}求解吸收概率$b_{ij}$的闭式表达式}{96}{section.B.3}%
+\contentsline {section}{\numberline {附B.4}推导P对Q的条件概率分布以及条件PGF}{97}{section.B.4}%
+\contentsline {chapter}{\numberline {附录 C\hspace {.3em}}忙期开始时缓存队列Q的几何分布性质证明}{99}{appendix.C}%
+\contentsline {chapter}{\numberline {附录 D\hspace {.3em}}经典CSMA饱和吞吐量的统一参数推导}{101}{appendix.D}%
+\contentsline {section}{\numberline {附D.1}统一参数表示与模型设定}{101}{section.D.1}%
+\contentsline {section}{\numberline {附D.2}吞吐量表达式与最优传输概率}{102}{section.D.2}%
+\contentsline {chapter}{攻读硕士学位期间相关的科研成果目录}{103}{appendix*.46}%
