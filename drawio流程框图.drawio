@@ -1,4 +1,4 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6" pages="13">
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6" pages="14">
   <diagram id="YTQj_tfn2IdJy9A6Xu8z" name="章节安排流程框图">
     <mxGraphModel dx="2369" dy="2564" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="1" shadow="0" adaptiveColors="auto">
       <root>
@@ -153,7 +153,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="BVvUwlE0WxQsThsvMVa6" name="章节安排流程图_PPT横版">
-    <mxGraphModel dx="2871" dy="1373" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="1540" dy="907" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1930,6 +1930,140 @@
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="827" y="450" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="nJaspGG_xHdUAbkTEV2c" name="第 14 页">
+    <mxGraphModel dx="2567" dy="1512" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="zDhLz65309JT8UnPDs2F-43" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="230" width="260" x="90" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-44" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#000000;strokeWidth=2;fontFamily=微软雅黑, Microsoft YaHei;fontStyle=1;fontSize=20;" value="第 1 章 绪 论" vertex="1">
+          <mxGeometry height="50" width="260" x="90" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-45" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontFamily=微软雅黑, Microsoft YaHei;fontSize=18;" value="研究背景与问题提出" vertex="1">
+          <mxGeometry height="40" width="230" x="105" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-46" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontFamily=微软雅黑, Microsoft YaHei;fontSize=18;" value="国内外研究现状" vertex="1">
+          <mxGeometry height="40" width="230" x="105" y="235" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-47" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontFamily=微软雅黑, Microsoft YaHei;fontSize=18;" value="本文研究目标与内容" vertex="1">
+          <mxGeometry height="40" width="230" x="105" y="285" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-48" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="230" width="260" x="90" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-49" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#000000;strokeWidth=2;fontFamily=微软雅黑, Microsoft YaHei;fontStyle=1;fontSize=18;" value="第 2 章 随机接入网络及其建模" vertex="1">
+          <mxGeometry height="50" width="260" x="90" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-50" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontFamily=微软雅黑, Microsoft YaHei;fontSize=18;" value="随机接入标准方案" vertex="1">
+          <mxGeometry height="40" width="230" x="105" y="775" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-51" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontFamily=微软雅黑, Microsoft YaHei;fontSize=18;" value="系统场景与模型假设" vertex="1">
+          <mxGeometry height="40" width="230" x="105" y="825" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-52" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontFamily=微软雅黑, Microsoft YaHei;fontSize=18;" value="关键性能指标体系" vertex="1">
+          <mxGeometry height="40" width="230" x="105" y="875" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-53" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#000000;strokeWidth=2;fontFamily=微软雅黑, Microsoft YaHei;fontStyle=1;fontSize=22;" value="研究核心：&lt;br&gt;连续传输机制" vertex="1">
+          <mxGeometry height="100" width="200" x="400" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-54" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8F9FA;strokeColor=#000000;strokeWidth=2;fontFamily=微软雅黑, Microsoft YaHei;fontStyle=1;fontSize=18;" value="应用于 Aloha (SAST)" vertex="1">
+          <mxGeometry height="50" width="210" x="650" y="215" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-55" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8F9FA;strokeColor=#000000;strokeWidth=2;fontFamily=微软雅黑, Microsoft YaHei;fontStyle=1;fontSize=18;" value="应用于 CSMA (CSMAST)" vertex="1">
+          <mxGeometry height="50" width="210" x="650" y="805" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-56" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="240" width="280" x="910" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-57" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#000000;strokeWidth=2;fontFamily=微软雅黑, Microsoft YaHei;fontStyle=1;fontSize=20;" value="第 3 章 面向 Aloha 网络的&lt;br&gt;连续传输机制设计与分析" vertex="1">
+          <mxGeometry height="60" width="280" x="910" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-58" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontFamily=微软雅黑, Microsoft YaHei;fontSize=18;" value="SAST 机制描述与模型" vertex="1">
+          <mxGeometry height="40" width="250" x="925" y="195" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-59" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontFamily=微软雅黑, Microsoft YaHei;fontSize=18;" value="基于休假排队的机制分析" vertex="1">
+          <mxGeometry height="40" width="250" x="925" y="245" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-60" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontFamily=微软雅黑, Microsoft YaHei;fontSize=18;" value="吞吐量与时延性能优化" vertex="1">
+          <mxGeometry height="40" width="250" x="925" y="295" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-61" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="240" width="280" x="910" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-62" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#000000;strokeWidth=2;fontFamily=微软雅黑, Microsoft YaHei;fontStyle=1;fontSize=20;" value="第 4 章 面向 CSMA 网络的&lt;br&gt;连续传输机制设计与分析" vertex="1">
+          <mxGeometry height="60" width="280" x="910" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-63" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontFamily=微软雅黑, Microsoft YaHei;fontSize=18;" value="CSMAST 机制描述模型" vertex="1">
+          <mxGeometry height="40" width="250" x="925" y="785" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-64" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontFamily=微软雅黑, Microsoft YaHei;fontSize=18;" value="基于休假排队的性能分析" vertex="1">
+          <mxGeometry height="40" width="250" x="925" y="835" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-65" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontFamily=微软雅黑, Microsoft YaHei;fontSize=18;" value="吞吐量与公平性推导优化" vertex="1">
+          <mxGeometry height="40" width="250" x="925" y="885" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-66" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8F9FA;strokeColor=#000000;strokeWidth=2;fontFamily=微软雅黑, Microsoft YaHei;fontStyle=1;fontSize=18;" value="置入多协议集合，协同优化" vertex="1">
+          <mxGeometry height="50" width="240" x="1220" y="215" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-67" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="240" width="300" x="1490" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-68" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#000000;strokeWidth=2;fontFamily=微软雅黑, Microsoft YaHei;fontStyle=1;fontSize=20;" value="第 5 章 基于监督学习的智能&lt;br&gt;协议与参数联合选择方法" vertex="1">
+          <mxGeometry height="60" width="300" x="1490" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-69" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontFamily=微软雅黑, Microsoft YaHei;fontSize=18;" value="问题建模与统一接入框架" vertex="1">
+          <mxGeometry height="40" width="270" x="1505" y="195" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-70" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontFamily=微软雅黑, Microsoft YaHei;fontSize=18;" value="离散事件仿真与数据集" vertex="1">
+          <mxGeometry height="40" width="270" x="1505" y="245" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-71" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontFamily=微软雅黑, Microsoft YaHei;fontSize=18;" value="多任务深度学习预测模型" vertex="1">
+          <mxGeometry height="40" width="270" x="1505" y="295" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-72" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="150" width="300" x="1490" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-73" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#000000;strokeWidth=2;fontFamily=微软雅黑, Microsoft YaHei;fontStyle=1;fontSize=20;" value="第 6 章 总 结 与 展 望" vertex="1">
+          <mxGeometry height="50" width="300" x="1490" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-74" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontFamily=微软雅黑, Microsoft YaHei;fontSize=18;" value="本文工作全面总结与&lt;br&gt;未来研究方向展望" vertex="1">
+          <mxGeometry height="70" width="270" x="1505" y="815" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-75" edge="1" parent="1" source="zDhLz65309JT8UnPDs2F-43" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;endArrow=block;endFill=1;strokeColor=#333333;exitX=1;exitY=0.5;entryX=0;entryY=0.25;" target="zDhLz65309JT8UnPDs2F-53">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-76" edge="1" parent="1" source="zDhLz65309JT8UnPDs2F-48" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;endArrow=block;endFill=1;strokeColor=#333333;exitX=1;exitY=0.5;entryX=0;entryY=0.75;" target="zDhLz65309JT8UnPDs2F-53">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-77" edge="1" parent="1" source="zDhLz65309JT8UnPDs2F-53" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;endArrow=block;endFill=1;strokeColor=#333333;exitX=1;exitY=0.25;entryX=0;entryY=0.5;" target="zDhLz65309JT8UnPDs2F-54">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-78" edge="1" parent="1" source="zDhLz65309JT8UnPDs2F-53" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;endArrow=block;endFill=1;strokeColor=#333333;exitX=1;exitY=0.75;entryX=0;entryY=0.5;" target="zDhLz65309JT8UnPDs2F-55">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-79" edge="1" parent="1" source="zDhLz65309JT8UnPDs2F-54" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;endArrow=block;endFill=1;strokeColor=#333333;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="zDhLz65309JT8UnPDs2F-56">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-80" edge="1" parent="1" source="zDhLz65309JT8UnPDs2F-55" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;endArrow=block;endFill=1;strokeColor=#333333;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="zDhLz65309JT8UnPDs2F-61">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-81" edge="1" parent="1" source="zDhLz65309JT8UnPDs2F-56" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;endArrow=block;endFill=1;strokeColor=#333333;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="zDhLz65309JT8UnPDs2F-66">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-82" edge="1" parent="1" source="zDhLz65309JT8UnPDs2F-66" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;endArrow=block;endFill=1;strokeColor=#333333;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="zDhLz65309JT8UnPDs2F-67">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-83" edge="1" parent="1" source="zDhLz65309JT8UnPDs2F-67" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;endArrow=block;endFill=1;strokeColor=#333333;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="zDhLz65309JT8UnPDs2F-72">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zDhLz65309JT8UnPDs2F-84" edge="1" parent="1" source="zDhLz65309JT8UnPDs2F-61" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;endArrow=block;endFill=1;strokeColor=#333333;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="zDhLz65309JT8UnPDs2F-72">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

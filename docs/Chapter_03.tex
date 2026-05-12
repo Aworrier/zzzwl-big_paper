@@ -1,7 +1,7 @@
 \chapter{面向 Aloha 协议的连续传输机制设计与性能分析}
 \label{chapter3:SAST}
 
-上一章分析了 5G 随机接入标准框架。尽管其包含复杂的信令与协议过程，但在 2 步小数据传输场景下，可将接入过程抽象为时隙 Aloha 模型。基于此，本章回到抽象模型，在统一假设下分析接入竞争与连续传输机制。在此基础上，提出连续传输增强的时隙 Aloha 机制，即 SAST 协议，并依次给出机制流程、休假排队建模以及吞吐量与时延性能分析。
+上一章分析了 5G 随机接入标准框架。尽管其包含复杂的信令与协议过程，但在 2 步小数据传输场景下，可将接入过程抽象为时隙 Aloha 模型。基于此，本章回到抽象模型，在统一假设下分析接入竞争与连续传输机制。在此基础上，提出连续传输增强的时隙 Aloha 机制，即 SAST ，并依次给出机制流程、休假排队建模以及吞吐量与时延性能分析。 
 
 \section{SAST机制设计与系统模型描述}
 \label{sec:sast_system_model}
@@ -24,10 +24,27 @@ SAST 协议的核心策略可以概括为一次接入、连续占用，可打破
 	\item[时隙 4 （重新竞争）：] 网络恢复到无节点占用的状态。节点 1 和节点 2 重新参与信道竞争，此时节点 2 以概率 $q$ 成功抢占信道发送队首包，而节点 1 保持静默。
 \end{description}
 
-可见，SAST 机制中，队首数据包的成功传输可视为一次无法保证的信道预约。在后续分析中，我们将队首包的成功传输与一次成功的接入作等价处理。
+需要特别指出的是，本章所提出的 SAST 机制在思想上虽与传统基于连接的 Aloha（CBA）或 5G 中的免调度均体现出一定的连续占用特征，但在设计范式存在本质区别。现有机制通常依赖显式预约或连接建立过程来实现信道的持续占用，SAST 采用的是一种隐式预留策略：节点无需发送专门的 RTS/RRC 等额外控制信令，而是用 5G 标准中的 MsgA 报文进行竞争；一旦基站成功解码并反馈 MsgB，后续信道占用通过连续发送数据报文自然延续，该过程是不改变现有分布式接入架构与帧结构的。
+为避免与其他 Aloha 类协议混淆，这里从机制实现角度对 SA、CBA 与 SAST 三类 Aloha 协议作简要总结，如表~\ref{tab:aloha_compare} 所示。
 
-为避免与其他 Aloha 类协议混淆，这里从机制实现角度对 SA、CBA 与 SAST 三类 Aloha 协议作简要总结。SA 中每个数据包独立竞争并在成功后立即释放信道；CBA 引入连接态管理，并以预设批量参数 $M$ 进行连续发送，且在一个批量发送周期内不再被其他节点打断；SAST 则不引入连接管理，而由队列状态自适应决定连续发送长度，传输过程中随时可能被打断。
-
+\begin{table}[htbp]
+\centering
+\caption{SA、CBA 与 SAST 机制的核心特性对比}
+\label{tab:aloha_compare}
+\renewcommand{\arraystretch}{1.3} 
+\begin{tabular}{l c c c}
+\toprule
+\textbf{对比维度} & \textbf{SA} & \textbf{CBA} & \textbf{SAST（本文）} \\
+\midrule
+接入机制 & 逐包独立竞争 & 显式信令预约 & 隐式预留 (复用 MsgA) \\
+连续传输 & 不支持 & 静态配置 (固定 $M$) & 动态自适应 (队列驱动) \\
+释放条件 & 单包传毕即放 & 预留期满释放 & 队列清空或遭遇碰撞 \\
+连接管理 & 无连接态 & 需建立与维护连接 & 无连接态 \\
+信令开销 & 基础反馈 & 高 (需控制信令交互) & 基础反馈 \\
+中断机制 & 不适用 & 预留期内不可打断 & 碰撞即时中断并退避 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \section{基于休假排队理论的系统建模}
 \label{sec:sast_queuing_model}
@@ -287,28 +304,28 @@ G_{A_{V}}(z) =
 
 \begin{figure}[t]
 	\centering
-	\begin{subfigure}{0.49\textwidth}
+	\begin{subfigure}{0.495\textwidth}
 		\centering
 		\includegraphics[width=\linewidth]{figure/chap3/p_ne_vs_q.pdf}
 		\caption{节点缓存非空概率$p_{ne}$}
 		\label{fig:p_ne}
 	\end{subfigure}
 	\hfill
-	\begin{subfigure}{0.49\textwidth}
+	\begin{subfigure}{0.485\textwidth}
 		\centering
 		\includegraphics[width=\linewidth]{figure/chap3/theta_vs_q.pdf}
 		\caption{尝试速率$\theta$}
 		\label{fig:theta}
 	\end{subfigure}
 	
-	\begin{subfigure}{0.49\textwidth}
+	\begin{subfigure}{0.495\textwidth}
 		\centering
 		\includegraphics[width=\linewidth]{figure/chap3/mean_B_vs_q.pdf}
 		\caption{信道忙期平均长度$\overline{B}$}
 		\label{fig:mean_B}
 	\end{subfigure}
 	\hfill
-	\begin{subfigure}{0.49\textwidth}
+	\begin{subfigure}{0.485\textwidth}
 		\centering
 		\includegraphics[width=\linewidth]{figure/chap3/mean_Vc_vs_q.pdf}
 		\caption{信道假期平均长度$\overline{V}_c$}
@@ -567,7 +584,7 @@ SAST 机制在 5G 系统中的部署具有较强兼容性，可以复用 3GPP R1
 		\label{fig:str_sat}
 	\end{subfigure}
 	\hfill
-	\begin{subfigure}[b]{0.48\textwidth}
+	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
 		% 对应 TCOM Fig. 8b
 		\includegraphics[width=\textwidth]{figure/chap3/str_vs_lambda_unsaturated.pdf}
