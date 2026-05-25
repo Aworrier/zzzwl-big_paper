@@ -241,8 +241,7 @@
         	\leavevmode\renewcommand{\baselinestretch}{1.5}
         	
             \vspace{2\baselineskip}
-			 {\songti \zihao{1}\textbf{中山大学\@degree 学位论文}} \\
-%            {\songti \zihao{1}\textbf{XX大学\@degree 学位论文}} \\
+            {\songti \zihao{1}\textbf{中山大学\@degree 学位论文}} \\
 
             \vspace{3.5\baselineskip}
            { \zihao{4}\begin{tabular}{ll}
@@ -256,13 +255,16 @@
             		{\makebox[3cm][s]{\textbf{专 \hfill 业：} }} & \@cmajor \\
             		{\makebox[3cm][s]{\textbf{学 \hfill 位 \hfill 申 \hfill 请 \hfill 人：}}}& \@cauthor \\
             		{\makebox[3cm][s]{\textbf{\textbf{导 \hfill 师 \hfill 姓 \hfill 名：}}}} & \@cmentor \\
+            		{\makebox[3cm][s]{\textbf{学 \hfill 号：} }} & \@studentid \\
+					{\makebox[3cm][s]{\textbf{学 \hfill 院：} }} & \@cschool \\
             \end{tabular}%
 
-        	\vspace{4\baselineskip}
+        	\vspace{3\baselineskip}
 	        \begin{tabular}{rr}
 	        	论文答辩委员会主席： & \raisebox{-1ex}{\underline{\makebox[6cm][c]{}}}\\
 	        	成员：& \raisebox{-1ex}{\underline{\makebox[6cm][c]{}}}\\
 	        	{}& \raisebox{-1ex}{\underline{\makebox[6cm][c]{}}}\\
+				{}& \raisebox{-1ex}{\underline{\makebox[6cm][c]{}}}\\
 	        	{}& \raisebox{-1ex}{\underline{\makebox[6cm][c]{}}}
 	        \end{tabular}}
 

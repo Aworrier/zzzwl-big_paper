@@ -6,7 +6,7 @@
 在此基础上，引入休假排队理论方法，构建能够刻画状态持续时间非对称性的分析模型；
 最后，基于所建模型推导饱和状态下的网络吞吐量与公平性两个性能指标，从而揭示 CSMAST 机制在该类网络环境下的特有性能演化规律。
 
-\section{CSMAST 机制设计与状态演化模型}
+\section{CSMAST 系统模型与机制描述}
 \label{sec:csmast_system_model}
 
 本章的研究工作建立在\ref{sec:general_system_model}节所述通用上行通信网络模型的基础之上，并针对 CSMA 协议中物理层与 MAC 层之间紧密交互的特性进行具体化建模与扩展。为探究连续传输机制在 CSMA 网络中的性能极限，本章进一步假设系统始终处于饱和状态，即网络中 $n$ 个同质节点的数据包缓冲队列始终非空，所有节点持续处于信道竞争状态。
@@ -52,7 +52,7 @@
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=0.9\textwidth]{figure/chap4/csmast_channel.png}
-	\caption{CSMAST 方案中的信道状态演变示意图。$B$、$V_c$ 和 $C_c$ 分别表示信道的忙期、假期和周期时间。}
+	\caption{CSMAST 方案中的信道状态演变示意图（$B$、$V_c$ 和 $C_c$ 分别表示信道的忙期、假期和周期时间）}
 	\label{fig:csmast_channel}
 \end{figure}
 
@@ -67,7 +67,7 @@
 基于上述定义，将一次信道忙期与其后紧随的信道假期共同构成一个完整的信道周期，记为 $C_c$，即 $C_c = B_c + V_c$。
 由于信道忙期由任一节点的成功接入所触发，且忙期一旦开始即由该节点独占信道并持续传输，因此从统计特性上看，信道层面的忙期与单节点视角下的忙期在概率分布上是等价的。为简化符号表示，后续分析中统一使用 $B$ 表示信道忙期。下文使用 $\overline{B} \triangleq \mathbb{E}[B]$ 和 $\overline{V}_c \triangleq \mathbb{E}[V_c]$ 分别表示信道忙期与信道假期的平均持续时长。具体的概率分布推导及性能指标计算将在下一节中进一步展开。
 
-\section{基于休假排队理论的统计特性建模}
+\section{基于休假排队理论的建模分析}
 在进行具体推导之前，本节首先定义三个常用概率。根据第 ~\ref{subsec:channel_vacation_analysis}~节的分析，在饱和网络条件下，当节点数量 $n$ 较大且接入概率 $q$ 较小时，系统中的接入请求总数可近似建模为参数为 $\theta = nq$ 的泊松随机变量。在任意空闲时隙中，网络内发起接入请求的节点数量刻画了系统的瞬时竞争程度，并决定了下一时隙的信道状态转移。基于此，定义如下三个概率：
 \begin{itemize}
 	\item $p_0 = e^{-\theta}$：表示无节点发起接入请求的概率，即信道保持空闲状态。
@@ -104,7 +104,7 @@
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=0.95\textwidth]{figure/chap4/markov_model.pdf}
-	\caption{描述信道假期 $V_c$ 内状态转移过程的吸收马尔可夫链模型。其中状态 F 和 I 为可转移态，状态 S 为吸收态。}
+	\caption{描述信道假期 $V_c$ 内状态转移过程的吸收马尔可夫链模型（状态 F 和 I 为可转移态，状态 S 为吸收态）}
 	\label{fig:csmast_markov_absorption}
 \end{figure}
 
@@ -279,7 +279,7 @@
 	\label{eq:jain_explicit}
 	J_T \approx \frac{1}{1 + \frac{n}{T} \cdot \frac{n^2 q^2 \tau_S^2 e^{nq} + (e^{nq}-1)^2 \tau_F^2 + 2(e^{nq}-1)\tau_F \tau_I + \tau_I^2}{nq \tau_S e^{nq} + (e^{nq}-1)^2 \tau_F + (e^{nq}-1)\tau_I}}.
 \end{equation}
-\section{仿真验证与性能分析}
+\section{仿真验证与结果分析}
 \label{sec:simulation_results}
 
 
@@ -301,17 +301,17 @@ $\lambda_{out,i}^{T}=\frac{N_{succ,i}(\tau_S-\tau_I)}{T}$
 	\begin{subfigure}{0.49\textwidth}
 		\centering
 		\includegraphics[width=\linewidth]{figure/chap4/thu_vs_q_CSMAST_multi_taus.pdf}
-		\caption{不同 $\tau_S$ 下 $\lambda^{net}_{out}$ 随接入概率 $q$ 的变化}
+		\caption{不同 $\tau_S$ 下 $\lambda^{net}_{out}$ 随接入概率 $q$ 的变化情况}
 		\label{fig:csmast_throughput_vs_q_taus}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}{0.49\textwidth}
 		\centering
 		\includegraphics[width=\linewidth]{figure/chap4/thu_vs_n_CSMAST_multi_q.pdf}
-		\caption{网络吞吐量 $\lambda^{net}_{out}$ 随节点数量 $n$ 的变化}
+		\caption{网络吞吐量 $\lambda^{net}_{out}$ 随节点数量 $n$ 的变化情况}
 		\label{fig:csmast_throughput_vs_n}
 	\end{subfigure}
-	\caption{CSMAST 网络吞吐量结果}
+	\caption{CSMAST 机制下吞吐量随系统参数变化情况}
 	\label{fig:csmast_throughput_group}
 \end{figure}
 
@@ -322,17 +322,17 @@ $\lambda_{out,i}^{T}=\frac{N_{succ,i}(\tau_S-\tau_I)}{T}$
 	\begin{subfigure}{0.49\textwidth}
 		\centering
 		\includegraphics[width=\linewidth]{figure/chap4/jt_vs_q_CSMAST_multi_taus.pdf}
-		\caption{不同 $\tau_S$ 下公平性 $J_T$ 随接入概率 $q$ 的变化}
+		\caption{不同 $\tau_S$ 下公平性 $J_T$ 随接入概率 $q$ 的变化情况}
 		\label{fig:csmast_jain_vs_q_taus}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}{0.49\textwidth}
 		\centering
 		\includegraphics[width=\linewidth]{figure/chap4/jt_vs_t_CSMAST_multi_q.pdf}
-		\caption{不同 $q$ 下短期公平性 $J_T$ 随观测时间窗口 $T$ 的变化}
+		\caption{不同 $q$ 下短期公平性 $J_T$ 随观测时间窗口 $T$ 的变化情况}
 		\label{fig:csmast_jain_vs_t_multi_q}
 	\end{subfigure}
-	\caption{CSMAST 网络公平性结果}
+	\caption{CSMAST 机制下公平性关于系统参数的变化情况}
 	\label{fig:csmast_fairness_group}
 \end{figure}
 
@@ -348,7 +348,7 @@ $\lambda_{out,i}^{T}=\frac{N_{succ,i}(\tau_S-\tau_I)}{T}$
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=0.7\textwidth]{figure/chap4/throughput_fairness_tradeoff.pdf}
-	\caption{CSMAST 与经典 CSMA 的吞吐量-公平性轨迹对比（$n=100,\tau_S=5,\tau_F=3,\tau_I=1,T=10^6$）}
+	\caption{CSMAST 与经典 CSMA 机制的吞吐量-公平性轨迹对比（$n=100,\tau_S=5,\tau_F=3,\tau_I=1,T=10^6$）}
 	\label{fig:comparison_classic}
 \end{figure}
 

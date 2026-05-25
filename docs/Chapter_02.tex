@@ -3,7 +3,7 @@
 
 本章旨在构建全文后续分析所依赖的网络场景，并对随机接入标准机制、MAC 层抽象、系统场景与性能指标进行系统阐述。章节内容安排如下：首先，回顾现有主流随机接入标准方案，重点分析 5G 授权频谱下的竞争式随机接入机制与非授权频谱下的载波侦听接入机制，并说明其在 MAC 层抽象中的对应关系。其次，在统一视角下给出后续章节共用的系统场景与建模假设，明确网络拓扑、业务到达、信道特性与反馈机制等关键条件。最后，定义吞吐量、时延、公平性与信令开销等关键性能指标，为后续机制设计、理论分析与仿真实验提供评价标准。
 
-\section{5G随机接入标准方案与理论抽象}
+\section{5G随机接入标准机制与建模}
 \label{sec:standard_schemes}
 
 本节从机理分析与数学抽象的视角，对现有随机接入协议的内在结构进行梳理。重点不在于复述标准流程细节，而在于提炼其在 MAC 层的核心竞争逻辑，并建立其与经典随机接入模型之间的对应关系。该抽象框架为后续第~\ref{chapter3:SAST}章和第~\ref{chapter4:CSMAST}章的连续传输机制设计，以及第~\ref{chapter5:ai_selector}章的 AI 多协议选择提供统一的理论依据。
@@ -14,7 +14,7 @@
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=0.95\linewidth]{figure/chap2/5G NR标准随机接入过程.pdf}
-	\caption{5G NR 两步/四步竞争式随机接入流程示意图}
+	\caption{5G NR 两步/四步竞争式随机接入标准流程示意图}
 	\label{fig:cba_access}
 \end{figure}
 5G NR 随机接入过程继承并演进自 4G LTE 随机接入机制，是终端建立无线连接和获取上行资源的关键过程。在典型的基于竞争的随机接入（Contention-Based Random Access, CBRA）中，终端首先通过随机前导码发起接入请求。当随机接入成功后，基站为终端分配专用无线资源，终端随后在连接状态下进行数据传输。
@@ -28,7 +28,7 @@
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=0.95\linewidth]{figure/chap2/5G NR SDT标准随机接入过程.pdf}
-	\caption{5G NR 四步/两步 SDT 标准随机接入流程示意图}
+	\caption{5G NR 四步/两步 SDT 随机接入标准流程示意图}
 	\label{fig:sdt_access}
 \end{figure}
 
@@ -57,7 +57,7 @@
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=0.97\linewidth]{figure/chap2/5G NR标准LBT过程.pdf}
-	\caption{NR-U 中基于 LBT 的信道接入流程}
+	\caption{NR-U 中基于 LBT 的信道接入标准流程}
 	\label{fig:lbt_process}
 \end{figure}
 
@@ -119,13 +119,13 @@
 % \end{figure}
 
 
-\section{通用接入系统模型与环境假设}
+\section{统一接入系统模型与基本假设}
 \label{sec:general_system_model}
 
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=0.99\linewidth]{figure/chap2/通用系统场景.pdf}
-	\caption{通用系统场景示意图}
+	\caption{统一随机接入系统场景示意图}
 	\label{fig:system_model}
 \end{figure}
 
@@ -184,7 +184,7 @@
 基于上述通用假设，后续各章将在统一系统场景下展开递进分析。第~\ref{chapter3:SAST}章聚焦 SAST 机制下的吞吐量、时延及信令开销等性能；第~\ref{chapter4:CSMAST}章分析 CSMAST 机制下的吞吐量、公平性等性能；第~\ref{chapter5:ai_selector}章面向多业务与动态负载环境，综合吞吐量、时延、公平性及信令开销，研究多协议智能切换与参数自适应优化策略。
 
 
-\section{关键性能评价指标定义}
+\section{系统性能评价指标定义}
 \label{sec:performance_metrics}
 
 为对所提机制进行系统评估，并保证与现有标准随机接入方案之间的可比性，本文从吞吐量、时延、公平性及信令开销四个方面统一定义关键性能指标。

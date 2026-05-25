@@ -3,7 +3,7 @@
 
 上一章分析了 5G 随机接入标准框架。尽管其包含复杂的信令与协议过程，但在 2 步小数据传输场景下，可将接入过程抽象为时隙 Aloha 模型。基于此，本章回到抽象模型，在统一假设下分析接入竞争与连续传输机制。在此基础上，提出连续传输增强的时隙 Aloha 机制，即 SAST ，并依次给出机制流程、休假排队建模以及吞吐量与时延性能分析。 
 
-\section{SAST机制设计与系统模型描述}
+\section{SAST系统模型与机制描述}
 \label{sec:sast_system_model}
 
 本章所研究的 SAST 网络环境遵循~\ref{sec:general_system_model}~节定义的通用系统模型。具体而言，考虑由 $n$ 个同质节点和单个接收机构成的分布式时隙 Aloha 网络，节点流量服从伯努利到达，信道采用碰撞模型，且具备即时无误的确认或否定确认反馈机制。
@@ -14,7 +14,7 @@ SAST 协议的核心策略可以概括为一次接入、连续占用，可打破
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=0.9\textwidth]{figure/chap3/two_node_sast.pdf}
-	\caption{两节点SAST网络示意图}
+	\caption{两节点 SAST 网络时序示意图}
 	\label{fig:two_node_sast}
 \end{figure}
 \begin{description}
@@ -209,7 +209,7 @@ G_{A_{V}}(z) =
 \end{equation}
 至此，我们建立了节点新包到达过程与系统参数之间的解析关系，为后续求解尝试率 $\theta$ 及缓存队列被清空概率 $p_0$ 做好铺垫。
 
-\subsection{尝试速率与概率$p_0$分析}
+\subsection{尝试速率$\theta$与概率$p_0$分析}
 \label{subsec:attempt_rate_analysis}
 
 在前两小节中，我们分别建立了信道和节点的休假排队模型，其性能指标的闭式解均依赖于系统的尝试速率 $\theta$ 以及节点在忙期结束时清空缓存的概率 $p_0$。本节将结合稳态排队分析，推导这两个关键参数的解析表达式，从而闭合整个分析框架。
@@ -342,7 +342,7 @@ G_{A_{V}}(z) =
 
 
 
-\section{吞吐量性能推导与理论分析}
+\section{吞吐量性能分析}
 \label{sec:throughput_analysis}
 
 本节基于前文休假排队模型分析 SAST机制下的吞吐量。为了探究 SAST 机制的性能极限，我们考虑网络处于饱和状态这一场景。在这一场景中，节点缓存始终非空（$p_{ne}=1$）、缓存清空概率为零（$p_0=0$），因此尝试速率为 $\theta_{sa}=nq$。将上述条件代入式 (\ref{eq:mean_vc_derived}) 与 $\overline{B}_{sa}$ 的表达式，可得饱和状态下的平均周期参数分别为	$ \overline{V}_{c,sa} = \frac{e^{nq}}{nq}, \quad \overline{B}_{sa} = \frac{1}{1 - e^{-nq}} $。
@@ -422,7 +422,7 @@ G_{A_{V}}(z) =
 
 
 
-\section{时延性能推导与理论分析}
+\section{时延性能分析}
 \label{sec:delay_analysis}
 除了吞吐量之外，时延是衡量随机接入机制性能的另一项关键指标。本节将分别对接入时延 $D_A$ 和数据包时延 $D_P$ 进行推导。
 
@@ -532,7 +532,7 @@ $ 	\gamma = \frac{\lambda[\lambda(1-e^{-\theta}) + (1-\lambda)(1-p_A)]}{(1-\lamb
 对比前文的吞吐量分析可知，饱和接入时延取得最小值的点，恰好对应于接入吞吐量 $\lambda_{out}^a$ 取得最大值的点。这表明在饱和网络中，通过优化 $q$ 可以同时实现接入效率的最优和接入时延的最小化。
 
 
-\section{SAST机制在5G小数据传输中的性能评估}
+\section{SAST 机制在5G小数据传输中的性能评估}
 \label{sec:5g_case_study}
 
 \begin{figure}[t]
