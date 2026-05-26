@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.28)  25 MAY 2026 06:31
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.28)  26 MAY 2026 11:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1022,8 +1022,7 @@ File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \tikz@expandcount=\count415
  (d:/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-))) (./docs/Information.tex) (./docs/Abstract.tex)
-No file main.aux.
+))) (./docs/Information.tex) (./docs/Abstract.tex) (./main.aux (./docs/Acronym.aux) (./docs/Symbol.aux) (./docs/Chapter_01.aux) (./docs/Chapter_02.aux) (./docs/Chapter_03.aux) (./docs/Chapter_04.aux) (./docs/Chapter_05.aux) (./docs/Chapter_06.aux) (./docs/AppendixA.aux) (./docs/AppendixB.aux) (./docs/AppendixC.aux) (./docs/AppendixD.aux) (./docs/Achievement.aux) (./docs/Acknowledgements.aux) (./docs/Postscript.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
@@ -1102,6 +1101,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 17.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 17.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -1168,12 +1168,10 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 17.
 LaTeX Info: Redefining \pageref on input line 17.
 LaTeX Info: Redefining \nameref on input line 17.
+ (./main.out) (./main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
-
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
 
 
 Package xeCJK Warning: Unknown CJK family `zhsongbold' is being ignored.
@@ -1260,28 +1258,41 @@ LaTeX Font Warning: Font shape `TU/SimHei(0)/b/n' undefined
 ] [1] [2] [3
 
 
-] [4]
+] [4] (./main.toc [5
+
+
+])
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [5
+ [6] (./main.lof
+Overfull \hbox (10.8383pt too wide) in paragraph at lines 16--16
+ [][] [][]\TU/SimSun(0)/m/n/12.045 系 统 参 数 随 传 输 概 率 $\OML/cmm/m/it/12.045 q$ \TU/SimSun(0)/m/n/12.045 的 变 化 情 况  |（$\OML/cmm/m/it/12.045 n \OT1/cmr/m/n/12.045 = 100$\TU/SimSun(0)/m/n/12.045 ，| $\OML/cmm/m/it/12.045 ^^U \OT1/cmr/m/n/12.045 = []/\OML/cmm/m/it/12.045 n \OMS/cmsy/m/n/12.045 2 f\OT1/cmr/m/n/12.045 0\OML/cmm/m/it/12.045 :\OT1/cmr/m/n/12.045 002\OML/cmm/m/it/12.045 ; \OT1/cmr/m/n/12.045 0\OML/cmm/m/it/12.045 :\OT1/cmr/m/n/12.045 004\OMS/cmsy/m/n/12.045 g$\TU/SimSun(0)/m/n/12.045 ）| 
+ []
 
 
-] [6
+Overfull \hbox (9.29745pt too wide) in paragraph at lines 27--27
+ [][] [][]\TU/TimesNewRoman(0)/m/n/12.045 CSMAST \TU/SimSun(0)/m/n/12.045 与 经 典 \TU/TimesNewRoman(0)/m/n/12.045 CSMA \TU/SimSun(0)/m/n/12.045 机 制 的 吞 吐 量\TU/TimesNewRoman(0)/m/n/12.045 -\TU/SimSun(0)/m/n/12.045 公 平 性 轨 迹 对 比  |（$\OML/cmm/m/it/12.045 n \OT1/cmr/m/n/12.045 = 100\OML/cmm/m/it/12.045 ; ^^\[] \OT1/cmr/m/n/12.045 = 
+ []
 
 
-]
+Underfull \vbox (badness 4279) has occurred while \output is active []
+
+ [7
+
+
+])
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
- [7] [8
-
-
-]
+ [8] (./main.lot)
 \tf@lot=\write7
 \openout7 = `main.lot'.
 
- [9] [10
+ [9
+
+
+] [10
 
 
 ]
@@ -1318,14 +1329,7 @@ Overfull \hbox (24.0498pt too wide) in alignment at lines 20--90
 ] [12]) [13]
 \openout2 = `docs/Symbol.aux'.
 
- (./docs/Symbol.tex
-
-LaTeX Warning: Reference `chapter3:SAST' on page XIV undefined on input line 40.
-
-
-LaTeX Warning: Reference `chapter3:SAST' on page XIV undefined on input line 45.
-
-[14
+ (./docs/Symbol.tex [14
 
 
 
@@ -1337,48 +1341,6 @@ LaTeX Warning: Reference `chapter3:SAST' on page XIV undefined on input line 45.
 第1章
 File: figure/chap1/iot_challenges.pdf Graphic file (type pdf)
 <use figure/chap1/iot_challenges.pdf>
-
-Package natbib Warning: Citation `2023_ITUFramework' on page 1 undefined on input line 18.
-
-
-Package natbib Warning: Citation `3GPP_TR38843_R19' on page 1 undefined on input line 18.
-
-
-Package natbib Warning: Citation `2021_6Gsurvey' on page 1 undefined on input line 18.
-
-
-Package natbib Warning: Citation `2023_6Groad' on page 1 undefined on input line 18.
-
-
-Package natbib Warning: Citation `2024_V2x' on page 1 undefined on input line 18.
-
-
-Package natbib Warning: Citation `2010_IoTsurvey' on page 1 undefined on input line 20.
-
-
-Package natbib Warning: Citation `2015_IoTsurvey2' on page 1 undefined on input line 20.
-
-
-Package natbib Warning: Citation `2022_IoTsurvey3' on page 1 undefined on input line 20.
-
-
-Package natbib Warning: Citation `2023_IoTsurvey3' on page 1 undefined on input line 20.
-
-
-Package natbib Warning: Citation `2022_M2Mcoexistence' on page 1 undefined on input line 20.
-
-
-Package natbib Warning: Citation `2026_IoTtraffic' on page 1 undefined on input line 20.
-
-
-Package natbib Warning: Citation `2020_SmartFactory' on page 1 undefined on input line 20.
-
-
-Package natbib Warning: Citation `2026_MACsurvey' on page 1 undefined on input line 22.
-
-
-Package natbib Warning: Citation `2025_RAleo' on page 1 undefined on input line 25.
-
 [1
 
 
@@ -1387,268 +1349,37 @@ Package natbib Warning: Citation `2025_RAleo' on page 1 undefined on input line 
 
 
 ]
-
-Package natbib Warning: Citation `2018_5GIoTsurvey' on page 2 undefined on input line 27.
-
-
-Package natbib Warning: Citation `2019_5GIoTsurvey' on page 2 undefined on input line 27.
-
-
-Package natbib Warning: Citation `2013_4gLTERA' on page 2 undefined on input line 28.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
-
-Package natbib Warning: Citation `3GPP_TS36321' on page 3 undefined on input line 31.
-
-
-Package natbib Warning: Citation `2020_2stepRA' on page 3 undefined on input line 31.
-
-
-Package natbib Warning: Citation `3GPP_TS38321_R17' on page 3 undefined on input line 31.
-
-
-Package natbib Warning: Citation `2016_LAA' on page 3 undefined on input line 36.
-
-
-Package natbib Warning: Citation `2020_He' on page 3 undefined on input line 36.
-
-
-Package natbib Warning: Citation `2024_NRU' on page 3 undefined on input line 36.
-
-
-Package natbib Warning: Citation `3GPP_TR38.843' on page 3 undefined on input line 41.
-
-
-Package natbib Warning: Citation `3GPP_RP-234039' on page 3 undefined on input line 41.
-
-
-Package natbib Warning: Citation `2023_Jin' on page 3 undefined on input line 42.
-
-
-Package natbib Warning: Citation `2025_AI_IIoT' on page 3 undefined on input line 43.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [4]
-
-Package natbib Warning: Citation `1970_Aloha' on page 5 undefined on input line 76.
-
-
-Package natbib Warning: Citation `2012_DaiAloha' on page 5 undefined on input line 76.
-
-
-Package natbib Warning: Citation `2016_massiveAloha' on page 5 undefined on input line 76.
-
-
-Package natbib Warning: Citation `2016_massiveAloha' on page 5 undefined on input line 76.
-
-
-LaTeX Warning: Reference `fig:aloha_related_work' on page 5 undefined on input line 77.
-
 File: figure/chap1/aloha_related_work.pdf Graphic file (type pdf)
 <use figure/chap1/aloha_related_work.pdf>
-
-Package natbib Warning: Citation `2003_SA_backoff' on page 5 undefined on input line 88.
-
-
-Package natbib Warning: Citation `2011_SA_backoff' on page 5 undefined on input line 88.
-
-
-Package natbib Warning: Citation `2013_SA_backoff' on page 5 undefined on input line 88.
-
-
-Package natbib Warning: Citation `2015_HybridRA' on page 5 undefined on input line 88.
-
-
-Package natbib Warning: Citation `2018_SA_EB' on page 5 undefined on input line 88.
-
-
-Package natbib Warning: Citation `2009_SA_Backoff' on page 5 undefined on input line 88.
-
-
-Package natbib Warning: Citation `2013_SA_backoff' on page 5 undefined on input line 88.
-
-
-Package natbib Warning: Citation `2018_SA_EB' on page 5 undefined on input line 88.
-
-
-Package natbib Warning: Citation `2015_SA_bursty' on page 5 undefined on input line 89.
-
-
-Package natbib Warning: Citation `2011_3GPPR11' on page 5 undefined on input line 89.
-
-
-Package natbib Warning: Citation `2016_SA_bursty' on page 5 undefined on input line 89.
-
 
 Underfull \vbox (badness 1521) has occurred while \output is active []
 
  [5]
-
-Package natbib Warning: Citation `2006_Multichannel' on page 6 undefined on input line 92.
-
-
-Package natbib Warning: Citation `2013_OFDMA' on page 6 undefined on input line 92.
-
-
-Package natbib Warning: Citation `2015_OFDMA' on page 6 undefined on input line 92.
-
-
-Package natbib Warning: Citation `2020_FastRetrial' on page 6 undefined on input line 92.
-
-
-Package natbib Warning: Citation `1973_RAloha' on page 6 undefined on input line 92.
-
-
-Package natbib Warning: Citation `2015_HybridRA' on page 6 undefined on input line 92.
-
-
-Package natbib Warning: Citation `2019_KimRAPID' on page 6 undefined on input line 92.
-
-
-Package natbib Warning: Citation `2024_zhao' on page 6 undefined on input line 92.
-
-
-Package natbib Warning: Citation `1988_MPR' on page 6 undefined on input line 98.
-
-
-Package natbib Warning: Citation `2005_MPR' on page 6 undefined on input line 98.
-
-
-Package natbib Warning: Citation `2022_MPR' on page 6 undefined on input line 98.
-
-
-Package natbib Warning: Citation `2007_CRDSA' on page 6 undefined on input line 99.
-
-
-Package natbib Warning: Citation `2011_GraphCRDSA' on page 6 undefined on input line 99.
-
-
-Package natbib Warning: Citation `2018_enhanced_CRDSA' on page 6 undefined on input line 99.
-
-
-Package natbib Warning: Citation `2024_CRDSA' on page 6 undefined on input line 99.
-
-
-Package natbib Warning: Citation `2017_NOMA' on page 6 undefined on input line 100.
-
-
-Package natbib Warning: Citation `2017_NOMA2' on page 6 undefined on input line 100.
-
-
-Package natbib Warning: Citation `2021_NOMA' on page 6 undefined on input line 100.
-
-
-Package natbib Warning: Citation `2021_NOMA' on page 6 undefined on input line 100.
-
-
 Underfull \vbox (badness 1577) has occurred while \output is active []
 
  [6]
-
-Package natbib Warning: Citation `1975_KleinrockCSMA' on page 7 undefined on input line 109.
-
-
-Package natbib Warning: Citation `1975_KleinrockCSMA' on page 7 undefined on input line 109.
-
-
-LaTeX Warning: Reference `fig:csma_related_work' on page 7 undefined on input line 109.
-
 File: figure/chap1/csma_related_work.pdf Graphic file (type pdf)
 <use figure/chap1/csma_related_work.pdf>
-
-Package natbib Warning: Citation `2000_BianchiDCF' on page 7 undefined on input line 117.
-
-
-Package natbib Warning: Citation `2013_DaiSunDCF' on page 7 undefined on input line 117.
-
-
-Package natbib Warning: Citation `2014_JinCSMAStability' on page 7 undefined on input line 117.
-
-[7]
-
-Package natbib Warning: Citation `2014_GaoEDCA' on page 8 undefined on input line 119.
-
-
-Package natbib Warning: Citation `2023_KimCPB' on page 8 undefined on input line 119.
-
-
-Package natbib Warning: Citation `2023_ZhouAdaptiveLBT' on page 8 undefined on input line 119.
-
-
-Package natbib Warning: Citation `2024_CordeschiOptBackoff' on page 8 undefined on input line 119.
-
-
-Package natbib Warning: Citation `2022_LoginovCRLBT' on page 8 undefined on input line 121.
-
-
-Package natbib Warning: Citation `2026_YuanCSMAEnergy' on page 8 undefined on input line 121.
-
-
-Package natbib Warning: Citation `2025_ZhaoCSMADelay' on page 8 undefined on input line 121.
-
-
-Package natbib Warning: Citation `2024_CordeschiMPRCSMA' on page 8 undefined on input line 121.
-
-
+ [7]
 Underfull \vbox (badness 7722) has occurred while \output is active []
 
  [8]
-
-LaTeX Warning: Reference `fig:ai_related_work' on page 9 undefined on input line 127.
-
-
 Overfull \hbox (3.65594pt too wide) in paragraph at lines 127--128
 []\TU/SimSun(0)/m/n/12.045 随 着 \TU/TimesNewRoman(0)/m/n/12.045 AI \TU/SimSun(0)/m/n/12.045 技 术 在 无 线 通 信 领 域 的 持 续 发 展，|  利 用 数 据 驱 动 方 法 优 化 无 线 接 入 网  |（\TU/TimesNewRoman(0)/m/n/12.045 RAN\TU/SimSun(0)/m/n/12.045 ）|
  []
 
 File: figure/chap1/ai_related_work.pdf Graphic file (type pdf)
 <use figure/chap1/ai_related_work.pdf>
-
-Package natbib Warning: Citation `2019_JSAC_DLMA' on page 9 undefined on input line 136.
-
-
-Package natbib Warning: Citation `2021_TCCN_JointLearning' on page 9 undefined on input line 136.
-
-
-Package natbib Warning: Citation `2022_GLOBECOM_Abstraction' on page 9 undefined on input line 136.
-
-
-Package natbib Warning: Citation `2023_ICC_IntrinsicRewards' on page 9 undefined on input line 136.
-
-
-Package natbib Warning: Citation `2024_TMLCN_Feasible' on page 9 undefined on input line 136.
-
-[9]
-
-Package natbib Warning: Citation `2020_IFIPNetw_ALOHAQT' on page 10 undefined on input line 139.
-
-
-Package natbib Warning: Citation `2022_WCNC_DRLRA' on page 10 undefined on input line 139.
-
-
-Package natbib Warning: Citation `2023_TCCN_GRU_DSA' on page 10 undefined on input line 139.
-
-
-Package natbib Warning: Citation `2024_TMLCN_MARLM2M' on page 10 undefined on input line 139.
-
-
-Package natbib Warning: Citation `2019_ICCT_Selection' on page 10 undefined on input line 142.
-
-
-Package natbib Warning: Citation `2020_ICAIIC_MACDesign' on page 10 undefined on input line 142.
-
-
-Package natbib Warning: Citation `2021_ACCESS_SelfDriving' on page 10 undefined on input line 142.
-
-[10]
+[9] [10]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [11]
@@ -1658,9 +1389,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 2680) has occurred while \output is active []
 
  [13] [14]
-
-LaTeX Warning: Reference `fig:structure' on page 15 undefined on input line 215.
-
 File: figure/chap1/章节安排流程框图.pdf Graphic file (type pdf)
 <use figure/chap1/章节安排流程框图.pdf>
 ) [15] [16]
@@ -1668,20 +1396,8 @@ File: figure/chap1/章节安排流程框图.pdf Graphic file (type pdf)
 
  (./docs/Chapter_02.tex
 第2章
-
-LaTeX Warning: Reference `chapter3:SAST' on page 17 undefined on input line 9.
-
-
-LaTeX Warning: Reference `chapter4:CSMAST' on page 17 undefined on input line 9.
-
-
-LaTeX Warning: Reference `chapter5:ai_selector' on page 17 undefined on input line 9.
-
 File: figure/chap2/5G NR标准随机接入过程.pdf Graphic file (type pdf)
 <use figure/chap2/5G NR标准随机接入过程.pdf>
-
-LaTeX Warning: Reference `fig:cba_access' on page 17 undefined on input line 21.
-
 
 Underfull \vbox (badness 1533) has occurred while \output is active []
 
@@ -1695,105 +1411,25 @@ Underfull \vbox (badness 1533) has occurred while \output is active []
 ]
 File: figure/chap2/5G NR SDT标准随机接入过程.pdf Graphic file (type pdf)
 <use figure/chap2/5G NR SDT标准随机接入过程.pdf>
-
-
-LaTeX Warning: Reference `fig:sdt_access' on page 18 undefined on input line 35.
-
-[18]
-
-Package natbib Warning: Citation `3gpp38213' on page 19 undefined on input line 44.
-
-
-LaTeX Warning: Reference `fig:lbt_process' on page 19 undefined on input line 46.
-
+ [18]
 File: figure/chap2/5G NR标准LBT过程.pdf Graphic file (type pdf)
 <use figure/chap2/5G NR标准LBT过程.pdf>
-[19]
-
-Package natbib Warning: Citation `2000_BianchiDCF' on page 20 undefined on input line 102.
-
-
-Package natbib Warning: Citation `2013_DaiSunDCF' on page 20 undefined on input line 102.
-
-
-LaTeX Warning: Reference `chapter3:SAST' on page 20 undefined on input line 104.
-
-
-LaTeX Warning: Reference `chapter4:CSMAST' on page 20 undefined on input line 104.
-
+ [19]
 File: figure/chap2/通用系统场景.pdf Graphic file (type pdf)
 <use figure/chap2/通用系统场景.pdf>
 
-LaTeX Warning: Reference `fig:system_model' on page 20 undefined on input line 134.
-
-
 Underfull \vbox (badness 1281) has occurred while \output is active []
 
- [20]
-
-LaTeX Warning: Reference `chapter3:SAST' on page 21 undefined on input line 140.
-
-
-LaTeX Warning: Reference `chapter4:CSMAST' on page 21 undefined on input line 142.
-
-
-LaTeX Warning: Reference `chapter5:ai_selector' on page 21 undefined on input line 144.
-
-
-LaTeX Warning: Reference `chapter3:SAST' on page 21 undefined on input line 152.
-
-
-LaTeX Warning: Reference `chapter4:CSMAST' on page 21 undefined on input line 152.
-
-[21]
-
-LaTeX Warning: Reference `chapter5:ai_selector' on page 22 undefined on input line 156.
-
-
-LaTeX Warning: Reference `chapter5:ai_selector' on page 22 undefined on input line 167.
-
-
-LaTeX Warning: Reference `tab:traffic_feature_def' on page 22 undefined on input line 167.
-
-
+ [20] [21]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [22]
-
-LaTeX Warning: Reference `chapter3:SAST' on page 23 undefined on input line 184.
-
-
-LaTeX Warning: Reference `chapter4:CSMAST' on page 23 undefined on input line 184.
-
-
-LaTeX Warning: Reference `chapter5:ai_selector' on page 23 undefined on input line 184.
-
-[23]
-
-LaTeX Warning: Reference `chapter3:SAST' on page 24 undefined on input line 242.
-
-
-LaTeX Warning: Reference `chapter4:CSMAST' on page 24 undefined on input line 242.
-
-
-LaTeX Warning: Reference `chapter5:ai_selector' on page 24 undefined on input line 242.
-
-) [24]
+ [22] [23]) [24]
 \openout2 = `docs/Chapter_03.aux'.
 
  (./docs/Chapter_03.tex
 第3章
-
-LaTeX Warning: Reference `sec:general_system_model' on page 25 undefined on input line 9.
-
-
-LaTeX Warning: Reference `fig:two_node_sast' on page 25 undefined on input line 13.
-
 File: figure/chap3/two_node_sast.pdf Graphic file (type pdf)
 <use figure/chap3/two_node_sast.pdf>
-
-LaTeX Warning: Reference `tab:aloha_compare' on page 25 undefined on input line 28.
-
 [25
 
 
@@ -1801,55 +1437,16 @@ LaTeX Warning: Reference `tab:aloha_compare' on page 25 undefined on input line 
 
 
 
-]
-
-Package natbib Warning: Citation `2021_Huang' on page 26 undefined on input line 52.
-
-[26] [27]
-
-LaTeX Warning: Hyper reference `bhfn:1' on page 28 undefined on input line 89.
-
-[28]
-
-LaTeX Warning: Hyper reference `bhfn:2' on page 29 undefined on input line 140.
-
-
+] [26] [27] [28]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [29]
-
-LaTeX Warning: Reference `eq:G_AB_exact' on page 30 undefined on input line 167.
-
-[30]
-
-LaTeX Warning: Reference `app:proof_lemma1' on page 31 undefined on input line 186.
-
-
+ [29] [30]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [31]
 Underfull \vbox (badness 5091) has occurred while \output is active []
 
  [32]
-
-Package natbib Warning: Citation `2008_Markov_absorb' on page 33 undefined on input line 249.
-
-
-LaTeX Warning: Reference `fig:absorbing_markov' on page 33 undefined on input line 249.
-
-
-LaTeX Warning: Reference `app:proof_appendix2' on page 33 undefined on input line 250.
-
-
-LaTeX Warning: Reference `eq:GQ_GP_relation' on page 33 undefined on input line 255.
-
-
-LaTeX Warning: Reference `eq:GQ_GP_relation' on page 33 undefined on input line 256.
-
-
-LaTeX Warning: Reference `eq:GP_derived' on page 33 undefined on input line 256.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [33]
@@ -1882,21 +1479,9 @@ LaTeX Font Warning: Font shape `TU/SimHei(0)/m/it' undefined
 (Font)              using `TU/SimHei(0)/m/n' instead on input line 273.
 
 
-LaTeX Warning: Reference `app:proof_theorem_fixed_point' on page 34 undefined on input line 273.
-
-
-LaTeX Warning: Reference `thm:geometric_Q' on page 34 undefined on input line 276.
-
-
-LaTeX Warning: Reference `eq:p0_closed_form_1' on page 34 undefined on input line 276.
-
-
 Underfull \vbox (badness 2626) has occurred while \output is active []
 
  [34]
-
-LaTeX Warning: Reference `eq:theta_fixed_point' on page 35 undefined on input line 303.
-
 File: figure/chap3/p_ne_vs_q.pdf Graphic file (type pdf)
 <use figure/chap3/p_ne_vs_q.pdf>
 File: figure/chap3/theta_vs_q.pdf Graphic file (type pdf)
@@ -1905,67 +1490,24 @@ File: figure/chap3/mean_B_vs_q.pdf Graphic file (type pdf)
 <use figure/chap3/mean_B_vs_q.pdf>
 File: figure/chap3/mean_Vc_vs_q.pdf Graphic file (type pdf)
 <use figure/chap3/mean_Vc_vs_q.pdf>
-
-LaTeX Warning: Reference `fig:p_ne' on page 35 undefined on input line 338.
-
-
-LaTeX Warning: Reference `fig:mean_Vc' on page 35 undefined on input line 338.
-
-
-LaTeX Warning: Reference `fig:theta' on page 35 undefined on input line 339.
-
-
-LaTeX Warning: Reference `eq:theta_fixed_point' on page 35 undefined on input line 341.
-
-
-LaTeX Warning: Reference `fig:mean_B' on page 35 undefined on input line 341.
-
-
-LaTeX Warning: Reference `fig:mean_Vc' on page 35 undefined on input line 341.
-
-[35]
-
-LaTeX Warning: Reference `eq:mean_vc_derived' on page 36 undefined on input line 348.
-
-[36]
+ [35] [36]
 File: figure/chap3/access_throughput_vs_q.pdf Graphic file (type pdf)
 <use figure/chap3/access_throughput_vs_q.pdf>
 File: figure/chap3/data_throughput_vs_q.pdf Graphic file (type pdf)
 <use figure/chap3/data_throughput_vs_q.pdf>
-
-
-LaTeX Warning: Reference `fig:throughput_vs_q' on page 37 undefined on input line 414.
-
-
-LaTeX Warning: Reference `fig:sub_access' on page 37 undefined on input line 415.
-
-[37]
-
-LaTeX Warning: Reference `fig:sub_data' on page 38 undefined on input line 419.
-
-
+ [37]
 Underfull \vbox (badness 1521) has occurred while \output is active []
 
  [38]
-
-LaTeX Warning: Reference `fig:markov_chain' on page 39 undefined on input line 458.
-
 File: figure/chap3/2Dmarkov_chain.pdf Graphic file (type pdf)
 <use figure/chap3/2Dmarkov_chain.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [39]
-
-LaTeX Warning: Reference `eq:mean_queue_length' on page 40 undefined on input line 491.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [40]
-
-LaTeX Warning: Reference `eq:mean_packet_delay' on page 41 undefined on input line 497.
-
 File: figure/chap3/access_delay_unsaturated.pdf Graphic file (type pdf)
 <use figure/chap3/access_delay_unsaturated.pdf>
 File: figure/chap3/packet_delay_unsaturated.pdf Graphic file (type pdf)
@@ -1973,34 +1515,12 @@ File: figure/chap3/packet_delay_unsaturated.pdf Graphic file (type pdf)
 File: figure/chap3/access_delay_saturated.pdf Graphic file (type pdf)
 <use figure/chap3/access_delay_saturated.pdf>
 
-LaTeX Warning: Reference `fig:delay_vs_q' on page 41 undefined on input line 528.
-
-
-LaTeX Warning: Reference `fig:access_delay_unsaturated' on page 41 undefined on input line 529.
-
-
-LaTeX Warning: Reference `fig:packet_delay_unsaturated' on page 41 undefined on input line 529.
-
-
-LaTeX Warning: Reference `fig:access_delay_saturated' on page 41 undefined on input line 531.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [41]
 File: figure/chap3/sast_scheme.pdf Graphic file (type pdf)
 <use figure/chap3/sast_scheme.pdf>
-
-
-LaTeX Warning: Reference `fig:sdt_access' on page 42 undefined on input line 549.
-
-
-Package natbib Warning: Citation `2012_DaiAloha' on page 42 undefined on input line 555.
-
-
-LaTeX Warning: Reference `fig:signaling_process' on page 42 undefined on input line 560.
-
-[42]
+ [42]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [43]
@@ -2008,16 +1528,6 @@ File: figure/chap3/str_vs_q_saturated.pdf Graphic file (type pdf)
 <use figure/chap3/str_vs_q_saturated.pdf>
 File: figure/chap3/str_vs_lambda_unsaturated.pdf Graphic file (type pdf)
 <use figure/chap3/str_vs_lambda_unsaturated.pdf>
-
-
-LaTeX Warning: Reference `fig:str_comparison' on page 44 undefined on input line 598.
-
-
-LaTeX Warning: Reference `fig:str_sat' on page 44 undefined on input line 599.
-
-
-LaTeX Warning: Reference `fig:str_unsat' on page 44 undefined on input line 602.
-
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -2032,7 +1542,9 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  (./docs/Chapter_04.tex
 第4章
 
-LaTeX Warning: Reference `sec:general_system_model' on page 47 undefined on input line 12.
+Overfull \hbox (0.51999pt too wide) in paragraph at lines 12--14
+[]\TU/SimSun(0)/m/n/12.045 本 章 的 研 究 工 作 建 立 在[]\TU/TimesNewRoman(0)/m/n/12.045 2.2[]\TU/SimSun(0)/m/n/12.045 节 所 述 通 用 上 行 通 信 网 络 模 型 的 基 础 之 上，|  并 针 对 \TU/TimesNewRoman(0)/m/n/12.045 CSMA
+ []
 
 
 Underfull \vbox (badness 1533) has occurred while \output is active []
@@ -2043,18 +1555,7 @@ Underfull \vbox (badness 1533) has occurred while \output is active []
 ] [48]
 File: figure/chap4/csmast_channel.png Graphic file (type bmp)
 <figure/chap4/csmast_channel.png>
-
-
-LaTeX Warning: Reference `fig:csmast_channel' on page 49 undefined on input line 60.
-
-[49]
-
-LaTeX Warning: Reference `subsec:channel_vacation_analysis' on page 50 undefined on input line 71.
-
-
-LaTeX Warning: Reference `chapter3:SAST' on page 50 undefined on input line 81.
-
-
+ [49]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [50]
@@ -2063,51 +1564,16 @@ File: figure/chap4/markov_model.pdf Graphic file (type pdf)
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [51]
-
-LaTeX Warning: Reference `fig:csmast_markov_absorption' on page 52 undefined on input line 116.
-
-[52]
-
-Package natbib Warning: Citation `2008_Markov_absorb' on page 53 undefined on input line 142.
-
-
+ [51] [52]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [53]
-
-LaTeX Warning: Reference `subsec:B_analysis' on page 54 undefined on input line 189.
-
-
-LaTeX Warning: Reference `subsec:Vc_analysis' on page 54 undefined on input line 189.
-
-
-LaTeX Warning: Reference `chapter3:SAST' on page 54 undefined on input line 192.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [54]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [55]
-
-LaTeX Warning: Reference `eq:throughput_csmast' on page 56 undefined on input line 242.
-
-
-LaTeX Warning: Reference `thm:csmast_max_throughput' on page 56 undefined on input line 245.
-
-
-LaTeX Warning: Reference `app:classic_csma' on page 56 undefined on input line 248.
-
-[56]
-
-Package natbib Warning: Citation `1996_Gausian' on page 57 undefined on input line 269.
-
-
-LaTeX Warning: Reference `eq:jain_moment_form' on page 57 undefined on input line 277.
-
-
+ [55] [56]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [57]
@@ -2115,42 +1581,18 @@ File: figure/chap4/thu_vs_q_CSMAST_multi_taus.pdf Graphic file (type pdf)
 <use figure/chap4/thu_vs_q_CSMAST_multi_taus.pdf>
 File: figure/chap4/thu_vs_n_CSMAST_multi_q.pdf Graphic file (type pdf)
 <use figure/chap4/thu_vs_n_CSMAST_multi_q.pdf>
-
-
-LaTeX Warning: Reference `fig:csmast_throughput_vs_q_taus' on page 58 undefined on input line 318.
-
 File: figure/chap4/jt_vs_q_CSMAST_multi_taus.pdf Graphic file (type pdf)
 <use figure/chap4/jt_vs_q_CSMAST_multi_taus.pdf>
 File: figure/chap4/jt_vs_t_CSMAST_multi_q.pdf Graphic file (type pdf)
 <use figure/chap4/jt_vs_t_CSMAST_multi_q.pdf>
 
-LaTeX Warning: Reference `fig:csmast_throughput_vs_n' on page 58 undefined on input line 339.
-
-
-LaTeX Warning: Reference `fig:csmast_jain_vs_q_taus' on page 58 undefined on input line 345.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1331) has occurred while \output is active []
 
  [58]
 File: figure/chap4/throughput_fairness_tradeoff.pdf Graphic file (type pdf)
 <use figure/chap4/throughput_fairness_tradeoff.pdf>
-
-
-LaTeX Warning: Reference `fig:csmast_jain_vs_t_multi_q' on page 59 undefined on input line 355.
-
-
-LaTeX Warning: Reference `eq:jain_explicit' on page 59 undefined on input line 355.
-
-[59]
-
-LaTeX Warning: Reference `fig:comparison_classic' on page 60 undefined on input line 359.
-
-
-LaTeX Warning: Reference `app:classic_csma' on page 60 undefined on input line 359.
-
-
-Underfull \vbox (badness 5161) has occurred while \output is active []
+ [59]
+Underfull \vbox (badness 2980) has occurred while \output is active []
 
  [60]) [61] [62
 
@@ -2163,171 +1605,75 @@ Underfull \vbox (badness 5161) has occurred while \output is active []
  (./docs/Chapter_05.tex
 第5章
 
-LaTeX Warning: Reference `chapter4:CSMAST' on page 63 undefined on input line 7.
-
-
-LaTeX Warning: Reference `tab:protocol_comparison' on page 63 undefined on input line 8.
-
-
-LaTeX Warning: Reference `subsec:problem_formulation' on page 63 undefined on input line 32.
-
-
-LaTeX Warning: Reference `subsec:unified_input' on page 63 undefined on input line 32.
-
-
-LaTeX Warning: Reference `subsec:sim_mapping_utility' on page 63 undefined on input line 32.
-
-
-LaTeX Warning: Reference `subsec:equiv_constrained_opt' on page 63 undefined on input line 32.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [63
 
 
 ]
-
-LaTeX Warning: Reference `fig:chap5_framework' on page 64 undefined on input line 71.
-
-
-LaTeX Warning: Reference `eq:chap5_overview' on page 64 undefined on input line 71.
-
 File: figure/chap5/fig_5_1_model1.pdf Graphic file (type pdf)
 <use figure/chap5/fig_5_1_model1.pdf>
 
-LaTeX Warning: Reference `eq:chap5_overview' on page 64 undefined on input line 83.
+Underfull \vbox (badness 1132) has occurred while \output is active []
 
-[64]
-Overfull \hbox (10.79729pt too wide) in paragraph at lines 85--86
+ [64]
+Overfull \hbox (10.79729pt too wide) in paragraph at lines 82--83
 []\TU/SimSun(0)/m/n/12.045 针 对 通 用 网 络 参 数 $[][]$，|  将 其 定 义 为 包 含 网 络 节 点 规 模 与 观 测 时 长 的 向 量 $[][] \OT1/cmr/m/n/12.045 =
  []
 
 
-LaTeX Warning: Reference `tab:traffic_feature_def' on page 65 undefined on input line 88.
-
-
-Underfull \hbox (badness 1348) in paragraph at lines 104--105
+Underfull \hbox (badness 1348) in paragraph at lines 101--102
 []|\TU/SimSun(0)/m/n/10.53937 表 征 系 统 整 体 流 量 强 度，|
  []
 
 
-Underfull \hbox (badness 5696) in paragraph at lines 128--134
+Underfull \hbox (badness 5696) in paragraph at lines 125--131
 []|$\OT1/cmr/m/n/10.53937 ^^I[] = [][] []\OML/cmm/m/it/10.53937 ; R\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 ^^\\OT1/cmr/m/n/10.53937 ) =
  []
 
 
-Overfull \hbox (10.44249pt too wide) in paragraph at lines 96--148
+Overfull \hbox (10.44249pt too wide) in paragraph at lines 93--145
  [][] 
  []
 
-[65]
-
-LaTeX Warning: Reference `tab:input_features' on page 66 undefined on input line 157.
-
-
-LaTeX Warning: Reference `sec:performance_metrics' on page 66 undefined on input line 202.
-
-[66] [67]
-
-LaTeX Warning: Reference `eq:chap5_overview' on page 68 undefined on input line 237.
-
-
-LaTeX Warning: Reference `eq:chap5_constrained' on page 68 undefined on input line 285.
-
-
+[65] [66] [67]
 Underfull \vbox (badness 5431) has occurred while \output is active []
 
  [68]
-
-LaTeX Warning: Reference `subsec:grid_sampling' on page 69 undefined on input line 300.
-
-
-LaTeX Warning: Reference `subsec:unified_simulator' on page 69 undefined on input line 300.
-
-
-LaTeX Warning: Reference `subsec:dataset_construction' on page 69 undefined on input line 300.
-
-
-LaTeX Warning: Reference `fig:dataset_sampling_strategy' on page 69 undefined on input line 305.
-
 File: figure/chap5/数据集采样策略.pdf Graphic file (type pdf)
 <use figure/chap5/数据集采样策略.pdf>
 
 Underfull \vbox (badness 1521) has occurred while \output is active []
 
  [69]
-File: figure/chap5/仿真器实现流程框图.pdf Graphic file (type pdf)
-<use figure/chap5/仿真器实现流程框图.pdf>
-
+File: figure/chap5/仿真平台实现流程框图.pdf Graphic file (type pdf)
+<use figure/chap5/仿真平台实现流程框图.pdf>
+ [70]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [70] [71]
-
-LaTeX Warning: Reference `fig:unified_simulator_main' on page 72 undefined on input line 352.
-
-
-Overfull \hbox (1.51387pt too wide) in paragraph at lines 401--503
+ [71]
+Overfull \hbox (1.51387pt too wide) in paragraph at lines 397--499
  [][] 
  []
 
 
-LaTeX Warning: Reference `tab:dataset_summary' on page 72 undefined on input line 507.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [72]
-
-LaTeX Warning: Reference `tab:dataset_summary' on page 73 undefined on input line 519.
-
-
+ [72] [73]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [73]
-
-LaTeX Warning: Reference `subsec:dataset_construction' on page 74 undefined on input line 530.
-
-
-LaTeX Warning: Reference `subsec:hard_sharing' on page 74 undefined on input line 531.
-
-
-LaTeX Warning: Reference `subsec:training' on page 74 undefined on input line 531.
-
-
-LaTeX Warning: Reference `subsec:visual_results' on page 74 undefined on input line 531.
-
-
-LaTeX Warning: Reference `subsec:curve_consistency' on page 74 undefined on input line 531.
-
-[74]
+ [74]
 File: figure/chap5/神经网络训练流程.pdf Graphic file (type pdf)
 <use figure/chap5/神经网络训练流程.pdf>
 
+Underfull \vbox (badness 3792) has occurred while \output is active []
 
-LaTeX Warning: Reference `fig:nn_training_flow' on page 75 undefined on input line 628.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [75]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [76]
-Overfull \hbox (13.09618pt too wide) in alignment at lines 670--695
+ [75] [76]
+Overfull \hbox (13.09618pt too wide) in alignment at lines 668--693
 [] [] [] [] 
  []
 
-
-LaTeX Warning: Reference `tab:surrogate_model_config_result' on page 77 undefined on input line 699.
-
-
-Underfull \vbox (badness 2744) has occurred while \output is active []
-
- [77]
-
-LaTeX Warning: Reference `tab:surrogate_model_config_result' on page 78 undefined on input line 701.
-
+[77]
 File: figure/chap5/shared_legend.pdf Graphic file (type pdf)
 <use figure/chap5/shared_legend.pdf>
 File: figure/chap5/5_3_metric_throughput.pdf Graphic file (type pdf)
@@ -2335,13 +1681,12 @@ File: figure/chap5/5_3_metric_throughput.pdf Graphic file (type pdf)
 File: figure/chap5/5_3_metric_delay.pdf Graphic file (type pdf)
 <use figure/chap5/5_3_metric_delay.pdf>
 
-Overfull \hbox (2.9906pt too wide) in paragraph at lines 718--722
+Overfull \hbox (2.9906pt too wide) in paragraph at lines 716--720
  [][][] 
  []
 
 File: figure/chap5/5_3_metric_signaling.pdf Graphic file (type pdf)
 <use figure/chap5/5_3_metric_signaling.pdf>
-[78]
 File: figure/chap5/shared_legend.pdf Graphic file (type pdf)
 <use figure/chap5/shared_legend.pdf>
 File: figure/chap5/5_3_utility_throughput_prio.pdf Graphic file (type pdf)
@@ -2350,67 +1695,43 @@ File: figure/chap5/5_3_utility_delay_prio.pdf Graphic file (type pdf)
 <use figure/chap5/5_3_utility_delay_prio.pdf>
 File: figure/chap5/5_3_utility_signaling_prio.pdf Graphic file (type pdf)
 <use figure/chap5/5_3_utility_signaling_prio.pdf>
-
-
-LaTeX Warning: Reference `fig:ai_vs_sim_uniform_003' on page 79 undefined on input line 768.
-
-
-Underfull \vbox (badness 3302) has occurred while \output is active []
+[78]
+Underfull \vbox (badness 3108) has occurred while \output is active []
 
  [79]
-
-LaTeX Warning: Reference `fig:utility_priority_uniform_003' on page 80 undefined on input line 771.
-
-
-Underfull \vbox (badness 2735) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [80] [81]
-
-LaTeX Warning: Reference `tab:chap5_scene1_windows' on page 82 undefined on input line 790.
-
-
-LaTeX Warning: Reference `tab:chap5_scene2_windows' on page 82 undefined on input line 817.
-
-[82]
-
-LaTeX Warning: Reference `fig:utility_vs_traffic_uniform' on page 83 undefined on input line 850.
-
-
-LaTeX Warning: Reference `fig:utility_vs_traffic_mixed' on page 83 undefined on input line 850.
-
 File: figure/chap5/utility_dynamic_uniform_0315.pdf Graphic file (type pdf)
 <use figure/chap5/utility_dynamic_uniform_0315.pdf>
+ [82]
 File: figure/chap5/utility_dynamic_combined_0315.pdf Graphic file (type pdf)
 <use figure/chap5/utility_dynamic_combined_0315.pdf>
-[83])
-Underfull \vbox (badness 1997) has occurred while \output is active []
-
- [84] [85] [86
-
-
-
-
-]
+) [83] [84]
 \openout2 = `docs/Chapter_06.aux'.
 
  (./docs/Chapter_06.tex
 第6章
-[87
-
-
-] [88]) [89] [90
+[85
 
 
 
 
-] (./main.bbl [91
+
+
+] [86]) [87] [88
+
+
+
+
+] (./main.bbl [89
 
 ]
 Underfull \hbox (badness 1205) in paragraph at lines 217--224
 []\TU/TimesNewRoman(0)/m/n/10.53937 Abramson N. THE ALOHA SYSTEM: Another Alternative for Computer Communications[C]
  []
 
-[92] [93] [94] [95] [96]) [97] [98
+[90] [91] [92] [93] [94]) [95] [96
 
 
 ]
@@ -2418,10 +1739,10 @@ Underfull \hbox (badness 1205) in paragraph at lines 217--224
 
  (./docs/AppendixA.tex
 附录 A
-) [99
+) [97
 
 
-] [100
+] [98
 
 
 
@@ -2431,13 +1752,7 @@ Underfull \hbox (badness 1205) in paragraph at lines 217--224
 
  (./docs/AppendixB.tex
 附录 B
-
-Package natbib Warning: Citation `2008_Markov_absorb' on page 101 undefined on input line 5.
-
-
-LaTeX Warning: Reference `fig:absorbing_markov' on page 101 undefined on input line 16.
-
-[101
+[99
 
 
 ]
@@ -2446,60 +1761,44 @@ File: figure/appdix/P2Q_Absorbing_Markov_chain.pdf Graphic file (type pdf)
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 50.
+(hyperref)                removing `math shift' on input line 49.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 50.
+(hyperref)                removing `subscript' on input line 49.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 50.
-
-
-Package natbib Warning: Citation `2008_Markov_absorb' on page 102 undefined on input line 66.
+(hyperref)                removing `math shift' on input line 49.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [102]
+ [100]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [103]
-
-LaTeX Warning: Reference `eq:GQ_GP_relation' on page 104 undefined on input line 125.
-
-) [104]
+ [101]) [102]
 \openout2 = `docs/AppendixC.aux'.
 
  (./docs/AppendixC.tex
 附录 C
 
-LaTeX Warning: Reference `thm:geometric_Q' on page 105 undefined on input line 4.
-
-
-Package natbib Warning: Citation `1996_Gausian' on page 105 undefined on input line 5.
-
-
-LaTeX Warning: Reference `eq:GP_derived' on page 105 undefined on input line 15.
-
-
-LaTeX Warning: Reference `eq:GQ_GP_relation' on page 105 undefined on input line 26.
-
-
-LaTeX Warning: Reference `eq:GP_alpha' on page 105 undefined on input line 26.
-
-
-LaTeX Warning: Reference `eq:p0_alpha' on page 105 undefined on input line 26.
-
-
-LaTeX Warning: Reference `eq:G_AV1' on page 105 undefined on input line 26.
-
-
-LaTeX Warning: Reference `eq:beta_defination' on page 105 undefined on input line 36.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [103
+
+
+
+
+
+
+]) [104]
+\openout2 = `docs/AppendixD.aux'.
+
+ (./docs/AppendixD.tex
+附录 D
+
+Underfull \vbox (badness 4739) has occurred while \output is active []
 
  [105
 
@@ -2508,60 +1807,23 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-]
-
-LaTeX Warning: Reference `eq:GQ_ansatz' on page 106 undefined on input line 41.
-
-
-LaTeX Warning: Reference `C6' on page 106 undefined on input line 42.
-
-
-LaTeX Warning: Reference `C5' on page 106 undefined on input line 46.
-
-
-LaTeX Warning: Reference `C6' on page 106 undefined on input line 58.
-
-
-LaTeX Warning: Reference `C6' on page 106 undefined on input line 63.
-
-
-LaTeX Warning: Reference `C9' on page 106 undefined on input line 63.
-
-
-LaTeX Warning: Reference `eq:theta_relation' on page 106 undefined on input line 63.
-
-) [106]
-\openout2 = `docs/AppendixD.aux'.
-
- (./docs/AppendixD.tex
-附录 D
-
-Package natbib Warning: Citation `2013_DaiCSMA' on page 107 undefined on input line 10.
-
-
-Underfull \vbox (badness 4739) has occurred while \output is active []
-
- [107
-
-
-
-
-
-
-]
-
-Package natbib Warning: Citation `2022_LambertW' on page 108 undefined on input line 52.
-
-
-LaTeX Warning: Reference `eq:classic_csma_throughput' on page 108 undefined on input line 53.
-
-
-LaTeX Warning: Reference `fig:comparison_classic' on page 108 undefined on input line 53.
-
-) [108]
+]) [106]
 \openout2 = `docs/Achievement.aux'.
 
- (./docs/Achievement.tex [109
+ (./docs/Achievement.tex [107
+
+
+
+
+
+
+]) [108]
+\openout2 = `docs/Acknowledgements.aux'.
+
+ (./docs/Acknowledgements.tex
+Underfull \vbox (badness 3128) has occurred while \output is active []
+
+ [109
 
 
 
@@ -2569,78 +1831,34 @@ LaTeX Warning: Reference `fig:comparison_classic' on page 108 undefined on input
 
 
 ]) [110]
-\openout2 = `docs/Acknowledgements.aux'.
-
- (./docs/Acknowledgements.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [111
-
-
-
-
-
-
-]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [112]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [113]
-Underfull \vbox (badness 6876) has occurred while \output is active []
-
- [114]) [115] [116
-
-
-
-
-]
 \openout2 = `docs/Postscript.aux'.
 
- (./docs/Postscript.tex) [117
-
-
-] [118
+ (./docs/Postscript.tex) [111
 
 
 
 
-]
 
-Package natbib Warning: There were undefined citations.
 
-(./main.aux (./docs/Acronym.aux) (./docs/Symbol.aux) (./docs/Chapter_01.aux) (./docs/Chapter_02.aux) (./docs/Chapter_03.aux) (./docs/Chapter_04.aux) (./docs/Chapter_05.aux) (./docs/Chapter_06.aux)
+] [112
 
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
 
-(./docs/AppendixA.aux) (./docs/AppendixB.aux) (./docs/AppendixC.aux) (./docs/AppendixD.aux) (./docs/Achievement.aux) (./docs/Acknowledgements.aux) (./docs/Postscript.aux))
+
+
+] (./main.aux (./docs/Acronym.aux) (./docs/Symbol.aux) (./docs/Chapter_01.aux) (./docs/Chapter_02.aux) (./docs/Chapter_03.aux) (./docs/Chapter_04.aux) (./docs/Chapter_05.aux) (./docs/Chapter_06.aux) (./docs/AppendixA.aux) (./docs/AppendixB.aux) (./docs/AppendixC.aux) (./docs/AppendixD.aux) (./docs/Achievement.aux) (./docs/Acknowledgements.aux) (./docs/Postscript.aux))
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  827E75EFBFA84DF518354E6098DC1640;7283.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 1E6681EE5206935B5B034EE4FCACC3F0;7291.
  ) 
 Here is how much of TeX's memory you used:
- 36375 strings out of 476179
- 782182 string characters out of 5813072
- 1080992 words of memory out of 5000000
- 56299 multiletter control sequences out of 15000+600000
+ 36376 strings out of 476179
+ 778941 string characters out of 5813072
+ 1112150 words of memory out of 5000000
+ 56258 multiletter control sequences out of 15000+600000
  497246 words of font info for 204 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 103i,21n,111p,1195b,834s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 103i,21n,111p,1195b,992s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (138 pages).
+Output written on main.pdf (132 pages).

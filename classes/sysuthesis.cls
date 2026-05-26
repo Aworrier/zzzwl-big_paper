@@ -163,6 +163,9 @@
 \renewcommand{\cfttoctitlefont}{\hfill\zihao{-2}\heiti\bfseries}
 \renewcommand{\cftlottitlefont}{\hfill\zihao{-2}\heiti\bfseries}
 \renewcommand{\cftloftitlefont}{\hfill\zihao{-2}\heiti\bfseries}
+\setlength{\cftbeforetoctitleskip}{18pt}
+\setlength{\cftbeforelottitleskip}{18pt}
+\setlength{\cftbeforeloftitleskip}{18pt}
 
 % 目录中章节标题：四号黑体
 \renewcommand{\cftchapfont}{\zihao{4}\heiti}

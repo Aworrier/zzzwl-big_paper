@@ -62,31 +62,31 @@
 \contentsline {subsection}{\numberline {5.1.2}标准化输入向量$\mathbf {X}_{\mathrm {in}}$的构造}{64}{subsection.5.1.2}%
 \contentsline {subsection}{\numberline {5.1.3}性能指标向量与效用函数的构造}{66}{subsection.5.1.3}%
 \contentsline {subsection}{\numberline {5.1.4}等价资源约束下的联合优化问题}{68}{subsection.5.1.4}%
-\contentsline {section}{\numberline {5.2}基于仿真器的协议数据集构建方法}{69}{section.5.2}%
+\contentsline {section}{\numberline {5.2}基于仿真平台的协议数据集构建方法}{69}{section.5.2}%
 \contentsline {subsection}{\numberline {5.2.1}两阶段参数空间采样策略}{69}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}统一仿真器的设计与实现}{71}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.2}统一仿真平台的设计与实现}{70}{subsection.5.2.2}%
 \contentsline {subsection}{\numberline {5.2.3}数据集构建与预处理}{72}{subsection.5.2.3}%
-\contentsline {section}{\numberline {5.3}基于多任务学习的性能预测模型设计}{74}{section.5.3}%
+\contentsline {section}{\numberline {5.3}基于多任务学习的性能预测模型设计}{73}{section.5.3}%
 \contentsline {subsection}{\numberline {5.3.1}基于硬参数共享的多任务网络架构}{74}{subsection.5.3.1}%
 \contentsline {subsection}{\numberline {5.3.2}多目标协同优化与训练策略}{76}{subsection.5.3.2}%
 \contentsline {subsection}{\numberline {5.3.3}性能预测模型的可视化结果}{77}{subsection.5.3.3}%
-\contentsline {subsection}{\numberline {5.3.4}性能预测模型曲线一致性与效用曲线对比说明}{79}{subsection.5.3.4}%
+\contentsline {subsection}{\numberline {5.3.4}性能预测模型曲线一致性与效用曲线对比说明}{78}{subsection.5.3.4}%
 \contentsline {section}{\numberline {5.4}基于性能预测模型的协议与参数适配方法}{81}{section.5.4}%
 \contentsline {section}{\numberline {5.5}本章小结}{84}{section.5.5}%
-\contentsline {chapter}{\numberline {第6章\hspace {.3em}}总结与展望}{87}{chapter.6}%
-\contentsline {section}{\numberline {6.1}工作总结}{87}{section.6.1}%
-\contentsline {section}{\numberline {6.2}研究展望}{88}{section.6.2}%
-\contentsline {chapter}{参考文献}{91}{chapter*.46}%
-\contentsline {chapter}{\numberline {附录 A\hspace {.3em}}类型1假期内新包到达过程的PGF推导}{99}{appendix.A}%
-\contentsline {chapter}{\numberline {附录 B\hspace {.3em}}节点在忙期时队列状态Q到P的马尔可夫链建模与概率生成函数推导}{101}{appendix.B}%
-\contentsline {section}{\numberline {附B.1}构建马尔可夫吸收链模型}{101}{section.B.1}%
-\contentsline {section}{\numberline {附B.2}分析马尔可夫吸收链的状态转移概率}{101}{section.B.2}%
-\contentsline {section}{\numberline {附B.3}求解吸收概率$b_{ij}$的闭式表达式}{102}{section.B.3}%
-\contentsline {section}{\numberline {附B.4}推导P对Q的条件概率分布以及条件PGF}{103}{section.B.4}%
-\contentsline {chapter}{\numberline {附录 C\hspace {.3em}}忙期开始时缓存队列Q的几何分布性质证明}{105}{appendix.C}%
-\contentsline {chapter}{\numberline {附录 D\hspace {.3em}}经典CSMA饱和吞吐量的统一参数推导}{107}{appendix.D}%
-\contentsline {section}{\numberline {附D.1}统一参数表示与模型设定}{107}{section.D.1}%
-\contentsline {section}{\numberline {附D.2}吞吐量表达式与最优传输概率}{108}{section.D.2}%
-\contentsline {chapter}{攻读硕士学位期间相关的科研成果目录}{109}{appendix*.48}%
-\contentsline {chapter}{致谢}{111}{appendix*.49}%
-\contentsline {chapter}{学位论文版权使用授权书}{117}{appendix*.50}%
+\contentsline {chapter}{\numberline {第6章\hspace {.3em}}总结与展望}{85}{chapter.6}%
+\contentsline {section}{\numberline {6.1}工作总结}{85}{section.6.1}%
+\contentsline {section}{\numberline {6.2}研究展望}{86}{section.6.2}%
+\contentsline {chapter}{参考文献}{89}{chapter*.46}%
+\contentsline {chapter}{\numberline {附录 A\hspace {.3em}}类型1假期内新包到达过程的PGF推导}{97}{appendix.A}%
+\contentsline {chapter}{\numberline {附录 B\hspace {.3em}}节点在忙期时队列状态Q到P的马尔可夫链建模与概率生成函数推导}{99}{appendix.B}%
+\contentsline {section}{\numberline {附B.1}构建马尔可夫吸收链模型}{99}{section.B.1}%
+\contentsline {section}{\numberline {附B.2}分析马尔可夫吸收链的状态转移概率}{99}{section.B.2}%
+\contentsline {section}{\numberline {附B.3}求解吸收概率$b_{ij}$的闭式表达式}{100}{section.B.3}%
+\contentsline {section}{\numberline {附B.4}推导P对Q的条件概率分布以及条件PGF}{101}{section.B.4}%
+\contentsline {chapter}{\numberline {附录 C\hspace {.3em}}忙期开始时缓存队列Q的几何分布性质证明}{103}{appendix.C}%
+\contentsline {chapter}{\numberline {附录 D\hspace {.3em}}经典CSMA饱和吞吐量的统一参数推导}{105}{appendix.D}%
+\contentsline {section}{\numberline {附D.1}统一参数表示与模型设定}{105}{section.D.1}%
+\contentsline {section}{\numberline {附D.2}吞吐量表达式与最优传输概率}{106}{section.D.2}%
+\contentsline {chapter}{攻读硕士学位期间相关的科研成果目录}{107}{appendix*.48}%
+\contentsline {chapter}{致谢}{109}{appendix*.49}%
+\contentsline {chapter}{学位论文版权使用授权书}{111}{appendix*.50}%
