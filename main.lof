@@ -22,7 +22,7 @@
 \addvspace {10.0pt}
 \contentsline {figure}{\numberline {4-1}{\ignorespaces CSMAST 方案中的信道状态演变示意图（$B$、$V_c$ 和 $C_c$ 分别表示信道的忙期、假期和周期时间）\relax }}{49}{figure.caption.25}%
 \contentsline {figure}{\numberline {4-2}{\ignorespaces 描述信道假期 $V_c$ 内状态转移过程的吸收马尔可夫链模型（状态 F 和 I 为可转移态，状态 S 为吸收态）\relax }}{52}{figure.caption.26}%
-\contentsline {figure}{\numberline {4-3}{\ignorespaces CSMAST 机制下吞吐量随系统参数变化情况\relax }}{59}{figure.caption.27}%
+\contentsline {figure}{\numberline {4-3}{\ignorespaces CSMAST 机制下吞吐量随系统参数变化情况\relax }}{58}{figure.caption.27}%
 \contentsline {figure}{\numberline {4-4}{\ignorespaces CSMAST 机制下公平性关于系统参数的变化情况\relax }}{59}{figure.caption.28}%
 \contentsline {figure}{\numberline {4-5}{\ignorespaces CSMAST 与经典 CSMA 机制的吞吐量-公平性轨迹对比（$n=100,\tau _S=5,\tau _F=3,\tau _I=1,T=10^6$）\relax }}{60}{figure.caption.29}%
 \addvspace {10.0pt}

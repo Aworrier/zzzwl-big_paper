@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.28)  26 MAY 2026 11:17
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.28)  26 MAY 2026 16:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1542,11 +1542,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  (./docs/Chapter_04.tex
 第4章
 
-Overfull \hbox (0.51999pt too wide) in paragraph at lines 12--14
-[]\TU/SimSun(0)/m/n/12.045 本 章 的 研 究 工 作 建 立 在[]\TU/TimesNewRoman(0)/m/n/12.045 2.2[]\TU/SimSun(0)/m/n/12.045 节 所 述 通 用 上 行 通 信 网 络 模 型 的 基 础 之 上，|  并 针 对 \TU/TimesNewRoman(0)/m/n/12.045 CSMA
- []
-
-
 Underfull \vbox (badness 1533) has occurred while \output is active []
 
  [47
@@ -1555,25 +1550,19 @@ Underfull \vbox (badness 1533) has occurred while \output is active []
 ] [48]
 File: figure/chap4/csmast_channel.png Graphic file (type bmp)
 <figure/chap4/csmast_channel.png>
- [49]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [50]
+ [49] [50]
 File: figure/chap4/markov_model.pdf Graphic file (type pdf)
 <use figure/chap4/markov_model.pdf>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [51] [52]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [53]
+ [53] [54]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [54]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+ [55]
+Underfull \vbox (badness 7613) has occurred while \output is active []
 
- [55] [56]
+ [56]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [57]
@@ -1581,18 +1570,21 @@ File: figure/chap4/thu_vs_q_CSMAST_multi_taus.pdf Graphic file (type pdf)
 <use figure/chap4/thu_vs_q_CSMAST_multi_taus.pdf>
 File: figure/chap4/thu_vs_n_CSMAST_multi_q.pdf Graphic file (type pdf)
 <use figure/chap4/thu_vs_n_CSMAST_multi_q.pdf>
+
+Underfull \vbox (badness 2478) has occurred while \output is active []
+
+ [58]
 File: figure/chap4/jt_vs_q_CSMAST_multi_taus.pdf Graphic file (type pdf)
 <use figure/chap4/jt_vs_q_CSMAST_multi_taus.pdf>
 File: figure/chap4/jt_vs_t_CSMAST_multi_q.pdf Graphic file (type pdf)
 <use figure/chap4/jt_vs_t_CSMAST_multi_q.pdf>
-
-Underfull \vbox (badness 1331) has occurred while \output is active []
-
- [58]
 File: figure/chap4/throughput_fairness_tradeoff.pdf Graphic file (type pdf)
 <use figure/chap4/throughput_fairness_tradeoff.pdf>
+
+Underfull \vbox (badness 3849) has occurred while \output is active []
+
  [59]
-Underfull \vbox (badness 2980) has occurred while \output is active []
+Underfull \vbox (badness 5161) has occurred while \output is active []
 
  [60]) [61] [62
 
@@ -1727,8 +1719,8 @@ File: figure/chap5/utility_dynamic_combined_0315.pdf Graphic file (type pdf)
 ] (./main.bbl [89
 
 ]
-Underfull \hbox (badness 1205) in paragraph at lines 217--224
-[]\TU/TimesNewRoman(0)/m/n/10.53937 Abramson N. THE ALOHA SYSTEM: Another Alternative for Computer Communications[C]
+Underfull \hbox (badness 3009) in paragraph at lines 217--224
+[]\TU/TimesNewRoman(0)/m/n/10.53937 Abramson N. The ALOHA System: Another Alternative for Computer Communications[C]
  []
 
 [90] [91] [92] [93] [94]) [95] [96

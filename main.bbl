@@ -26,8 +26,8 @@
 
 \bibitem{2023_ITUFramework}
 \bibauthor{{International Telecommunication Union}}\@. \bibtitle{Framework and
-  overall objectives of the future development of {IMT} for 2030 and
-  beyond}\thinspace{}\textnormal{: }\bibnumber{ITU-R M.2160-0}\bibmark{[R]}\@.
+  Overall Objectives of the Future Development of {IMT} for 2030 and
+  Beyond}\thinspace{}\textnormal{: }\bibnumber{ITU-R M.2160-0}\bibmark{[R]}\@.
   \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibinstitution{ITU-R}\@,
   \bibyear{2023}\@.
 
@@ -41,8 +41,8 @@
 
 \bibitem{2021_6Gsurvey}
 \bibauthor{{You} X\@, {Wang} C-X\@, {Huang} J, et~al}\@. \bibtitle{Towards 6G
-  wireless communication networks: Vision, enabling technologies, and new
-  paradigm shifts}\bibmark{[J]}\@. \bibjournal{Science China Information
+  Wireless Communication Networks: Vision, Enabling Technologies, and New
+  Paradigm Shifts}\bibmark{[J]}\@. \bibjournal{Science China Information
   Sciences}\@, \bibyear{2021}\@,
   \bibvolume{64}\bibnumber{(1)}\thinspace{}\textnormal{: }\bibpages{110301}\@.
 
@@ -61,22 +61,22 @@
   }\bibpages{344\thinspace{}\textnormal{--}\thinspace{}383}\@.
 
 \bibitem{2010_IoTsurvey}
-\bibauthor{{Atzori} L\@, {Iera} A\@, {Morabito} G}\@. \bibtitle{The internet of
-  things: A survey}\bibmark{[J]}\@. \bibjournal{Computer networks}\@,
+\bibauthor{{Atzori} L\@, {Iera} A\@, {Morabito} G}\@. \bibtitle{The Internet of
+  Things: A Survey}\bibmark{[J]}\@. \bibjournal{Computer networks}\@,
   \bibyear{2010}\@, \bibvolume{54}\bibnumber{(15)}\thinspace{}\textnormal{:
   }\bibpages{2787\thinspace{}\textnormal{--}\thinspace{}2805}\@.
 
 \bibitem{2015_IoTsurvey2}
 \bibauthor{{Al-Fuqaha} A\@, {Guizani} M\@, {Mohammadi} M, et~al}\@.
-  \bibtitle{Internet of things: A survey on enabling technologies, protocols,
-  and applications}\bibmark{[J]}\@. \bibjournal{IEEE Communications Surveys \&
+  \bibtitle{Internet of Things: A Survey on Enabling Technologies, Protocols,
+  and Applications}\bibmark{[J]}\@. \bibjournal{IEEE Communications Surveys \&
   Tutorials}\@, \bibyear{2015}\@,
   \bibvolume{17}\bibnumber{(4)}\thinspace{}\textnormal{:
   }\bibpages{2347\thinspace{}\textnormal{--}\thinspace{}2376}\@.
 
 \bibitem{2022_IoTsurvey3}
-\bibauthor{{Chi} H~R\@, {Wu} C~K\@, {Huang} N-F, et~al}\@. \bibtitle{A survey
-  of network automation for industrial internet-of-things toward industry
+\bibauthor{{Chi} H~R\@, {Wu} C~K\@, {Huang} N-F, et~al}\@. \bibtitle{A Survey
+  of Network Automation for Industrial Internet-of-Things toward Industry
   5.0}\bibmark{[J]}\@. \bibjournal{IEEE Transactions on Industrial
   Informatics}\@, \bibyear{2022}\@,
   \bibvolume{19}\bibnumber{(2)}\thinspace{}\textnormal{:
@@ -84,15 +84,15 @@
 
 \bibitem{2023_IoTsurvey3}
 \bibauthor{{Mowla} M~N\@, {Mowla} N\@, {Shah} A~S, et~al}\@. \bibtitle{Internet
-  of Things and wireless sensor networks for smart agriculture applications: A
-  survey}\bibmark{[J]}\@. \bibjournal{IEEE Access}\@, \bibyear{2023}\@,
+  of Things and Wireless Sensor Networks for Smart Agriculture Applications: A
+  Survey}\bibmark{[J]}\@. \bibjournal{IEEE Access}\@, \bibyear{2023}\@,
   \bibvolume{11}\thinspace{}\textnormal{:
   }\bibpages{145813\thinspace{}\textnormal{--}\thinspace{}145852}\@.
 
 \bibitem{2022_M2Mcoexistence}
 \bibauthor{{Singh} U\@, {Dua} A\@, {Kumar} N, et~al}\@. \bibtitle{Scalable
-  priority-based resource allocation scheme for M2M communication in LTE/LTE-A
-  network}\bibmark{[J]}\@. \bibjournal{Computers and Electrical Engineering}\@,
+  Priority-Based Resource Allocation Scheme for M2M Communication in LTE/LTE-A
+  Network}\bibmark{[J]}\@. \bibjournal{Computers and Electrical Engineering}\@,
   \bibyear{2022}\@, \bibvolume{103}\thinspace{}\textnormal{:
   }\bibpages{108321}\@.
 
@@ -105,7 +105,7 @@
 
 \bibitem{2020_SmartFactory}
 \bibauthor{{Castagno} P\@, {Mancuso} V\@, {Sereno} M, et~al}\@. \bibtitle{A
-  simple model of MTC flows applied to smart factories}\bibmark{[J]}\@.
+  Simple Model of MTC Flows Applied to Smart Factories}\bibmark{[J]}\@.
   \bibjournal{IEEE Transactions on Mobile Computing}\@, \bibyear{2020}\@,
   \bibvolume{20}\bibnumber{(10)}\thinspace{}\textnormal{:
   }\bibpages{2906\thinspace{}\textnormal{--}\thinspace{}2923}\@.
@@ -127,20 +127,20 @@
 
 \bibitem{2018_5GIoTsurvey}
 \bibauthor{{Li} S\@, {Da Xu} L\@, {Zhao} S}\@. \bibtitle{5G Internet of Things:
-  A survey}\bibmark{[J]}\@. \bibjournal{Journal of Industrial Information
+  A Survey}\bibmark{[J]}\@. \bibjournal{Journal of Industrial Information
   Integration}\@, \bibyear{2018}\@, \bibvolume{10}\thinspace{}\textnormal{:
   }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}9}\@.
 
 \bibitem{2019_5GIoTsurvey}
-\bibauthor{{Chettri} L\@, {Bera} R}\@. \bibtitle{A comprehensive survey on
-  Internet of Things (IoT) toward 5G wireless systems}\bibmark{[J]}\@.
+\bibauthor{{Chettri} L\@, {Bera} R}\@. \bibtitle{A Comprehensive Survey on
+  Internet of Things (IoT) toward 5G Wireless Systems}\bibmark{[J]}\@.
   \bibjournal{IEEE Internet of Things Journal}\@, \bibyear{2019}\@,
   \bibvolume{7}\bibnumber{(1)}\thinspace{}\textnormal{:
   }\bibpages{16\thinspace{}\textnormal{--}\thinspace{}32}\@.
 
 \bibitem{2013_4gLTERA}
 \bibauthor{{Dahlman} E\@, {Parkvall} S\@, {Skold} J}\@. \bibbooktitle{4G:
-  LTE/LTE-advanced for mobile broadband}\bibmark{[M]}\@.
+  LTE/LTE-Advanced for Mobile Broadband}\bibmark{[M]}\@.
   \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Academic
   press}\@, \bibyear{2013}\@.
 
@@ -153,8 +153,8 @@
   \bibyear{2015}\@.
 
 \bibitem{2020_2stepRA}
-\bibauthor{{Kim} J\@, {Lee} G\@, {Kim} S, et~al}\@. \bibtitle{Two-step random
-  access for 5G system: Latest trends and challenges}\bibmark{[J]}\@.
+\bibauthor{{Kim} J\@, {Lee} G\@, {Kim} S, et~al}\@. \bibtitle{Two-Step Random
+  Access for 5G System: Latest Trends and Challenges}\bibmark{[J]}\@.
   \bibjournal{IEEE Network}\@, \bibyear{2020}\@,
   \bibvolume{35}\bibnumber{(1)}\thinspace{}\textnormal{:
   }\bibpages{273\thinspace{}\textnormal{--}\thinspace{}279}\@.
@@ -168,8 +168,8 @@
 
 \bibitem{2016_LAA}
 \bibauthor{{Mukherjee} A\@, {Cheng} J-F\@, {Falahati} S, et~al}\@.
-  \bibtitle{Licensed-assisted access LTE: coexistence with IEEE 802.11 and the
-  evolution toward 5G}\bibmark{[J]}\@. \bibjournal{IEEE Communications
+  \bibtitle{Licensed-Assisted Access LTE: Coexistence with IEEE 802.11 and the
+  Evolution toward 5G}\bibmark{[J]}\@. \bibjournal{IEEE Communications
   Magazine}\@, \bibyear{2016}\@,
   \bibvolume{54}\bibnumber{(6)}\thinspace{}\textnormal{:
   }\bibpages{50\thinspace{}\textnormal{--}\thinspace{}57}\@.
@@ -214,7 +214,7 @@
   }\bibpages{1238\thinspace{}\textnormal{--}\thinspace{}1292}\@.
 
 \bibitem{1970_Aloha}
-\bibauthor{{Abramson} N}\@. \bibtitle{{{THE ALOHA SYSTEM}}: {{Another}}
+\bibauthor{{Abramson} N}\@. \bibtitle{{{The ALOHA System}}: {{Another}}
   Alternative for Computer Communications}\bibmark{[C]}
   //\thinspace{}\bibbooktitle{Proceedings of the {{November}} 17-19, 1970, Fall
   Joint Computer Conference}\@. \bibaddress{New York, NY,
@@ -223,38 +223,38 @@
   }\bibpages{281\thinspace{}\textnormal{--}\thinspace{}285}\@.
 
 \bibitem{2012_DaiAloha}
-\bibauthor{{Dai} L}\@. \bibtitle{Stability and delay analysis of buffered Aloha
-  networks}\bibmark{[J]}\@. \bibjournal{IEEE Transactions on Wireless
+\bibauthor{{Dai} L}\@. \bibtitle{Stability and Delay Analysis of Buffered Aloha
+  Networks}\bibmark{[J]}\@. \bibjournal{IEEE Transactions on Wireless
   Communications}\@, \bibyear{2012}\@,
   \bibvolume{11}\bibnumber{(8)}\thinspace{}\textnormal{:
   }\bibpages{2707\thinspace{}\textnormal{--}\thinspace{}2719}\@.
 
 \bibitem{2016_massiveAloha}
 \bibauthor{{Bockelmann} C\@, {Pratas} N\@, {Nikopour} H, et~al}\@.
-  \bibtitle{Massive machine-type communications in 5G: Physical and MAC-layer
-  solutions}\bibmark{[J]}\@. \bibjournal{IEEE Communications Magazine}\@,
+  \bibtitle{Massive Machine-Type Communications in 5G: Physical and MAC-Layer
+  Solutions}\bibmark{[J]}\@. \bibjournal{IEEE Communications Magazine}\@,
   \bibyear{2016}\@, \bibvolume{54}\bibnumber{(9)}\thinspace{}\textnormal{:
   }\bibpages{59\thinspace{}\textnormal{--}\thinspace{}65}\@.
 
 \bibitem{2003_SA_backoff}
-\bibauthor{{Yang} Y\@, {Yum} T-S~P}\@. \bibtitle{Delay distributions of slotted
+\bibauthor{{Yang} Y\@, {Yum} T-S~P}\@. \bibtitle{Delay Distributions of Slotted
   {Aloha} and {CSMA}}\bibmark{[J]}\@. \bibjournal{IEEE Transactions on
   Communications}\@, \bibyear{2003}\@,
   \bibvolume{51}\bibnumber{(11)}\thinspace{}\textnormal{:
   }\bibpages{1846\thinspace{}\textnormal{--}\thinspace{}1857}\@.
 
 \bibitem{2011_SA_backoff}
-\bibauthor{{Seo} J-B\@, {Leung} V~C~M}\@. \bibtitle{Design and analysis of
-  backoff algorithms for random access channels in {UMTS-LTE} and {IEEE 802.16
-  systems}}\bibmark{[J]}\@. \bibjournal{IEEE Transactions on Vehicular
+\bibauthor{{Seo} J-B\@, {Leung} V~C~M}\@. \bibtitle{Design and Analysis of
+  Backoff Algorithms for Random Access Channels in {UMTS-LTE} and {IEEE 802.16
+  Systems}}\bibmark{[J]}\@. \bibjournal{IEEE Transactions on Vehicular
   Technology}\@, \bibyear{2011}\@,
   \bibvolume{60}\bibnumber{(8)}\thinspace{}\textnormal{:
   }\bibpages{3975\thinspace{}\textnormal{--}\thinspace{}3989}\@.
 
 \bibitem{2013_SA_backoff}
 \bibauthor{{Wu} H\@, {Zhu} C\@, {La} R~J, et~al}\@. \bibtitle{{FASA}:
-  accelerated {S-{Aloha}} using access history for event-driven {M2M}
-  communications}\bibmark{[J]}\@. \bibjournal{IEEE/ACM Transactions on
+  Accelerated {S-{Aloha}} Using Access History for Event-Driven {M2M}
+  Communications}\bibmark{[J]}\@. \bibjournal{IEEE/ACM Transactions on
   Networking}\@, \bibyear{2013}\@,
   \bibvolume{21}\bibnumber{(6)}\thinspace{}\textnormal{:
   }\bibpages{1904\thinspace{}\textnormal{--}\thinspace{}1917}\@.
@@ -319,7 +319,7 @@
 
 \bibitem{2015_OFDMA}
 \bibauthor{{Wei} C-H\@, {Bianchi} G\@, {Cheng} R-G}\@. \bibtitle{Modeling and
-  {{Analysis}} of {{Random Access Channels With Bursty Arrivals}} in {{OFDMA
+  {{Analysis}} of {{Random Access Channels with Bursty Arrivals}} in {{OFDMA
   Wireless Networks}}}\bibmark{[J]}\@. \bibjournal{IEEE Transactions on
   Wireless Communications}\@, \bibyear{2015}\@,
   \bibvolume{14}\bibnumber{(4)}\thinspace{}\textnormal{:
@@ -438,8 +438,8 @@
   }\bibpages{1403\thinspace{}\textnormal{--}\thinspace{}1416}\@.
 
 \bibitem{2000_BianchiDCF}
-\bibauthor{{Bianchi} G}\@. \bibtitle{Performance analysis of the IEEE 802.11
-  distributed coordination function}\bibmark{[J]}\@. \bibjournal{IEEE Journal
+\bibauthor{{Bianchi} G}\@. \bibtitle{Performance Analysis of the IEEE 802.11
+  Distributed Coordination Function}\bibmark{[J]}\@. \bibjournal{IEEE Journal
   on Selected Areas in Communications}\@, \bibyear{2000}\@,
   \bibvolume{18}\bibnumber{(3)}\thinspace{}\textnormal{:
   }\bibpages{535\thinspace{}\textnormal{--}\thinspace{}547}\@.
@@ -453,8 +453,8 @@
   }\bibpages{1558\thinspace{}\textnormal{--}\thinspace{}1572}\@.
 
 \bibitem{2014_JinCSMAStability}
-\bibauthor{{Jin} H\@, {Seo} J-B\@, {Sung} D~K}\@. \bibtitle{Stability analysis
-  of p-persistent slotted CSMA systems with finite population}\bibmark{[J]}\@.
+\bibauthor{{Jin} H\@, {Seo} J-B\@, {Sung} D~K}\@. \bibtitle{Stability Analysis
+  of p-Persistent Slotted CSMA Systems with Finite Population}\bibmark{[J]}\@.
   \bibjournal{IEEE/ACM Transactions on Networking}\@, \bibyear{2014}\@,
   \bibvolume{22}\bibnumber{(6)}\thinspace{}\textnormal{:
   }\bibpages{1881\thinspace{}\textnormal{--}\thinspace{}1894}\@.
@@ -468,44 +468,44 @@
   }\bibpages{3863\thinspace{}\textnormal{--}\thinspace{}3879}\@.
 
 \bibitem{2023_KimCPB}
-\bibauthor{{Kim} Y\@, {Park} S-L}\@. \bibtitle{Performance improvement of
-  random access by prioritizing collisions}\bibmark{[J]}\@. \bibjournal{IEEE
+\bibauthor{{Kim} Y\@, {Park} S-L}\@. \bibtitle{Performance Improvement of
+  Random Access by Prioritizing Collisions}\bibmark{[J]}\@. \bibjournal{IEEE
   Transactions on Wireless Communications}\@, \bibyear{2023}\@,
   \bibvolume{22}\bibnumber{(5)}\thinspace{}\textnormal{:
   }\bibpages{3289\thinspace{}\textnormal{--}\thinspace{}3302}\@.
 
 \bibitem{2023_ZhouAdaptiveLBT}
 \bibauthor{{Zhou} H\@, {Deng} Y\@, {Nallanathan} A}\@. \bibtitle{Novel
-  listen-before-talk access scheme with adaptive backoff procedure for uplink
-  centric broadband}\bibmark{[J]}\@. \bibjournal{IEEE Transactions on Vehicular
+  Listen-before-Talk Access Scheme with Adaptive Backoff Procedure for Uplink
+  Centric Broadband}\bibmark{[J]}\@. \bibjournal{IEEE Transactions on Vehicular
   Technology}\@, \bibyear{2023}\@,
   \bibvolume{72}\bibnumber{(8)}\thinspace{}\textnormal{:
   }\bibpages{10678\thinspace{}\textnormal{--}\thinspace{}10691}\@.
 
 \bibitem{2024_CordeschiOptBackoff}
 \bibauthor{{Cordeschi} N\@, {De Rango} F\@, {Baiocchi} A}\@. \bibtitle{Optimal
-  back-off distribution for maximum weighted throughput in
+  Back-off Distribution for Maximum Weighted Throughput in
   CSMA}\bibmark{[J]}\@. \bibjournal{IEEE/ACM Transactions on Networking}\@,
   \bibyear{2024}\@, \bibvolume{32}\bibnumber{(1)}\thinspace{}\textnormal{:
   }\bibpages{417\thinspace{}\textnormal{--}\thinspace{}430}\@.
 
 \bibitem{2022_LoginovCRLBT}
 \bibauthor{{Loginov} V\@, {Khorov} E\@, {Lyakhov} A, et~al}\@.
-  \bibtitle{CR-LBT: Listen-before-talk with collision resolution for 5G NR-U
-  networks}\bibmark{[J]}\@. \bibjournal{IEEE Transactions on Wireless
+  \bibtitle{CR-LBT: Listen-before-Talk with Collision Resolution for 5G NR-U
+  Networks}\bibmark{[J]}\@. \bibjournal{IEEE Transactions on Wireless
   Communications}\@, \bibyear{2022}\@,
   \bibvolume{21}\bibnumber{(11)}\thinspace{}\textnormal{:
   }\bibpages{9502\thinspace{}\textnormal{--}\thinspace{}9515}\@.
 
 \bibitem{2026_YuanCSMAEnergy}
 \bibauthor{{Yuan} A\@, {Sun} X\@, {Qiu} J, et~al}\@. \bibtitle{To Sense or Not
-  To Sense: A Comparative Study of Energy Efficiency in Energy-Aware Random
+  to Sense: A Comparative Study of Energy Efficiency in Energy-Aware Random
   Access Networks}\bibmark{[J]}\@. \bibjournal{IEEE Transactions on Green
   Communications and Networking}\@, \bibyear{2026}\@.
 
 \bibitem{2025_ZhaoCSMADelay}
-\bibauthor{{Zhao} Y\@, {Dai} L}\@. \bibtitle{To sense or not to sense: A delay
-  perspective}\bibmark{[J]}\@. \bibjournal{IEEE Transactions on
+\bibauthor{{Zhao} Y\@, {Dai} L}\@. \bibtitle{To Sense or Not to Sense: A Delay
+  Perspective}\bibmark{[J]}\@. \bibjournal{IEEE Transactions on
   Communications}\@, \bibyear{2025}\@.
 
 \bibitem{2024_CordeschiMPRCSMA}
@@ -540,7 +540,7 @@
 \bibitem{2023_ICC_IntrinsicRewards}
 \bibauthor{{Miuccio} L\@, {Riolo} S\@, {Bennis} M, et~al}\@. \bibtitle{On
   Learning Intrinsic Rewards for Faster Multi-Agent Reinforcement Learning
-  based {MAC} Protocol Design in 6G Wireless Networks}\bibmark{[C]}
+  Based {MAC} Protocol Design in 6G Wireless Networks}\bibmark{[C]}
   //\thinspace{}\bibbooktitle{Proc. IEEE Int. Conf. Commun. (ICC)}\@.
   \bibyear{2023}\thinspace{}\textnormal{:
   }\bibpages{466\thinspace{}\textnormal{--}\thinspace{}471}\@.
@@ -607,8 +607,8 @@
   }\bibpages{34829\thinspace{}\textnormal{--}\thinspace{}34844}\@.
 
 \bibitem{3gpp38213}
-\bibauthor{{3GPP}}\@. \bibtitle{3GPP TS 38.213: NR; Physical layer procedures
-  for control}\bibmark{[R]}\@. \bibyear{Release 17}\@.
+\bibauthor{{3GPP}}\@. \bibtitle{3GPP TS 38.213: NR; Physical Layer Procedures
+  for Control}\bibmark{[R]}\@. \bibyear{Release 17}\@.
 
 \bibitem{2021_Huang}
 \bibauthor{黄欢欢}\@.
@@ -618,7 +618,7 @@
 
 \bibitem{2008_Markov_absorb}
 \bibauthor{{Bertsekas} D\@, {Tsitsiklis} J~N}\@. \bibbooktitle{Introduction to
-  probability}\bibmark{[M]}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
+  Probability}\bibmark{[M]}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
   }\bibpublisher{Athena Scientific}\@, \bibyear{2008}\@.
 
 \bibitem{1996_Gausian}
