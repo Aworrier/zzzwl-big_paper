@@ -28,11 +28,11 @@
 	\item 失败状态（Failure, F），持续时间为 $\tau_F = x + 1$ 个时隙，表示多节点并发接入导致传输失败，信道在碰撞被检测并恢复侦听之前处于无效占用状态；
 	\item 成功状态（Success, S），持续时间为 $\tau_S = y + 1$ 个时隙，表示单节点成功完成数据包传输并获得确认反馈。
 \end{enumerate}
-这种状态时长的非对称性（即 $\tau_S \neq \tau_F \neq \tau_I$）是 CSMA 与 Aloha 协议的本质区别，也极大增加了后续理论建模的复杂度。
+这种状态时长的非对称性，即 $\tau_S \neq \tau_F \neq \tau_I$，是 CSMA 与 Aloha 协议的本质区别，也极大增加了后续理论建模的复杂度。
 
 \subsection{CSMAST 协议机制描述}
 
-在此异构时间模型下，本章提出了一种应用连续传输机制的 CSMA 增强方案，即 CSMAST。该协议的核心设计思想在于：通过一次成功的信道竞争，获取后续多次连续传输的机会，从而有效降低重复竞争所带来的接入开销。
+在此异构时间模型下，本章提出了一种应用连续传输机制的 CSMA 增强方案，即 CSMAST。该协议的核心设计思想是，通过一次成功的信道竞争，获取后续多次连续传输的机会，从而有效降低重复竞争所带来的接入开销。
 从 CSMAST 机制流程上看，其遵循竞争接入、连续占用、退避重置的闭环逻辑。具体而言，当网络节点侦听到信道处于空闲状态（状态 I），或成功状态 S、失败状态 F 的最后一个时隙时，节点会在下一时隙起始时刻，依据预设概率 $q\in[0,1]$ 执行随机接入决策。
 当节点根据随机接入策略选择不发送时，其将继续保持信道侦听状态，并在后续时隙中等待下一次接入机会；当节点选择发送时，则可能出现以下两种情况：
 \begin{itemize}
@@ -52,7 +52,7 @@
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=0.9\textwidth]{figure/chap4/csmast_channel.png}
-	\caption{CSMAST 方案中的信道状态演变示意图（$B$、$V_c$ 和 $C_c$ 分别表示信道的忙期、假期和周期时间）}
+	\caption{CSMAST 方案中的信道状态演变示意图，其中$B$、$V_c$ 和 $C_c$ 分别表示信道的忙期、假期和周期时间长度}
 	\label{fig:csmast_channel}
 \end{figure}
 
@@ -104,7 +104,7 @@
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=0.95\textwidth]{figure/chap4/markov_model.pdf}
-	\caption{描述信道假期 $V_c$ 内状态转移过程的吸收马尔可夫链模型（状态 F 和 I 为可转移态，状态 S 为吸收态）}
+	\caption{描述信道假期 $V_c$ 内状态转移过程的吸收马尔可夫链模型，其中状态 F 和 I 为可转移态，状态 S 为吸收态}
 	\label{fig:csmast_markov_absorption}
 \end{figure}
 
@@ -348,7 +348,7 @@ $\lambda_{out,i}^{T}=\frac{N_{succ,i}(\tau_S-\tau_I)}{T}$
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=0.7\textwidth]{figure/chap4/throughput_fairness_tradeoff.pdf}
-	\caption{CSMAST 与经典 CSMA 机制的吞吐量-公平性轨迹对比（$n=100,\tau_S=5,\tau_F=3,\tau_I=1,T=10^6$）}
+	\caption{CSMAST 与经典 CSMA 机制的吞吐量-公平性轨迹对比，$n=100,\tau_S=5,\tau_F=3,\tau_I=1,T=10^6$}
 	\label{fig:comparison_classic}
 \end{figure}
 
