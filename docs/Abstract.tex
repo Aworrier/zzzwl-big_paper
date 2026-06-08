@@ -1,25 +1,48 @@
 %%
 % 摘要信息
-% 摘要内容应概括地反映出本论文的主要内容，主要说明本论文的研究目的、内容、方法、成果和结论。要突出本论文的创造性成果或新见解，不要与引言相 混淆。语言力求精练、准确，以 300—500 字为宜。
+% 摘要内容应概括地反映出本论文的主要内容，主要说明本论文的研究目的、内容、方法、成果和结论。要突出本论文的创造性成果或新见解，不要与引言相 混淆。语言力求精练、准确。
 % 关键词是供检索用的主题词条，应采用能覆盖论文主要内容的通用技术词条(参照相应的技术术语 标准)。按词条的外延层次排列（外延大的排在前面）。
 
 
 \cabstract{
-随着物联网（IoT）和海量机器型通信（mMTC）应用的快速发展，现有的第五代移动通信（5G）网络在面对复杂多样的流量特征和能效需求时逐渐显现出局限性。为满足B5G（Beyond 5G）时代对大规模连接与高能效通信的需求，亟需设计新型的介质接入控制（MAC）层随机接入机制，以兼顾系统容量、信令开销和能耗性能。本论文针对5G免授权随机接入机制（Grant-Free Random Access, GFRA）资源利用模式僵化的问题，提出一种动态时长免授权随机接入机制（Dynamic Time-GFRA, DT-GFRA），旨在充分利用随机接入信道的短时可用性，提升网络能效与系统容量。
+随着B5G/6G网络向海量终端连接与多样化业务需求持续演进，随机接入过程的性能瓶颈已成为制约工业物联网、车联网等复杂场景规模化部署的关键因素。当前 5G 蜂窝系统的随机接入机制已沿授权频谱的小数据传输（Small Data Transmission, SDT）与非授权频谱的先听后说（Listen-Before-Talk, LBT）两条路径演进，但在高负载、多业务并存场景下，现有标准方案仍存在接入开销高、资源利用效率低、动态业务适配能力不足等问题，限制系统综合性能。本文从竞争成功后连续传输的统一视角出发，对两类随机接入机制进行扩展设计与性能分析。
 
-论文首先基于离散时间休假排队理论构建了DT-GFRA的理论模型，分析节点和信道在忙期与假期之间的耦合关系，推导网络稳态运行点及吞吐量、时延等性能指标的解析表达式，并在此基础上完成接入参数的最优配置与能效优化。其次，论文构建了基于能效门限的接入机制选择与资源分配策略，在FT-GFRA、DT-GFRA与GBRA共存的B5G网络中，实现面向业务流量特征的最优接入策略选择。最后，为应对复杂多业务场景下的动态流量与高维决策问题，论文提出基于多智能体近端策略优化（MAPPO）的DT-GFRA强化学习框架，实现分布式能效优化与快速收敛。
+面向授权频谱短报文接入场景，3GPP标准随机接入过程主要基于时隙Aloha思想设计，在高负载条件下存在重复竞争开销大、接入效率受限等问题。为此，本文提出一种与3GPP标准兼容的连续传输增强Aloha接入机制。该机制在保留现有分布式接入框架的基础上，引入竞争成功后连续传输数据的策略，提高吞吐性能并降低单位数据传输的平均开销，实现性能提升与标准兼容性的协同优化。为量化评估所提机制的性能，本文基于休假排队理论构建了系统性能分析模型，对吞吐量、时延和信令开销等关键指标进行刻画与分析。
+理论分析与仿真结果表明，在不引入额外复杂控制逻辑、且不改变基本接入流程框架的前提下，所提机制通过引入竞争成功后的连续传输策略，减少重复竞争开销，可将系统数据吞吐量提升至约0.5；相较于传统逐包独立竞争的时隙 Aloha 机制，系统信道利用效率得到提升。同时，在5G小数据传输场景中，该机制还能够降低信令开销。
 
-研究结果表明，所提出的DT-GFRA机制在不更改物理层结构的前提下，可有效提升随机接入信道利用率与系统能效，具备良好的兼容性与可实施性。本研究丰富了B5G蜂窝网络MAC层接入协议体系，为面向未来物联网场景的高能效通信机制设计提供了新的理论支撑与工程参考。
+面向非授权频谱LBT接入场景，3GPP标准随机接入过程主要基于载波侦听多址（Carrier Sense Multiple Access, CSMA）思想进行设计，存在频繁侦听与退避操作导致系统开销偏高、资源利用效率不足等局限。针对该问题，本文提出一种连续传输增强的 CSMA 接入机制。该机制在保留载波侦听与退避的基础上，引入连续传输策略，降低重复竞争带来的资源消耗与效率损失。针对信道侦听与传输时长异构这一关键问题，本文构建了基于吸收马尔可夫链和休假排队理论的分析模型，对系统吞吐量与接入公平性进行刻画和优化分析。
+理论分析与仿真结果表明，该机制在无需额外复杂控制逻辑的情况下，相比同等条件下的传统 CSMA 协议可实现约28.8\%的吞吐量提升。尽管所提机制在短时间尺度上存在轻微信道占用不均的问题，但从长期统计平均角度，系统公平性与传统CSMA机制基本持平。
+
+上述两种增强型接入机制分别针对授权、非授权单一频谱场景优化，但在动态业务环境中，单一接入机制难以持续适配场景变化、无法兼顾多维性能需求。因此，本文进一步构建统一的接入性能评估与自适应决策框架，通过离散事件仿真生成覆盖多协议、多参数配置的大规模数据集，以网络规模、业务流量以及协议配置参数等作为主要输入，采用多任务学习模型实现对吞吐量、时延、公平性及信令开销等指标的高效预测；在此基础上，设计多目标效用函数，提出接入协议适配与参数配置的协同优化方法，实现动态场景下的快速决策。实验结果表明，该方法能够在动态场景中以较低计算开销实现快速决策，并获得较稳定的综合性能改善。
+
+综上，本文从接入机制增强与多协议智能优化两个视角出发，构建了低开销、可自适应的 B5G/6G 随机接入方案，可提升系统吞吐量、降低信令开销、增强动态业务适配能力，为接入机制优化与工程实现提供了理论依据与技术支撑。
+% 针对动态业务环境中单一接入机制难以持续适配场景变化、无法兼顾多维性能需求的问题，本文进一步构建统一的接入性能评估与自适应决策框架。
 }
 % 中文关键词(每个关键词之间用;分开,最后一个关键词不打标点符号。)
-\ckeywords{B5G；物联网；免授权随机接入；休假排队论；强化学习；能效优化}
+\ckeywords{5G；随机接入；Aloha；CSMA/LBT；连续传输；休假排队；多任务学习；自适应决策}
 
 \eabstract{
-With the rapid proliferation of the Internet of Things (IoT) and massive Machine-Type Communications (mMTC), the existing fifth-generation (5G) networks face increasing challenges in supporting diverse traffic characteristics and stringent energy efficiency requirements. To meet the demands of Beyond 5G (B5G) networks for massive connectivity and energy-efficient communication, it is crucial to develop novel Medium Access Control (MAC) layer random access mechanisms that balance system capacity, signaling overhead, and energy consumption. This thesis proposes a Dynamic Time Grant-Free Random Access (DT-GFRA) mechanism to overcome the rigidity of conventional GFRA resource utilization, thereby enhancing network throughput and energy efficiency by exploiting the short-term availability of random access channels.
+As B5G/6G networks evolve toward massive connectivity and heterogeneous services, random access protocols in complex Internet of Things (IoT)  scenarios face a fundamental tradeoff among access overhead, spectrum efficiency, and adaptability. Existing 5G solutions, including small data transmission (SDT) in licensed spectrum and listen-before-talk (LBT) in unlicensed spectrum, suffer from excessive contention overhead and limited efficiency under high-load conditions. This work is based on a unified design principle that enables successive transmission after successful contention.
 
-Firstly, a discrete-time vacation queuing model is developed to analyze the DT-GFRA mechanism. The model characterizes the coupling behavior between node busy periods and channel idle periods, derives the steady-state operating point, and provides closed-form expressions for throughput and delay. On this basis, optimal access parameters and energy-efficient configurations are obtained. Secondly, an energy-efficiency-based access and resource allocation strategy is designed to enable adaptive protocol selection among FT-GFRA, DT-GFRA, and GBRA in hybrid B5G networks. Finally, to handle dynamic multi-service environments with heterogeneous traffic patterns, a Multi-Agent Proximal Policy Optimization (MAPPO)-based reinforcement learning framework is proposed, enabling distributed optimization and fast convergence under practical communication constraints.
+To reduce repeated contention overhead in slotted Aloha-based SDT, a successive transmission enhanced Aloha mechanism is proposed while preserving the basic access procedure of existing systems. 
+By enabling successive transmission after a successful contention, the proposed scheme reduces per-packet overhead while retaining the distributed access architecture.
+Based on vacation queueing theory, an analytical model is established  to characterize the system performance including throughput, delay and signaling overhead. 
+Simulation results show that the proposed mechanism increases the data throughput to about 0.5, yielding higher throughput than the conventional per-packet contention-based slotted Aloha scheme, while reducing signaling overhead in 5G SDT scenarios.
 
-Simulation and analytical results demonstrate that the proposed DT-GFRA mechanism significantly improves resource utilization and energy efficiency without modifying the physical layer, showing strong compatibility and feasibility within the 3GPP framework. The study contributes to the theoretical development and practical design of high-efficiency MAC-layer access mechanisms for future B5G-enabled IoT networks.
+
+To improve the efficiency of LBT-based access in unlicensed spectrum, a successive-transmission enhanced CSMA mechanism is further proposed. By incorporating successive transmission after successful channel access into the CSMA framework, the scheme reduces frequent sensing and backoff operations.
+To capture the heterogeneity of channel sensing and transmission durations, a joint analytical model based on an absorbing Markov chain and vacation queueing theory is developed. 
+Analysis and simulations demonstrate a 28.8\% throughput improvement over classical CSMA with comparable fairness in the long-term statistical sense and no additional control overhead.
+
+
+To address the poor adaptability of single mechanisms in dynamic traffic  environments, 
+a unified framework for access performance evaluation and adaptive decision-making is proposed.
+A multi-protocol dataset is constructed via discrete-event simulation. Taking network scale, traffic load, and protocol configurations as inputs, a multi-task learning method is employed to predict multiple performance metrics efficiently.
+Based on a multi-objective utility function, joint optimization of protocol selection and parameter configuration is achieved, enabling efficient adaptation to dynamic traffic scenarios with low computational complexity.
+
+In summary, this work develops a low-overhead and adaptive random access framework for B5G/6G IoT systems. It offers both mechanism-level enhancements and system-level optimization strategies.
+
+
 }
-% 英文文关键词（关键词之间用逗号隔开，最后一个关键词不打标点符号。）
-\ekeywords{ Beyond 5G (B5G), Internet of Things (IoT), Grant-Free Random Access (GFRA), Vacation Queuing Theory, Reinforcement Learning, Energy Efficiency Optimization} 
+% 英文关键词（关键词之间用逗号隔开，最后一个关键词不打标点符号。）
+\ekeywords{5G, Random Access, Aloha, CSMA/LBT, Successive Transmission, Vacation Queueing Theory, Multi-Task Learning, Adaptive Decision-Making} 

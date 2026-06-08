@@ -1,0 +1,146 @@
+﻿===TotalCandidates===
+81
+===MissingInAcronym===
+4G	1	Chapter_02.tex
+ALOHA	1	Chapter_01.tex
+C1	2	AppendixA.tex
+C2	3	AppendixA.tex
+C3	2	AppendixA.tex
+CA	1	Chapter_01.tex
+CAPC	1	Chapter_02.tex
+CBRA	1	Chapter_02.tex
+CG	1	Chapter_01.tex
+CONNECTED	1	Chapter_02.tex
+CPB	1	Chapter_01.tex
+CR	1	Chapter_01.tex
+CSMA	46	Chapter_01.tex
+CSMA/LBT	13	Chapter_01.tex
+FC	2	Chapter_05.tex
+GD	1	Chapter_01.tex
+GELU	4	Chapter_05.tex
+IC	1	Chapter_06.tex
+L1	2	Chapter_05.tex
+MAE	6	Chapter_05.tex
+MATLAB	1	Chapter_04.tex
+MCOT	2	Chapter_02.tex
+MSE	5	Chapter_05.tex
+MT	1	Chapter_05.tex
+MTC	1	Chapter_01.tex
+NAS	1	Chapter_01.tex
+NB	1	Chapter_01.tex
+P2Q	1	AppendixB.tex
+PRACH	1	Chapter_02.tex
+PUSCH	1	Chapter_03.tex
+Q-1	2	AppendixB.tex
+QT/QTF	1	Chapter_01.tex
+R17	2	Chapter_03.tex
+R8	1	Chapter_01.tex
+RA	5	Chapter_01.tex
+RAPID	1	Chapter_01.tex
+SA/SAST	1	Chapter_05.tex
+SDR	1	Chapter_06.tex
+SINR	1	Chapter_06.tex
+TB	1	Chapter_01.tex
+V0	3	AppendixC.tex
+V1	9	AppendixA.tex
+===InAcronymButNotInBody===
+CW
+eMTC
+GBRA
+GFRA
+GRU
+HARQ-ACK
+IoT
+ITU-R
+ML
+mMTC
+NB-IoT
+NR-U
+PMF
+QoS
+RedCap
+RL
+TB-MPR
+===AllCandidates===
+3GPP	14	Chapter_01.tex
+4G	1	Chapter_02.tex
+5G	22	Chapter_01.tex
+6G	4	Chapter_01.tex
+AI	17	Chapter_01.tex
+AI/ML	1	Chapter_01.tex
+ALOHA	1	Chapter_01.tex
+B5G	5	Chapter_01.tex
+BEB	2	Chapter_01.tex
+C1	2	AppendixA.tex
+C2	3	AppendixA.tex
+C3	2	AppendixA.tex
+CA	1	Chapter_01.tex
+CAPC	1	Chapter_02.tex
+CBA	12	Chapter_02.tex
+CBRA	1	Chapter_02.tex
+CCA	1	Chapter_02.tex
+CG	1	Chapter_01.tex
+CONNECTED	1	Chapter_02.tex
+CPB	1	Chapter_01.tex
+CR	1	Chapter_01.tex
+CRDSA	2	Chapter_01.tex
+CSMA	46	Chapter_01.tex
+CSMA/CA	1	Chapter_02.tex
+CSMA/LBT	13	Chapter_01.tex
+CSMAST	48	Chapter_01.tex
+DCF	3	Chapter_01.tex
+DLMA	1	Chapter_01.tex
+DNN	1	Chapter_05.tex
+DQN	1	Chapter_01.tex
+EDCA	1	Chapter_01.tex
+FC	2	Chapter_05.tex
+GD	1	Chapter_01.tex
+GELU	4	Chapter_05.tex
+IC	1	Chapter_06.tex
+IEEE	3	Chapter_01.tex
+IRSA	1	Chapter_01.tex
+JFI	3	Chapter_02.tex
+L1	2	Chapter_05.tex
+LBT	21	Chapter_01.tex
+LTE	3	Chapter_01.tex
+MAC	31	Chapter_01.tex
+MAE	6	Chapter_05.tex
+MARL	1	Chapter_01.tex
+MATLAB	1	Chapter_04.tex
+MCOT	2	Chapter_02.tex
+MMPP	1	Chapter_02.tex
+MPR	7	Chapter_01.tex
+MSE	5	Chapter_05.tex
+MT	1	Chapter_05.tex
+MTC	1	Chapter_01.tex
+NAS	1	Chapter_01.tex
+NB	1	Chapter_01.tex
+NOMA	2	Chapter_01.tex
+NR	26	Chapter_01.tex
+NWDAF	2	Chapter_01.tex
+OFDMA	2	Chapter_01.tex
+P2Q	1	AppendixB.tex
+PGF	4	Chapter_03.tex
+PRACH	1	Chapter_02.tex
+PUSCH	1	Chapter_03.tex
+Q-1	2	AppendixB.tex
+QT/QTF	1	Chapter_01.tex
+R17	2	Chapter_03.tex
+R8	1	Chapter_01.tex
+RA	5	Chapter_01.tex
+RAN	2	Chapter_01.tex
+RAPID	1	Chapter_01.tex
+RRC	2	Chapter_02.tex
+RTS/CTS	1	Chapter_01.tex
+SA	11	Chapter_02.tex
+SA/SAST	1	Chapter_05.tex
+SAST	48	Chapter_01.tex
+SDR	1	Chapter_06.tex
+SDT	19	Chapter_01.tex
+SIC	5	Chapter_01.tex
+SINR	1	Chapter_06.tex
+STR	7	Chapter_02.tex
+TB	1	Chapter_01.tex
+V0	3	AppendixC.tex
+V1	9	AppendixA.tex
+

@@ -19,7 +19,7 @@
 ]{ctexbook}
 
 %\def\@printtwoside{0} % 设置文章为电子版格式（不添加多余空白页）
-\def\@printtwoside{1} % 设置文章为双面打印格式（添加多余空白页保证每个表格、章节开头为奇数页面）
+ \def\@printtwoside{1} % 设置文章为双面打印格式（添加多余空白页保证每个表格、章节开头为奇数页面）
 
 % 配置英文字体
 \RequirePackage{fontspec}
@@ -42,7 +42,7 @@
 \RequirePackage{enumitem}
 \RequirePackage{bbm}
 \RequirePackage{bm}
-\RequirePackage[notlof,notlot,nottoc,numbib]{tocbibind} %table of content
+\RequirePackage[nottoc,numbib]{tocbibind} %table of content
 \RequirePackage{tocloft}
 \RequirePackage{wrapfig}
 \RequirePackage{colortbl}
@@ -114,7 +114,8 @@
 %    \fancyhead[L]{\zihao{-5}\@ctitle}
 %    \fancyhead[R]{\zihao{-5}\leftmark}
     % 居中式页眉
-    \fancyhead[CO]{\zihao{-5}{中山大学\@degree 学位论文}}
+	 \fancyhead[CO]{\zihao{-5}{中山大学\@degree 学位论文}}
+%    \fancyhead[CO]{\zihao{-5}{XX大学\@degree 学位论文}}
     \fancyhead[CE]{\zihao{-5}\@ctitle}
     %\fancyhead[C]{\zihao{-5}\leftmark}
 }
@@ -122,11 +123,13 @@
 
 % 中英文摘要页面样式
 \fancypagestyle{cAbstract}{
-   \fancyhead[CO]{\zihao{-5}{中山大学\@degree 学位论文}}
+    \fancyhead[CO]{\zihao{-5}{中山大学\@degree 学位论文}}
+%   \fancyhead[CO]{\zihao{-5}{XX大学\@degree 学位论文}}
    \fancyhead[CE]{\zihao{-5}\@ctitle}
 }
 \fancypagestyle{eAbstract}{
-    \fancyhead[CO]{\zihao{-5}{中山大学\@degree 学位论文}}
+	 \fancyhead[CO]{\zihao{-5}{中山大学\@degree 学位论文}}
+%    \fancyhead[CO]{\zihao{-5}{XX大学\@degree 学位论文}}
     \fancyhead[CE]{\zihao{-5}\@ctitle}
 }
 
@@ -135,7 +138,8 @@
 \fancypagestyle{listoffiguretable}{
 	\fancyhf{}
 	\fancyfoot[C]{\zihao{-5}\thepage}
-	\fancyhead[CO]{\zihao{-5}{中山大学\@degree 学位论文}}
+	 \fancyhead[CO]{\zihao{-5}{中山大学\@degree 学位论文}}
+%	\fancyhead[CO]{\zihao{-5}{XX大学\@degree 学位论文}}
 	\fancyhead[CE]{\zihao{-5}\@ctitle}
 }
 
@@ -150,6 +154,8 @@
 % 目录设定，使用tocloft宏包
 \setcounter{secnumdepth}{3} % depth of toc, 2
 \setcounter{tocdepth}{1}
+\renewcommand{\listfigurename}{图目录}
+\renewcommand{\listtablename}{表格目录}
 % 如果要在目录中显示子章节请换用下面这行(目录中显示到x.y.z章)，如果不用这行默认显示到x.y章。
 % \setcounter{tocdepth}{2}
 
@@ -157,6 +163,9 @@
 \renewcommand{\cfttoctitlefont}{\hfill\zihao{-2}\heiti\bfseries}
 \renewcommand{\cftlottitlefont}{\hfill\zihao{-2}\heiti\bfseries}
 \renewcommand{\cftloftitlefont}{\hfill\zihao{-2}\heiti\bfseries}
+\setlength{\cftbeforetoctitleskip}{18pt}
+\setlength{\cftbeforelottitleskip}{18pt}
+\setlength{\cftbeforeloftitleskip}{18pt}
 
 % 目录中章节标题：四号黑体
 \renewcommand{\cftchapfont}{\zihao{4}\heiti}
@@ -173,6 +182,16 @@
 \renewcommand{\cftafterlottitle}{\hfill}
 \renewcommand{\cftafterloftitle}{\hfill}
 \renewcommand{\cftnodots}{\cftdotsep}     % 使用点指示页数
+
+% 图目录条目前缀：图1-1
+\renewcommand{\cftfigpresnum}{图}
+\renewcommand{\cftfigaftersnum}{\hspace{0.5em}}
+\addtolength{\cftfignumwidth}{2\ccwd}
+
+% 表目录条目前缀：表1-1
+\renewcommand{\cfttabpresnum}{表}
+\renewcommand{\cfttabaftersnum}{\hspace{0.5em}}
+\addtolength{\cfttabnumwidth}{2\ccwd}
 
 \addtolength{\cftchapnumwidth}{3\ccwd}
 \newcommand\mybold[1]{\textit{\textbf{#1}}}
@@ -239,13 +258,16 @@
             		{\makebox[3cm][s]{\textbf{专 \hfill 业：} }} & \@cmajor \\
             		{\makebox[3cm][s]{\textbf{学 \hfill 位 \hfill 申 \hfill 请 \hfill 人：}}}& \@cauthor \\
             		{\makebox[3cm][s]{\textbf{\textbf{导 \hfill 师 \hfill 姓 \hfill 名：}}}} & \@cmentor \\
+            		{\makebox[3cm][s]{\textbf{学 \hfill 号：} }} & \@studentid \\
+					{\makebox[3cm][s]{\textbf{学 \hfill 院：} }} & \@cschool \\
             \end{tabular}%
 
-        	\vspace{4\baselineskip}
+        	\vspace{3\baselineskip}
 	        \begin{tabular}{rr}
 	        	论文答辩委员会主席： & \raisebox{-1ex}{\underline{\makebox[6cm][c]{}}}\\
 	        	成员：& \raisebox{-1ex}{\underline{\makebox[6cm][c]{}}}\\
 	        	{}& \raisebox{-1ex}{\underline{\makebox[6cm][c]{}}}\\
+				{}& \raisebox{-1ex}{\underline{\makebox[6cm][c]{}}}\\
 	        	{}& \raisebox{-1ex}{\underline{\makebox[6cm][c]{}}}
 	        \end{tabular}}
 
